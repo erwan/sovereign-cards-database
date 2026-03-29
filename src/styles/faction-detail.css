@@ -48,6 +48,65 @@
   user-select: none;
 }
 
+.deck-view-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem 1rem;
+  margin: -0.5rem 0 1.5rem;
+}
+
+.deck-view-toolbar-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.deck-view-switch {
+  display: inline-flex;
+  border-radius: 0.375rem;
+  border: 1px solid var(--border-strong);
+  background: var(--bg-base);
+  overflow: hidden;
+}
+
+.deck-view-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+}
+
+.deck-view-option {
+  display: inline-block;
+  padding: 0.4rem 0.85rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  user-select: none;
+  border: none;
+  margin: 0;
+}
+
+.deck-view-option:hover {
+  color: var(--text-primary);
+}
+
+.deck-view-input:focus-visible + .deck-view-option {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+  z-index: 1;
+  position: relative;
+}
+
+.deck-view-input:checked + .deck-view-option {
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 35%, var(--border-strong));
+}
+
 .card-type-section {
   margin-bottom: 2rem;
 }
@@ -87,22 +146,26 @@
   font: inherit;
   color: inherit;
   text-align: left;
+  cursor: default;
+}
+
+.faction-detail[data-deck-view="list"] .card-item {
   cursor: pointer;
 }
 
-.faction-detail .card-item:focus-visible {
+.faction-detail[data-deck-view="list"] .card-item:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 
-.faction-detail .card-item:hover {
+.faction-detail[data-deck-view="list"] .card-item:hover {
   border-color: color-mix(in srgb, var(--accent) 45%, var(--border-strong));
   box-shadow:
     var(--shadow-soft),
     0 0 0 1px color-mix(in srgb, var(--accent) 25%, transparent);
 }
 
-.faction-detail .card-item:hover .card-thumb {
+.faction-detail[data-deck-view="list"] .card-item:hover .card-thumb {
   border-color: var(--border-strong);
 }
 
@@ -156,6 +219,29 @@
   font-size: 0.875rem;
   color: var(--text-muted);
   text-transform: capitalize;
+}
+
+.faction-detail[data-deck-view="gallery"] .card-list {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr));
+  gap: 1.25rem;
+}
+
+.faction-detail[data-deck-view="gallery"] .card-item {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  padding: 0.5rem;
+}
+
+.faction-detail[data-deck-view="gallery"] .card-meta {
+  display: none;
+}
+
+.faction-detail[data-deck-view="gallery"] .card-thumb {
+  width: 100%;
+  max-width: none;
+  height: auto;
+  object-fit: contain;
 }
 
 .card-lightbox {

@@ -10,12 +10,11 @@ const { card, assetPrefix } = Astro.props;
 ---
 
 <li>
-  <button
-    type="button"
+  <div
     class="card-item"
-    aria-label={`View full card: ${card.name}, cost ${card.cost}`}
     data-full-src={`${assetPrefix}${card.image}`}
     data-card-name={card.name}
+    data-card-cost={String(card.cost)}
   >
     <img
       class="card-thumb"
@@ -35,5 +34,5 @@ const { card, assetPrefix } = Astro.props;
         {card.cost}
       </span>
     </div>
-  </button>
+  </div>
 </li>

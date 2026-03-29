@@ -84,6 +84,22 @@ export function cardBlockTypeLabel(card: CardEntry): string {
   return card.type_secondary.join(' / ');
 }
 
+function costSortKey(cost: string): number {
+  if (cost.length === 1 && cost >= '0' && cost <= '9') {
+    return cost.charCodeAt(0) - 48;
+  }
+  return 10;
+}
+
+export function compareCardsByCostThenName(a: CardEntry, b: CardEntry): number {
+  const ka = costSortKey(a.cost);
+  const kb = costSortKey(b.cost);
+  if (ka !== kb) return ka - kb;
+  const byCostChar = a.cost.localeCompare(b.cost, undefined, { sensitivity: 'base' });
+  if (byCostChar !== 0) return byCostChar;
+  return a.name.localeCompare(b.name, undefined, { sensitivity: 'base' });
+}
+
 const CARD_TYPES = new Set<string>(['unknown', 'unit', 'reflex', 'augment', 'colony']);
 
 export function folderToDisplayName(folder: string): string {

@@ -18,15 +18,31 @@
     var img = document.getElementById("card-lightbox-img");
     if (!dialog || !img) return;
 
-    document.querySelectorAll(".card-item[data-full-src]").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        var src = btn.getAttribute("data-full-src");
-        var name = btn.getAttribute("data-card-name") || "";
-        if (!src) return;
-        img.src = src;
-        img.alt = name;
-        dialog.showModal();
-      });
+    function openFrom(el) {
+      var src = el.getAttribute("data-full-src");
+      var name = el.getAttribute("data-card-name") || "";
+      if (!src) return;
+      img.src = src;
+      img.alt = name;
+      dialog.showModal();
+    }
+
+    document.addEventListener("click", function (e) {
+      var item = e.target.closest(
+        '.faction-detail[data-deck-view="list"] .card-item[data-full-src]'
+      );
+      if (!item) return;
+      openFrom(item);
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key !== "Enter" && e.key !== " ") return;
+      var item = e.target.closest(
+        '.faction-detail[data-deck-view="list"] .card-item[data-full-src]'
+      );
+      if (!item) return;
+      e.preventDefault();
+      openFrom(item);
     });
 
     dialog.addEventListener("click", function (e) {
