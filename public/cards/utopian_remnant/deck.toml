@@ -130,7 +130,7 @@ type = "unit"
 type_secondary = [
     "antigrav",
 ]
-cost = 3
+cost = 5
 
 [[cards]]
 image = "16.jpg"
@@ -139,7 +139,7 @@ type = "unit"
 type_secondary = [
     "antigrav",
 ]
-cost = 2
+cost = 7
 
 [[cards]]
 image = "17.jpg"
@@ -244,7 +244,7 @@ type = "colony"
 type_secondary = [
     "facility",
 ]
-cost = 3
+cost = 5
 
 [[cards]]
 image = "30.jpg"
