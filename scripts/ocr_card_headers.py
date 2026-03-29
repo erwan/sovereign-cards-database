@@ -1,12 +1,35 @@
 #!/usr/bin/env python3
 """
-OCR card headers under public/cards and update deck.yaml:
-- Name: top 60px (stored with each word capitalized, e.g. Title Case)
-- Type: 40px-tall band starting at y=270 from the top
+OCR card headers under public/cards and update ``deck.yaml``.
 
-Preserves optional top-level ``description`` when rewriting deck.yaml.
+Strips:
+- Name: top 60px (Title Case per word)
+- Type: 40px band starting at y=270 from the top. If OCR yields ``unknown`` but
+  the card already has a non-empty, non-unknown ``type``, the existing value is kept.
 
-Requires Tesseract on PATH (e.g. brew install tesseract).
+By default, OCR updates **both** ``name`` and ``type``. Pass ``--name`` and/or
+``--type`` to update only those fields; other keys on each card (including any
+the script does not know about) are left unchanged. Top-level ``description``
+is preserved when the file is rewritten.
+
+Requires Tesseract on PATH (e.g. ``brew install tesseract``).
+
+Examples:
+
+  # All decks: refresh name and type (default)
+  python scripts/ocr_card_headers.py
+
+  # Only set type from OCR; leave name and other keys untouched
+  python scripts/ocr_card_headers.py --type
+
+  # Only set name
+  python scripts/ocr_card_headers.py --name
+
+  # One deck, dry-run, type only
+  python scripts/ocr_card_headers.py --deck cult_of_apsynthos --dry-run --type
+
+  # Explicitly both fields (same as default)
+  python scripts/ocr_card_headers.py --name --type
 """
 
 from __future__ import annotations
@@ -150,6 +173,8 @@ def process_deck(
     *,
     dry_run: bool,
     verbose: bool,
+    want_name: bool,
+    want_type: bool,
 ) -> int:
     loaded = load_deck(deck_dir)
     if loaded is None:
@@ -179,21 +204,31 @@ def process_deck(
             print(f"warn: missing file {img_path}", file=sys.stderr)
             continue
 
-        top = crop_horizontal_strip(img_path, 0, TOP_PX)
-        if top is None:
-            print(f"warn: empty top strip {img_path}", file=sys.stderr)
-            continue
-        raw_top = ocr_strip(top)
+        raw_top = ""
+        raw_type = ""
+        name = entry.get("name")
+        typ = entry.get("type")
 
-        type_img = crop_horizontal_strip(img_path, TYPE_STRIP_Y, TYPE_STRIP_H)
-        raw_type = ocr_strip(type_img) if type_img is not None else ""
+        if want_name:
+            top = crop_horizontal_strip(img_path, 0, TOP_PX)
+            if top is None:
+                print(f"warn: empty top strip {img_path}", file=sys.stderr)
+                continue
+            raw_top = ocr_strip(top)
+            name = parse_name(raw_top)
 
-        name = parse_name(raw_top)
-        typ = parse_type(raw_type)
+        if want_type:
+            type_img = crop_horizontal_strip(img_path, TYPE_STRIP_Y, TYPE_STRIP_H)
+            raw_type = ocr_strip(type_img) if type_img is not None else ""
+            typ = parse_type(raw_type)
+            prev_type = entry.get("type")
+            if typ == "unknown" and isinstance(prev_type, str) and prev_type.strip() and prev_type != "unknown":
+                typ = prev_type
 
         old_name = entry.get("name")
         old_type = entry.get("type")
-        if old_name != name or old_type != typ:
+        changed = (want_name and old_name != name) or (want_type and old_type != typ)
+        if changed:
             updated += 1
             if verbose:
                 print(
@@ -201,8 +236,10 @@ def process_deck(
                     f"-> name={name!r} type={typ}"
                 )
 
-        entry["name"] = name
-        entry["type"] = typ
+        if want_name:
+            entry["name"] = name
+        if want_type:
+            entry["type"] = typ
 
     if not dry_run and updated:
         write_deck_yaml(deck_dir, cards, description)
@@ -213,7 +250,10 @@ def process_deck(
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description=__doc__)
+    parser = argparse.ArgumentParser(
+        description=__doc__,
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
     parser.add_argument(
         "--deck",
         metavar="SLUG",
@@ -225,7 +265,23 @@ def main() -> int:
         help="OCR and report but do not write deck.yaml",
     )
     parser.add_argument("-v", "--verbose", action="store_true", help="Print OCR text per card")
+    parser.add_argument(
+        "--name",
+        action="store_true",
+        dest="set_name",
+        help="OCR title strip and set only the name field",
+    )
+    parser.add_argument(
+        "--type",
+        action="store_true",
+        dest="set_type",
+        help="OCR type strip and set only the type field",
+    )
     args = parser.parse_args()
+
+    explicit_fields = args.set_name or args.set_type
+    want_name = args.set_name if explicit_fields else True
+    want_type = args.set_type if explicit_fields else True
 
     if not CARDS_ROOT.is_dir():
         print(f"Missing {CARDS_ROOT}", file=sys.stderr)
@@ -241,7 +297,13 @@ def main() -> int:
 
     total = 0
     for d in dirs:
-        total += process_deck(d, dry_run=args.dry_run, verbose=args.verbose)
+        total += process_deck(
+            d,
+            dry_run=args.dry_run,
+            verbose=args.verbose,
+            want_name=want_name,
+            want_type=want_type,
+        )
 
     if args.dry_run:
         print(f"Total cards with changes: {total} (files not written)")
