@@ -1,96 +1,119 @@
-description: >
-  First people out of the wrecked ark; they claim Apsyntion, not Earth, as home.
-  Semi-nomadic clans live beside Lilin hives, coaxing food and oxygen from the
-  fungal mat while oral tradition hides Wormwood’s grave—Wind Cathedrals on the
-  cliffs echo hive-song at dawn and dusk.
+description: 'First people out of the wrecked ark; they claim Apsyntion, not Earth, as home. Semi-nomadic clans live beside Lilin hives, coaxing food and oxygen from the fungal mat while oral tradition hides Wormwood’s grave—Wind Cathedrals on the cliffs echo hive-song at dawn and dusk.
+
+  '
 cards:
-  - image: "01.jpg"
-    name: "Led Gees Sme Free Dle Le Tire"
-    type: unit
-  - image: "02.jpg"
-    name: "Apsyntion Communication"
-    type: reflex
-  - image: "03.jpg"
-    name: "Apsyntion Symbiosis"
-    type: reflex
-  - image: "04.jpg"
-    name: "Behemoth"
-    type: unit
-  - image: "05.jpg"
-    name: "Borespikes"
-    type: augment
-  - image: "06.jpg"
-    name: "Boreworm"
-    type: unit
-  - image: "07.jpg"
-    name: "Brood Den"
-    type: colony
-  - image: "08.jpg"
-    name: "Brood Handlers"
-    type: unit
-  - image: "09.jpg"
-    name: "Bury"
-    type: reflex
-  - image: "10.jpg"
-    name: "Chrysalis"
-    type: unit
-  - image: "11.jpg"
-    name: "Contact"
-    type: reflex
-  - image: "12.jpg"
-    name: "Legge"
-    type: augment
-  - image: "13.jpg"
-    name: "Fungus Farm"
-    type: colony
-  - image: "14.jpg"
-    name: "Harlequin"
-    type: unit
-  - image: "15.jpg"
-    name: "Incursion"
-    type: reflex
-  - image: "16.jpg"
-    name: "Lilin Hive"
-    type: colony
-  - image: "17.jpg"
-    name: "Lilin Matron"
-    type: unit
-  - image: "18.jpg"
-    name: "Lilin Vultures"
-    type: unit
-  - image: "19.jpg"
-    name: "Mark Of The Hive"
-    type: augment
-  - image: "20.jpg"
-    name: "Mimetic Scales"
-    type: augment
-  - image: "21.jpg"
-    name: "Musk Herders"
-    type: unit
-  - image: "22.jpg"
-    name: "Shroud"
-    type: unit
-  - image: "23.jpg"
-    name: "Spawning Pits"
-    type: colony
-  - image: "24.jpg"
-    name: "Spore Weevils"
-    type: unit
-  - image: "25.jpg"
-    name: "Sporemask Poachers"
-    type: unit
-  - image: "26.jpg"
-    name: "Wind Cathedral"
-    type: colony
-  - image: "27.jpg"
-    name: "Windlion"
-    type: unit
-  - image: "28.jpg"
-    name: "Windwalker Camp"
-    type: colony
-  - image: "29.jpg"
-    name: "Xeno Psychology"
-    type: reflex
-  - image: "30.jpg"
-    name: "Xenophagy"
-    type: augment
+- image: 01.jpg
+  name: Led Gees Sme Free Dle Le Tire
+  type: unit
+  type_secondary: Human
+- image: 02.jpg
+  name: Apsyntion Communication
+  type: reflex
+- image: 03.jpg
+  name: Apsyntion Symbiosis
+  type: reflex
+- image: 04.jpg
+  name: Behemoth
+  type: unit
+  type_secondary: Xeno -
+- image: 05.jpg
+  name: Borespikes
+  type: augment
+  type_secondary: Unit
+- image: 06.jpg
+  name: Boreworm
+  type: unit
+  type_secondary: Xeno 7 I Oo Ed Ee I Eet A Al Ae I Ne .
+- image: 07.jpg
+  name: Brood Den
+  type: colony
+  type_secondary: '- Colony Facility . 8'
+- image: 08.jpg
+  name: Brood Handlers
+  type: unit
+  type_secondary: Chimera
+- image: 09.jpg
+  name: Bury
+  type: reflex
+- image: 10.jpg
+  name: Chrysalis
+  type: unit
+  type_secondary: Xeno -
+- image: 11.jpg
+  name: Contact
+  type: reflex
+- image: 12.jpg
+  name: Legge
+  type: augment
+  type_secondary: Unit
+- image: 13.jpg
+  name: Fungus Farm
+  type: colony
+  type_secondary: '- Colony Facility .'
+- image: 14.jpg
+  name: Harlequin
+  type: unit
+  type_secondary: Xeno
+- image: 15.jpg
+  name: Incursion
+  type: reflex
+- image: 16.jpg
+  name: Lilin Hive
+  type: colony
+  type_secondary: Aciereys
+- image: 17.jpg
+  name: Lilin Matron
+  type: unit
+  type_secondary: Xeno
+- image: 18.jpg
+  name: Lilin Vultures
+  type: unit
+  type_secondary: Xeno
+- image: 19.jpg
+  name: Mark Of The Hive
+  type: augment
+  type_secondary: Facility
+- image: 20.jpg
+  name: Mimetic Scales
+  type: augment
+  type_secondary: Unit
+- image: 21.jpg
+  name: Musk Herders
+  type: unit
+  type_secondary: Human
+- image: 22.jpg
+  name: Shroud
+  type: unit
+  type_secondary: Unit Xeno
+- image: 23.jpg
+  name: Spawning Pits
+  type: colony
+  type_secondary: Facility .
+- image: 24.jpg
+  name: Spore Weevils
+  type: unit
+  type_secondary: Xeno -
+- image: 25.jpg
+  name: Sporemask Poachers
+  type: unit
+  type_secondary: Human -
+- image: 26.jpg
+  name: Wind Cathedral
+  type: colony
+  type_secondary: Facility .
+- image: 27.jpg
+  name: Windlion
+  type: unit
+  type_secondary: Xeno -
+- image: 28.jpg
+  name: Windwalker Camp
+  type: colony
+  type_secondary: Facility
+- image: 29.jpg
+  name: Xeno Psychology
+  type: reflex
+  type_secondary: Reflex
+- image: 30.jpg
+  name: Xenophagy
+  type: augment
+  type_secondary: Unit

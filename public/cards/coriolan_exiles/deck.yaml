@@ -1,96 +1,118 @@
-description: >
-  Once-prosperous Coriolis was broken by war between Utopia, Myrmidon, and
-  Coriolis itself. Stripped nobles and survivors trade in caravans, melt relics
-  into guns, herd engineered Ceph for wealth, and cling to governance from the
-  ruins while the old dynasty’s corpse is slowly built over.
+description: 'Once-prosperous Coriolis was broken by war between Utopia, Myrmidon, and Coriolis itself. Stripped nobles and survivors trade in caravans, melt relics into guns, herd engineered Ceph for wealth, and cling to governance from the ruins while the old dynasty’s corpse is slowly built over.
+
+  '
 cards:
-  - image: "01.jpg"
-    name: "Bull Ceph"
-    type: unit
-  - image: "02.jpg"
-    name: "Caravan Guards"
-    type: unit
-  - image: "03.jpg"
-    name: "Duchess Of Ash"
-    type: unit
-  - image: "04.jpg"
-    name: "Duelist"
-    type: augment
-  - image: "05.jpg"
-    name: "Field Medics"
-    type: unit
-  - image: "06.jpg"
-    name: "Flagbearers"
-    type: unit
-  - image: "07.jpg"
-    name: "Frontier Despot"
-    type: unit
-  - image: "08.jpg"
-    name: "Gardens Of Kadesh"
-    type: colony
-  - image: "09.jpg"
-    name: "Glacial Melt"
-    type: reflex
-  - image: "10.jpg"
-    name: "Graftguard"
-    type: unit
-  - image: "11.jpg"
-    name: "High Caste"
-    type: augment
-  - image: "12.jpg"
-    name: "Highborn Academy"
-    type: colony
-  - image: "13.jpg"
-    name: "Highborn Nursery"
-    type: colony
-  - image: "14.jpg"
-    name: "Ice Hauler"
-    type: unit
-  - image: "15.jpg"
-    name: "Merchant Caravan"
-    type: unit
-  - image: "16.jpg"
-    name: "Migrant Labor"
-    type: reflex
-  - image: "17.jpg"
-    name: "Mule"
-    type: augment
-  - image: "18.jpg"
-    name: "Musk Ceph"
-    type: unit
-  - image: "19.jpg"
-    name: "Noble Profession"
-    type: augment
-  - image: "20.jpg"
-    name: "Open Market"
-    type: colony
-  - image: "21.jpg"
-    name: "Plutocracy"
-    type: reflex
-  - image: "22.jpg"
-    name: "Prodigal Sons"
-    type: reflex
-  - image: "23.jpg"
-    name: "Rail Cavalry"
-    type: unit
-  - image: "24.jpg"
-    name: "Relocation"
-    type: reflex
-  - image: "25.jpg"
-    name: "Ruined Arcology"
-    type: colony
-  - image: "26.jpg"
-    name: "Scrap Hunt"
-    type: reflex
-  - image: "27.jpg"
-    name: "Scrap Scavengers"
-    type: unit
-  - image: "28.jpg"
-    name: "Stun Whip"
-    type: augment
-  - image: "29.jpg"
-    name: "Synthsilk Hatchery"
-    type: colony
-  - image: "30.jpg"
-    name: "Technocrats"
-    type: unit
+- image: 01.jpg
+  name: Bull Ceph
+  type: unit
+  type_secondary: Xeno
+- image: 02.jpg
+  name: Caravan Guards
+  type: unit
+  type_secondary: Xeno
+- image: 03.jpg
+  name: Duchess Of Ash
+  type: unit
+  type_secondary: Human
+- image: 04.jpg
+  name: Duelist
+  type: augment
+  type_secondary: Unit
+- image: 05.jpg
+  name: Field Medics
+  type: unit
+  type_secondary: Human
+- image: 06.jpg
+  name: Flagbearers
+  type: unit
+  type_secondary: Human
+- image: 07.jpg
+  name: Frontier Despot
+  type: unit
+  type_secondary: Human -
+- image: 08.jpg
+  name: Gardens Of Kadesh
+  type: colony
+  type_secondary: Facility
+- image: 09.jpg
+  name: Glacial Melt
+  type: reflex
+- image: 10.jpg
+  name: Graftguard
+  type: unit
+  type_secondary: Human
+- image: 11.jpg
+  name: High Caste
+  type: augment
+  type_secondary: Unit
+- image: 12.jpg
+  name: Highborn Academy
+  type: colony
+- image: 13.jpg
+  name: Highborn Nursery
+  type: colony
+  type_secondary: Facility.
+- image: 14.jpg
+  name: Ice Hauler
+  type: unit
+  type_secondary: Mech
+- image: 15.jpg
+  name: Merchant Caravan
+  type: unit
+  type_secondary: Human Xeno
+- image: 16.jpg
+  name: Migrant Labor
+  type: reflex
+- image: 17.jpg
+  name: Mule
+  type: augment
+  type_secondary: Unit
+- image: 18.jpg
+  name: Musk Ceph
+  type: unit
+  type_secondary: Xeno
+- image: 19.jpg
+  name: Noble Profession
+  type: augment
+  type_secondary: Facility
+- image: 20.jpg
+  name: Open Market
+  type: colony
+  type_secondary: Facility
+- image: 21.jpg
+  name: Plutocracy
+  type: reflex
+- image: 22.jpg
+  name: Prodigal Sons
+  type: reflex
+- image: 23.jpg
+  name: Rail Cavalry
+  type: unit
+  type_secondary: '- Unit Antigrav'
+- image: 24.jpg
+  name: Relocation
+  type: reflex
+  type_secondary: Reflex
+- image: 25.jpg
+  name: Ruined Arcology
+  type: colony
+  type_secondary: Facility.
+- image: 26.jpg
+  name: Scrap Hunt
+  type: reflex
+- image: 27.jpg
+  name: Scrap Scavengers
+  type: unit
+  type_secondary: Human
+- image: 28.jpg
+  name: Stun Whip
+  type: augment
+  type_secondary: Unit
+- image: 29.jpg
+  name: Synthsilk Hatchery
+  type: colony
+  type_secondary: Facility
+- image: 30.jpg
+  name: Technocrats
+  type: unit
+  type_secondary: Human

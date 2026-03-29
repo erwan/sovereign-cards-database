@@ -1,96 +1,119 @@
-description: >
-  They settle the fungal wastes’ most toxic psychoactive zones and Lilin husks,
-  obeying laws shaped by semi-aware xenofungus. Initiates splice mycelium into
-  flesh until the network owns their nerves—gaining strength and spore-born
-  “telepathy” while spreading infection toward a holy end to mankind.
+description: 'They settle the fungal wastes’ most toxic psychoactive zones and Lilin husks, obeying laws shaped by semi-aware xenofungus. Initiates splice mycelium into flesh until the network owns their nerves—gaining strength and spore-born “telepathy” while spreading infection toward a holy end to mankind.
+
+  '
 cards:
-  - image: "01.jpg"
-    name: "Acid Husks"
-    type: unit
-  - image: "02.jpg"
-    name: "Apsyntion Preserve"
-    type: colony
-  - image: "03.jpg"
-    name: "Blister Plates"
-    type: augment
-  - image: "04.jpg"
-    name: "Boreworm Larvae"
-    type: unit
-  - image: "05.jpg"
-    name: "Carrier"
-    type: augment
-  - image: "06.jpg"
-    name: "Chimera Guild"
-    type: colony
-  - image: "07.jpg"
-    name: "Elder Hybrids"
-    type: unit
-  - image: "08.jpg"
-    name: "Endospexi"
-    type: unit
-  - image: "09.jpg"
-    name: "Fungal Bloom"
-    type: reflex
-  - image: "10.jpg"
-    name: "Gene Speakers"
-    type: unit
-  - image: "11.jpg"
-    name: "Hyphal Warning"
-    type: augment
-  - image: "12.jpg"
-    name: "Grendels"
-    type: unit
-  - image: "13.jpg"
-    name: "Haruspexi"
-    type: unit
-  - image: "14.jpg"
-    name: "Herdmasters"
-    type: unit
-  - image: "15.jpg"
-    name: "Mosaic Mutation"
-    type: reflex
-  - image: "16.jpg"
-    name: "Mycandrium"
-    type: colony
-  - image: "17.jpg"
-    name: "Mygologists"
-    type: unit
-  - image: "18.jpg"
-    name: "Orthogenesis"
-    type: reflex
-  - image: "19.jpg"
-    name: "Plague Spores"
-    type: reflex
-  - image: "20.jpg"
-    name: "Planet Plague"
-    type: augment
-  - image: "21.jpg"
-    name: "Rot Midden"
-    type: colony
-  - image: "22.jpg"
-    name: "Silkspitters"
-    type: unit
-  - image: "23.jpg"
-    name: "Spore Blossoms"
-    type: augment
-  - image: "24.jpg"
-    name: "Spore Mats"
-    type: colony
-  - image: "25.jpg"
-    name: "Spore Slaves"
-    type: unit
-  - image: "26.jpg"
-    name: "Spore Storm"
-    type: reflex
-  - image: "27.jpg"
-    name: "Stalk Tenders"
-    type: unit
-  - image: "28.jpg"
-    name: "Unruly Husks"
-    type: unit
-  - image: "29.jpg"
-    name: "Xeno Regeneration"
-    type: reflex
-  - image: "30.jpg"
-    name: "Kenoneural Arcology"
-    type: colony
+- image: 01.jpg
+  name: Acid Husks
+  type: unit
+  type_secondary: Xeno
+- image: 02.jpg
+  name: Apsyntion Preserve
+  type: colony
+  type_secondary: Facility
+- image: 03.jpg
+  name: Blister Plates
+  type: augment
+  type_secondary: Unit
+- image: 04.jpg
+  name: Boreworm Larvae
+  type: unit
+  type_secondary: '- Unit Xeno'
+- image: 05.jpg
+  name: Carrier
+  type: augment
+  type_secondary: '- Augment Unit'
+- image: 06.jpg
+  name: Chimera Guild
+  type: colony
+  type_secondary: Facility .
+- image: 07.jpg
+  name: Elder Hybrids
+  type: unit
+  type_secondary: Unit Chimera -
+- image: 08.jpg
+  name: Endospexi
+  type: unit
+  type_secondary: Chimera
+- image: 09.jpg
+  name: Fungal Bloom
+  type: reflex
+- image: 10.jpg
+  name: Gene Speakers
+  type: unit
+  type_secondary: Chimera
+- image: 11.jpg
+  name: Hyphal Warning
+  type: augment
+  type_secondary: Unit
+- image: 12.jpg
+  name: Grendels
+  type: unit
+  type_secondary: Xeno
+- image: 13.jpg
+  name: Haruspexi
+  type: unit
+  type_secondary: Chimera Ioe
+- image: 14.jpg
+  name: Herdmasters
+  type: unit
+  type_secondary: Chimera
+- image: 15.jpg
+  name: Mosaic Mutation
+  type: reflex
+- image: 16.jpg
+  name: Mycandrium
+  type: colony
+  type_secondary: Facility
+- image: 17.jpg
+  name: Mygologists
+  type: unit
+  type_secondary: Human
+- image: 18.jpg
+  name: Orthogenesis
+  type: reflex
+  type_secondary: Eee
+- image: 19.jpg
+  name: Plague Spores
+  type: reflex
+- image: 20.jpg
+  name: Planet Plague
+  type: augment
+  type_secondary: '- Augment Unit 5'
+- image: 21.jpg
+  name: Rot Midden
+  type: colony
+  type_secondary: Facility
+- image: 22.jpg
+  name: Silkspitters
+  type: unit
+  type_secondary: Xeno 3
+- image: 23.jpg
+  name: Spore Blossoms
+  type: augment
+  type_secondary: Unit
+- image: 24.jpg
+  name: Spore Mats
+  type: colony
+  type_secondary: Facility.
+- image: 25.jpg
+  name: Spore Slaves
+  type: unit
+  type_secondary: Human -
+- image: 26.jpg
+  name: Spore Storm
+  type: reflex
+- image: 27.jpg
+  name: Stalk Tenders
+  type: unit
+  type_secondary: Xeno -
+- image: 28.jpg
+  name: Unruly Husks
+  type: unit
+  type_secondary: Xeno
+- image: 29.jpg
+  name: Xeno Regeneration
+  type: reflex
+- image: 30.jpg
+  name: Kenoneural Arcology
+  type: colony
+  type_secondary: Facility

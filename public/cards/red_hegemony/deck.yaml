@@ -1,95 +1,119 @@
-description: >
-  Scarlet-flag pirates and slavers on cloudbases over the acid wastes—a loose
-  confederation of fugitives whose cobbled ships wield any forbidden tech:
-  synths, mechs, aliens. Leadership is fluid; only strength and survival bind them.
+description: 'Scarlet-flag pirates and slavers on cloudbases over the acid wastes—a loose confederation of fugitives whose cobbled ships wield any forbidden tech: synths, mechs, aliens. Leadership is fluid; only strength and survival bind them.
+
+  '
 cards:
-  - image: "01.jpg"
-    name: "Ambush"
-    type: reflex
-  - image: "02.jpg"
-    name: "Gre"
-    type: colony
-  - image: "03.jpg"
-    name: "Betrayal"
-    type: reflex
-  - image: "04.jpg"
-    name: "Bombardment"
-    type: reflex
-  - image: "05.jpg"
-    name: "Bounty Hunters"
-    type: unit
-  - image: "06.jpg"
-    name: "Brassjackets"
-    type: unit
-  - image: "07.jpg"
-    name: "Civilian Casualties"
-    type: reflex
-  - image: "08.jpg"
-    name: "Clone Stock"
-    type: augment
-  - image: "09.jpg"
-    name: "Cloudbreak Spire"
-    type: colony
-  - image: "10.jpg"
-    name: "Corsairs"
-    type: unit
-  - image: "11.jpg"
-    name: "Datajack Bandits"
-    type: unit
-  - image: "12.jpg"
-    name: "Decksweeps"
-    type: unit
-  - image: "13.jpg"
-    name: "Exosuit"
-    type: augment
-  - image: "14.jpg"
-    name: "Gambler"
-    type: augment
-  - image: "15.jpg"
-    name: "Grave Hoard"
-    type: colony
-  - image: "16.jpg"
-    name: "Hacker"
-    type: colony
-  - image: "17.jpg"
-    name: "Hegemony Pirates"
-    type: unit
-  - image: "18.jpg"
-    name: "Hegemony Slavers"
-    type: unit
-  - image: "19.jpg"
-    name: "Leb"
-    type: unit
-  - image: "20.jpg"
-    name: "Hornet Swarm"
-    type: unit
-  - image: "21.jpg"
-    name: "Listening Post"
-    type: colony
-  - image: "22.jpg"
-    name: "Privateer Contract"
-    type: reflex
-  - image: "23.jpg"
-    name: "Razorback"
-    type: unit
-  - image: "24.jpg"
-    name: "Reconstruct"
-    type: augment
-  - image: "25.jpg"
-    name: "Shipbreakers"
-    type: unit
-  - image: "26.jpg"
-    name: "Smog Skiff"
-    type: unit
-  - image: "27.jpg"
-    name: "Talent Hack"
-    type: reflex
-  - image: "28.jpg"
-    name: "Telepath Graft"
-    type: augment
-  - image: "29.jpg"
-    name: "Tethered Nephilim"
-    type: unit
-  - image: "30.jpg"
-    name: "Worker Hovels"
-    type: colony
+- image: 01.jpg
+  name: Ambush
+  type: reflex
+- image: 02.jpg
+  name: Gre
+  type: colony
+  type_secondary: '- Colony Facility .'
+- image: 03.jpg
+  name: Betrayal
+  type: reflex
+- image: 04.jpg
+  name: Bombardment
+  type: reflex
+- image: 05.jpg
+  name: Bounty Hunters
+  type: unit
+  type_secondary: Human A Eee
+- image: 06.jpg
+  name: Brassjackets
+  type: unit
+  type_secondary: Synth A Llll
+- image: 07.jpg
+  name: Civilian Casualties
+  type: reflex
+  type_secondary: Eee Ame 7
+- image: 08.jpg
+  name: Clone Stock
+  type: augment
+  type_secondary: Unit
+- image: 09.jpg
+  name: Cloudbreak Spire
+  type: colony
+  type_secondary: '- Colony Facility.'
+- image: 10.jpg
+  name: Corsairs
+  type: unit
+  type_secondary: Antigrav Te A Ne En Ee Es.
+- image: 11.jpg
+  name: Datajack Bandits
+  type: unit
+  type_secondary: Human
+- image: 12.jpg
+  name: Decksweeps
+  type: unit
+  type_secondary: Human
+- image: 13.jpg
+  name: Exosuit
+  type: augment
+  type_secondary: Unit
+- image: 14.jpg
+  name: Gambler
+  type: augment
+  type_secondary: 4 - Augment Unit
+- image: 15.jpg
+  name: Grave Hoard
+  type: colony
+  type_secondary: Facility
+- image: 16.jpg
+  name: Hacker
+  type: colony
+  type_secondary: Facility.
+- image: 17.jpg
+  name: Hegemony Pirates
+  type: unit
+  type_secondary: Human -
+- image: 18.jpg
+  name: Hegemony Slavers
+  type: unit
+  type_secondary: Human -
+- image: 19.jpg
+  name: Leb
+  type: unit
+  type_secondary: Mech
+- image: 20.jpg
+  name: Hornet Swarm
+  type: unit
+  type_secondary: Synth
+- image: 21.jpg
+  name: Listening Post
+  type: colony
+  type_secondary: Facility
+- image: 22.jpg
+  name: Privateer Contract
+  type: reflex
+- image: 23.jpg
+  name: Razorback
+  type: unit
+  type_secondary: '- Unit Antigrav'
+- image: 24.jpg
+  name: Reconstruct
+  type: augment
+  type_secondary: Unit
+- image: 25.jpg
+  name: Shipbreakers
+  type: unit
+  type_secondary: Human
+- image: 26.jpg
+  name: Smog Skiff
+  type: unit
+  type_secondary: Antigrav
+- image: 27.jpg
+  name: Talent Hack
+  type: reflex
+- image: 28.jpg
+  name: Telepath Graft
+  type: augment
+  type_secondary: Unit
+- image: 29.jpg
+  name: Tethered Nephilim
+  type: unit
+  type_secondary: Synth
+- image: 30.jpg
+  name: Worker Hovels
+  type: colony
+  type_secondary: Colony Facility

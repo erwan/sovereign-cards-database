@@ -1,96 +1,118 @@
-description: >
-  The largest human society, millions deep beneath the surface in caste darkness.
-  Talents rule from pleasure domes while modified Drones never see the sun;
-  propaganda, drugs, and cloning have split them into near-species. Echoes are
-  commerce, not reverence—except to drones who see Wormwood as escape.
+description: 'The largest human society, millions deep beneath the surface in caste darkness. Talents rule from pleasure domes while modified Drones never see the sun; propaganda, drugs, and cloning have split them into near-species. Echoes are commerce, not reverence—except to drones who see Wormwood as escape.
+
+  '
 cards:
-  - image: "01.jpg"
-    name: "Agromechs"
-    type: unit
-  - image: "02.jpg"
-    name: "Graft Necrosis"
-    type: reflex
-  - image: "03.jpg"
-    name: "Creche Harvest"
-    type: reflex
-  - image: "04.jpg"
-    name: "Critical Shot"
-    type: reflex
-  - image: "05.jpg"
-    name: "Crustcracker Gang"
-    type: unit
-  - image: "06.jpg"
-    name: "Flamer Crew"
-    type: unit
-  - image: "07.jpg"
-    name: "Flystrikers"
-    type: unit
-  - image: "08.jpg"
-    name: "Geneforge Nurses"
-    type: unit
-  - image: "09.jpg"
-    name: "Homo Superior"
-    type: unit
-  - image: "10.jpg"
-    name: "Husk Harvesters"
-    type: unit
-  - image: "11.jpg"
-    name: "Hypnobar"
-    type: augment
-  - image: "12.jpg"
-    name: "Iron Tortoise"
-    type: unit
-  - image: "13.jpg"
-    name: "Lowhivers"
-    type: unit
-  - image: "14.jpg"
-    name: "Mandatory Stims"
-    type: reflex
-  - image: "15.jpg"
-    name: "Mantle Bore"
-    type: colony
-  - image: "16.jpg"
-    name: "Mindjack"
-    type: reflex
-  - image: "17.jpg"
-    name: "Nerve Splice"
-    type: reflex
-  - image: "18.jpg"
-    name: "Neural Amp"
-    type: augment
-  - image: "19.jpg"
-    name: "Nodal Addicts"
-    type: unit
-  - image: "20.jpg"
-    name: "Pleasure Dome"
-    type: colony
-  - image: "21.jpg"
-    name: "Punishment Chamber"
-    type: colony
-  - image: "22.jpg"
-    name: "Recycling Vats"
-    type: colony
-  - image: "23.jpg"
-    name: "Rut Hollow"
-    type: colony
-  - image: "24.jpg"
-    name: "Scav Gang"
-    type: unit
-  - image: "25.jpg"
-    name: "Secret Police"
-    type: unit
-  - image: "26.jpg"
-    name: "Sporemask"
-    type: augment
-  - image: "27.jpg"
-    name: "Stimshifts"
-    type: augment
-  - image: "28.jpg"
-    name: "Titan Cannon"
-    type: colony
-  - image: "29.jpg"
-    name: "Vir Ex Machina"
-    type: augment
-  - image: "30.jpg"
-    name: "Walker Artillery"
-    type: unit
+- image: 01.jpg
+  name: Agromechs
+  type: unit
+  type_secondary: Mech
+- image: 02.jpg
+  name: Graft Necrosis
+  type: reflex
+- image: 03.jpg
+  name: Creche Harvest
+  type: reflex
+- image: 04.jpg
+  name: Critical Shot
+  type: reflex
+- image: 05.jpg
+  name: Crustcracker Gang
+  type: unit
+  type_secondary: Human
+- image: 06.jpg
+  name: Flamer Crew
+  type: unit
+  type_secondary: Human
+- image: 07.jpg
+  name: Flystrikers
+  type: unit
+  type_secondary: Human
+- image: 08.jpg
+  name: Geneforge Nurses
+  type: unit
+  type_secondary: Human
+- image: 09.jpg
+  name: Homo Superior
+  type: unit
+  type_secondary: Chimera
+- image: 10.jpg
+  name: Husk Harvesters
+  type: unit
+  type_secondary: Human
+- image: 11.jpg
+  name: Hypnobar
+  type: augment
+  type_secondary: Facility .
+- image: 12.jpg
+  name: Iron Tortoise
+  type: unit
+  type_secondary: Mech
+- image: 13.jpg
+  name: Lowhivers
+  type: unit
+  type_secondary: 4 - Unit Human
+- image: 14.jpg
+  name: Mandatory Stims
+  type: reflex
+- image: 15.jpg
+  name: Mantle Bore
+  type: colony
+  type_secondary: Facility
+- image: 16.jpg
+  name: Mindjack
+  type: reflex
+- image: 17.jpg
+  name: Nerve Splice
+  type: reflex
+- image: 18.jpg
+  name: Neural Amp
+  type: augment
+  type_secondary: Unit
+- image: 19.jpg
+  name: Nodal Addicts
+  type: unit
+  type_secondary: Human En Er A On Ee Es Es.
+- image: 20.jpg
+  name: Pleasure Dome
+  type: colony
+  type_secondary: Facility
+- image: 21.jpg
+  name: Punishment Chamber
+  type: colony
+  type_secondary: Facility.
+- image: 22.jpg
+  name: Recycling Vats
+  type: colony
+  type_secondary: Facility
+- image: 23.jpg
+  name: Rut Hollow
+  type: colony
+  type_secondary: Facility .
+- image: 24.jpg
+  name: Scav Gang
+  type: unit
+  type_secondary: Human
+- image: 25.jpg
+  name: Secret Police
+  type: unit
+  type_secondary: Human -
+- image: 26.jpg
+  name: Sporemask
+  type: augment
+  type_secondary: Unit
+- image: 27.jpg
+  name: Stimshifts
+  type: augment
+  type_secondary: Facility.
+- image: 28.jpg
+  name: Titan Cannon
+  type: colony
+  type_secondary: Nliie Ee Ae Ee F Fi A Oo A A 2 Colony Pacieedy.
+- image: 29.jpg
+  name: Vir Ex Machina
+  type: augment
+  type_secondary: Unit
+- image: 30.jpg
+  name: Walker Artillery
+  type: unit
+  type_secondary: Mech

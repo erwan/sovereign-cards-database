@@ -1,96 +1,118 @@
-description: >
-  Escaped drones—often from the Undercity—built a militant, trade-hungry
-  enclave of equals. They copy and field scavenged war tech, wage a hidden war of
-  hacks and knives to free their kind, and would turn Wormwood’s power against
-  every chain.
+description: 'Escaped drones—often from the Undercity—built a militant, trade-hungry enclave of equals. They copy and field scavenged war tech, wage a hidden war of hacks and knives to free their kind, and would turn Wormwood’s power against every chain.
+
+  '
 cards:
-  - image: "01.jpg"
-    name: "Apsynthos Cryopod"
-    type: colony
-  - image: "02.jpg"
-    name: "Apsynthos Memorial"
-    type: colony
-  - image: "03.jpg"
-    name: "Se"
-    type: unit
-  - image: "04.jpg"
-    name: "Cantina"
-    type: colony
-  - image: "05.jpg"
-    name: "Defection"
-    type: reflex
-  - image: "06.jpg"
-    name: "Desperate Sacrifice"
-    type: reflex
-  - image: "07.jpg"
-    name: "Detonation Packs"
-    type: augment
-  - image: "08.jpg"
-    name: "Double Agent"
-    type: augment
-  - image: "09.jpg"
-    name: "Drone Insurgents"
-    type: unit
-  - image: "10.jpg"
-    name: "Drone Riots"
-    type: reflex
-  - image: "11.jpg"
-    name: "Dustmen"
-    type: unit
-  - image: "12.jpg"
-    name: "Hive Radicals"
-    type: unit
-  - image: "13.jpg"
-    name: "Holonet Scribes"
-    type: unit
-  - image: "14.jpg"
-    name: "Infoleak"
-    type: reflex
-  - image: "15.jpg"
-    name: "Nano Plantation"
-    type: colony
-  - image: "16.jpg"
-    name: "Nerve Plates"
-    type: augment
-  - image: "17.jpg"
-    name: "Plasma Torch"
-    type: augment
-  - image: "18.jpg"
-    name: "Rail Sniper"
-    type: unit
-  - image: "19.jpg"
-    name: "Recon Guerillas"
-    type: unit
-  - image: "20.jpg"
-    name: "Refugee Ethics"
-    type: reflex
-  - image: "21.jpg"
-    name: "Sabotage"
-    type: reflex
-  - image: "22.jpg"
-    name: "Scrap Depot"
-    type: colony
-  - image: "23.jpg"
-    name: "Sentinels"
-    type: unit
-  - image: "24.jpg"
-    name: "Skimsquad"
-    type: unit
-  - image: "25.jpg"
-    name: "Splicing Medics"
-    type: unit
-  - image: "26.jpg"
-    name: "Stitch Tanks"
-    type: colony
-  - image: "27.jpg"
-    name: "Undercity Anarchs"
-    type: unit
-  - image: "28.jpg"
-    name: "Watchdogs"
-    type: unit
-  - image: "29.jpg"
-    name: "Webweave Spies"
-    type: unit
-  - image: "30.jpg"
-    name: "Worker Strike"
-    type: augment
+- image: 01.jpg
+  name: Apsynthos Cryopod
+  type: colony
+- image: 02.jpg
+  name: Apsynthos Memorial
+  type: colony
+  type_secondary: '- Colony Facility'
+- image: 03.jpg
+  name: Se
+  type: unit
+  type_secondary: Antigrav
+- image: 04.jpg
+  name: Cantina
+  type: colony
+  type_secondary: Facility .
+- image: 05.jpg
+  name: Defection
+  type: reflex
+- image: 06.jpg
+  name: Desperate Sacrifice
+  type: reflex
+  type_secondary: In
+- image: 07.jpg
+  name: Detonation Packs
+  type: augment
+  type_secondary: Unit -
+- image: 08.jpg
+  name: Double Agent
+  type: augment
+  type_secondary: Unit.
+- image: 09.jpg
+  name: Drone Insurgents
+  type: unit
+  type_secondary: Human -
+- image: 10.jpg
+  name: Drone Riots
+  type: reflex
+- image: 11.jpg
+  name: Dustmen
+  type: unit
+  type_secondary: Human
+- image: 12.jpg
+  name: Hive Radicals
+  type: unit
+  type_secondary: Human
+- image: 13.jpg
+  name: Holonet Scribes
+  type: unit
+  type_secondary: Human
+- image: 14.jpg
+  name: Infoleak
+  type: reflex
+- image: 15.jpg
+  name: Nano Plantation
+  type: colony
+  type_secondary: Facility
+- image: 16.jpg
+  name: Nerve Plates
+  type: augment
+  type_secondary: Unit
+- image: 17.jpg
+  name: Plasma Torch
+  type: augment
+  type_secondary: Unit
+- image: 18.jpg
+  name: Rail Sniper
+  type: unit
+  type_secondary: Human
+- image: 19.jpg
+  name: Recon Guerillas
+  type: unit
+  type_secondary: Human
+- image: 20.jpg
+  name: Refugee Ethics
+  type: reflex
+- image: 21.jpg
+  name: Sabotage
+  type: reflex
+- image: 22.jpg
+  name: Scrap Depot
+  type: colony
+  type_secondary: Facility.
+- image: 23.jpg
+  name: Sentinels
+  type: unit
+  type_secondary: Mech
+- image: 24.jpg
+  name: Skimsquad
+  type: unit
+  type_secondary: Antigrav
+- image: 25.jpg
+  name: Splicing Medics
+  type: unit
+  type_secondary: Human -
+- image: 26.jpg
+  name: Stitch Tanks
+  type: colony
+  type_secondary: Facility Eae
+- image: 27.jpg
+  name: Undercity Anarchs
+  type: unit
+  type_secondary: Human
+- image: 28.jpg
+  name: Watchdogs
+  type: unit
+  type_secondary: Mech
+- image: 29.jpg
+  name: Webweave Spies
+  type: unit
+  type_secondary: Human
+- image: 30.jpg
+  name: Worker Strike
+  type: augment
+  type_secondary: Facility

@@ -4,8 +4,12 @@ OCR card headers under public/cards and update ``deck.yaml``.
 
 Strips:
 - Name: top 60px (Title Case per word)
-- Type: 40px band starting at y=270 from the top. If OCR yields ``unknown`` but
-  the card already has a non-empty, non-unknown ``type``, the existing value is kept.
+- Type: 40px band starting at y=270 from the top. Primary keyword (``unit``, etc.) is
+  parsed from the segment before an em/en dash or ``--`` / `` - ``; text after the
+  dash becomes ``type_secondary`` (Title Case per word). If OCR yields ``unknown``
+  for the primary but the card already has a non-unknown ``type``, that value is kept.
+  If secondary OCR is empty but ``type_secondary`` is already set, it is kept; otherwise
+  the key is omitted.
 
 By default, OCR updates **both** ``name`` and ``type``. Pass ``--name`` and/or
 ``--type`` to update only those fields; other keys on each card (including any
@@ -127,14 +131,34 @@ def parse_name(raw_top: str) -> str:
     return capitalize_each_word(name)
 
 
-def parse_type(raw_type_strip: str) -> str:
-    joined = re.sub(r"\s+", " ", raw_type_strip).strip()
+def split_type_strip(joined: str) -> tuple[str, str]:
+    for sep in ("\u2014", "\u2013", "--", " - "):
+        if sep in joined:
+            left, right = joined.split(sep, 1)
+            return left.strip(), right.strip()
+    return joined.strip(), ""
+
+
+def parse_type(primary_segment: str) -> str:
+    joined = re.sub(r"\s+", " ", primary_segment).strip()
     m = TYPE_PATTERN.search(joined)
     if m:
         t = m.group(1).lower()
         if t in VALID_TYPES and t != "unknown":
             return t
     return "unknown"
+
+
+def parse_type_secondary(right_segment: str) -> str:
+    joined = re.sub(r"\s+", " ", right_segment).strip()
+    if not joined:
+        return ""
+    cleaned = re.sub(r"[^A-Za-z0-9\s\-'.]", " ", joined)
+    cleaned = re.sub(r"\s+", " ", cleaned).strip()
+    if len(cleaned) < 1:
+        return ""
+    trimmed = trim_short_caps_edges(cleaned)
+    return capitalize_each_word(trimmed)
 
 
 def write_deck_yaml(deck_dir: Path, cards: list[dict], description: str = "") -> None:
@@ -208,6 +232,9 @@ def process_deck(
         raw_type = ""
         name = entry.get("name")
         typ = entry.get("type")
+        type_sec = entry.get("type_secondary")
+        if not isinstance(type_sec, str):
+            type_sec = ""
 
         if want_name:
             top = crop_horizontal_strip(img_path, 0, TOP_PX)
@@ -220,26 +247,41 @@ def process_deck(
         if want_type:
             type_img = crop_horizontal_strip(img_path, TYPE_STRIP_Y, TYPE_STRIP_H)
             raw_type = ocr_strip(type_img) if type_img is not None else ""
-            typ = parse_type(raw_type)
+            joined = re.sub(r"\s+", " ", raw_type).strip()
+            primary, secondary_raw = split_type_strip(joined)
+            typ = parse_type(primary)
             prev_type = entry.get("type")
             if typ == "unknown" and isinstance(prev_type, str) and prev_type.strip() and prev_type != "unknown":
                 typ = prev_type
+            type_sec = parse_type_secondary(secondary_raw)
+            prev_sec = entry.get("type_secondary")
+            if not type_sec and isinstance(prev_sec, str) and prev_sec.strip():
+                type_sec = prev_sec.strip()
 
         old_name = entry.get("name")
         old_type = entry.get("type")
-        changed = (want_name and old_name != name) or (want_type and old_type != typ)
+        old_sec = entry.get("type_secondary")
+        old_sec_norm = old_sec.strip() if isinstance(old_sec, str) else ""
+        new_sec_norm = type_sec if want_type else old_sec_norm
+        changed = (want_name and old_name != name) or (
+            want_type and (old_type != typ or old_sec_norm != new_sec_norm)
+        )
         if changed:
             updated += 1
             if verbose:
                 print(
                     f"{deck_dir.name}/{img_name}: top={raw_top!r} type_strip={raw_type!r} "
-                    f"-> name={name!r} type={typ}"
+                    f"-> name={name!r} type={typ} type_secondary={type_sec!r}"
                 )
 
         if want_name:
             entry["name"] = name
         if want_type:
             entry["type"] = typ
+            if type_sec:
+                entry["type_secondary"] = type_sec
+            else:
+                entry.pop("type_secondary", None)
 
     if not dry_run and updated:
         write_deck_yaml(deck_dir, cards, description)

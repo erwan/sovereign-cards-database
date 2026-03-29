@@ -1,96 +1,118 @@
-description: >
-  The only civilization that can breathe its homeland’s air and drink its water,
-  inside constantly maintained shields. Long-lived scholars maintain corrupted
-  Apsynthos datalinks, pioneered the cybernetic Chimeras, and enforce strict law—
-  exile awaits those who break the Remnant’s compact with paradise.
+description: 'The only civilization that can breathe its homeland’s air and drink its water, inside constantly maintained shields. Long-lived scholars maintain corrupted Apsynthos datalinks, pioneered the cybernetic Chimeras, and enforce strict law— exile awaits those who break the Remnant’s compact with paradise.
+
+  '
 cards:
-  - image: "01.jpg"
-    name: "Aegis Shell"
-    type: augment
-  - image: "02.jpg"
-    name: "Aether Tap"
-    type: colony
-  - image: "03.jpg"
-    name: "Airdock"
-    type: colony
-  - image: "04.jpg"
-    name: "Apsynthos Revelations"
-    type: reflex
-  - image: "05.jpg"
-    name: "Chimera Empaths"
-    type: unit
-  - image: "06.jpg"
-    name: "Chimera Oracles"
-    type: unit
-  - image: "07.jpg"
-    name: "Chimera Symbiont"
-    type: unit
-  - image: "08.jpg"
-    name: "Chimera Telepaths"
-    type: unit
-  - image: "09.jpg"
-    name: "Cloning Tanks"
-    type: colony
-  - image: "10.jpg"
-    name: "Cloudbreakers"
-    type: unit
-  - image: "11.jpg"
-    name: "Command Ring"
-    type: colony
-  - image: "12.jpg"
-    name: "Creche Tutors"
-    type: unit
-  - image: "13.jpg"
-    name: "Datajack Legion"
-    type: unit
-  - image: "14.jpg"
-    name: "Fractal Weave"
-    type: augment
-  - image: "15.jpg"
-    name: "Grav Skimmers"
-    type: unit
-  - image: "16.jpg"
-    name: "Gravcarrier"
-    type: unit
-  - image: "17.jpg"
-    name: "Ion Shroud"
-    type: augment
-  - image: "18.jpg"
-    name: "Knit"
-    type: reflex
-  - image: "19.jpg"
-    name: "Misdirection"
-    type: reflex
-  - image: "20.jpg"
-    name: "Orbital Strike"
-    type: reflex
-  - image: "21.jpg"
-    name: "Perimeter Shield"
-    type: colony
-  - image: "22.jpg"
-    name: "Psych Resonator"
-    type: augment
-  - image: "23.jpg"
-    name: "Spider Battery"
-    type: unit
-  - image: "24.jpg"
-    name: "Tachyon Burst"
-    type: reflex
-  - image: "25.jpg"
-    name: "Tachyon Cannon"
-    type: augment
-  - image: "26.jpg"
-    name: "Tachyon Sentries"
-    type: unit
-  - image: "27.jpg"
-    name: "Technogeisha"
-    type: unit
-  - image: "28.jpg"
-    name: "Terraformers"
-    type: unit
-  - image: "29.jpg"
-    name: "Water Extractors"
-    type: colony
-  - image: "30.jpg"
-    name: "Weather Control"
-    type: reflex
+- image: 01.jpg
+  name: Aegis Shell
+  type: augment
+  type_secondary: Unit
+- image: 02.jpg
+  name: Aether Tap
+  type: colony
+  type_secondary: Facility
+- image: 03.jpg
+  name: Airdock
+  type: colony
+- image: 04.jpg
+  name: Apsynthos Revelations
+  type: reflex
+- image: 05.jpg
+  name: Chimera Empaths
+  type: unit
+  type_secondary: . Unit Chimera
+- image: 06.jpg
+  name: Chimera Oracles
+  type: unit
+  type_secondary: Chimera
+- image: 07.jpg
+  name: Chimera Symbiont
+  type: unit
+  type_secondary: Chimera
+- image: 08.jpg
+  name: Chimera Telepaths
+  type: unit
+  type_secondary: Chimera
+- image: 09.jpg
+  name: Cloning Tanks
+  type: colony
+  type_secondary: '- Colony Facility.'
+- image: 10.jpg
+  name: Cloudbreakers
+  type: unit
+  type_secondary: Unit Antigrav
+- image: 11.jpg
+  name: Command Ring
+  type: colony
+  type_secondary: Facility .
+- image: 12.jpg
+  name: Creche Tutors
+  type: unit
+  type_secondary: Synth
+- image: 13.jpg
+  name: Datajack Legion
+  type: unit
+  type_secondary: Synth A Os Ee Nent Amma Et Ae Ne '
+- image: 14.jpg
+  name: Fractal Weave
+  type: augment
+  type_secondary: Augment Unit
+- image: 15.jpg
+  name: Grav Skimmers
+  type: unit
+  type_secondary: Antigrav
+- image: 16.jpg
+  name: Gravcarrier
+  type: unit
+  type_secondary: Antigrav 2
+- image: 17.jpg
+  name: Ion Shroud
+  type: augment
+  type_secondary: Unit
+- image: 18.jpg
+  name: Knit
+  type: reflex
+- image: 19.jpg
+  name: Misdirection
+  type: reflex
+- image: 20.jpg
+  name: Orbital Strike
+  type: reflex
+- image: 21.jpg
+  name: Perimeter Shield
+  type: colony
+  type_secondary: Facility .
+- image: 22.jpg
+  name: Psych Resonator
+  type: augment
+  type_secondary: Unit
+- image: 23.jpg
+  name: Spider Battery
+  type: unit
+  type_secondary: Mech -
+- image: 24.jpg
+  name: Tachyon Burst
+  type: reflex
+  type_secondary: Reflex
+- image: 25.jpg
+  name: Tachyon Cannon
+  type: augment
+  type_secondary: Unit
+- image: 26.jpg
+  name: Tachyon Sentries
+  type: unit
+  type_secondary: Human
+- image: 27.jpg
+  name: Technogeisha
+  type: unit
+  type_secondary: Human
+- image: 28.jpg
+  name: Terraformers
+  type: unit
+  type_secondary: Mech
+- image: 29.jpg
+  name: Water Extractors
+  type: colony
+  type_secondary: Facility
+- image: 30.jpg
+  name: Weather Control
+  type: reflex

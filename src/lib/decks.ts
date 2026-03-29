@@ -8,6 +8,7 @@ export interface CardEntry {
   image: string;
   name: string;
   type: CardType;
+  type_secondary?: string;
 }
 
 export interface Deck {
@@ -73,10 +74,18 @@ function assertCard(raw: unknown, slug: string, index: number): CardEntry {
   if (typeof o.type !== 'string' || !CARD_TYPES.has(o.type)) {
     throw new Error(`Invalid type at ${slug}[${index}]: ${String(o.type)}`);
   }
+  let type_secondary: string | undefined;
+  if (o.type_secondary !== undefined && o.type_secondary !== null) {
+    if (typeof o.type_secondary !== 'string' || !o.type_secondary.trim()) {
+      throw new Error(`Invalid type_secondary at ${slug}[${index}]`);
+    }
+    type_secondary = o.type_secondary.trim();
+  }
   return {
     image: o.image,
     name: o.name,
     type: o.type as CardType,
+    ...(type_secondary !== undefined ? { type_secondary } : {}),
   };
 }
 

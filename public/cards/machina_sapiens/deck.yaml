@@ -1,96 +1,119 @@
-description: >
-  Sapient and semi-sapient machines evolved from the ark’s terraforming nanites.
-  They mimic human and Lilin ways in war and culture, may venerate Wormwood as
-  creator—or merely echo our faiths—and perceive much of the planet through the
-  ambient nanite cloud.
+description: 'Sapient and semi-sapient machines evolved from the ark’s terraforming nanites. They mimic human and Lilin ways in war and culture, may venerate Wormwood as creator—or merely echo our faiths—and perceive much of the planet through the ambient nanite cloud.
+
+  '
 cards:
-  - image: "01.jpg"
-    name: "Apsynthos Nanocore"
-    type: colony
-  - image: "02.jpg"
-    name: "Black Queen"
-    type: unit
-  - image: "03.jpg"
-    name: "Blink Gate"
-    type: colony
-  - image: "04.jpg"
-    name: "Blink Module"
-    type: augment
-  - image: "05.jpg"
-    name: "Cataphract"
-    type: unit
-  - image: "06.jpg"
-    name: "Command Spire"
-    type: colony
-  - image: "07.jpg"
-    name: "Corpse Harvesters"
-    type: unit
-  - image: "08.jpg"
-    name: "Cybernetic Conciousness"
-    type: reflex
-  - image: "09.jpg"
-    name: "Datajack Wraiths"
-    type: unit
-  - image: "10.jpg"
-    name: "Datalink Hub"
-    type: colony
-  - image: "11.jpg"
-    name: "Exterminating Servitors"
-    type: unit
-  - image: "12.jpg"
-    name: "Graft Rejection"
-    type: reflex
-  - image: "13.jpg"
-    name: "Hunter"
-    type: unit
-  - image: "14.jpg"
-    name: "Nanite Golems"
-    type: unit
-  - image: "15.jpg"
-    name: "Nanocore Emissaries"
-    type: unit
-  - image: "16.jpg"
-    name: "Nautilus"
-    type: unit
-  - image: "17.jpg"
-    name: "Quiet Hulk"
-    type: unit
-  - image: "18.jpg"
-    name: "Remake"
-    type: reflex
-  - image: "19.jpg"
-    name: "Repair And Refit"
-    type: reflex
-  - image: "20.jpg"
-    name: "Shield Generator"
-    type: augment
-  - image: "21.jpg"
-    name: "Shrike Herd"
-    type: unit
-  - image: "22.jpg"
-    name: "Snatchers"
-    type: unit
-  - image: "23.jpg"
-    name: "Stray Mecha"
-    type: unit
-  - image: "24.jpg"
-    name: "Synaptic Umbilical"
-    type: augment
-  - image: "25.jpg"
-    name: "Sft"
-    type: colony
-  - image: "26.jpg"
-    name: "Tachyon Shield"
-    type: colony
-  - image: "27.jpg"
-    name: "Beso"
-    type: reflex
-  - image: "28.jpg"
-    name: "They Of The Machine"
-    type: reflex
-  - image: "29.jpg"
-    name: "Thought Control"
-    type: reflex
-  - image: "30.jpg"
-    name: "Viral Saboteur"
-    type: augment
+- image: 01.jpg
+  name: Apsynthos Nanocore
+  type: colony
+  type_secondary: Facility
+- image: 02.jpg
+  name: Black Queen
+  type: unit
+  type_secondary: Synth
+- image: 03.jpg
+  name: Blink Gate
+  type: colony
+  type_secondary: Facility.
+- image: 04.jpg
+  name: Blink Module
+  type: augment
+  type_secondary: '- Augment Unit'
+- image: 05.jpg
+  name: Cataphract
+  type: unit
+  type_secondary: Synth
+- image: 06.jpg
+  name: Command Spire
+  type: colony
+  type_secondary: Facility
+- image: 07.jpg
+  name: Corpse Harvesters
+  type: unit
+  type_secondary: Synth -
+- image: 08.jpg
+  name: Cybernetic Conciousness
+  type: reflex
+- image: 09.jpg
+  name: Datajack Wraiths
+  type: unit
+  type_secondary: Synth
+- image: 10.jpg
+  name: Datalink Hub
+  type: colony
+  type_secondary: Facility
+- image: 11.jpg
+  name: Exterminating Servitors
+  type: unit
+  type_secondary: Synth
+- image: 12.jpg
+  name: Graft Rejection
+  type: reflex
+  type_secondary: Reflex
+- image: 13.jpg
+  name: Hunter
+  type: unit
+  type_secondary: Synth I Ame
+- image: 14.jpg
+  name: Nanite Golems
+  type: unit
+  type_secondary: Synth
+- image: 15.jpg
+  name: Nanocore Emissaries
+  type: unit
+  type_secondary: Synth A Llll
+- image: 16.jpg
+  name: Nautilus
+  type: unit
+  type_secondary: Synth -
+- image: 17.jpg
+  name: Quiet Hulk
+  type: unit
+  type_secondary: Synth
+- image: 18.jpg
+  name: Remake
+  type: reflex
+- image: 19.jpg
+  name: Repair And Refit
+  type: reflex
+- image: 20.jpg
+  name: Shield Generator
+  type: augment
+  type_secondary: Unit 5
+- image: 21.jpg
+  name: Shrike Herd
+  type: unit
+  type_secondary: Synth
+- image: 22.jpg
+  name: Snatchers
+  type: unit
+  type_secondary: Synth
+- image: 23.jpg
+  name: Stray Mecha
+  type: unit
+  type_secondary: Synth
+- image: 24.jpg
+  name: Synaptic Umbilical
+  type: augment
+  type_secondary: Unit 3
+- image: 25.jpg
+  name: Sft
+  type: colony
+  type_secondary: Facility.
+- image: 26.jpg
+  name: Tachyon Shield
+  type: colony
+  type_secondary: Facility .
+- image: 27.jpg
+  name: Beso
+  type: reflex
+- image: 28.jpg
+  name: They Of The Machine
+  type: reflex
+  type_secondary: Reflex
+- image: 29.jpg
+  name: Thought Control
+  type: reflex
+- image: 30.jpg
+  name: Viral Saboteur
+  type: augment
+  type_secondary: Unit .eeme Ae Rae
