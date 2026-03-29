@@ -4,6 +4,7 @@ dist/
 
 # Python
 .venv
+scripts/__pycache__/
 
 # generated types
 .astro/

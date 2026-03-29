@@ -4,6 +4,8 @@ OCR card headers under public/cards and update deck.yaml:
 - Name: top 60px (stored with each word capitalized, e.g. Title Case)
 - Type: 40px-tall band starting at y=270 from the top
 
+Preserves optional top-level ``description`` when rewriting deck.yaml.
+
 Requires Tesseract on PATH (e.g. brew install tesseract).
 """
 
@@ -112,31 +114,35 @@ def parse_type(raw_type_strip: str) -> str:
     return "unknown"
 
 
-def yaml_escape_name(s: str) -> str:
-    return s.replace("\\", "\\\\").replace('"', '\\"')
-
-
-def write_deck_yaml(deck_dir: Path, cards: list[dict]) -> None:
+def write_deck_yaml(deck_dir: Path, cards: list[dict], description: str = "") -> None:
     out = deck_dir / "deck.yaml"
-    lines = ["cards:"]
-    for c in cards:
-        img = c["image"]
-        name = c["name"]
-        typ = c["type"]
-        lines.append(f'  - image: "{yaml_escape_name(img)}"')
-        lines.append(f'    name: "{yaml_escape_name(name)}"')
-        lines.append(f"    type: {typ}")
-    out.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    if description.strip():
+        data: dict = {"description": description, "cards": cards}
+    else:
+        data = {"cards": cards}
+    out.write_text(
+        yaml.dump(
+            data,
+            default_flow_style=False,
+            allow_unicode=True,
+            sort_keys=False,
+            width=10_000,
+        ),
+        encoding="utf-8",
+    )
 
 
-def load_deck(deck_dir: Path) -> list[dict] | None:
+def load_deck(deck_dir: Path) -> tuple[list[dict], str] | None:
     p = deck_dir / "deck.yaml"
     if not p.is_file():
         return None
     data = yaml.safe_load(p.read_text(encoding="utf-8"))
     if not isinstance(data, dict) or not isinstance(data.get("cards"), list):
         return None
-    return data["cards"]
+    cards = data["cards"]
+    desc_raw = data.get("description")
+    description = desc_raw if isinstance(desc_raw, str) else ""
+    return (cards, description)
 
 
 def process_deck(
@@ -145,9 +151,13 @@ def process_deck(
     dry_run: bool,
     verbose: bool,
 ) -> int:
-    cards = load_deck(deck_dir)
-    if not cards:
+    loaded = load_deck(deck_dir)
+    if loaded is None:
         print(f"skip (no deck.yaml): {deck_dir.name}", file=sys.stderr)
+        return 0
+    cards, description = loaded
+    if not cards:
+        print(f"skip (empty cards): {deck_dir.name}", file=sys.stderr)
         return 0
 
     updated = 0
@@ -195,7 +205,7 @@ def process_deck(
         entry["type"] = typ
 
     if not dry_run and updated:
-        write_deck_yaml(deck_dir, cards)
+        write_deck_yaml(deck_dir, cards, description)
     elif dry_run and updated:
         print(f"[dry-run] would update {updated} card(s) in {deck_dir.name}", file=sys.stderr)
 
