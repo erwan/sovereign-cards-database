@@ -13,8 +13,17 @@ export interface CardEntry {
 export interface Deck {
   slug: string;
   displayName: string;
+  description: string;
   cards: CardEntry[];
 }
+
+export const DISPLAY_TYPE_ORDER: readonly CardType[] = [
+  'unit',
+  'colony',
+  'augment',
+  'reflex',
+  'unknown',
+] as const;
 
 const CARD_TYPES = new Set<string>(['unknown', 'unit', 'reflex', 'augment', 'colony']);
 
@@ -54,14 +63,23 @@ function loadDeckFromDir(slug: string, dir: string): Deck {
   if (doc === null || typeof doc !== 'object' || Array.isArray(doc)) {
     throw new Error(`Invalid deck.yaml root for ${slug}`);
   }
-  const cardsRaw = (doc as { cards?: unknown }).cards;
+  const root = doc as { cards?: unknown; description?: unknown };
+  const cardsRaw = root.cards;
   if (!Array.isArray(cardsRaw)) {
     throw new Error(`Missing cards array in ${slug}/deck.yaml`);
   }
   const cards = cardsRaw.map((c, i) => assertCard(c, slug, i));
+  let description = '';
+  if (root.description !== undefined && root.description !== null) {
+    if (typeof root.description !== 'string') {
+      throw new Error(`Invalid description in ${slug}/deck.yaml`);
+    }
+    description = root.description;
+  }
   return {
     slug,
     displayName: folderToDisplayName(slug),
+    description,
     cards,
   };
 }

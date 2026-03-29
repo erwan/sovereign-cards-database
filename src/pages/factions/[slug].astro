@@ -2,7 +2,7 @@
 import '../../styles/faction-detail.css';
 import FactionLayout from '../../layouts/FactionLayout.astro';
 import { getBaseUrl } from '../../lib/baseUrl';
-import { loadDecks, type Deck } from '../../lib/decks';
+import { DISPLAY_TYPE_ORDER, loadDecks, type CardType, type Deck } from '../../lib/decks';
 
 export function getStaticPaths() {
   return loadDecks().map((deck) => ({
@@ -15,33 +15,117 @@ interface Props {
   deck: Deck;
 }
 
+function typeSectionLabel(t: CardType): string {
+  return t.charAt(0).toUpperCase() + t.slice(1);
+}
+
 const { deck } = Astro.props;
 const base = getBaseUrl();
 const assetPrefix = `${base}cards/${deck.slug}/`;
+const coverSrc = `${assetPrefix}cover.png`;
 ---
 
 <FactionLayout title={`${deck.displayName} — Sovereign Cards`}>
   <div class="faction-detail">
-    <h1>{deck.displayName}</h1>
-    <ul class="card-list">
-      {
-        deck.cards.map((card) => (
-          <li class="card-item">
-            <img
-              class="card-thumb"
-              src={`${assetPrefix}${card.image}`}
-              alt=""
-              width="120"
-              height="168"
-              loading="lazy"
-            />
-            <div class="card-meta">
-              <span class="card-name">{card.name}</span>
-              <span class="card-type">{card.type}</span>
-            </div>
-          </li>
-        ))
-      }
-    </ul>
+    <header class="deck-header">
+      <img
+        class="deck-header-cover"
+        src={coverSrc}
+        alt=""
+        width="280"
+        height="392"
+        loading="eager"
+      />
+      <div class="deck-header-text">
+        <h1 class="deck-title">{deck.displayName}</h1>
+        {
+          deck.description.trim() !== '' && (
+            <p class="deck-description">{deck.description}</p>
+          )
+        }
+      </div>
+    </header>
+
+    {
+      DISPLAY_TYPE_ORDER.map((type) => {
+        const sectionCards = deck.cards.filter((c) => c.type === type);
+        if (sectionCards.length === 0) return null;
+        return (
+          <section class="card-type-section" aria-labelledby={`type-${type}`}>
+            <h2 class="card-type-heading" id={`type-${type}`}>
+              {typeSectionLabel(type)}
+            </h2>
+            <ul class="card-list">
+              {sectionCards.map((card) => (
+                <li class="card-item">
+                  <button
+                    type="button"
+                    class="card-thumb-btn"
+                    aria-label={`View full card: ${card.name}`}
+                    data-full-src={`${assetPrefix}${card.image}`}
+                    data-card-name={card.name}
+                  >
+                    <img
+                      class="card-thumb"
+                      src={`${assetPrefix}${card.image}`}
+                      alt=""
+                      width="120"
+                      height="168"
+                      loading="lazy"
+                    />
+                  </button>
+                  <div class="card-meta">
+                    <span class="card-name">{card.name}</span>
+                    <span class="card-type">{card.type}</span>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </section>
+        );
+      })
+    }
+
+    <dialog
+      class="card-lightbox"
+      id="card-lightbox"
+      aria-modal="true"
+      aria-labelledby="card-lightbox-caption"
+    >
+      <div class="card-lightbox-panel">
+        <form method="dialog" class="card-lightbox-close-wrap">
+          <button type="submit" class="card-lightbox-close">
+            Close
+          </button>
+        </form>
+        <img class="card-lightbox-img" id="card-lightbox-img" alt="" />
+        <p class="card-lightbox-caption" id="card-lightbox-caption"></p>
+      </div>
+    </dialog>
   </div>
+
+  <script is:inline>
+    (function () {
+      var dialog = document.getElementById('card-lightbox');
+      var img = document.getElementById('card-lightbox-img');
+      var caption = document.getElementById('card-lightbox-caption');
+      if (!dialog || !img || !caption) return;
+
+      document.querySelectorAll('.card-thumb-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var src = btn.getAttribute('data-full-src');
+          var name = btn.getAttribute('data-card-name') || '';
+          if (!src) return;
+          img.src = src;
+          img.alt = name;
+          caption.textContent = name;
+          dialog.showModal();
+        });
+      });
+
+      dialog.addEventListener('click', function (e) {
+        if (e.target === dialog) dialog.close();
+      });
+    })();
+  </script>
 </FactionLayout>
