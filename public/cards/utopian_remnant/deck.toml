@@ -1,0 +1,223 @@
+description = "The only civilization that can breathe its homeland’s air and drink its water, inside constantly maintained shields. Long-lived scholars maintain corrupted Apsynthos datalinks, pioneered the cybernetic Chimeras, and enforce strict law— exile awaits those who break the Remnant’s compact with paradise.\n"
+
+[[cards]]
+image = "01.jpg"
+name = "Aegis Shell"
+type = "augment"
+type_secondary = [
+    "unit",
+]
+
+[[cards]]
+image = "02.jpg"
+name = "Aether Tap"
+type = "colony"
+type_secondary = [
+    "facility",
+]
+
+[[cards]]
+image = "03.jpg"
+name = "Airdock"
+type = "colony"
+type_secondary = [
+    "facility",
+]
+
+[[cards]]
+image = "04.jpg"
+name = "Apsynthos Revelations"
+type = "reflex"
+
+[[cards]]
+image = "05.jpg"
+name = "Chimera Empaths"
+type = "unit"
+type_secondary = [
+    "chimera",
+]
+
+[[cards]]
+image = "06.jpg"
+name = "Chimera Oracles"
+type = "unit"
+type_secondary = [
+    "chimera",
+]
+
+[[cards]]
+image = "07.jpg"
+name = "Chimera Symbiont"
+type = "unit"
+type_secondary = [
+    "chimera",
+]
+
+[[cards]]
+image = "08.jpg"
+name = "Chimera Telepaths"
+type = "unit"
+type_secondary = [
+    "chimera",
+]
+
+[[cards]]
+image = "09.jpg"
+name = "Cloning Tanks"
+type = "colony"
+type_secondary = [
+    "facility",
+]
+
+[[cards]]
+image = "10.jpg"
+name = "Cloudbreakers"
+type = "unit"
+type_secondary = [
+    "antigrav",
+]
+
+[[cards]]
+image = "11.jpg"
+name = "Command Ring"
+type = "colony"
+type_secondary = [
+    "facility",
+]
+
+[[cards]]
+image = "12.jpg"
+name = "Creche Tutors"
+type = "unit"
+type_secondary = [
+    "synth",
+]
+
+[[cards]]
+image = "13.jpg"
+name = "Datajack Legion"
+type = "unit"
+type_secondary = [
+    "synth",
+]
+
+[[cards]]
+image = "14.jpg"
+name = "Fractal Weave"
+type = "augment"
+type_secondary = [
+    "unit",
+]
+
+[[cards]]
+image = "15.jpg"
+name = "Grav Skimmers"
+type = "unit"
+type_secondary = [
+    "antigrav",
+]
+
+[[cards]]
+image = "16.jpg"
+name = "Gravcarrier"
+type = "unit"
+type_secondary = [
+    "antigrav",
+]
+
+[[cards]]
+image = "17.jpg"
+name = "Ion Shroud"
+type = "augment"
+type_secondary = [
+    "unit",
+]
+
+[[cards]]
+image = "18.jpg"
+name = "Knit"
+type = "reflex"
+
+[[cards]]
+image = "19.jpg"
+name = "Misdirection"
+type = "reflex"
+
+[[cards]]
+image = "20.jpg"
+name = "Orbital Strike"
+type = "reflex"
+
+[[cards]]
+image = "21.jpg"
+name = "Perimeter Shield"
+type = "colony"
+type_secondary = [
+    "facility",
+]
+
+[[cards]]
+image = "22.jpg"
+name = "Psych Resonator"
+type = "augment"
+type_secondary = [
+    "unit",
+]
+
+[[cards]]
+image = "23.jpg"
+name = "Spider Battery"
+type = "unit"
+type_secondary = [
+    "mech",
+]
+
+[[cards]]
+image = "24.jpg"
+name = "Tachyon Burst"
+type = "reflex"
+
+[[cards]]
+image = "25.jpg"
+name = "Tachyon Cannon"
+type = "augment"
+type_secondary = [
+    "unit",
+]
+
+[[cards]]
+image = "26.jpg"
+name = "Tachyon Sentries"
+type = "unit"
+type_secondary = [
+    "human",
+]
+
+[[cards]]
+image = "27.jpg"
+name = "Technogeisha"
+type = "unit"
+type_secondary = [
+    "human",
+]
+
+[[cards]]
+image = "28.jpg"
+name = "Terraformers"
+type = "unit"
+type_secondary = [
+    "mech",
+]
+
+[[cards]]
+image = "29.jpg"
+name = "Water Extractors"
+type = "colony"
+type_secondary = [
+    "facility",
+]
+
+[[cards]]
+image = "30.jpg"
+name = "Weather Control"
+type = "reflex"

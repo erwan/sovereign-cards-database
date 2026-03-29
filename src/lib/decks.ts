@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { parse as parseYaml } from 'yaml';
+import { parse as parseToml } from 'smol-toml';
 
 export type CardType = 'unknown' | 'unit' | 'reflex' | 'augment' | 'colony';
 
@@ -130,22 +130,22 @@ function assertCard(raw: unknown, slug: string, index: number): CardEntry {
 }
 
 function loadDeckFromDir(slug: string, dir: string): Deck {
-  const yamlPath = path.join(dir, 'deck.yaml');
-  const rawText = fs.readFileSync(yamlPath, 'utf8');
-  const doc = parseYaml(rawText) as unknown;
+  const tomlPath = path.join(dir, 'deck.toml');
+  const rawText = fs.readFileSync(tomlPath, 'utf8');
+  const doc = parseToml(rawText) as unknown;
   if (doc === null || typeof doc !== 'object' || Array.isArray(doc)) {
-    throw new Error(`Invalid deck.yaml root for ${slug}`);
+    throw new Error(`Invalid deck.toml root for ${slug}`);
   }
   const root = doc as { cards?: unknown; description?: unknown };
   const cardsRaw = root.cards;
   if (!Array.isArray(cardsRaw)) {
-    throw new Error(`Missing cards array in ${slug}/deck.yaml`);
+    throw new Error(`Missing cards array in ${slug}/deck.toml`);
   }
   const cards = cardsRaw.map((c, i) => assertCard(c, slug, i));
   let description = '';
   if (root.description !== undefined && root.description !== null) {
     if (typeof root.description !== 'string') {
-      throw new Error(`Invalid description in ${slug}/deck.yaml`);
+      throw new Error(`Invalid description in ${slug}/deck.toml`);
     }
     description = root.description;
   }

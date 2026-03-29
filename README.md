@@ -1,6 +1,6 @@
 # Sovereign Cards Database
 
-A small [Astro](https://astro.build/) site that lists **Sovereign: Fall of Wormwood** cards by faction (deck). Each faction page shows card names, images, and inferred types from YAML metadata under `public/cards/`.
+A small [Astro](https://astro.build/) site that lists **Sovereign: Fall of Wormwood** cards by faction (deck). Each faction page shows card names, images, and inferred types from TOML metadata under `public/cards/`.
 
 **Live site:** [https://erwan.github.io/sovereign-cards-database/](https://erwan.github.io/sovereign-cards-database/)
 
@@ -33,5 +33,5 @@ The site is configured for GitHub Pages with `base: '/sovereign-cards-database'`
 ## Project layout (short)
 
 - `src/pages/` — routes (home, faction pages)
-- `public/cards/<faction_slug>/` — per-deck `deck.yaml` and card images
-- `src/lib/decks.ts` — reads and parses deck YAML at build time
+- `public/cards/<faction_slug>/` — per-deck `deck.toml` and card images
+- `src/lib/decks.ts` — reads and parses deck TOML at build time

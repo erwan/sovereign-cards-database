@@ -1,0 +1,220 @@
+description = "Sapient and semi-sapient machines evolved from the ark’s terraforming nanites. They mimic human and Lilin ways in war and culture, may venerate Wormwood as creator—or merely echo our faiths—and perceive much of the planet through the ambient nanite cloud.\n"
+
+[[cards]]
+image = "01.jpg"
+name = "Apsynthos Nanocore"
+type = "colony"
+type_secondary = [
+    "facility",
+]
+
+[[cards]]
+image = "02.jpg"
+name = "Black Queen"
+type = "unit"
+type_secondary = [
+    "synth",
+]
+
+[[cards]]
+image = "03.jpg"
+name = "Blink Gate"
+type = "colony"
+type_secondary = [
+    "facility",
+]
+
+[[cards]]
+image = "04.jpg"
+name = "Blink Module"
+type = "augment"
+type_secondary = [
+    "unit",
+]
+
+[[cards]]
+image = "05.jpg"
+name = "Cataphract"
+type = "unit"
+type_secondary = [
+    "synth",
+]
+
+[[cards]]
+image = "06.jpg"
+name = "Command Spire"
+type = "colony"
+type_secondary = [
+    "facility",
+]
+
+[[cards]]
+image = "07.jpg"
+name = "Corpse Harvesters"
+type = "unit"
+type_secondary = [
+    "synth",
+]
+
+[[cards]]
+image = "08.jpg"
+name = "Cybernetic Conciousness"
+type = "reflex"
+
+[[cards]]
+image = "09.jpg"
+name = "Datajack Wraiths"
+type = "unit"
+type_secondary = [
+    "synth",
+]
+
+[[cards]]
+image = "10.jpg"
+name = "Datalink Hub"
+type = "colony"
+type_secondary = [
+    "facility",
+]
+
+[[cards]]
+image = "11.jpg"
+name = "Exterminating Servitors"
+type = "unit"
+type_secondary = [
+    "synth",
+]
+
+[[cards]]
+image = "12.jpg"
+name = "Graft Rejection"
+type = "reflex"
+
+[[cards]]
+image = "13.jpg"
+name = "Hunter"
+type = "unit"
+type_secondary = [
+    "synth",
+]
+
+[[cards]]
+image = "14.jpg"
+name = "Nanite Golems"
+type = "unit"
+type_secondary = [
+    "synth",
+]
+
+[[cards]]
+image = "15.jpg"
+name = "Nanocore Emissaries"
+type = "unit"
+type_secondary = [
+    "synth",
+]
+
+[[cards]]
+image = "16.jpg"
+name = "Nautilus"
+type = "unit"
+type_secondary = [
+    "synth",
+]
+
+[[cards]]
+image = "17.jpg"
+name = "Quiet Hulk"
+type = "unit"
+type_secondary = [
+    "synth",
+]
+
+[[cards]]
+image = "18.jpg"
+name = "Remake"
+type = "reflex"
+
+[[cards]]
+image = "19.jpg"
+name = "Repair And Refit"
+type = "reflex"
+
+[[cards]]
+image = "20.jpg"
+name = "Shield Generator"
+type = "augment"
+type_secondary = [
+    "unit",
+]
+
+[[cards]]
+image = "21.jpg"
+name = "Shrike Herd"
+type = "unit"
+type_secondary = [
+    "synth",
+]
+
+[[cards]]
+image = "22.jpg"
+name = "Snatchers"
+type = "unit"
+type_secondary = [
+    "synth",
+]
+
+[[cards]]
+image = "23.jpg"
+name = "Stray Mecha"
+type = "unit"
+type_secondary = [
+    "synth",
+]
+
+[[cards]]
+image = "24.jpg"
+name = "Synaptic Umbilical"
+type = "augment"
+type_secondary = [
+    "unit",
+]
+
+[[cards]]
+image = "25.jpg"
+name = "Sft"
+type = "colony"
+type_secondary = [
+    "facility",
+]
+
+[[cards]]
+image = "26.jpg"
+name = "Tachyon Shield"
+type = "colony"
+type_secondary = [
+    "facility",
+]
+
+[[cards]]
+image = "27.jpg"
+name = "Beso"
+type = "reflex"
+
+[[cards]]
+image = "28.jpg"
+name = "They Of The Machine"
+type = "reflex"
+
+[[cards]]
+image = "29.jpg"
+name = "Thought Control"
+type = "reflex"
+
+[[cards]]
+image = "30.jpg"
+name = "Viral Saboteur"
+type = "augment"
+type_secondary = [
+    "unit",
+]

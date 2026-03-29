@@ -1,0 +1,223 @@
+description = "The largest human society, millions deep beneath the surface in caste darkness. Talents rule from pleasure domes while modified Drones never see the sun; propaganda, drugs, and cloning have split them into near-species. Echoes are commerce, not reverence—except to drones who see Wormwood as escape.\n"
+
+[[cards]]
+image = "01.jpg"
+name = "Agromechs"
+type = "unit"
+type_secondary = [
+    "mech",
+]
+
+[[cards]]
+image = "02.jpg"
+name = "Graft Necrosis"
+type = "reflex"
+
+[[cards]]
+image = "03.jpg"
+name = "Creche Harvest"
+type = "reflex"
+
+[[cards]]
+image = "04.jpg"
+name = "Critical Shot"
+type = "reflex"
+
+[[cards]]
+image = "05.jpg"
+name = "Crustcracker Gang"
+type = "unit"
+type_secondary = [
+    "human",
+]
+
+[[cards]]
+image = "06.jpg"
+name = "Flamer Crew"
+type = "unit"
+type_secondary = [
+    "human",
+]
+
+[[cards]]
+image = "07.jpg"
+name = "Flystrikers"
+type = "unit"
+type_secondary = [
+    "human",
+]
+
+[[cards]]
+image = "08.jpg"
+name = "Geneforge Nurses"
+type = "unit"
+type_secondary = [
+    "human",
+]
+
+[[cards]]
+image = "09.jpg"
+name = "Homo Superior"
+type = "unit"
+type_secondary = [
+    "chimera",
+]
+
+[[cards]]
+image = "10.jpg"
+name = "Husk Harvesters"
+type = "unit"
+type_secondary = [
+    "human",
+]
+
+[[cards]]
+image = "11.jpg"
+name = "Hypnobar"
+type = "augment"
+type_secondary = [
+    "facility",
+]
+
+[[cards]]
+image = "12.jpg"
+name = "Iron Tortoise"
+type = "unit"
+type_secondary = [
+    "mech",
+]
+
+[[cards]]
+image = "13.jpg"
+name = "Lowhivers"
+type = "unit"
+type_secondary = [
+    "human",
+]
+
+[[cards]]
+image = "14.jpg"
+name = "Mandatory Stims"
+type = "reflex"
+
+[[cards]]
+image = "15.jpg"
+name = "Mantle Bore"
+type = "colony"
+type_secondary = [
+    "facility",
+]
+
+[[cards]]
+image = "16.jpg"
+name = "Mindjack"
+type = "reflex"
+
+[[cards]]
+image = "17.jpg"
+name = "Nerve Splice"
+type = "reflex"
+
+[[cards]]
+image = "18.jpg"
+name = "Neural Amp"
+type = "augment"
+type_secondary = [
+    "unit",
+]
+
+[[cards]]
+image = "19.jpg"
+name = "Nodal Addicts"
+type = "unit"
+type_secondary = [
+    "human",
+]
+
+[[cards]]
+image = "20.jpg"
+name = "Pleasure Dome"
+type = "colony"
+type_secondary = [
+    "facility",
+]
+
+[[cards]]
+image = "21.jpg"
+name = "Punishment Chamber"
+type = "colony"
+type_secondary = [
+    "facility",
+]
+
+[[cards]]
+image = "22.jpg"
+name = "Recycling Vats"
+type = "colony"
+type_secondary = [
+    "facility",
+]
+
+[[cards]]
+image = "23.jpg"
+name = "Rut Hollow"
+type = "colony"
+type_secondary = [
+    "facility",
+]
+
+[[cards]]
+image = "24.jpg"
+name = "Scav Gang"
+type = "unit"
+type_secondary = [
+    "human",
+]
+
+[[cards]]
+image = "25.jpg"
+name = "Secret Police"
+type = "unit"
+type_secondary = [
+    "human",
+]
+
+[[cards]]
+image = "26.jpg"
+name = "Sporemask"
+type = "augment"
+type_secondary = [
+    "unit",
+]
+
+[[cards]]
+image = "27.jpg"
+name = "Stimshifts"
+type = "augment"
+type_secondary = [
+    "facility",
+]
+
+[[cards]]
+image = "28.jpg"
+name = "Titan Cannon"
+type = "colony"
+type_secondary = [
+    "facility",
+]
+
+[[cards]]
+image = "29.jpg"
+name = "Vir Ex Machina"
+type = "augment"
+type_secondary = [
+    "unit",
+]
+
+[[cards]]
+image = "30.jpg"
+name = "Walker Artillery"
+type = "unit"
+type_secondary = [
+    "mech",
+]

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-OCR card headers under public/cards and update ``deck.yaml``.
+OCR card headers under public/cards and update ``deck.toml``.
 
 Strips:
 - Name: top 60px (Title Case per word)
@@ -9,12 +9,12 @@ Strips:
   For secondaries, the whole type line is tokenized into alphanumeric words; the first
   word (the primary type) is skipped, then each remaining word that appears in
   ``VALID_SECONDARY_BY_PRIMARY[primary]`` for the resolved primary type is collected in
-  order (primary comes from OCR or, when OCR is ``unknown``, from existing YAML).
+  order (primary comes from OCR or, when OCR is ``unknown``, from existing TOML).
   Reflex cards have no secondary line: none is parsed, ``unknown`` is not stored, and any
-  existing ``type_secondary`` in YAML is removed. If there is nothing after the first
+  existing ``type_secondary`` in TOML is removed. If there is nothing after the first
   word, the secondary field is left empty (preserve existing). If there are words but
-  none match a known secondary, ``[unknown]`` is used. Secondaries are stored as a YAML
-  list (e.g. ``[human, xeno]``). If OCR
+  none match a known secondary, ``[unknown]`` is used. Secondaries are stored as a TOML
+  array (e.g. ``["human", "xeno"]``). If OCR
   yields ``unknown`` for the primary but the card already has a non-unknown ``type``,
   that value is kept. If secondary OCR is empty but ``type_secondary`` is already set,
   it is kept; otherwise the key is omitted.
@@ -54,7 +54,8 @@ import re
 import sys
 from pathlib import Path
 
-import yaml
+import tomli
+import tomli_w
 from PIL import Image, ImageOps
 import pytesseract
 
@@ -262,7 +263,7 @@ def parse_type_secondary_list_from_type_line(type_line: str, primary: object) ->
     return out
 
 
-def coerce_yaml_type_secondary(raw: object, primary: object) -> list[str]:
+def coerce_type_secondary(raw: object, primary: object) -> list[str]:
     if is_reflex_primary(primary):
         return []
     known = known_secondaries_for_primary(primary)
@@ -290,29 +291,34 @@ def coerce_yaml_type_secondary(raw: object, primary: object) -> list[str]:
     return []
 
 
-def write_deck_yaml(deck_dir: Path, cards: list[dict], description: str = "") -> None:
-    out = deck_dir / "deck.yaml"
+def _ordered_card_for_toml(entry: dict) -> dict:
+    priority = ("image", "name", "type", "type_secondary")
+    out: dict = {}
+    for k in priority:
+        if k in entry:
+            out[k] = entry[k]
+    for k in sorted(entry.keys()):
+        if k not in out:
+            out[k] = entry[k]
+    return out
+
+
+def write_deck_toml(deck_dir: Path, cards: list[dict], description: str = "") -> None:
+    ordered = [_ordered_card_for_toml(c) for c in cards]
     if description.strip():
-        data: dict = {"description": description, "cards": cards}
+        data: dict = {"description": description, "cards": ordered}
     else:
-        data = {"cards": cards}
-    out.write_text(
-        yaml.dump(
-            data,
-            default_flow_style=False,
-            allow_unicode=True,
-            sort_keys=False,
-            width=10_000,
-        ),
-        encoding="utf-8",
-    )
+        data = {"cards": ordered}
+    out = deck_dir / "deck.toml"
+    out.write_text(tomli_w.dumps(data), encoding="utf-8")
 
 
 def load_deck(deck_dir: Path) -> tuple[list[dict], str] | None:
-    p = deck_dir / "deck.yaml"
+    p = deck_dir / "deck.toml"
     if not p.is_file():
         return None
-    data = yaml.safe_load(p.read_text(encoding="utf-8"))
+    with p.open("rb") as f:
+        data = tomli.load(f)
     if not isinstance(data, dict) or not isinstance(data.get("cards"), list):
         return None
     cards = data["cards"]
@@ -331,7 +337,7 @@ def process_deck(
 ) -> int:
     loaded = load_deck(deck_dir)
     if loaded is None:
-        print(f"skip (no deck.yaml): {deck_dir.name}", file=sys.stderr)
+        print(f"skip (no deck.toml): {deck_dir.name}", file=sys.stderr)
         return 0
     cards, description = loaded
     if not cards:
@@ -361,7 +367,7 @@ def process_deck(
         raw_type = ""
         name = entry.get("name")
         typ = entry.get("type")
-        old_list = coerce_yaml_type_secondary(entry.get("type_secondary"), entry.get("type"))
+        old_list = coerce_type_secondary(entry.get("type_secondary"), entry.get("type"))
         type_sec_list = list(old_list)
 
         if want_name:
@@ -422,7 +428,7 @@ def process_deck(
                 entry.pop("type_secondary", None)
 
     if not dry_run and updated:
-        write_deck_yaml(deck_dir, cards, description)
+        write_deck_toml(deck_dir, cards, description)
     elif dry_run and updated:
         print(f"[dry-run] would update {updated} card(s) in {deck_dir.name}", file=sys.stderr)
 
@@ -432,7 +438,7 @@ def process_deck(
 def normalize_secondary_in_deck(deck_dir: Path, *, dry_run: bool) -> int:
     loaded = load_deck(deck_dir)
     if loaded is None:
-        print(f"skip (no deck.yaml): {deck_dir.name}", file=sys.stderr)
+        print(f"skip (no deck.toml): {deck_dir.name}", file=sys.stderr)
         return 0
     cards, description = loaded
     updated = 0
@@ -442,7 +448,7 @@ def normalize_secondary_in_deck(deck_dir: Path, *, dry_run: bool) -> int:
         if "type_secondary" not in entry:
             continue
         raw = entry.get("type_secondary")
-        desired = coerce_yaml_type_secondary(raw, entry.get("type"))
+        desired = coerce_type_secondary(raw, entry.get("type"))
         if desired:
             if entry.get("type_secondary") != desired:
                 updated += 1
@@ -454,7 +460,7 @@ def normalize_secondary_in_deck(deck_dir: Path, *, dry_run: bool) -> int:
                 entry.pop("type_secondary", None)
 
     if not dry_run and updated:
-        write_deck_yaml(deck_dir, cards, description)
+        write_deck_toml(deck_dir, cards, description)
     elif dry_run and updated:
         print(f"[dry-run] would normalize type_secondary on {updated} card(s) in {deck_dir.name}", file=sys.stderr)
     return updated
@@ -473,7 +479,7 @@ def main() -> int:
     parser.add_argument(
         "--dry-run",
         action="store_true",
-        help="OCR and report but do not write deck.yaml",
+        help="OCR and report but do not write deck.toml",
     )
     parser.add_argument("-v", "--verbose", action="store_true", help="Print OCR text per card")
     parser.add_argument(
@@ -522,7 +528,7 @@ def main() -> int:
         if args.dry_run:
             print(f"Total type_secondary normalizations: {total} (files not written)")
         else:
-            print(f"Normalized type_secondary across deck.yaml files: {total} card row(s)")
+            print(f"Normalized type_secondary across deck.toml files: {total} card row(s)")
         return 0
 
     total = 0
@@ -538,7 +544,7 @@ def main() -> int:
     if args.dry_run:
         print(f"Total cards with changes: {total} (files not written)")
     else:
-        print(f"Updated entries across deck.yaml files: {total}")
+        print(f"Updated entries across deck.toml files: {total}")
     return 0
 
 
