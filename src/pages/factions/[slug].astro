@@ -94,8 +94,16 @@ const coverSrc = `${assetPrefix}cover.png`;
                     />
                     <div class="card-meta">
                       <span class="card-name">{card.name}</span>
-                      <span class="card-cost" aria-hidden="true">{card.cost}</span>
                       <span class="card-type">{cardBlockTypeLabel(card)}</span>
+                      <span
+                        class:list={[
+                          'card-cost',
+                          { 'card-cost--reflex': card.type === 'reflex' },
+                        ]}
+                        aria-hidden="true"
+                      >
+                        {card.cost}
+                      </span>
                     </div>
                   </button>
                 </li>

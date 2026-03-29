@@ -130,11 +130,26 @@
 }
 
 .faction-detail .card-cost {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.625rem;
+  height: 1.625rem;
+  padding: 0 0.2rem;
+  border-radius: 50%;
   font-size: 0.8125rem;
   font-variant-numeric: tabular-nums;
   font-weight: 600;
-  color: var(--accent);
+  line-height: 1;
+  color: #fff;
+  background: #5e4018;
+  border: 2px solid #fff;
   width: fit-content;
+}
+
+.faction-detail .card-cost--reflex {
+  background: #5a5c73;
 }
 
 .faction-detail .card-type {
