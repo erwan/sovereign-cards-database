@@ -38,6 +38,19 @@ body {
   min-height: 100vh;
 }
 
+.site-footer {
+  margin-top: 2rem;
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.site-footer p {
+  margin: 0;
+}
+
 a {
   color: var(--accent);
   text-decoration-color: color-mix(in srgb, var(--accent) 45%, transparent);
