@@ -1,0 +1,39 @@
+---
+import { cardBlockTypeLabel, type CardEntry } from "../lib/decks";
+
+interface Props {
+  card: CardEntry;
+  assetPrefix: string;
+}
+
+const { card, assetPrefix } = Astro.props;
+---
+
+<li>
+  <button
+    type="button"
+    class="card-item"
+    aria-label={`View full card: ${card.name}, cost ${card.cost}`}
+    data-full-src={`${assetPrefix}${card.image}`}
+    data-card-name={card.name}
+  >
+    <img
+      class="card-thumb"
+      src={`${assetPrefix}${card.image}`}
+      alt=""
+      width="120"
+      height="168"
+      loading="lazy"
+    />
+    <div class="card-meta">
+      <span class="card-name">{card.name}</span>
+      <span class="card-type">{cardBlockTypeLabel(card)}</span>
+      <span
+        class:list={["card-cost", { "card-cost--reflex": card.type === "reflex" }]}
+        aria-hidden="true"
+      >
+        {card.cost}
+      </span>
+    </div>
+  </button>
+</li>

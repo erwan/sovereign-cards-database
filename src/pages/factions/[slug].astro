@@ -1,15 +1,16 @@
 ---
-import '../../styles/faction-detail.css';
-import FactionLayout from '../../layouts/FactionLayout.astro';
-import { getBaseUrl } from '../../lib/baseUrl';
+import "../../styles/faction-detail.css";
+import CardLightbox from "../../components/CardLightbox.astro";
+import CardListItem from "../../components/CardListItem.astro";
+import DeckHeader from "../../components/DeckHeader.astro";
+import FactionLayout from "../../layouts/FactionLayout.astro";
+import { getBaseUrl } from "../../lib/baseUrl";
 import {
   DISPLAY_TYPE_ORDER,
   loadDecks,
-  cardBlockTypeLabel,
-  typeStatNoun,
   typeSectionHeading,
   type Deck,
-} from '../../lib/decks';
+} from "../../lib/decks";
 
 export function getStaticPaths() {
   return loadDecks().map((deck) => ({
@@ -34,37 +35,7 @@ const coverSrc = `${assetPrefix}cover.png`;
 
 <FactionLayout title={`${deck.displayName} — Sovereign Cards`}>
   <div class="faction-detail">
-    <header class="deck-header">
-      <img
-        class="deck-header-cover"
-        src={coverSrc}
-        alt=""
-        width="280"
-        height="392"
-        loading="eager"
-      />
-      <div class="deck-header-text">
-        <h1 class="deck-title">{deck.displayName}</h1>
-        {
-          deck.description.trim() !== '' && (
-            <p class="deck-description">{deck.description}</p>
-          )
-        }
-        {
-          typeStats.length > 0 && (
-            <p class="deck-type-stats">
-              {typeStats.map((row, i) => (
-                <>
-                  {i > 0 && <span class="deck-type-stats-sep" aria-hidden="true"> | </span>}
-                  <a href={`#type-${row.type}`}>{`${row.count} ${typeStatNoun(row.type)}`}</a>
-                </>
-              ))}
-            </p>
-          )
-        }
-      </div>
-    </header>
-
+    <DeckHeader deck={deck} coverSrc={coverSrc} typeStats={typeStats} />
     {
       DISPLAY_TYPE_ORDER.map((type) => {
         const sectionCards = deck.cards.filter((c) => c.type === type);
@@ -76,81 +47,13 @@ const coverSrc = `${assetPrefix}cover.png`;
             </h2>
             <ul class="card-list">
               {sectionCards.map((card) => (
-                <li>
-                  <button
-                    type="button"
-                    class="card-item"
-                    aria-label={`View full card: ${card.name}, cost ${card.cost}`}
-                    data-full-src={`${assetPrefix}${card.image}`}
-                    data-card-name={card.name}
-                  >
-                    <img
-                      class="card-thumb"
-                      src={`${assetPrefix}${card.image}`}
-                      alt=""
-                      width="120"
-                      height="168"
-                      loading="lazy"
-                    />
-                    <div class="card-meta">
-                      <span class="card-name">{card.name}</span>
-                      <span class="card-type">{cardBlockTypeLabel(card)}</span>
-                      <span
-                        class:list={[
-                          'card-cost',
-                          { 'card-cost--reflex': card.type === 'reflex' },
-                        ]}
-                        aria-hidden="true"
-                      >
-                        {card.cost}
-                      </span>
-                    </div>
-                  </button>
-                </li>
+                <CardListItem card={card} assetPrefix={assetPrefix} />
               ))}
             </ul>
           </section>
         );
       })
     }
-
-    <dialog
-      class="card-lightbox"
-      id="card-lightbox"
-      aria-modal="true"
-      aria-labelledby="card-lightbox-img"
-    >
-      <div class="card-lightbox-panel">
-        <form method="dialog" class="card-lightbox-close-wrap">
-          <button type="submit" class="card-lightbox-close">
-            Close
-          </button>
-        </form>
-        <img class="card-lightbox-img" id="card-lightbox-img" alt="" />
-      </div>
-    </dialog>
+    <CardLightbox />
   </div>
-
-  <script is:inline>
-    (function () {
-      var dialog = document.getElementById('card-lightbox');
-      var img = document.getElementById('card-lightbox-img');
-      if (!dialog || !img) return;
-
-      document.querySelectorAll('.card-item[data-full-src]').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          var src = btn.getAttribute('data-full-src');
-          var name = btn.getAttribute('data-card-name') || '';
-          if (!src) return;
-          img.src = src;
-          img.alt = name;
-          dialog.showModal();
-        });
-      });
-
-      dialog.addEventListener('click', function (e) {
-        if (e.target === dialog) dialog.close();
-      });
-    })();
-  </script>
 </FactionLayout>

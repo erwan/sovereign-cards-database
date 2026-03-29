@@ -1,0 +1,52 @@
+---
+import { typeStatNoun, type CardType, type Deck } from "../lib/decks";
+
+interface TypeStatRow {
+  type: CardType;
+  count: number;
+}
+
+interface Props {
+  deck: Deck;
+  coverSrc: string;
+  typeStats: TypeStatRow[];
+}
+
+const { deck, coverSrc, typeStats } = Astro.props;
+---
+
+<header class="deck-header">
+  <img
+    class="deck-header-cover"
+    src={coverSrc}
+    alt=""
+    width="280"
+    height="392"
+    loading="eager"
+  />
+  <div class="deck-header-text">
+    <h1 class="deck-title">{deck.displayName}</h1>
+    {
+      deck.description.trim() !== "" && (
+        <p class="deck-description">{deck.description}</p>
+      )
+    }
+    {
+      typeStats.length > 0 && (
+        <p class="deck-type-stats">
+          {typeStats.map((row, i) => (
+            <>
+              {i > 0 && (
+                <span class="deck-type-stats-sep" aria-hidden="true">
+                  {" "}
+                  |{" "}
+                </span>
+              )}
+              <a href={`#type-${row.type}`}>{`${row.count} ${typeStatNoun(row.type)}`}</a>
+            </>
+          ))}
+        </p>
+      )
+    }
+  </div>
+</header>
