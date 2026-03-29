@@ -1,91 +1,91 @@
 cards:
   - image: "01.jpg"
-    name: "Card 01"
-    type: unknown
+    name: "Battle Stims"
+    type: augment
   - image: "02.jpg"
-    name: "Card 02"
-    type: unknown
+    name: "Burnout"
+    type: reflex
   - image: "03.jpg"
-    name: "Card 03"
-    type: unknown
+    name: "Conscription"
+    type: reflex
   - image: "04.jpg"
-    name: "Card 04"
-    type: unknown
+    name: "Defensive Position"
+    type: reflex
   - image: "05.jpg"
-    name: "Card 05"
-    type: unknown
+    name: "Drillyard"
+    type: colony
   - image: "06.jpg"
-    name: "Card 06"
-    type: unknown
+    name: "Firehawk Bomber"
+    type: unit
   - image: "07.jpg"
-    name: "Card 07"
-    type: unknown
+    name: "Flesh Spare"
+    type: augment
   - image: "08.jpg"
-    name: "Card 08"
-    type: unknown
+    name: "Flux Ammo"
+    type: reflex
   - image: "09.jpg"
-    name: "Card 09"
-    type: unknown
+    name: "Geneforge"
+    type: colony
   - image: "10.jpg"
-    name: "Card 10"
-    type: unknown
+    name: "Goliath Cannon"
+    type: colony
   - image: "11.jpg"
-    name: "Card 11"
-    type: unknown
+    name: "Iron Oni"
+    type: unit
   - image: "12.jpg"
-    name: "Card 12"
-    type: unknown
+    name: "Lascannon Heavies"
+    type: unit
   - image: "13.jpg"
-    name: "Card 13"
-    type: unknown
+    name: "Link Crown"
+    type: augment
   - image: "14.jpg"
-    name: "Card 14"
-    type: unknown
+    name: "Lotus Eaters"
+    type: unit
   - image: "15.jpg"
-    name: "Card 15"
-    type: unknown
+    name: "Vel Martial Law"
+    type: reflex
   - image: "16.jpg"
-    name: "Card 16"
-    type: unknown
+    name: "Mech Foundry"
+    type: colony
   - image: "17.jpg"
-    name: "Card 17"
-    type: unknown
+    name: "Mech Junkies"
+    type: unit
   - image: "18.jpg"
-    name: "Card 18"
-    type: unknown
+    name: "Military Academy"
+    type: colony
   - image: "19.jpg"
-    name: "Card 19"
-    type: unknown
+    name: "Newbloods"
+    type: unit
   - image: "20.jpg"
-    name: "Card 20"
-    type: unknown
+    name: "Powered Exoskeleton"
+    type: augment
   - image: "21.jpg"
-    name: "Card 21"
-    type: unknown
+    name: "Salamander Armor"
+    type: unit
   - image: "22.jpg"
-    name: "Card 22"
-    type: unknown
+    name: "Shock Troops"
+    type: unit
   - image: "23.jpg"
-    name: "Card 23"
-    type: unknown
+    name: "Slave Battalion"
+    type: unit
   - image: "24.jpg"
-    name: "Card 24"
-    type: unknown
+    name: "Stiltstrider"
+    type: unit
   - image: "25.jpg"
-    name: "Card 25"
-    type: unknown
+    name: "Striker Mech"
+    type: unit
   - image: "26.jpg"
-    name: "Card 26"
-    type: unknown
+    name: "Synthsilk Platoon"
+    type: unit
   - image: "27.jpg"
-    name: "Card 27"
-    type: unknown
+    name: "Tundra Palace"
+    type: colony
   - image: "28.jpg"
-    name: "Card 28"
-    type: unknown
+    name: "Veteran Plate"
+    type: augment
   - image: "29.jpg"
-    name: "Card 29"
-    type: unknown
+    name: "War Chiefs"
+    type: unit
   - image: "30.jpg"
-    name: "Card 30"
-    type: unknown
+    name: "Warthirst"
+    type: reflex

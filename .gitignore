@@ -2,6 +2,9 @@
 dist/
 .output/
 
+# Python
+.venv
+
 # generated types
 .astro/
 

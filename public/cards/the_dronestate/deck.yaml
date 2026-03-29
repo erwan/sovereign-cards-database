@@ -1,91 +1,91 @@
 cards:
   - image: "01.jpg"
-    name: "Card 01"
+    name: "Apsynthos Cryopod"
     type: unknown
   - image: "02.jpg"
-    name: "Card 02"
-    type: unknown
+    name: "Apsynthos Memorial"
+    type: colony
   - image: "03.jpg"
-    name: "Card 03"
-    type: unknown
+    name: "Se"
+    type: unit
   - image: "04.jpg"
-    name: "Card 04"
-    type: unknown
+    name: "Cantina"
+    type: colony
   - image: "05.jpg"
-    name: "Card 05"
-    type: unknown
+    name: "Defection"
+    type: reflex
   - image: "06.jpg"
-    name: "Card 06"
-    type: unknown
+    name: "Desperate Sacrifice"
+    type: reflex
   - image: "07.jpg"
-    name: "Card 07"
-    type: unknown
+    name: "Detonation Packs"
+    type: augment
   - image: "08.jpg"
-    name: "Card 08"
-    type: unknown
+    name: "Double Agent"
+    type: augment
   - image: "09.jpg"
-    name: "Card 09"
-    type: unknown
+    name: "Drone Insurgents"
+    type: unit
   - image: "10.jpg"
-    name: "Card 10"
-    type: unknown
+    name: "Drone Riots"
+    type: reflex
   - image: "11.jpg"
-    name: "Card 11"
-    type: unknown
+    name: "Dustmen"
+    type: unit
   - image: "12.jpg"
-    name: "Card 12"
-    type: unknown
+    name: "Hive Radicals"
+    type: unit
   - image: "13.jpg"
-    name: "Card 13"
-    type: unknown
+    name: "Holonet Scribes"
+    type: unit
   - image: "14.jpg"
-    name: "Card 14"
-    type: unknown
+    name: "Infoleak"
+    type: reflex
   - image: "15.jpg"
-    name: "Card 15"
-    type: unknown
+    name: "Nano Plantation"
+    type: colony
   - image: "16.jpg"
-    name: "Card 16"
-    type: unknown
+    name: "Nerve Plates"
+    type: augment
   - image: "17.jpg"
-    name: "Card 17"
-    type: unknown
+    name: "Plasma Torch"
+    type: augment
   - image: "18.jpg"
-    name: "Card 18"
-    type: unknown
+    name: "Rail Sniper"
+    type: unit
   - image: "19.jpg"
-    name: "Card 19"
-    type: unknown
+    name: "Recon Guerillas"
+    type: unit
   - image: "20.jpg"
-    name: "Card 20"
-    type: unknown
+    name: "Refugee Ethics"
+    type: reflex
   - image: "21.jpg"
-    name: "Card 21"
-    type: unknown
+    name: "Sabotage"
+    type: reflex
   - image: "22.jpg"
-    name: "Card 22"
-    type: unknown
+    name: "Scrap Depot"
+    type: colony
   - image: "23.jpg"
-    name: "Card 23"
-    type: unknown
+    name: "Sentinels"
+    type: unit
   - image: "24.jpg"
-    name: "Card 24"
-    type: unknown
+    name: "Skimsquad"
+    type: unit
   - image: "25.jpg"
-    name: "Card 25"
-    type: unknown
+    name: "Splicing Medics"
+    type: unit
   - image: "26.jpg"
-    name: "Card 26"
-    type: unknown
+    name: "Stitch Tanks"
+    type: colony
   - image: "27.jpg"
-    name: "Card 27"
-    type: unknown
+    name: "Undercity Anarchs"
+    type: unit
   - image: "28.jpg"
-    name: "Card 28"
-    type: unknown
+    name: "Watchdogs"
+    type: unit
   - image: "29.jpg"
-    name: "Card 29"
-    type: unknown
+    name: "Webweave Spies"
+    type: unit
   - image: "30.jpg"
-    name: "Card 30"
-    type: unknown
+    name: "Worker Strike"
+    type: augment

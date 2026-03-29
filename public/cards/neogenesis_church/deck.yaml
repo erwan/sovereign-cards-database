@@ -1,91 +1,91 @@
 cards:
   - image: "01.jpg"
-    name: "Card 01"
-    type: unknown
+    name: "Absolution Sphere"
+    type: colony
   - image: "02.jpg"
-    name: "Card 02"
-    type: unknown
+    name: "Acid Baptists"
+    type: unit
   - image: "03.jpg"
-    name: "Card 03"
-    type: unknown
+    name: "Ascetic Virtues"
+    type: reflex
   - image: "04.jpg"
-    name: "Card 04"
-    type: unknown
+    name: "Clinical Immortality"
+    type: augment
   - image: "05.jpg"
-    name: "Card 05"
-    type: unknown
+    name: "Crecheling Prophet"
+    type: unit
   - image: "06.jpg"
-    name: "Card 06"
-    type: unknown
+    name: "Desertion"
+    type: reflex
   - image: "07.jpg"
-    name: "Card 07"
-    type: unknown
+    name: "Deva Monks"
+    type: unit
   - image: "08.jpg"
-    name: "Card 08"
-    type: unknown
+    name: "Gravelinks"
+    type: augment
   - image: "09.jpg"
-    name: "Card 09"
-    type: unknown
+    name: "Halo Lift"
+    type: colony
   - image: "10.jpg"
-    name: "Card 10"
-    type: unknown
+    name: "Holy Day"
+    type: reflex
   - image: "11.jpg"
-    name: "Card 11"
-    type: unknown
+    name: "House Of Meditation"
+    type: colony
   - image: "12.jpg"
-    name: "Card 12"
-    type: unknown
+    name: "Hymn Of Knitting Ang"
+    type: augment
   - image: "13.jpg"
-    name: "Card 13"
-    type: unknown
+    name: "Inquisitors"
+    type: unit
   - image: "14.jpg"
-    name: "Card 14"
-    type: unknown
+    name: "Jetleap Seraphim"
+    type: unit
   - image: "15.jpg"
-    name: "Card 15"
-    type: unknown
+    name: "Library Of The Ark"
+    type: colony
   - image: "16.jpg"
-    name: "Card 16"
-    type: unknown
+    name: "Maestra Sangha"
+    type: unit
   - image: "17.jpg"
-    name: "Card 17"
-    type: unknown
+    name: "Messenger Ferry"
+    type: unit
   - image: "18.jpg"
-    name: "Card 18"
-    type: unknown
+    name: "Miraculous Escape"
+    type: reflex
   - image: "19.jpg"
-    name: "Card 19"
-    type: unknown
+    name: "Neogenesis Chapel"
+    type: colony
   - image: "20.jpg"
-    name: "Card 20"
-    type: unknown
+    name: "Pious Devotion"
+    type: augment
   - image: "21.jpg"
-    name: "Card 21"
-    type: unknown
+    name: "Relic Seekers"
+    type: unit
   - image: "22.jpg"
-    name: "Card 22"
-    type: unknown
+    name: "Seraphim Choir"
+    type: unit
   - image: "23.jpg"
-    name: "Card 23"
-    type: unknown
+    name: "Symmetric Supplication"
+    type: reflex
   - image: "24.jpg"
-    name: "Card 24"
-    type: unknown
+    name: "Terra Ascetics"
+    type: unit
   - image: "25.jpg"
-    name: "Card 25"
-    type: unknown
+    name: "Terra Colossus"
+    type: colony
   - image: "26.jpg"
-    name: "Card 26"
-    type: unknown
+    name: "Theocracy"
+    type: augment
   - image: "27.jpg"
-    name: "Card 27"
-    type: unknown
+    name: "Trench Judges"
+    type: unit
   - image: "28.jpg"
-    name: "Card 28"
-    type: unknown
+    name: "Webweave Cherubs"
+    type: unit
   - image: "29.jpg"
-    name: "Card 29"
-    type: unknown
+    name: "White Bishops"
+    type: unit
   - image: "30.jpg"
-    name: "Card 30"
-    type: unknown
+    name: "Zealotry"
+    type: reflex

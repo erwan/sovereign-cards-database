@@ -1,91 +1,91 @@
 cards:
   - image: "01.jpg"
-    name: "Card 01"
-    type: unknown
+    name: "Ambush"
+    type: reflex
   - image: "02.jpg"
-    name: "Card 02"
-    type: unknown
+    name: "Gre"
+    type: colony
   - image: "03.jpg"
-    name: "Card 03"
-    type: unknown
+    name: "Betrayal"
+    type: reflex
   - image: "04.jpg"
-    name: "Card 04"
-    type: unknown
+    name: "Bombardment"
+    type: reflex
   - image: "05.jpg"
-    name: "Card 05"
-    type: unknown
+    name: "Bounty Hunters"
+    type: unit
   - image: "06.jpg"
-    name: "Card 06"
-    type: unknown
+    name: "Brassjackets"
+    type: unit
   - image: "07.jpg"
-    name: "Card 07"
-    type: unknown
+    name: "Civilian Casualties"
+    type: reflex
   - image: "08.jpg"
-    name: "Card 08"
-    type: unknown
+    name: "Clone Stock"
+    type: augment
   - image: "09.jpg"
-    name: "Card 09"
-    type: unknown
+    name: "Cloudbreak Spire"
+    type: colony
   - image: "10.jpg"
-    name: "Card 10"
-    type: unknown
+    name: "Corsairs"
+    type: unit
   - image: "11.jpg"
-    name: "Card 11"
-    type: unknown
+    name: "Datajack Bandits"
+    type: unit
   - image: "12.jpg"
-    name: "Card 12"
-    type: unknown
+    name: "Decksweeps"
+    type: unit
   - image: "13.jpg"
-    name: "Card 13"
-    type: unknown
+    name: "Exosuit"
+    type: augment
   - image: "14.jpg"
-    name: "Card 14"
-    type: unknown
+    name: "Gambler"
+    type: augment
   - image: "15.jpg"
-    name: "Card 15"
-    type: unknown
+    name: "Grave Hoard"
+    type: colony
   - image: "16.jpg"
-    name: "Card 16"
-    type: unknown
+    name: "Hacker"
+    type: colony
   - image: "17.jpg"
-    name: "Card 17"
-    type: unknown
+    name: "Hegemony Pirates"
+    type: unit
   - image: "18.jpg"
-    name: "Card 18"
-    type: unknown
+    name: "Hegemony Slavers"
+    type: unit
   - image: "19.jpg"
-    name: "Card 19"
-    type: unknown
+    name: "Leb"
+    type: unit
   - image: "20.jpg"
-    name: "Card 20"
-    type: unknown
+    name: "Hornet Swarm"
+    type: unit
   - image: "21.jpg"
-    name: "Card 21"
-    type: unknown
+    name: "Listening Post"
+    type: colony
   - image: "22.jpg"
-    name: "Card 22"
-    type: unknown
+    name: "Privateer Contract"
+    type: reflex
   - image: "23.jpg"
-    name: "Card 23"
-    type: unknown
+    name: "Razorback"
+    type: unit
   - image: "24.jpg"
-    name: "Card 24"
-    type: unknown
+    name: "Reconstruct"
+    type: augment
   - image: "25.jpg"
-    name: "Card 25"
-    type: unknown
+    name: "Shipbreakers"
+    type: unit
   - image: "26.jpg"
-    name: "Card 26"
-    type: unknown
+    name: "Smog Skiff"
+    type: unit
   - image: "27.jpg"
-    name: "Card 27"
-    type: unknown
+    name: "Talent Hack"
+    type: reflex
   - image: "28.jpg"
-    name: "Card 28"
-    type: unknown
+    name: "Telepath Graft"
+    type: augment
   - image: "29.jpg"
-    name: "Card 29"
-    type: unknown
+    name: "Tethered Nephilim"
+    type: unit
   - image: "30.jpg"
-    name: "Card 30"
-    type: unknown
+    name: "Worker Hovels"
+    type: colony
