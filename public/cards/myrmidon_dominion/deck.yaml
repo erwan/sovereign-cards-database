@@ -71,7 +71,7 @@ cards:
   name: Mech Foundry
   type: colony
   type_secondary:
-  - unknown
+  - facility
 - image: 17.jpg
   name: Mech Junkies
   type: unit
@@ -126,7 +126,7 @@ cards:
   name: Tundra Palace
   type: colony
   type_secondary:
-  - unknown
+  - facility
 - image: 28.jpg
   name: Veteran Plate
   type: augment

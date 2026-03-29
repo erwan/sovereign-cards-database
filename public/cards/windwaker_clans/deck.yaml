@@ -71,7 +71,7 @@ cards:
   name: Lilin Hive
   type: colony
   type_secondary:
-  - unknown
+  - facility
 - image: 17.jpg
   name: Lilin Matron
   type: unit

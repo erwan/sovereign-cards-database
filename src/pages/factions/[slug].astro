@@ -5,6 +5,7 @@ import { getBaseUrl } from '../../lib/baseUrl';
 import {
   DISPLAY_TYPE_ORDER,
   loadDecks,
+  cardBlockTypeLabel,
   typeStatNoun,
   typeSectionHeading,
   type Deck,
@@ -93,7 +94,7 @@ const coverSrc = `${assetPrefix}cover.png`;
                     />
                     <div class="card-meta">
                       <span class="card-name">{card.name}</span>
-                      <span class="card-type">{card.type}</span>
+                      <span class="card-type">{cardBlockTypeLabel(card)}</span>
                     </div>
                   </button>
                 </li>

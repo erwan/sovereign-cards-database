@@ -88,7 +88,7 @@ cards:
   name: Neogenesis Chapel
   type: colony
   type_secondary:
-  - unknown
+  - facility
 - image: 20.jpg
   name: Pious Devotion
   type: augment
@@ -116,7 +116,7 @@ cards:
   name: Terra Colossus
   type: colony
   type_secondary:
-  - unknown
+  - facility
 - image: 26.jpg
   name: Theocracy
   type: augment

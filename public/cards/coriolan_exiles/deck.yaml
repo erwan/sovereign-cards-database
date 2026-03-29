@@ -59,7 +59,7 @@ cards:
   name: Highborn Academy
   type: colony
   type_secondary:
-  - unknown
+  - facility
 - image: 13.jpg
   name: Highborn Nursery
   type: colony

@@ -77,6 +77,11 @@ export function typeStatNoun(type: CardType): string {
   return TYPE_STAT_NOUN[type];
 }
 
+export function cardBlockTypeLabel(card: CardEntry): string {
+  if (!card.type_secondary?.length) return '';
+  return card.type_secondary.join(' / ');
+}
+
 const CARD_TYPES = new Set<string>(['unknown', 'unit', 'reflex', 'augment', 'colony']);
 
 export function folderToDisplayName(folder: string): string {
