@@ -57,10 +57,10 @@ const coverSrc = `${assetPrefix}cover.png`;
             </h2>
             <ul class="card-list">
               {sectionCards.map((card) => (
-                <li class="card-item">
+                <li>
                   <button
                     type="button"
-                    class="card-thumb-btn"
+                    class="card-item"
                     aria-label={`View full card: ${card.name}`}
                     data-full-src={`${assetPrefix}${card.image}`}
                     data-card-name={card.name}
@@ -73,11 +73,11 @@ const coverSrc = `${assetPrefix}cover.png`;
                       height="168"
                       loading="lazy"
                     />
+                    <div class="card-meta">
+                      <span class="card-name">{card.name}</span>
+                      <span class="card-type">{card.type}</span>
+                    </div>
                   </button>
-                  <div class="card-meta">
-                    <span class="card-name">{card.name}</span>
-                    <span class="card-type">{card.type}</span>
-                  </div>
                 </li>
               ))}
             </ul>
@@ -111,7 +111,7 @@ const coverSrc = `${assetPrefix}cover.png`;
       var caption = document.getElementById('card-lightbox-caption');
       if (!dialog || !img || !caption) return;
 
-      document.querySelectorAll('.card-thumb-btn').forEach(function (btn) {
+      document.querySelectorAll('.card-item[data-full-src]').forEach(function (btn) {
         btn.addEventListener('click', function () {
           var src = btn.getAttribute('data-full-src');
           var name = btn.getAttribute('data-card-name') || '';

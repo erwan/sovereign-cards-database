@@ -64,6 +64,7 @@
 
 .faction-detail .card-item {
   display: flex;
+  width: 100%;
   gap: 0.75rem;
   align-items: flex-start;
   border: 1px solid var(--border-strong);
@@ -71,28 +72,27 @@
   padding: 0.75rem;
   background: var(--bg-elevated);
   box-shadow: var(--shadow-soft);
-}
-
-.faction-detail .card-thumb-btn {
-  display: block;
-  padding: 0;
   margin: 0;
-  border: none;
-  background: none;
+  font: inherit;
+  color: inherit;
+  text-align: left;
   cursor: pointer;
-  border-radius: 0.25rem;
-  flex-shrink: 0;
-  line-height: 0;
 }
 
-.faction-detail .card-thumb-btn:focus-visible {
+.faction-detail .card-item:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 
-.faction-detail .card-thumb-btn:hover .card-thumb {
+.faction-detail .card-item:hover {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border-strong));
+  box-shadow:
+    var(--shadow-soft),
+    0 0 0 1px color-mix(in srgb, var(--accent) 25%, transparent);
+}
+
+.faction-detail .card-item:hover .card-thumb {
   border-color: var(--border-strong);
-  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 35%, transparent);
 }
 
 .faction-detail .card-thumb {
@@ -102,6 +102,8 @@
   object-fit: cover;
   border-radius: 0.25rem;
   border: 1px solid var(--border-subtle);
+  flex-shrink: 0;
+  line-height: 0;
 }
 
 .faction-detail .card-meta {
