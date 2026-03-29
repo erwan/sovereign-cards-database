@@ -7,6 +7,7 @@ type = "unit"
 type_secondary = [
     "xeno",
 ]
+cost = 4
 
 [[cards]]
 image = "02.jpg"
@@ -15,6 +16,7 @@ type = "unit"
 type_secondary = [
     "xeno",
 ]
+cost = 4
 
 [[cards]]
 image = "03.jpg"
@@ -23,6 +25,7 @@ type = "unit"
 type_secondary = [
     "human",
 ]
+cost = 4
 
 [[cards]]
 image = "04.jpg"
@@ -31,6 +34,7 @@ type = "augment"
 type_secondary = [
     "unit",
 ]
+cost = 2
 
 [[cards]]
 image = "05.jpg"
@@ -39,6 +43,7 @@ type = "unit"
 type_secondary = [
     "human",
 ]
+cost = 2
 
 [[cards]]
 image = "06.jpg"
@@ -47,6 +52,7 @@ type = "unit"
 type_secondary = [
     "human",
 ]
+cost = 3
 
 [[cards]]
 image = "07.jpg"
@@ -55,6 +61,7 @@ type = "unit"
 type_secondary = [
     "human",
 ]
+cost = 2
 
 [[cards]]
 image = "08.jpg"
@@ -63,11 +70,13 @@ type = "colony"
 type_secondary = [
     "facility",
 ]
+cost = 4
 
 [[cards]]
 image = "09.jpg"
 name = "Glacial Melt"
 type = "reflex"
+cost = 0
 
 [[cards]]
 image = "10.jpg"
@@ -76,6 +85,7 @@ type = "unit"
 type_secondary = [
     "human",
 ]
+cost = 4
 
 [[cards]]
 image = "11.jpg"
@@ -84,6 +94,7 @@ type = "augment"
 type_secondary = [
     "unit",
 ]
+cost = 2
 
 [[cards]]
 image = "12.jpg"
@@ -92,6 +103,7 @@ type = "colony"
 type_secondary = [
     "facility",
 ]
+cost = 3
 
 [[cards]]
 image = "13.jpg"
@@ -100,6 +112,7 @@ type = "colony"
 type_secondary = [
     "facility",
 ]
+cost = 3
 
 [[cards]]
 image = "14.jpg"
@@ -108,6 +121,7 @@ type = "unit"
 type_secondary = [
     "mech",
 ]
+cost = 3
 
 [[cards]]
 image = "15.jpg"
@@ -117,11 +131,13 @@ type_secondary = [
     "human",
     "xeno",
 ]
+cost = 3
 
 [[cards]]
 image = "16.jpg"
 name = "Migrant Labor"
 type = "reflex"
+cost = 0
 
 [[cards]]
 image = "17.jpg"
@@ -130,6 +146,7 @@ type = "augment"
 type_secondary = [
     "unit",
 ]
+cost = 3
 
 [[cards]]
 image = "18.jpg"
@@ -138,6 +155,7 @@ type = "unit"
 type_secondary = [
     "xeno",
 ]
+cost = 3
 
 [[cards]]
 image = "19.jpg"
@@ -146,6 +164,7 @@ type = "augment"
 type_secondary = [
     "facility",
 ]
+cost = 3
 
 [[cards]]
 image = "20.jpg"
@@ -154,16 +173,19 @@ type = "colony"
 type_secondary = [
     "facility",
 ]
+cost = 3
 
 [[cards]]
 image = "21.jpg"
 name = "Plutocracy"
 type = "reflex"
+cost = 1
 
 [[cards]]
 image = "22.jpg"
 name = "Prodigal Sons"
 type = "reflex"
+cost = 4
 
 [[cards]]
 image = "23.jpg"
@@ -172,11 +194,13 @@ type = "unit"
 type_secondary = [
     "antigrav",
 ]
+cost = 5
 
 [[cards]]
 image = "24.jpg"
 name = "Relocation"
 type = "reflex"
+cost = 2
 
 [[cards]]
 image = "25.jpg"
@@ -185,11 +209,13 @@ type = "colony"
 type_secondary = [
     "facility",
 ]
+cost = 4
 
 [[cards]]
 image = "26.jpg"
 name = "Scrap Hunt"
 type = "reflex"
+cost = 1
 
 [[cards]]
 image = "27.jpg"
@@ -198,6 +224,7 @@ type = "unit"
 type_secondary = [
     "human",
 ]
+cost = 3
 
 [[cards]]
 image = "28.jpg"
@@ -206,6 +233,7 @@ type = "augment"
 type_secondary = [
     "unit",
 ]
+cost = 2
 
 [[cards]]
 image = "29.jpg"
@@ -214,6 +242,7 @@ type = "colony"
 type_secondary = [
     "facility",
 ]
+cost = 4
 
 [[cards]]
 image = "30.jpg"
@@ -222,3 +251,4 @@ type = "unit"
 type_secondary = [
     "human",
 ]
+cost = 0

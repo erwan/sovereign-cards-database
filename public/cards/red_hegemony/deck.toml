@@ -4,6 +4,7 @@ description = "Scarlet-flag pirates and slavers on cloudbases over the acid wast
 image = "01.jpg"
 name = "Ambush"
 type = "reflex"
+cost = 2
 
 [[cards]]
 image = "02.jpg"
@@ -12,16 +13,19 @@ type = "colony"
 type_secondary = [
     "facility",
 ]
+cost = 3
 
 [[cards]]
 image = "03.jpg"
 name = "Betrayal"
 type = "reflex"
+cost = 3
 
 [[cards]]
 image = "04.jpg"
 name = "Bombardment"
 type = "reflex"
+cost = 0
 
 [[cards]]
 image = "05.jpg"
@@ -30,6 +34,7 @@ type = "unit"
 type_secondary = [
     "human",
 ]
+cost = 4
 
 [[cards]]
 image = "06.jpg"
@@ -38,11 +43,13 @@ type = "unit"
 type_secondary = [
     "synth",
 ]
+cost = 4
 
 [[cards]]
 image = "07.jpg"
 name = "Civilian Casualties"
 type = "reflex"
+cost = 1
 
 [[cards]]
 image = "08.jpg"
@@ -51,6 +58,7 @@ type = "augment"
 type_secondary = [
     "unit",
 ]
+cost = 3
 
 [[cards]]
 image = "09.jpg"
@@ -59,6 +67,7 @@ type = "colony"
 type_secondary = [
     "facility",
 ]
+cost = 4
 
 [[cards]]
 image = "10.jpg"
@@ -67,6 +76,7 @@ type = "unit"
 type_secondary = [
     "antigrav",
 ]
+cost = 4
 
 [[cards]]
 image = "11.jpg"
@@ -75,6 +85,7 @@ type = "unit"
 type_secondary = [
     "human",
 ]
+cost = 3
 
 [[cards]]
 image = "12.jpg"
@@ -83,6 +94,7 @@ type = "unit"
 type_secondary = [
     "human",
 ]
+cost = 2
 
 [[cards]]
 image = "13.jpg"
@@ -91,6 +103,7 @@ type = "augment"
 type_secondary = [
     "unit",
 ]
+cost = 2
 
 [[cards]]
 image = "14.jpg"
@@ -99,6 +112,7 @@ type = "augment"
 type_secondary = [
     "unit",
 ]
+cost = 2
 
 [[cards]]
 image = "15.jpg"
@@ -107,6 +121,7 @@ type = "colony"
 type_secondary = [
     "facility",
 ]
+cost = 4
 
 [[cards]]
 image = "16.jpg"
@@ -115,6 +130,7 @@ type = "colony"
 type_secondary = [
     "facility",
 ]
+cost = 3
 
 [[cards]]
 image = "17.jpg"
@@ -123,6 +139,7 @@ type = "unit"
 type_secondary = [
     "human",
 ]
+cost = 5
 
 [[cards]]
 image = "18.jpg"
@@ -131,6 +148,7 @@ type = "unit"
 type_secondary = [
     "human",
 ]
+cost = 4
 
 [[cards]]
 image = "19.jpg"
@@ -139,6 +157,7 @@ type = "unit"
 type_secondary = [
     "mech",
 ]
+cost = 4
 
 [[cards]]
 image = "20.jpg"
@@ -147,6 +166,7 @@ type = "unit"
 type_secondary = [
     "synth",
 ]
+cost = 6
 
 [[cards]]
 image = "21.jpg"
@@ -155,11 +175,13 @@ type = "colony"
 type_secondary = [
     "facility",
 ]
+cost = 3
 
 [[cards]]
 image = "22.jpg"
 name = "Privateer Contract"
 type = "reflex"
+cost = 0
 
 [[cards]]
 image = "23.jpg"
@@ -168,6 +190,7 @@ type = "unit"
 type_secondary = [
     "antigrav",
 ]
+cost = 2
 
 [[cards]]
 image = "24.jpg"
@@ -176,6 +199,7 @@ type = "augment"
 type_secondary = [
     "unit",
 ]
+cost = 2
 
 [[cards]]
 image = "25.jpg"
@@ -184,6 +208,7 @@ type = "unit"
 type_secondary = [
     "human",
 ]
+cost = 2
 
 [[cards]]
 image = "26.jpg"
@@ -192,11 +217,13 @@ type = "unit"
 type_secondary = [
     "antigrav",
 ]
+cost = 3
 
 [[cards]]
 image = "27.jpg"
 name = "Talent Hack"
 type = "reflex"
+cost = 2
 
 [[cards]]
 image = "28.jpg"
@@ -205,6 +232,7 @@ type = "augment"
 type_secondary = [
     "unit",
 ]
+cost = 2
 
 [[cards]]
 image = "29.jpg"
@@ -213,6 +241,7 @@ type = "unit"
 type_secondary = [
     "synth",
 ]
+cost = 6
 
 [[cards]]
 image = "30.jpg"
@@ -221,3 +250,4 @@ type = "colony"
 type_secondary = [
     "facility",
 ]
+cost = 8

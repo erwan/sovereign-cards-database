@@ -80,7 +80,7 @@ const coverSrc = `${assetPrefix}cover.png`;
                   <button
                     type="button"
                     class="card-item"
-                    aria-label={`View full card: ${card.name}`}
+                    aria-label={`View full card: ${card.name}, cost ${card.cost}`}
                     data-full-src={`${assetPrefix}${card.image}`}
                     data-card-name={card.name}
                   >
@@ -94,6 +94,7 @@ const coverSrc = `${assetPrefix}cover.png`;
                     />
                     <div class="card-meta">
                       <span class="card-name">{card.name}</span>
+                      <span class="card-cost" aria-hidden="true">{card.cost}</span>
                       <span class="card-type">{cardBlockTypeLabel(card)}</span>
                     </div>
                   </button>

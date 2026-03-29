@@ -7,6 +7,7 @@ type = "colony"
 type_secondary = [
     "facility",
 ]
+cost = 4
 
 [[cards]]
 image = "02.jpg"
@@ -15,11 +16,13 @@ type = "unit"
 type_secondary = [
     "human",
 ]
+cost = 3
 
 [[cards]]
 image = "03.jpg"
 name = "Ascetic Virtues"
 type = "reflex"
+cost = 1
 
 [[cards]]
 image = "04.jpg"
@@ -28,6 +31,7 @@ type = "augment"
 type_secondary = [
     "unit",
 ]
+cost = 4
 
 [[cards]]
 image = "05.jpg"
@@ -36,11 +40,13 @@ type = "unit"
 type_secondary = [
     "human",
 ]
+cost = 3
 
 [[cards]]
 image = "06.jpg"
 name = "Desertion"
 type = "reflex"
+cost = 2
 
 [[cards]]
 image = "07.jpg"
@@ -49,6 +55,7 @@ type = "unit"
 type_secondary = [
     "human",
 ]
+cost = 4
 
 [[cards]]
 image = "08.jpg"
@@ -57,6 +64,7 @@ type = "augment"
 type_secondary = [
     "unit",
 ]
+cost = 2
 
 [[cards]]
 image = "09.jpg"
@@ -65,11 +73,13 @@ type = "colony"
 type_secondary = [
     "facility",
 ]
+cost = 3
 
 [[cards]]
 image = "10.jpg"
 name = "Holy Day"
 type = "reflex"
+cost = 3
 
 [[cards]]
 image = "11.jpg"
@@ -78,6 +88,7 @@ type = "colony"
 type_secondary = [
     "facility",
 ]
+cost = 3
 
 [[cards]]
 image = "12.jpg"
@@ -86,6 +97,7 @@ type = "augment"
 type_secondary = [
     "unit",
 ]
+cost = 2
 
 [[cards]]
 image = "13.jpg"
@@ -94,6 +106,7 @@ type = "unit"
 type_secondary = [
     "human",
 ]
+cost = 3
 
 [[cards]]
 image = "14.jpg"
@@ -102,6 +115,7 @@ type = "unit"
 type_secondary = [
     "human",
 ]
+cost = 3
 
 [[cards]]
 image = "15.jpg"
@@ -110,6 +124,7 @@ type = "colony"
 type_secondary = [
     "facility",
 ]
+cost = 3
 
 [[cards]]
 image = "16.jpg"
@@ -118,6 +133,7 @@ type = "unit"
 type_secondary = [
     "human",
 ]
+cost = 4
 
 [[cards]]
 image = "17.jpg"
@@ -126,11 +142,13 @@ type = "unit"
 type_secondary = [
     "antigrav",
 ]
+cost = 0
 
 [[cards]]
 image = "18.jpg"
 name = "Miraculous Escape"
 type = "reflex"
+cost = 1
 
 [[cards]]
 image = "19.jpg"
@@ -139,6 +157,7 @@ type = "colony"
 type_secondary = [
     "facility",
 ]
+cost = 4
 
 [[cards]]
 image = "20.jpg"
@@ -147,6 +166,7 @@ type = "augment"
 type_secondary = [
     "unit",
 ]
+cost = 3
 
 [[cards]]
 image = "21.jpg"
@@ -155,6 +175,7 @@ type = "unit"
 type_secondary = [
     "human",
 ]
+cost = 2
 
 [[cards]]
 image = "22.jpg"
@@ -163,11 +184,13 @@ type = "unit"
 type_secondary = [
     "human",
 ]
+cost = 6
 
 [[cards]]
 image = "23.jpg"
 name = "Symmetric Supplication"
 type = "reflex"
+cost = 2
 
 [[cards]]
 image = "24.jpg"
@@ -176,6 +199,7 @@ type = "unit"
 type_secondary = [
     "human",
 ]
+cost = 2
 
 [[cards]]
 image = "25.jpg"
@@ -184,6 +208,7 @@ type = "colony"
 type_secondary = [
     "facility",
 ]
+cost = 3
 
 [[cards]]
 image = "26.jpg"
@@ -192,6 +217,7 @@ type = "augment"
 type_secondary = [
     "facility",
 ]
+cost = 6
 
 [[cards]]
 image = "27.jpg"
@@ -200,6 +226,7 @@ type = "unit"
 type_secondary = [
     "human",
 ]
+cost = 3
 
 [[cards]]
 image = "28.jpg"
@@ -208,6 +235,7 @@ type = "unit"
 type_secondary = [
     "human",
 ]
+cost = 3
 
 [[cards]]
 image = "29.jpg"
@@ -216,8 +244,10 @@ type = "unit"
 type_secondary = [
     "human",
 ]
+cost = 3
 
 [[cards]]
 image = "30.jpg"
 name = "Zealotry"
 type = "reflex"
+cost = 2

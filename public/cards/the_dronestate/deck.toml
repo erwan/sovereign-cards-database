@@ -7,6 +7,7 @@ type = "colony"
 type_secondary = [
     "facility",
 ]
+cost = 4
 
 [[cards]]
 image = "02.jpg"
@@ -15,6 +16,7 @@ type = "colony"
 type_secondary = [
     "facility",
 ]
+cost = 4
 
 [[cards]]
 image = "03.jpg"
@@ -23,6 +25,7 @@ type = "unit"
 type_secondary = [
     "antigrav",
 ]
+cost = 4
 
 [[cards]]
 image = "04.jpg"
@@ -31,16 +34,19 @@ type = "colony"
 type_secondary = [
     "facility",
 ]
+cost = 3
 
 [[cards]]
 image = "05.jpg"
 name = "Defection"
 type = "reflex"
+cost = 3
 
 [[cards]]
 image = "06.jpg"
 name = "Desperate Sacrifice"
 type = "reflex"
+cost = 1
 
 [[cards]]
 image = "07.jpg"
@@ -49,6 +55,7 @@ type = "augment"
 type_secondary = [
     "unit",
 ]
+cost = 2
 
 [[cards]]
 image = "08.jpg"
@@ -57,6 +64,7 @@ type = "augment"
 type_secondary = [
     "unit",
 ]
+cost = 0
 
 [[cards]]
 image = "09.jpg"
@@ -65,11 +73,13 @@ type = "unit"
 type_secondary = [
     "human",
 ]
+cost = 3
 
 [[cards]]
 image = "10.jpg"
 name = "Drone Riots"
 type = "reflex"
+cost = 2
 
 [[cards]]
 image = "11.jpg"
@@ -78,6 +88,7 @@ type = "unit"
 type_secondary = [
     "human",
 ]
+cost = 3
 
 [[cards]]
 image = "12.jpg"
@@ -86,6 +97,7 @@ type = "unit"
 type_secondary = [
     "human",
 ]
+cost = 3
 
 [[cards]]
 image = "13.jpg"
@@ -94,11 +106,13 @@ type = "unit"
 type_secondary = [
     "human",
 ]
+cost = 2
 
 [[cards]]
 image = "14.jpg"
 name = "Infoleak"
 type = "reflex"
+cost = 2
 
 [[cards]]
 image = "15.jpg"
@@ -107,6 +121,7 @@ type = "colony"
 type_secondary = [
     "facility",
 ]
+cost = 4
 
 [[cards]]
 image = "16.jpg"
@@ -115,6 +130,7 @@ type = "augment"
 type_secondary = [
     "unit",
 ]
+cost = 0
 
 [[cards]]
 image = "17.jpg"
@@ -123,6 +139,7 @@ type = "augment"
 type_secondary = [
     "unit",
 ]
+cost = 3
 
 [[cards]]
 image = "18.jpg"
@@ -131,6 +148,7 @@ type = "unit"
 type_secondary = [
     "human",
 ]
+cost = 4
 
 [[cards]]
 image = "19.jpg"
@@ -139,16 +157,19 @@ type = "unit"
 type_secondary = [
     "human",
 ]
+cost = 4
 
 [[cards]]
 image = "20.jpg"
 name = "Refugee Ethics"
 type = "reflex"
+cost = 3
 
 [[cards]]
 image = "21.jpg"
 name = "Sabotage"
 type = "reflex"
+cost = 3
 
 [[cards]]
 image = "22.jpg"
@@ -157,6 +178,7 @@ type = "colony"
 type_secondary = [
     "facility",
 ]
+cost = 3
 
 [[cards]]
 image = "23.jpg"
@@ -165,6 +187,7 @@ type = "unit"
 type_secondary = [
     "mech",
 ]
+cost = 6
 
 [[cards]]
 image = "24.jpg"
@@ -173,6 +196,7 @@ type = "unit"
 type_secondary = [
     "antigrav",
 ]
+cost = 6
 
 [[cards]]
 image = "25.jpg"
@@ -181,6 +205,7 @@ type = "unit"
 type_secondary = [
     "human",
 ]
+cost = 0
 
 [[cards]]
 image = "26.jpg"
@@ -189,6 +214,7 @@ type = "colony"
 type_secondary = [
     "facility",
 ]
+cost = 4
 
 [[cards]]
 image = "27.jpg"
@@ -197,6 +223,7 @@ type = "unit"
 type_secondary = [
     "human",
 ]
+cost = 2
 
 [[cards]]
 image = "28.jpg"
@@ -205,6 +232,7 @@ type = "unit"
 type_secondary = [
     "mech",
 ]
+cost = 0
 
 [[cards]]
 image = "29.jpg"
@@ -213,6 +241,7 @@ type = "unit"
 type_secondary = [
     "human",
 ]
+cost = 3
 
 [[cards]]
 image = "30.jpg"
@@ -221,3 +250,4 @@ type = "augment"
 type_secondary = [
     "facility",
 ]
+cost = 2

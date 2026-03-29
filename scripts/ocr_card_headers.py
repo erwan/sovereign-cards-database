@@ -4,6 +4,9 @@ OCR card headers under public/cards and update ``deck.toml``.
 
 Strips:
 - Name: top 60px (Title Case per word)
+- Cost: 40×40 square over the bottom-left cost gem, ``COST_INSET_X`` px from the image left
+  edge and ``COST_INSET_BOTTOM`` px up from the bottom (single digit; Tesseract with invert
+  fallback).
 - Type: 40px band starting at y=270 from the top. Primary keyword (``unit``, etc.) is
   parsed from the segment before an em/en dash or ``--`` / `` - `` (same as before).
   For secondaries, the whole type line is tokenized into alphanumeric words; the first
@@ -19,9 +22,9 @@ Strips:
   that value is kept. If secondary OCR is empty but ``type_secondary`` is already set,
   it is kept; otherwise the key is omitted.
 
-By default, OCR updates **both** ``name`` and ``type``. Pass ``--name`` and/or
-``--type`` to update only those fields; other keys on each card (including any
-the script does not know about) are left unchanged. Top-level ``description``
+By default, OCR updates ``name``, ``type``, and ``cost``. Pass ``--name``,
+``--type``, and/or ``--cost`` to update only those fields; other keys on each card
+(including any the script does not know about) are left unchanged. Top-level ``description``
 is preserved when the file is rewritten.
 
 Requires Tesseract on PATH (e.g. ``brew install tesseract``).
@@ -43,6 +46,9 @@ Examples:
   # Explicitly both fields (same as default)
   python scripts/ocr_card_headers.py --name --type
 
+  # Cost digit only (bottom-left 40×40 region)
+  python scripts/ocr_card_headers.py --cost
+
   # Re-coerce existing type_secondary strings/lists to canonical arrays (no image OCR)
   python scripts/ocr_card_headers.py --normalize-secondary
 """
@@ -63,6 +69,9 @@ CARDS_ROOT = Path(__file__).resolve().parent.parent / "public" / "cards"
 TOP_PX = 60
 TYPE_STRIP_Y = 270
 TYPE_STRIP_H = 40
+COST_SQUARE = 40
+COST_INSET_X = 20
+COST_INSET_BOTTOM = 12
 IMAGE_SUFFIXES = {".jpg", ".jpeg", ".png", ".webp"}
 
 VALID_TYPES = frozenset({"unknown", "unit", "reflex", "augment", "colony"})
@@ -157,10 +166,59 @@ def crop_horizontal_strip(path: Path, y0: int, height: int) -> Image.Image | Non
     return _prepare_strip_for_ocr(region)
 
 
+def crop_cost_square(path: Path) -> Image.Image | None:
+    im = Image.open(path).convert("RGB")
+    w, h = im.size
+    left = COST_INSET_X
+    right = COST_INSET_X + COST_SQUARE
+    upper = h - COST_INSET_BOTTOM - COST_SQUARE
+    lower = h - COST_INSET_BOTTOM
+    if left < 0 or upper < 0 or right > w or lower > h or right <= left or lower <= upper:
+        return None
+    region = im.crop((left, upper, right, lower))
+    return _prepare_strip_for_ocr(region)
+
+
 def ocr_strip(image: Image.Image) -> str:
     config = "--psm 6"
     text = pytesseract.image_to_string(image, config=config)
     return text or ""
+
+
+def ocr_cost_digit(image: Image.Image) -> str:
+    cfg10 = "--psm 10 -c tessedit_char_whitelist=0123456789"
+    cfg8 = "--psm 8 -c tessedit_char_whitelist=0123456789"
+
+    def run(img: Image.Image) -> str:
+        for cfg in (cfg10, cfg8):
+            t = pytesseract.image_to_string(img, config=cfg) or ""
+            if parse_cost_digit(t) is not None:
+                return t
+        return ""
+
+    t = run(image)
+    if t:
+        return t
+    if image.mode == "L":
+        t = run(ImageOps.invert(image))
+        if t:
+            return t
+    return ""
+
+
+def parse_cost_digit(raw: str) -> int | None:
+    m = re.search(r"[0-9]", raw)
+    return int(m.group(0)) if m else None
+
+
+def coerce_cost_value(raw: object) -> int | None:
+    if isinstance(raw, bool):
+        return None
+    if isinstance(raw, int) and 0 <= raw <= 9:
+        return raw
+    if isinstance(raw, float) and raw == int(raw):
+        return coerce_cost_value(int(raw))
+    return None
 
 
 def trim_short_caps_edges(name: str) -> str:
@@ -292,7 +350,7 @@ def coerce_type_secondary(raw: object, primary: object) -> list[str]:
 
 
 def _ordered_card_for_toml(entry: dict) -> dict:
-    priority = ("image", "name", "type", "type_secondary")
+    priority = ("image", "name", "type", "type_secondary", "cost")
     out: dict = {}
     for k in priority:
         if k in entry:
@@ -334,6 +392,7 @@ def process_deck(
     verbose: bool,
     want_name: bool,
     want_type: bool,
+    want_cost: bool,
 ) -> int:
     loaded = load_deck(deck_dir)
     if loaded is None:
@@ -365,8 +424,10 @@ def process_deck(
 
         raw_top = ""
         raw_type = ""
+        raw_cost = ""
         name = entry.get("name")
         typ = entry.get("type")
+        cost = coerce_cost_value(entry.get("cost"))
         old_list = coerce_type_secondary(entry.get("type_secondary"), entry.get("type"))
         type_sec_list = list(old_list)
 
@@ -395,28 +456,47 @@ def process_deck(
                 else:
                     type_sec_list = parsed
 
+        if want_cost:
+            cost_img = crop_cost_square(img_path)
+            if cost_img is None:
+                print(f"warn: empty cost crop {img_path}", file=sys.stderr)
+                if cost is None:
+                    cost = 0
+            else:
+                raw_cost = ocr_cost_digit(cost_img)
+                parsed_cost = parse_cost_digit(raw_cost)
+                if parsed_cost is not None:
+                    cost = parsed_cost
+                elif cost is None:
+                    cost = 0
+                    print(f"warn: no cost digit OCR {img_path} raw={raw_cost!r}", file=sys.stderr)
+
         final_type = typ if want_type else entry.get("type")
         if is_reflex_primary(final_type):
             type_sec_list = []
 
         old_name = entry.get("name")
         old_type = entry.get("type")
+        old_cost = coerce_cost_value(entry.get("cost"))
         new_sec_list = type_sec_list
+        new_cost = cost if want_cost else old_cost
         changed = (want_name and old_name != name) or (
             want_type and (old_type != typ or old_list != new_sec_list)
-        ) or (is_reflex_primary(final_type) and "type_secondary" in entry)
+        ) or (want_cost and old_cost != new_cost) or (is_reflex_primary(final_type) and "type_secondary" in entry)
         if changed:
             updated += 1
             if verbose:
                 print(
                     f"{deck_dir.name}/{img_name}: top={raw_top!r} type_strip={raw_type!r} "
-                    f"-> name={name!r} type={typ} type_secondary={new_sec_list!r}"
+                    f"cost_ocr={raw_cost!r} -> name={name!r} type={typ} type_secondary={new_sec_list!r} cost={new_cost!r}"
                 )
 
         if want_name:
             entry["name"] = name
         if want_type:
             entry["type"] = typ
+        if want_cost and new_cost is not None:
+            entry["cost"] = new_cost
 
         resolved_type = typ if want_type else entry.get("type")
         if is_reflex_primary(resolved_type):
@@ -495,19 +575,26 @@ def main() -> int:
         help="OCR type strip and set only the type field",
     )
     parser.add_argument(
+        "--cost",
+        action="store_true",
+        dest="set_cost",
+        help="OCR cost digit (40×40 over bottom-left cost gem) and set only the cost field",
+    )
+    parser.add_argument(
         "--normalize-secondary",
         action="store_true",
         help="Coerce type_secondary strings/lists to canonical lists (no OCR)",
     )
     args = parser.parse_args()
 
-    if args.normalize_secondary and (args.set_name or args.set_type):
-        print("Cannot combine --normalize-secondary with --name/--type", file=sys.stderr)
+    if args.normalize_secondary and (args.set_name or args.set_type or args.set_cost):
+        print("Cannot combine --normalize-secondary with --name/--type/--cost", file=sys.stderr)
         return 2
 
-    explicit_fields = args.set_name or args.set_type
+    explicit_fields = args.set_name or args.set_type or args.set_cost
     want_name = args.set_name if explicit_fields else True
     want_type = args.set_type if explicit_fields else True
+    want_cost = args.set_cost if explicit_fields else True
 
     if not CARDS_ROOT.is_dir():
         print(f"Missing {CARDS_ROOT}", file=sys.stderr)
@@ -539,6 +626,7 @@ def main() -> int:
             verbose=args.verbose,
             want_name=want_name,
             want_type=want_type,
+            want_cost=want_cost,
         )
 
     if args.dry_run:

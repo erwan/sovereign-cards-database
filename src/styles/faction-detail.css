@@ -129,6 +129,14 @@
   color: var(--text-primary);
 }
 
+.faction-detail .card-cost {
+  font-size: 0.8125rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: var(--accent);
+  width: fit-content;
+}
+
 .faction-detail .card-type {
   font-size: 0.875rem;
   color: var(--text-muted);
