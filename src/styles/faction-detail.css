@@ -195,14 +195,3 @@
   margin: 0 auto;
   border-radius: 0.25rem;
 }
-
-.card-lightbox-caption {
-  margin: 0.75rem 0 0;
-  text-align: center;
-  font-weight: 500;
-  color: var(--text-primary);
-}
-
-.card-lightbox-caption:empty {
-  display: none;
-}

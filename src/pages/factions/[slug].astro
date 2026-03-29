@@ -109,7 +109,7 @@ const coverSrc = `${assetPrefix}cover.png`;
       class="card-lightbox"
       id="card-lightbox"
       aria-modal="true"
-      aria-labelledby="card-lightbox-caption"
+      aria-labelledby="card-lightbox-img"
     >
       <div class="card-lightbox-panel">
         <form method="dialog" class="card-lightbox-close-wrap">
@@ -118,7 +118,6 @@ const coverSrc = `${assetPrefix}cover.png`;
           </button>
         </form>
         <img class="card-lightbox-img" id="card-lightbox-img" alt="" />
-        <p class="card-lightbox-caption" id="card-lightbox-caption"></p>
       </div>
     </dialog>
   </div>
@@ -127,8 +126,7 @@ const coverSrc = `${assetPrefix}cover.png`;
     (function () {
       var dialog = document.getElementById('card-lightbox');
       var img = document.getElementById('card-lightbox-img');
-      var caption = document.getElementById('card-lightbox-caption');
-      if (!dialog || !img || !caption) return;
+      if (!dialog || !img) return;
 
       document.querySelectorAll('.card-item[data-full-src]').forEach(function (btn) {
         btn.addEventListener('click', function () {
@@ -137,7 +135,6 @@ const coverSrc = `${assetPrefix}cover.png`;
           if (!src) return;
           img.src = src;
           img.alt = name;
-          caption.textContent = name;
           dialog.showModal();
         });
       });
