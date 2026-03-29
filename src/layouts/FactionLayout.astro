@@ -1,5 +1,6 @@
 ---
 import '../styles/faction-layout.css';
+import SiteGitHubLink from '../components/SiteGitHubLink.astro';
 import { getBaseUrl } from '../lib/baseUrl';
 import Layout from './Layout.astro';
 
@@ -13,9 +14,12 @@ const home = getBaseUrl();
 
 <Layout title={title}>
   <main class="faction-main">
-    <nav class="faction-nav">
-      <a href={home}>← Home</a>
-    </nav>
+    <div class="faction-header">
+      <nav class="faction-nav">
+        <a href={home}>← Home</a>
+      </nav>
+      <SiteGitHubLink />
+    </div>
     <slot />
   </main>
 </Layout>

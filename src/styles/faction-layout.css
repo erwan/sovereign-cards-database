@@ -4,8 +4,20 @@
   padding: 1rem 1.25rem 2rem;
 }
 
-.faction-nav {
+.faction-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
   margin-bottom: 1.25rem;
+}
+
+.faction-header .site-github {
+  flex-shrink: 0;
+}
+
+.faction-nav {
+  margin-bottom: 0;
 }
 
 .faction-nav a {
