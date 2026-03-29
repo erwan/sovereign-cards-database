@@ -25,6 +25,30 @@ export const DISPLAY_TYPE_ORDER: readonly CardType[] = [
   'unknown',
 ] as const;
 
+const TYPE_SECTION_HEADING: Record<CardType, string> = {
+  unit: 'Units',
+  colony: 'Colonies',
+  augment: 'Augments',
+  reflex: 'Reflexes',
+  unknown: 'Unknown cards',
+};
+
+const TYPE_STAT_NOUN: Record<CardType, string> = {
+  unit: 'units',
+  colony: 'colonies',
+  augment: 'augments',
+  reflex: 'reflexes',
+  unknown: 'unknown cards',
+};
+
+export function typeSectionHeading(type: CardType): string {
+  return TYPE_SECTION_HEADING[type];
+}
+
+export function typeStatNoun(type: CardType): string {
+  return TYPE_STAT_NOUN[type];
+}
+
 const CARD_TYPES = new Set<string>(['unknown', 'unit', 'reflex', 'augment', 'colony']);
 
 export function folderToDisplayName(folder: string): string {

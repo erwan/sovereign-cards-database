@@ -37,6 +37,17 @@
   white-space: pre-line;
 }
 
+.deck-type-stats {
+  margin: 0.75rem 0 0;
+  max-width: 42rem;
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+}
+
+.deck-type-stats-sep {
+  user-select: none;
+}
+
 .card-type-section {
   margin-bottom: 2rem;
 }

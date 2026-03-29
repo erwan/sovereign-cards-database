@@ -2,7 +2,13 @@
 import '../../styles/faction-detail.css';
 import FactionLayout from '../../layouts/FactionLayout.astro';
 import { getBaseUrl } from '../../lib/baseUrl';
-import { DISPLAY_TYPE_ORDER, loadDecks, type CardType, type Deck } from '../../lib/decks';
+import {
+  DISPLAY_TYPE_ORDER,
+  loadDecks,
+  typeStatNoun,
+  typeSectionHeading,
+  type Deck,
+} from '../../lib/decks';
 
 export function getStaticPaths() {
   return loadDecks().map((deck) => ({
@@ -15,11 +21,11 @@ interface Props {
   deck: Deck;
 }
 
-function typeSectionLabel(t: CardType): string {
-  return t.charAt(0).toUpperCase() + t.slice(1);
-}
-
 const { deck } = Astro.props;
+const typeStats = DISPLAY_TYPE_ORDER.map((type) => ({
+  type,
+  count: deck.cards.filter((c) => c.type === type).length,
+})).filter((row) => row.count > 0);
 const base = getBaseUrl();
 const assetPrefix = `${base}cards/${deck.slug}/`;
 const coverSrc = `${assetPrefix}cover.png`;
@@ -43,6 +49,18 @@ const coverSrc = `${assetPrefix}cover.png`;
             <p class="deck-description">{deck.description}</p>
           )
         }
+        {
+          typeStats.length > 0 && (
+            <p class="deck-type-stats">
+              {typeStats.map((row, i) => (
+                <>
+                  {i > 0 && <span class="deck-type-stats-sep" aria-hidden="true"> | </span>}
+                  <a href={`#type-${row.type}`}>{`${row.count} ${typeStatNoun(row.type)}`}</a>
+                </>
+              ))}
+            </p>
+          )
+        }
       </div>
     </header>
 
@@ -53,7 +71,7 @@ const coverSrc = `${assetPrefix}cover.png`;
         return (
           <section class="card-type-section" aria-labelledby={`type-${type}`}>
             <h2 class="card-type-heading" id={`type-${type}`}>
-              {typeSectionLabel(type)}
+              {typeSectionHeading(type)}
             </h2>
             <ul class="card-list">
               {sectionCards.map((card) => (
