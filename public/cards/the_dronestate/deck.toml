@@ -64,7 +64,7 @@ type = "augment"
 type_secondary = [
     "unit",
 ]
-cost = 0
+cost = 2
 
 [[cards]]
 image = "09.jpg"
@@ -130,7 +130,7 @@ type = "augment"
 type_secondary = [
     "unit",
 ]
-cost = 0
+cost = 2
 
 [[cards]]
 image = "17.jpg"
@@ -205,7 +205,7 @@ type = "unit"
 type_secondary = [
     "human",
 ]
-cost = 0
+cost = 2
 
 [[cards]]
 image = "26.jpg"
@@ -232,7 +232,7 @@ type = "unit"
 type_secondary = [
     "mech",
 ]
-cost = 0
+cost = 5
 
 [[cards]]
 image = "29.jpg"

@@ -13,7 +13,7 @@ cost = 5
 image = "02.jpg"
 name = "Graft Necrosis"
 type = "reflex"
-cost = 0
+cost = 1
 
 [[cards]]
 image = "03.jpg"
@@ -61,7 +61,7 @@ type = "unit"
 type_secondary = [
     "human",
 ]
-cost = 0
+cost = 2
 
 [[cards]]
 image = "09.jpg"
@@ -112,7 +112,7 @@ cost = 2
 image = "14.jpg"
 name = "Mandatory Stims"
 type = "reflex"
-cost = 0
+cost = 2
 
 [[cards]]
 image = "15.jpg"
@@ -223,7 +223,7 @@ type = "augment"
 type_secondary = [
     "facility",
 ]
-cost = 0
+cost = 2
 
 [[cards]]
 image = "28.jpg"

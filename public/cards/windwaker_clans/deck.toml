@@ -46,7 +46,7 @@ type = "unit"
 type_secondary = [
     "xeno",
 ]
-cost = 3
+cost = 5
 
 [[cards]]
 image = "07.jpg"
@@ -70,7 +70,7 @@ cost = 3
 image = "09.jpg"
 name = "Bury"
 type = "reflex"
-cost = 4
+cost = 1
 
 [[cards]]
 image = "10.jpg"
@@ -127,7 +127,7 @@ type = "colony"
 type_secondary = [
     "facility",
 ]
-cost = 0
+cost = 2
 
 [[cards]]
 image = "17.jpg"
@@ -235,13 +235,13 @@ type = "colony"
 type_secondary = [
     "facility",
 ]
-cost = 0
+cost = 3
 
 [[cards]]
 image = "29.jpg"
 name = "Xeno Psychology"
 type = "reflex"
-cost = 0
+cost = 1
 
 [[cards]]
 image = "30.jpg"
