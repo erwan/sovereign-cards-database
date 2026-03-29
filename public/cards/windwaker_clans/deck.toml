@@ -2,7 +2,7 @@ description = "First people out of the wrecked ark; they claim Apsyntion, not Ea
 
 [[cards]]
 image = "01.jpg"
-name = "Led Gees Sme Free Dle Le Tire"
+name = "Anemoi"
 type = "unit"
 type_secondary = [
     "human",
@@ -89,7 +89,7 @@ cost = 1
 
 [[cards]]
 image = "12.jpg"
-name = "Legge"
+name = "Flock Webs"
 type = "augment"
 type_secondary = [
     "unit",

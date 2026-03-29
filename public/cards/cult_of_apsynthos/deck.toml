@@ -245,7 +245,7 @@ cost = 1
 
 [[cards]]
 image = "30.jpg"
-name = "Kenoneural Arcology"
+name = "Xenoneural Arcology"
 type = "colony"
 type_secondary = [
     "facility",
