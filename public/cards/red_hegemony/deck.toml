@@ -8,7 +8,7 @@ cost = 2
 
 [[cards]]
 image = "02.jpg"
-name = "Gre"
+name = "Arena"
 type = "colony"
 type_secondary = [
     "facility",
@@ -25,7 +25,7 @@ cost = 3
 image = "04.jpg"
 name = "Bombardment"
 type = "reflex"
-cost = 0
+cost = 4
 
 [[cards]]
 image = "05.jpg"
@@ -152,7 +152,7 @@ cost = 4
 
 [[cards]]
 image = "19.jpg"
-name = "Leb"
+name = "Hellcat"
 type = "unit"
 type_secondary = [
     "mech",
@@ -181,7 +181,7 @@ cost = 3
 image = "22.jpg"
 name = "Privateer Contract"
 type = "reflex"
-cost = 0
+cost = 2
 
 [[cards]]
 image = "23.jpg"
@@ -190,7 +190,7 @@ type = "unit"
 type_secondary = [
     "antigrav",
 ]
-cost = 2
+cost = 4
 
 [[cards]]
 image = "24.jpg"
@@ -250,4 +250,4 @@ type = "colony"
 type_secondary = [
     "facility",
 ]
-cost = 8
+cost = 3
