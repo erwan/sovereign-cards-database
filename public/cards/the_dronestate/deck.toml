@@ -20,7 +20,7 @@ cost = 4
 
 [[cards]]
 image = "03.jpg"
-name = "Se"
+name = "Calliope"
 type = "unit"
 type_secondary = [
     "antigrav",
