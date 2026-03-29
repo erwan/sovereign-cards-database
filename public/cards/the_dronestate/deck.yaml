@@ -6,7 +6,7 @@ description: >
 cards:
   - image: "01.jpg"
     name: "Apsynthos Cryopod"
-    type: unknown
+    type: colony
   - image: "02.jpg"
     name: "Apsynthos Memorial"
     type: colony

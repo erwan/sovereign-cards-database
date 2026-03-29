@@ -51,7 +51,7 @@ cards:
     type: reflex
   - image: "16.jpg"
     name: "Lilin Hive"
-    type: unknown
+    type: colony
   - image: "17.jpg"
     name: "Lilin Matron"
     type: unit

@@ -9,10 +9,10 @@ cards:
     type: augment
   - image: "02.jpg"
     name: "Aether Tap"
-    type: unknown
+    type: colony
   - image: "03.jpg"
     name: "Airdock"
-    type: unknown
+    type: colony
   - image: "04.jpg"
     name: "Apsynthos Revelations"
     type: reflex

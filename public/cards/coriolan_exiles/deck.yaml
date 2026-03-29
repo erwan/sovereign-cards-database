@@ -39,7 +39,7 @@ cards:
     type: augment
   - image: "12.jpg"
     name: "Highborn Academy"
-    type: unknown
+    type: colony
   - image: "13.jpg"
     name: "Highborn Nursery"
     type: colony
