@@ -1,0 +1,49 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: dark;
+  --bg-base: #0b0d10;
+  --bg-elevated: #12151a;
+  --text-primary: #e8e6e1;
+  --text-muted: #94908a;
+  --border-subtle: rgba(232, 230, 225, 0.1);
+  --border-strong: rgba(232, 230, 225, 0.16);
+  --accent: #c4a86a;
+  --accent-hover: #d4bc84;
+  --shadow-soft: 0 0 0 1px rgba(0, 0, 0, 0.35);
+}
+
+body {
+  margin: 0;
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    sans-serif;
+  line-height: 1.55;
+  color: var(--text-primary);
+  background: var(--bg-base);
+  background-image: radial-gradient(
+    ellipse 120% 80% at 50% -20%,
+    rgba(196, 168, 106, 0.06),
+    transparent 55%
+  );
+  min-height: 100vh;
+}
+
+a {
+  color: var(--accent);
+  text-decoration-color: color-mix(in srgb, var(--accent) 45%, transparent);
+}
+
+a:hover {
+  color: var(--accent-hover);
+  text-decoration-color: var(--accent-hover);
+}

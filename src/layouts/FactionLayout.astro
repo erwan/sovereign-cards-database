@@ -1,4 +1,5 @@
 ---
+import '../styles/faction-layout.css';
 import { getBaseUrl } from '../lib/baseUrl';
 import Layout from './Layout.astro';
 
@@ -18,17 +19,3 @@ const home = getBaseUrl();
     <slot />
   </main>
 </Layout>
-
-<style>
-  .faction-main {
-    max-width: 72rem;
-    margin: 0 auto;
-    padding: 1rem 1.25rem 2rem;
-  }
-  .faction-nav {
-    margin-bottom: 1.25rem;
-  }
-  .faction-nav a {
-    color: inherit;
-  }
-</style>
