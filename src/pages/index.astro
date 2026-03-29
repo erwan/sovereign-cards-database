@@ -22,12 +22,11 @@ const base = getBaseUrl();
               <img
                 class="deck-cover"
                 src={`${base}cards/${deck.slug}/cover.png`}
-                alt=""
+                alt={deck.displayName}
                 width="280"
                 height="392"
                 loading="lazy"
               />
-              <span class="deck-name">{deck.displayName}</span>
             </a>
           </li>
         ))
