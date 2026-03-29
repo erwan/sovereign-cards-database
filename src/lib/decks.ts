@@ -35,7 +35,8 @@ export interface CardEntry {
   image: string;
   name: string;
   type: CardType;
-  cost: number;
+  /** Single display character (e.g. digit or X). */
+  cost: string;
   type_secondary?: CardSecondaryType[];
 }
 
@@ -108,8 +109,15 @@ function assertCard(raw: unknown, slug: string, index: number): CardEntry {
     throw new Error(`Invalid type at ${slug}[${index}]: ${String(o.type)}`);
   }
   const costRaw = o.cost;
-  if (typeof costRaw !== 'number' || !Number.isInteger(costRaw) || costRaw < 0 || costRaw > 9) {
-    throw new Error(`Invalid cost at ${slug}[${index}]: expected integer 0–9, got ${String(costRaw)}`);
+  let cost: string;
+  if (typeof costRaw === 'number' && Number.isInteger(costRaw) && costRaw >= 0 && costRaw <= 9) {
+    cost = String(costRaw);
+  } else if (typeof costRaw === 'string' && [...costRaw].length === 1) {
+    cost = costRaw;
+  } else {
+    throw new Error(
+      `Invalid cost at ${slug}[${index}]: expected integer 0–9 or a single character, got ${String(costRaw)}`,
+    );
   }
   let type_secondary: CardSecondaryType[] | undefined;
   if (o.type_secondary !== undefined && o.type_secondary !== null) {
@@ -130,7 +138,7 @@ function assertCard(raw: unknown, slug: string, index: number): CardEntry {
     image: o.image,
     name: o.name,
     type: o.type as CardType,
-    cost: costRaw,
+    cost,
     ...(type_secondary !== undefined ? { type_secondary } : {}),
   };
 }

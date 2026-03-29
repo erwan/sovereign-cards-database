@@ -133,7 +133,7 @@ cost = 2
 image = "17.jpg"
 name = "Nerve Splice"
 type = "reflex"
-cost = 0
+cost = "X"
 
 [[cards]]
 image = "18.jpg"

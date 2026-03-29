@@ -76,7 +76,7 @@ cost = 4
 image = "09.jpg"
 name = "Glacial Melt"
 type = "reflex"
-cost = 0
+cost = 2
 
 [[cards]]
 image = "10.jpg"
@@ -251,4 +251,4 @@ type = "unit"
 type_secondary = [
     "human",
 ]
-cost = 0
+cost = 3

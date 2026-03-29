@@ -5,8 +5,8 @@ OCR card headers under public/cards and update ``deck.toml``.
 Strips:
 - Name: top 60px (Title Case per word)
 - Cost: 40×40 square over the bottom-left cost gem, ``COST_INSET_X`` px from the image left
-  edge and ``COST_INSET_BOTTOM`` px up from the bottom (single digit; Tesseract with invert
-  fallback).
+  edge and ``COST_INSET_BOTTOM`` px up from the bottom (OCR: digit 0–9 or ``X``; Tesseract
+  with invert fallback).
 - Type: 40px band starting at y=270 from the top. Primary keyword (``unit``, etc.) is
   parsed from the segment before an em/en dash or ``--`` / `` - `` (same as before).
   For secondaries, the whole type line is tokenized into alphanumeric words; the first
@@ -46,7 +46,7 @@ Examples:
   # Explicitly both fields (same as default)
   python scripts/ocr_card_headers.py --name --type
 
-  # Cost digit only (bottom-left 40×40 region)
+  # Cost only (bottom-left 40×40 region; digit or X)
   python scripts/ocr_card_headers.py --cost
 
   # Re-coerce existing type_secondary strings/lists to canonical arrays (no image OCR)
@@ -185,14 +185,17 @@ def ocr_strip(image: Image.Image) -> str:
     return text or ""
 
 
+_COST_OCR_WHITELIST = "0123456789Xx"
+
+
 def ocr_cost_digit(image: Image.Image) -> str:
-    cfg10 = "--psm 10 -c tessedit_char_whitelist=0123456789"
-    cfg8 = "--psm 8 -c tessedit_char_whitelist=0123456789"
+    cfg10 = f"--psm 10 -c tessedit_char_whitelist={_COST_OCR_WHITELIST}"
+    cfg8 = f"--psm 8 -c tessedit_char_whitelist={_COST_OCR_WHITELIST}"
 
     def run(img: Image.Image) -> str:
         for cfg in (cfg10, cfg8):
             t = pytesseract.image_to_string(img, config=cfg) or ""
-            if parse_cost_digit(t) is not None:
+            if parse_cost_from_ocr(t) is not None:
                 return t
         return ""
 
@@ -206,19 +209,43 @@ def ocr_cost_digit(image: Image.Image) -> str:
     return ""
 
 
-def parse_cost_digit(raw: str) -> int | None:
+def parse_cost_from_ocr(raw: str) -> int | str | None:
     m = re.search(r"[0-9]", raw)
-    return int(m.group(0)) if m else None
+    if m:
+        return int(m.group(0))
+    if re.search(r"[Xx]", raw):
+        return "X"
+    return None
 
 
-def coerce_cost_value(raw: object) -> int | None:
+def coerce_cost_value(raw: object) -> int | str | None:
     if isinstance(raw, bool):
         return None
     if isinstance(raw, int) and 0 <= raw <= 9:
         return raw
     if isinstance(raw, float) and raw == int(raw):
         return coerce_cost_value(int(raw))
+    if isinstance(raw, str):
+        s = raw.strip()
+        if len(s) != 1:
+            return None
+        if s.isdigit():
+            d = int(s)
+            return d if 0 <= d <= 9 else None
+        return s
     return None
+
+
+def normalize_cost_compare(v: int | str | None) -> str | None:
+    if v is None:
+        return None
+    if isinstance(v, int):
+        return str(v)
+    return v
+
+
+def costs_represent_same(a: int | str | None, b: int | str | None) -> bool:
+    return normalize_cost_compare(a) == normalize_cost_compare(b)
 
 
 def trim_short_caps_edges(name: str) -> str:
@@ -464,12 +491,12 @@ def process_deck(
                     cost = 0
             else:
                 raw_cost = ocr_cost_digit(cost_img)
-                parsed_cost = parse_cost_digit(raw_cost)
+                parsed_cost = parse_cost_from_ocr(raw_cost)
                 if parsed_cost is not None:
                     cost = parsed_cost
                 elif cost is None:
                     cost = 0
-                    print(f"warn: no cost digit OCR {img_path} raw={raw_cost!r}", file=sys.stderr)
+                    print(f"warn: no cost OCR {img_path} raw={raw_cost!r}", file=sys.stderr)
 
         final_type = typ if want_type else entry.get("type")
         if is_reflex_primary(final_type):
@@ -482,7 +509,9 @@ def process_deck(
         new_cost = cost if want_cost else old_cost
         changed = (want_name and old_name != name) or (
             want_type and (old_type != typ or old_list != new_sec_list)
-        ) or (want_cost and old_cost != new_cost) or (is_reflex_primary(final_type) and "type_secondary" in entry)
+        ) or (want_cost and not costs_represent_same(old_cost, new_cost)) or (
+            is_reflex_primary(final_type) and "type_secondary" in entry
+        )
         if changed:
             updated += 1
             if verbose:
@@ -578,7 +607,7 @@ def main() -> int:
         "--cost",
         action="store_true",
         dest="set_cost",
-        help="OCR cost digit (40×40 over bottom-left cost gem) and set only the cost field",
+        help="OCR cost (40×40 over bottom-left cost gem; digit or X) and set only the cost field",
     )
     parser.add_argument(
         "--normalize-secondary",
