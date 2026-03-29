@@ -92,7 +92,7 @@ cost = 3
 
 [[cards]]
 image = "12.jpg"
-name = "Hymn Of Knitting Ang"
+name = "Hymn Of Knitting"
 type = "augment"
 type_secondary = [
     "unit",
