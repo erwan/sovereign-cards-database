@@ -6,6 +6,7 @@
 
 :root {
   color-scheme: dark;
+  --font-title: "Lato", ui-sans-serif, system-ui, sans-serif;
   --bg-base: #0b0d10;
   --bg-elevated: #12151a;
   --text-primary: #e8e6e1;
@@ -15,6 +16,14 @@
   --accent: #c4a86a;
   --accent-hover: #d4bc84;
   --shadow-soft: 0 0 0 1px rgba(0, 0, 0, 0.35);
+  --title-letter-spacing: 0.08em;
+}
+
+h1,
+h2 {
+  font-family: var(--font-title);
+  font-variant-caps: small-caps;
+  letter-spacing: var(--title-letter-spacing);
 }
 
 body {

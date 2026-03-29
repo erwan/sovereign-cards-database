@@ -166,7 +166,7 @@ function loadDeckFromDir(slug: string, dir: string): Deck {
   if (doc === null || typeof doc !== 'object' || Array.isArray(doc)) {
     throw new Error(`Invalid deck.toml root for ${slug}`);
   }
-  const root = doc as { cards?: unknown; description?: unknown };
+  const root = doc as { cards?: unknown; description?: unknown; name?: unknown };
   const cardsRaw = root.cards;
   if (!Array.isArray(cardsRaw)) {
     throw new Error(`Missing cards array in ${slug}/deck.toml`);
@@ -179,9 +179,19 @@ function loadDeckFromDir(slug: string, dir: string): Deck {
     }
     description = root.description;
   }
+  let displayName = folderToDisplayName(slug);
+  if (root.name !== undefined && root.name !== null) {
+    if (typeof root.name !== 'string') {
+      throw new Error(`Invalid name in ${slug}/deck.toml`);
+    }
+    const trimmed = root.name.trim();
+    if (trimmed) {
+      displayName = trimmed;
+    }
+  }
   return {
     slug,
-    displayName: folderToDisplayName(slug),
+    displayName,
     description,
     cards,
   };
