@@ -5,70 +5,84 @@ cards:
 - image: 01.jpg
   name: Apsynthos Nanocore
   type: colony
-  type_secondary: Facility
+  type_secondary:
+  - facility
 - image: 02.jpg
   name: Black Queen
   type: unit
-  type_secondary: Synth
+  type_secondary:
+  - synth
 - image: 03.jpg
   name: Blink Gate
   type: colony
-  type_secondary: Facility.
+  type_secondary:
+  - facility
 - image: 04.jpg
   name: Blink Module
   type: augment
-  type_secondary: '- Augment Unit'
+  type_secondary:
+  - unit
 - image: 05.jpg
   name: Cataphract
   type: unit
-  type_secondary: Synth
+  type_secondary:
+  - synth
 - image: 06.jpg
   name: Command Spire
   type: colony
-  type_secondary: Facility
+  type_secondary:
+  - facility
 - image: 07.jpg
   name: Corpse Harvesters
   type: unit
-  type_secondary: Synth -
+  type_secondary:
+  - synth
 - image: 08.jpg
   name: Cybernetic Conciousness
   type: reflex
 - image: 09.jpg
   name: Datajack Wraiths
   type: unit
-  type_secondary: Synth
+  type_secondary:
+  - synth
 - image: 10.jpg
   name: Datalink Hub
   type: colony
-  type_secondary: Facility
+  type_secondary:
+  - facility
 - image: 11.jpg
   name: Exterminating Servitors
   type: unit
-  type_secondary: Synth
+  type_secondary:
+  - synth
 - image: 12.jpg
   name: Graft Rejection
   type: reflex
-  type_secondary: Reflex
 - image: 13.jpg
   name: Hunter
   type: unit
-  type_secondary: Synth I Ame
+  type_secondary:
+  - synth
 - image: 14.jpg
   name: Nanite Golems
   type: unit
-  type_secondary: Synth
+  type_secondary:
+  - synth
 - image: 15.jpg
   name: Nanocore Emissaries
   type: unit
-  type_secondary: Synth A Llll
+  type_secondary:
+  - synth
 - image: 16.jpg
   name: Nautilus
   type: unit
-  type_secondary: Synth -
+  type_secondary:
+  - synth
 - image: 17.jpg
   name: Quiet Hulk
   type: unit
-  type_secondary: Synth
+  type_secondary:
+  - synth
 - image: 18.jpg
   name: Remake
   type: reflex
@@ -78,42 +92,49 @@ cards:
 - image: 20.jpg
   name: Shield Generator
   type: augment
-  type_secondary: Unit 5
+  type_secondary:
+  - unit
 - image: 21.jpg
   name: Shrike Herd
   type: unit
-  type_secondary: Synth
+  type_secondary:
+  - synth
 - image: 22.jpg
   name: Snatchers
   type: unit
-  type_secondary: Synth
+  type_secondary:
+  - synth
 - image: 23.jpg
   name: Stray Mecha
   type: unit
-  type_secondary: Synth
+  type_secondary:
+  - synth
 - image: 24.jpg
   name: Synaptic Umbilical
   type: augment
-  type_secondary: Unit 3
+  type_secondary:
+  - unit
 - image: 25.jpg
   name: Sft
   type: colony
-  type_secondary: Facility.
+  type_secondary:
+  - facility
 - image: 26.jpg
   name: Tachyon Shield
   type: colony
-  type_secondary: Facility .
+  type_secondary:
+  - facility
 - image: 27.jpg
   name: Beso
   type: reflex
 - image: 28.jpg
   name: They Of The Machine
   type: reflex
-  type_secondary: Reflex
 - image: 29.jpg
   name: Thought Control
   type: reflex
 - image: 30.jpg
   name: Viral Saboteur
   type: augment
-  type_secondary: Unit .eeme Ae Rae
+  type_secondary:
+  - unit

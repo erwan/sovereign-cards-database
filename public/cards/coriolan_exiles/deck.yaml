@@ -5,80 +5,100 @@ cards:
 - image: 01.jpg
   name: Bull Ceph
   type: unit
-  type_secondary: Xeno
+  type_secondary:
+  - xeno
 - image: 02.jpg
   name: Caravan Guards
   type: unit
-  type_secondary: Xeno
+  type_secondary:
+  - xeno
 - image: 03.jpg
   name: Duchess Of Ash
   type: unit
-  type_secondary: Human
+  type_secondary:
+  - human
 - image: 04.jpg
   name: Duelist
   type: augment
-  type_secondary: Unit
+  type_secondary:
+  - unit
 - image: 05.jpg
   name: Field Medics
   type: unit
-  type_secondary: Human
+  type_secondary:
+  - human
 - image: 06.jpg
   name: Flagbearers
   type: unit
-  type_secondary: Human
+  type_secondary:
+  - human
 - image: 07.jpg
   name: Frontier Despot
   type: unit
-  type_secondary: Human -
+  type_secondary:
+  - human
 - image: 08.jpg
   name: Gardens Of Kadesh
   type: colony
-  type_secondary: Facility
+  type_secondary:
+  - facility
 - image: 09.jpg
   name: Glacial Melt
   type: reflex
 - image: 10.jpg
   name: Graftguard
   type: unit
-  type_secondary: Human
+  type_secondary:
+  - human
 - image: 11.jpg
   name: High Caste
   type: augment
-  type_secondary: Unit
+  type_secondary:
+  - unit
 - image: 12.jpg
   name: Highborn Academy
   type: colony
+  type_secondary:
+  - unknown
 - image: 13.jpg
   name: Highborn Nursery
   type: colony
-  type_secondary: Facility.
+  type_secondary:
+  - facility
 - image: 14.jpg
   name: Ice Hauler
   type: unit
-  type_secondary: Mech
+  type_secondary:
+  - mech
 - image: 15.jpg
   name: Merchant Caravan
   type: unit
-  type_secondary: Human Xeno
+  type_secondary:
+  - human
+  - xeno
 - image: 16.jpg
   name: Migrant Labor
   type: reflex
 - image: 17.jpg
   name: Mule
   type: augment
-  type_secondary: Unit
+  type_secondary:
+  - unit
 - image: 18.jpg
   name: Musk Ceph
   type: unit
-  type_secondary: Xeno
+  type_secondary:
+  - xeno
 - image: 19.jpg
   name: Noble Profession
   type: augment
-  type_secondary: Facility
+  type_secondary:
+  - facility
 - image: 20.jpg
   name: Open Market
   type: colony
-  type_secondary: Facility
+  type_secondary:
+  - facility
 - image: 21.jpg
   name: Plutocracy
   type: reflex
@@ -88,31 +108,36 @@ cards:
 - image: 23.jpg
   name: Rail Cavalry
   type: unit
-  type_secondary: '- Unit Antigrav'
+  type_secondary:
+  - antigrav
 - image: 24.jpg
   name: Relocation
   type: reflex
-  type_secondary: Reflex
 - image: 25.jpg
   name: Ruined Arcology
   type: colony
-  type_secondary: Facility.
+  type_secondary:
+  - facility
 - image: 26.jpg
   name: Scrap Hunt
   type: reflex
 - image: 27.jpg
   name: Scrap Scavengers
   type: unit
-  type_secondary: Human
+  type_secondary:
+  - human
 - image: 28.jpg
   name: Stun Whip
   type: augment
-  type_secondary: Unit
+  type_secondary:
+  - unit
 - image: 29.jpg
   name: Synthsilk Hatchery
   type: colony
-  type_secondary: Facility
+  type_secondary:
+  - facility
 - image: 30.jpg
   name: Technocrats
   type: unit
-  type_secondary: Human
+  type_secondary:
+  - human

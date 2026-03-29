@@ -4,11 +4,38 @@ import { parse as parseYaml } from 'yaml';
 
 export type CardType = 'unknown' | 'unit' | 'reflex' | 'augment' | 'colony';
 
+export type CardSecondaryType =
+  | 'unknown'
+  | 'antigrav'
+  | 'unit'
+  | 'facility'
+  | 'human'
+  | 'xeno'
+  | 'chimera'
+  | 'aciereys'
+  | 'mech'
+  | 'reflex'
+  | 'synth';
+
+const CARD_SECONDARY_TYPES = new Set<string>([
+  'unknown',
+  'antigrav',
+  'unit',
+  'facility',
+  'human',
+  'xeno',
+  'chimera',
+  'aciereys',
+  'mech',
+  'reflex',
+  'synth',
+]);
+
 export interface CardEntry {
   image: string;
   name: string;
   type: CardType;
-  type_secondary?: string;
+  type_secondary?: CardSecondaryType[];
 }
 
 export interface Deck {
@@ -74,12 +101,20 @@ function assertCard(raw: unknown, slug: string, index: number): CardEntry {
   if (typeof o.type !== 'string' || !CARD_TYPES.has(o.type)) {
     throw new Error(`Invalid type at ${slug}[${index}]: ${String(o.type)}`);
   }
-  let type_secondary: string | undefined;
+  let type_secondary: CardSecondaryType[] | undefined;
   if (o.type_secondary !== undefined && o.type_secondary !== null) {
-    if (typeof o.type_secondary !== 'string' || !o.type_secondary.trim()) {
-      throw new Error(`Invalid type_secondary at ${slug}[${index}]`);
+    if (!Array.isArray(o.type_secondary) || o.type_secondary.length === 0) {
+      throw new Error(`Invalid type_secondary at ${slug}[${index}]: expected non-empty array`);
     }
-    type_secondary = o.type_secondary.trim();
+    const tags: CardSecondaryType[] = [];
+    for (let j = 0; j < o.type_secondary.length; j++) {
+      const el = o.type_secondary[j];
+      if (typeof el !== 'string' || !CARD_SECONDARY_TYPES.has(el)) {
+        throw new Error(`Invalid type_secondary[${j}] at ${slug}[${index}]: ${String(el)}`);
+      }
+      tags.push(el as CardSecondaryType);
+    }
+    type_secondary = tags;
   }
   return {
     image: o.image,

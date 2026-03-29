@@ -5,69 +5,86 @@ cards:
 - image: 01.jpg
   name: Aegis Shell
   type: augment
-  type_secondary: Unit
+  type_secondary:
+  - unit
 - image: 02.jpg
   name: Aether Tap
   type: colony
-  type_secondary: Facility
+  type_secondary:
+  - facility
 - image: 03.jpg
   name: Airdock
   type: colony
+  type_secondary:
+  - facility
 - image: 04.jpg
   name: Apsynthos Revelations
   type: reflex
 - image: 05.jpg
   name: Chimera Empaths
   type: unit
-  type_secondary: . Unit Chimera
+  type_secondary:
+  - chimera
 - image: 06.jpg
   name: Chimera Oracles
   type: unit
-  type_secondary: Chimera
+  type_secondary:
+  - chimera
 - image: 07.jpg
   name: Chimera Symbiont
   type: unit
-  type_secondary: Chimera
+  type_secondary:
+  - chimera
 - image: 08.jpg
   name: Chimera Telepaths
   type: unit
-  type_secondary: Chimera
+  type_secondary:
+  - chimera
 - image: 09.jpg
   name: Cloning Tanks
   type: colony
-  type_secondary: '- Colony Facility.'
+  type_secondary:
+  - facility
 - image: 10.jpg
   name: Cloudbreakers
   type: unit
-  type_secondary: Unit Antigrav
+  type_secondary:
+  - antigrav
 - image: 11.jpg
   name: Command Ring
   type: colony
-  type_secondary: Facility .
+  type_secondary:
+  - facility
 - image: 12.jpg
   name: Creche Tutors
   type: unit
-  type_secondary: Synth
+  type_secondary:
+  - synth
 - image: 13.jpg
   name: Datajack Legion
   type: unit
-  type_secondary: Synth A Os Ee Nent Amma Et Ae Ne '
+  type_secondary:
+  - synth
 - image: 14.jpg
   name: Fractal Weave
   type: augment
-  type_secondary: Augment Unit
+  type_secondary:
+  - unit
 - image: 15.jpg
   name: Grav Skimmers
   type: unit
-  type_secondary: Antigrav
+  type_secondary:
+  - antigrav
 - image: 16.jpg
   name: Gravcarrier
   type: unit
-  type_secondary: Antigrav 2
+  type_secondary:
+  - antigrav
 - image: 17.jpg
   name: Ion Shroud
   type: augment
-  type_secondary: Unit
+  type_secondary:
+  - unit
 - image: 18.jpg
   name: Knit
   type: reflex
@@ -80,39 +97,46 @@ cards:
 - image: 21.jpg
   name: Perimeter Shield
   type: colony
-  type_secondary: Facility .
+  type_secondary:
+  - facility
 - image: 22.jpg
   name: Psych Resonator
   type: augment
-  type_secondary: Unit
+  type_secondary:
+  - unit
 - image: 23.jpg
   name: Spider Battery
   type: unit
-  type_secondary: Mech -
+  type_secondary:
+  - mech
 - image: 24.jpg
   name: Tachyon Burst
   type: reflex
-  type_secondary: Reflex
 - image: 25.jpg
   name: Tachyon Cannon
   type: augment
-  type_secondary: Unit
+  type_secondary:
+  - unit
 - image: 26.jpg
   name: Tachyon Sentries
   type: unit
-  type_secondary: Human
+  type_secondary:
+  - human
 - image: 27.jpg
   name: Technogeisha
   type: unit
-  type_secondary: Human
+  type_secondary:
+  - human
 - image: 28.jpg
   name: Terraformers
   type: unit
-  type_secondary: Mech
+  type_secondary:
+  - mech
 - image: 29.jpg
   name: Water Extractors
   type: colony
-  type_secondary: Facility
+  type_secondary:
+  - facility
 - image: 30.jpg
   name: Weather Control
   type: reflex

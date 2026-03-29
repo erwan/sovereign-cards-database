@@ -5,7 +5,8 @@ cards:
 - image: 01.jpg
   name: Led Gees Sme Free Dle Le Tire
   type: unit
-  type_secondary: Human
+  type_secondary:
+  - human
 - image: 02.jpg
   name: Apsyntion Communication
   type: reflex
@@ -15,105 +16,127 @@ cards:
 - image: 04.jpg
   name: Behemoth
   type: unit
-  type_secondary: Xeno -
+  type_secondary:
+  - xeno
 - image: 05.jpg
   name: Borespikes
   type: augment
-  type_secondary: Unit
+  type_secondary:
+  - unit
 - image: 06.jpg
   name: Boreworm
   type: unit
-  type_secondary: Xeno 7 I Oo Ed Ee I Eet A Al Ae I Ne .
+  type_secondary:
+  - xeno
 - image: 07.jpg
   name: Brood Den
   type: colony
-  type_secondary: '- Colony Facility . 8'
+  type_secondary:
+  - facility
 - image: 08.jpg
   name: Brood Handlers
   type: unit
-  type_secondary: Chimera
+  type_secondary:
+  - chimera
 - image: 09.jpg
   name: Bury
   type: reflex
 - image: 10.jpg
   name: Chrysalis
   type: unit
-  type_secondary: Xeno -
+  type_secondary:
+  - xeno
 - image: 11.jpg
   name: Contact
   type: reflex
 - image: 12.jpg
   name: Legge
   type: augment
-  type_secondary: Unit
+  type_secondary:
+  - unit
 - image: 13.jpg
   name: Fungus Farm
   type: colony
-  type_secondary: '- Colony Facility .'
+  type_secondary:
+  - facility
 - image: 14.jpg
   name: Harlequin
   type: unit
-  type_secondary: Xeno
+  type_secondary:
+  - xeno
 - image: 15.jpg
   name: Incursion
   type: reflex
 - image: 16.jpg
   name: Lilin Hive
   type: colony
-  type_secondary: Aciereys
+  type_secondary:
+  - unknown
 - image: 17.jpg
   name: Lilin Matron
   type: unit
-  type_secondary: Xeno
+  type_secondary:
+  - xeno
 - image: 18.jpg
   name: Lilin Vultures
   type: unit
-  type_secondary: Xeno
+  type_secondary:
+  - xeno
 - image: 19.jpg
   name: Mark Of The Hive
   type: augment
-  type_secondary: Facility
+  type_secondary:
+  - facility
 - image: 20.jpg
   name: Mimetic Scales
   type: augment
-  type_secondary: Unit
+  type_secondary:
+  - unit
 - image: 21.jpg
   name: Musk Herders
   type: unit
-  type_secondary: Human
+  type_secondary:
+  - human
 - image: 22.jpg
   name: Shroud
   type: unit
-  type_secondary: Unit Xeno
+  type_secondary:
+  - xeno
 - image: 23.jpg
   name: Spawning Pits
   type: colony
-  type_secondary: Facility .
+  type_secondary:
+  - facility
 - image: 24.jpg
   name: Spore Weevils
   type: unit
-  type_secondary: Xeno -
+  type_secondary:
+  - xeno
 - image: 25.jpg
   name: Sporemask Poachers
   type: unit
-  type_secondary: Human -
+  type_secondary:
+  - human
 - image: 26.jpg
   name: Wind Cathedral
   type: colony
-  type_secondary: Facility .
+  type_secondary:
+  - facility
 - image: 27.jpg
   name: Windlion
   type: unit
-  type_secondary: Xeno -
+  type_secondary:
+  - xeno
 - image: 28.jpg
   name: Windwalker Camp
   type: colony
-  type_secondary: Facility
+  type_secondary:
+  - facility
 - image: 29.jpg
   name: Xeno Psychology
   type: reflex
-  type_secondary: Reflex
 - image: 30.jpg
   name: Xenophagy
   type: augment
-  type_secondary: Unit
+  type_secondary:
+  - unit

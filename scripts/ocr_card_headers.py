@@ -5,11 +5,19 @@ OCR card headers under public/cards and update ``deck.yaml``.
 Strips:
 - Name: top 60px (Title Case per word)
 - Type: 40px band starting at y=270 from the top. Primary keyword (``unit``, etc.) is
-  parsed from the segment before an em/en dash or ``--`` / `` - ``; text after the
-  dash becomes ``type_secondary`` (Title Case per word). If OCR yields ``unknown``
-  for the primary but the card already has a non-unknown ``type``, that value is kept.
-  If secondary OCR is empty but ``type_secondary`` is already set, it is kept; otherwise
-  the key is omitted.
+  parsed from the segment before an em/en dash or ``--`` / `` - `` (same as before).
+  For secondaries, the whole type line is tokenized into alphanumeric words; the first
+  word (the primary type) is skipped, then each remaining word that appears in
+  ``VALID_SECONDARY_BY_PRIMARY[primary]`` for the resolved primary type is collected in
+  order (primary comes from OCR or, when OCR is ``unknown``, from existing YAML).
+  Reflex cards have no secondary line: none is parsed, ``unknown`` is not stored, and any
+  existing ``type_secondary`` in YAML is removed. If there is nothing after the first
+  word, the secondary field is left empty (preserve existing). If there are words but
+  none match a known secondary, ``[unknown]`` is used. Secondaries are stored as a YAML
+  list (e.g. ``[human, xeno]``). If OCR
+  yields ``unknown`` for the primary but the card already has a non-unknown ``type``,
+  that value is kept. If secondary OCR is empty but ``type_secondary`` is already set,
+  it is kept; otherwise the key is omitted.
 
 By default, OCR updates **both** ``name`` and ``type``. Pass ``--name`` and/or
 ``--type`` to update only those fields; other keys on each card (including any
@@ -34,6 +42,9 @@ Examples:
 
   # Explicitly both fields (same as default)
   python scripts/ocr_card_headers.py --name --type
+
+  # Re-coerce existing type_secondary strings/lists to canonical arrays (no image OCR)
+  python scripts/ocr_card_headers.py --normalize-secondary
 """
 
 from __future__ import annotations
@@ -60,6 +71,65 @@ TYPE_PATTERN = re.compile(
 )
 MULTI_CAPS = re.compile(r"\b[A-Z]{2,}(?:\s+[A-Z]{2,})+\b")
 SINGLE_CAPS = re.compile(r"\b[A-Z]{4,}\b")
+
+# Per-primary allowed secondary tags (duplicated literals so each list can diverge).
+VALID_SECONDARY_BY_PRIMARY: dict[str, frozenset[str]] = {
+    "unknown": frozenset(
+        {
+            "antigrav",
+            "unit",
+            "facility",
+            "human",
+            "xeno",
+            "chimera",
+            "aciereys",
+            "mech",
+            "reflex",
+            "synth",
+        }
+    ),
+    "unit": frozenset(
+        {
+            "antigrav",
+            "human",
+            "xeno",
+            "chimera",
+            "aciereys",
+            "mech",
+            "synth",
+        }
+    ),
+    "augment": frozenset(
+        {
+            "unit",
+            "facility",
+        }
+    ),
+    "colony": frozenset(
+        {
+            "facility",
+        }
+    ),
+}
+
+VALID_SECONDARY_TYPES: frozenset[str] = frozenset({"unknown"}).union(
+    *VALID_SECONDARY_BY_PRIMARY.values()
+)
+_PRIMARY_KEYWORDS: frozenset[str] = frozenset({"unit", "reflex", "augment", "colony"})
+
+
+def is_reflex_primary(primary: object) -> bool:
+    return isinstance(primary, str) and primary.strip().lower() == "reflex"
+
+
+def known_secondaries_for_primary(primary: object) -> frozenset[str]:
+    if is_reflex_primary(primary):
+        return frozenset()
+    if isinstance(primary, str):
+        p = primary.strip().lower()
+        if p in VALID_SECONDARY_BY_PRIMARY:
+            return VALID_SECONDARY_BY_PRIMARY[p]
+    return VALID_SECONDARY_BY_PRIMARY["unknown"]
 
 
 def is_cover_filename(name: str) -> bool:
@@ -131,12 +201,11 @@ def parse_name(raw_top: str) -> str:
     return capitalize_each_word(name)
 
 
-def split_type_strip(joined: str) -> tuple[str, str]:
+def primary_segment_before_dash(type_line: str) -> str:
     for sep in ("\u2014", "\u2013", "--", " - "):
-        if sep in joined:
-            left, right = joined.split(sep, 1)
-            return left.strip(), right.strip()
-    return joined.strip(), ""
+        if sep in type_line:
+            return type_line.split(sep, 1)[0].strip()
+    return type_line.strip()
 
 
 def parse_type(primary_segment: str) -> str:
@@ -149,16 +218,76 @@ def parse_type(primary_segment: str) -> str:
     return "unknown"
 
 
-def parse_type_secondary(right_segment: str) -> str:
-    joined = re.sub(r"\s+", " ", right_segment).strip()
-    if not joined:
-        return ""
-    cleaned = re.sub(r"[^A-Za-z0-9\s\-'.]", " ", joined)
-    cleaned = re.sub(r"\s+", " ", cleaned).strip()
-    if len(cleaned) < 1:
-        return ""
-    trimmed = trim_short_caps_edges(cleaned)
-    return capitalize_each_word(trimmed)
+def _secondaries_from_phrase(phrase: str, known: frozenset[str]) -> list[str]:
+    text = re.sub(r"\s+", " ", phrase).strip()
+    if not text:
+        return []
+    whole = text.lower()
+    if whole in known:
+        return [whole]
+    out: list[str] = []
+    for w in text.split():
+        t = w.strip().lower()
+        if t in known:
+            out.append(t)
+        else:
+            out.append("unknown")
+    return out
+
+
+def parse_type_secondary_list_from_type_line(type_line: str, primary: object) -> list[str]:
+    if is_reflex_primary(primary):
+        return []
+    known = known_secondaries_for_primary(primary)
+    line = re.sub(r"\s+", " ", type_line).strip()
+    if not line:
+        return []
+    tokens = re.findall(r"[a-z0-9]+", line.lower())
+    if not tokens:
+        return []
+    if tokens[0] in _PRIMARY_KEYWORDS:
+        if len(tokens) <= 1:
+            return []
+        rest = tokens[1:]
+    else:
+        rest = list(tokens)
+    seen: set[str] = set()
+    out: list[str] = []
+    for tok in rest:
+        if tok in known and tok not in seen:
+            seen.add(tok)
+            out.append(tok)
+    if not out:
+        return ["unknown"]
+    return out
+
+
+def coerce_yaml_type_secondary(raw: object, primary: object) -> list[str]:
+    if is_reflex_primary(primary):
+        return []
+    known = known_secondaries_for_primary(primary)
+    if raw is None:
+        return []
+    if isinstance(raw, str):
+        return parse_type_secondary_list_from_type_line(raw, primary)
+    if isinstance(raw, list):
+        out: list[str] = []
+        for el in raw:
+            if not isinstance(el, str):
+                continue
+            s = el.strip()
+            if not s:
+                continue
+            low = s.lower()
+            if low == "unknown":
+                out.append("unknown")
+                continue
+            if low in known:
+                out.append(low)
+                continue
+            out.extend(_secondaries_from_phrase(s, known))
+        return list(dict.fromkeys(out))
+    return []
 
 
 def write_deck_yaml(deck_dir: Path, cards: list[dict], description: str = "") -> None:
@@ -210,7 +339,7 @@ def process_deck(
         return 0
 
     updated = 0
-    for i, entry in enumerate(cards):
+    for entry in cards:
         if not isinstance(entry, dict):
             continue
         img_name = entry.get("image")
@@ -232,9 +361,8 @@ def process_deck(
         raw_type = ""
         name = entry.get("name")
         typ = entry.get("type")
-        type_sec = entry.get("type_secondary")
-        if not isinstance(type_sec, str):
-            type_sec = ""
+        old_list = coerce_yaml_type_secondary(entry.get("type_secondary"), entry.get("type"))
+        type_sec_list = list(old_list)
 
         if want_name:
             top = crop_horizontal_strip(img_path, 0, TOP_PX)
@@ -248,38 +376,48 @@ def process_deck(
             type_img = crop_horizontal_strip(img_path, TYPE_STRIP_Y, TYPE_STRIP_H)
             raw_type = ocr_strip(type_img) if type_img is not None else ""
             joined = re.sub(r"\s+", " ", raw_type).strip()
-            primary, secondary_raw = split_type_strip(joined)
-            typ = parse_type(primary)
+            typ = parse_type(primary_segment_before_dash(joined))
             prev_type = entry.get("type")
             if typ == "unknown" and isinstance(prev_type, str) and prev_type.strip() and prev_type != "unknown":
                 typ = prev_type
-            type_sec = parse_type_secondary(secondary_raw)
-            prev_sec = entry.get("type_secondary")
-            if not type_sec and isinstance(prev_sec, str) and prev_sec.strip():
-                type_sec = prev_sec.strip()
+            if is_reflex_primary(typ):
+                type_sec_list = []
+            else:
+                parsed = parse_type_secondary_list_from_type_line(joined, typ)
+                if not parsed:
+                    type_sec_list = list(old_list)
+                else:
+                    type_sec_list = parsed
+
+        final_type = typ if want_type else entry.get("type")
+        if is_reflex_primary(final_type):
+            type_sec_list = []
 
         old_name = entry.get("name")
         old_type = entry.get("type")
-        old_sec = entry.get("type_secondary")
-        old_sec_norm = old_sec.strip() if isinstance(old_sec, str) else ""
-        new_sec_norm = type_sec if want_type else old_sec_norm
+        new_sec_list = type_sec_list
         changed = (want_name and old_name != name) or (
-            want_type and (old_type != typ or old_sec_norm != new_sec_norm)
-        )
+            want_type and (old_type != typ or old_list != new_sec_list)
+        ) or (is_reflex_primary(final_type) and "type_secondary" in entry)
         if changed:
             updated += 1
             if verbose:
                 print(
                     f"{deck_dir.name}/{img_name}: top={raw_top!r} type_strip={raw_type!r} "
-                    f"-> name={name!r} type={typ} type_secondary={type_sec!r}"
+                    f"-> name={name!r} type={typ} type_secondary={new_sec_list!r}"
                 )
 
         if want_name:
             entry["name"] = name
         if want_type:
             entry["type"] = typ
-            if type_sec:
-                entry["type_secondary"] = type_sec
+
+        resolved_type = typ if want_type else entry.get("type")
+        if is_reflex_primary(resolved_type):
+            entry.pop("type_secondary", None)
+        elif want_type:
+            if type_sec_list:
+                entry["type_secondary"] = type_sec_list
             else:
                 entry.pop("type_secondary", None)
 
@@ -288,6 +426,37 @@ def process_deck(
     elif dry_run and updated:
         print(f"[dry-run] would update {updated} card(s) in {deck_dir.name}", file=sys.stderr)
 
+    return updated
+
+
+def normalize_secondary_in_deck(deck_dir: Path, *, dry_run: bool) -> int:
+    loaded = load_deck(deck_dir)
+    if loaded is None:
+        print(f"skip (no deck.yaml): {deck_dir.name}", file=sys.stderr)
+        return 0
+    cards, description = loaded
+    updated = 0
+    for entry in cards:
+        if not isinstance(entry, dict):
+            continue
+        if "type_secondary" not in entry:
+            continue
+        raw = entry.get("type_secondary")
+        desired = coerce_yaml_type_secondary(raw, entry.get("type"))
+        if desired:
+            if entry.get("type_secondary") != desired:
+                updated += 1
+                if not dry_run:
+                    entry["type_secondary"] = desired
+        else:
+            updated += 1
+            if not dry_run:
+                entry.pop("type_secondary", None)
+
+    if not dry_run and updated:
+        write_deck_yaml(deck_dir, cards, description)
+    elif dry_run and updated:
+        print(f"[dry-run] would normalize type_secondary on {updated} card(s) in {deck_dir.name}", file=sys.stderr)
     return updated
 
 
@@ -319,7 +488,16 @@ def main() -> int:
         dest="set_type",
         help="OCR type strip and set only the type field",
     )
+    parser.add_argument(
+        "--normalize-secondary",
+        action="store_true",
+        help="Coerce type_secondary strings/lists to canonical lists (no OCR)",
+    )
     args = parser.parse_args()
+
+    if args.normalize_secondary and (args.set_name or args.set_type):
+        print("Cannot combine --normalize-secondary with --name/--type", file=sys.stderr)
+        return 2
 
     explicit_fields = args.set_name or args.set_type
     want_name = args.set_name if explicit_fields else True
@@ -336,6 +514,16 @@ def main() -> int:
             return 1
     else:
         dirs = sorted(p for p in CARDS_ROOT.iterdir() if p.is_dir())
+
+    if args.normalize_secondary:
+        total = 0
+        for d in dirs:
+            total += normalize_secondary_in_deck(d, dry_run=args.dry_run)
+        if args.dry_run:
+            print(f"Total type_secondary normalizations: {total} (files not written)")
+        else:
+            print(f"Normalized type_secondary across deck.yaml files: {total} card row(s)")
+        return 0
 
     total = 0
     for d in dirs:

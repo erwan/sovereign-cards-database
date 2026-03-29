@@ -5,75 +5,90 @@ cards:
 - image: 01.jpg
   name: Apsynthos Cryopod
   type: colony
+  type_secondary:
+  - facility
 - image: 02.jpg
   name: Apsynthos Memorial
   type: colony
-  type_secondary: '- Colony Facility'
+  type_secondary:
+  - facility
 - image: 03.jpg
   name: Se
   type: unit
-  type_secondary: Antigrav
+  type_secondary:
+  - antigrav
 - image: 04.jpg
   name: Cantina
   type: colony
-  type_secondary: Facility .
+  type_secondary:
+  - facility
 - image: 05.jpg
   name: Defection
   type: reflex
 - image: 06.jpg
   name: Desperate Sacrifice
   type: reflex
-  type_secondary: In
 - image: 07.jpg
   name: Detonation Packs
   type: augment
-  type_secondary: Unit -
+  type_secondary:
+  - unit
 - image: 08.jpg
   name: Double Agent
   type: augment
-  type_secondary: Unit.
+  type_secondary:
+  - unit
 - image: 09.jpg
   name: Drone Insurgents
   type: unit
-  type_secondary: Human -
+  type_secondary:
+  - human
 - image: 10.jpg
   name: Drone Riots
   type: reflex
 - image: 11.jpg
   name: Dustmen
   type: unit
-  type_secondary: Human
+  type_secondary:
+  - human
 - image: 12.jpg
   name: Hive Radicals
   type: unit
-  type_secondary: Human
+  type_secondary:
+  - human
 - image: 13.jpg
   name: Holonet Scribes
   type: unit
-  type_secondary: Human
+  type_secondary:
+  - human
 - image: 14.jpg
   name: Infoleak
   type: reflex
 - image: 15.jpg
   name: Nano Plantation
   type: colony
-  type_secondary: Facility
+  type_secondary:
+  - facility
 - image: 16.jpg
   name: Nerve Plates
   type: augment
-  type_secondary: Unit
+  type_secondary:
+  - unit
 - image: 17.jpg
   name: Plasma Torch
   type: augment
-  type_secondary: Unit
+  type_secondary:
+  - unit
 - image: 18.jpg
   name: Rail Sniper
   type: unit
-  type_secondary: Human
+  type_secondary:
+  - human
 - image: 19.jpg
   name: Recon Guerillas
   type: unit
-  type_secondary: Human
+  type_secondary:
+  - human
 - image: 20.jpg
   name: Refugee Ethics
   type: reflex
@@ -83,36 +98,45 @@ cards:
 - image: 22.jpg
   name: Scrap Depot
   type: colony
-  type_secondary: Facility.
+  type_secondary:
+  - facility
 - image: 23.jpg
   name: Sentinels
   type: unit
-  type_secondary: Mech
+  type_secondary:
+  - mech
 - image: 24.jpg
   name: Skimsquad
   type: unit
-  type_secondary: Antigrav
+  type_secondary:
+  - antigrav
 - image: 25.jpg
   name: Splicing Medics
   type: unit
-  type_secondary: Human -
+  type_secondary:
+  - human
 - image: 26.jpg
   name: Stitch Tanks
   type: colony
-  type_secondary: Facility Eae
+  type_secondary:
+  - facility
 - image: 27.jpg
   name: Undercity Anarchs
   type: unit
-  type_secondary: Human
+  type_secondary:
+  - human
 - image: 28.jpg
   name: Watchdogs
   type: unit
-  type_secondary: Mech
+  type_secondary:
+  - mech
 - image: 29.jpg
   name: Webweave Spies
   type: unit
-  type_secondary: Human
+  type_secondary:
+  - human
 - image: 30.jpg
   name: Worker Strike
   type: augment
-  type_secondary: Facility
+  type_secondary:
+  - facility

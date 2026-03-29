@@ -8,7 +8,8 @@ cards:
 - image: 02.jpg
   name: Gre
   type: colony
-  type_secondary: '- Colony Facility .'
+  type_secondary:
+  - facility
 - image: 03.jpg
   name: Betrayal
   type: reflex
@@ -18,102 +19,124 @@ cards:
 - image: 05.jpg
   name: Bounty Hunters
   type: unit
-  type_secondary: Human A Eee
+  type_secondary:
+  - human
 - image: 06.jpg
   name: Brassjackets
   type: unit
-  type_secondary: Synth A Llll
+  type_secondary:
+  - synth
 - image: 07.jpg
   name: Civilian Casualties
   type: reflex
-  type_secondary: Eee Ame 7
 - image: 08.jpg
   name: Clone Stock
   type: augment
-  type_secondary: Unit
+  type_secondary:
+  - unit
 - image: 09.jpg
   name: Cloudbreak Spire
   type: colony
-  type_secondary: '- Colony Facility.'
+  type_secondary:
+  - facility
 - image: 10.jpg
   name: Corsairs
   type: unit
-  type_secondary: Antigrav Te A Ne En Ee Es.
+  type_secondary:
+  - antigrav
 - image: 11.jpg
   name: Datajack Bandits
   type: unit
-  type_secondary: Human
+  type_secondary:
+  - human
 - image: 12.jpg
   name: Decksweeps
   type: unit
-  type_secondary: Human
+  type_secondary:
+  - human
 - image: 13.jpg
   name: Exosuit
   type: augment
-  type_secondary: Unit
+  type_secondary:
+  - unit
 - image: 14.jpg
   name: Gambler
   type: augment
-  type_secondary: 4 - Augment Unit
+  type_secondary:
+  - unit
 - image: 15.jpg
   name: Grave Hoard
   type: colony
-  type_secondary: Facility
+  type_secondary:
+  - facility
 - image: 16.jpg
   name: Hacker
   type: colony
-  type_secondary: Facility.
+  type_secondary:
+  - facility
 - image: 17.jpg
   name: Hegemony Pirates
   type: unit
-  type_secondary: Human -
+  type_secondary:
+  - human
 - image: 18.jpg
   name: Hegemony Slavers
   type: unit
-  type_secondary: Human -
+  type_secondary:
+  - human
 - image: 19.jpg
   name: Leb
   type: unit
-  type_secondary: Mech
+  type_secondary:
+  - mech
 - image: 20.jpg
   name: Hornet Swarm
   type: unit
-  type_secondary: Synth
+  type_secondary:
+  - synth
 - image: 21.jpg
   name: Listening Post
   type: colony
-  type_secondary: Facility
+  type_secondary:
+  - facility
 - image: 22.jpg
   name: Privateer Contract
   type: reflex
 - image: 23.jpg
   name: Razorback
   type: unit
-  type_secondary: '- Unit Antigrav'
+  type_secondary:
+  - antigrav
 - image: 24.jpg
   name: Reconstruct
   type: augment
-  type_secondary: Unit
+  type_secondary:
+  - unit
 - image: 25.jpg
   name: Shipbreakers
   type: unit
-  type_secondary: Human
+  type_secondary:
+  - human
 - image: 26.jpg
   name: Smog Skiff
   type: unit
-  type_secondary: Antigrav
+  type_secondary:
+  - antigrav
 - image: 27.jpg
   name: Talent Hack
   type: reflex
 - image: 28.jpg
   name: Telepath Graft
   type: augment
-  type_secondary: Unit
+  type_secondary:
+  - unit
 - image: 29.jpg
   name: Tethered Nephilim
   type: unit
-  type_secondary: Synth
+  type_secondary:
+  - synth
 - image: 30.jpg
   name: Worker Hovels
   type: colony
-  type_secondary: Colony Facility
+  type_secondary:
+  - facility

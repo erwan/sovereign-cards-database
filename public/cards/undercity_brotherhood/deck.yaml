@@ -5,7 +5,8 @@ cards:
 - image: 01.jpg
   name: Agromechs
   type: unit
-  type_secondary: Mech
+  type_secondary:
+  - mech
 - image: 02.jpg
   name: Graft Necrosis
   type: reflex
@@ -18,46 +19,56 @@ cards:
 - image: 05.jpg
   name: Crustcracker Gang
   type: unit
-  type_secondary: Human
+  type_secondary:
+  - human
 - image: 06.jpg
   name: Flamer Crew
   type: unit
-  type_secondary: Human
+  type_secondary:
+  - human
 - image: 07.jpg
   name: Flystrikers
   type: unit
-  type_secondary: Human
+  type_secondary:
+  - human
 - image: 08.jpg
   name: Geneforge Nurses
   type: unit
-  type_secondary: Human
+  type_secondary:
+  - human
 - image: 09.jpg
   name: Homo Superior
   type: unit
-  type_secondary: Chimera
+  type_secondary:
+  - chimera
 - image: 10.jpg
   name: Husk Harvesters
   type: unit
-  type_secondary: Human
+  type_secondary:
+  - human
 - image: 11.jpg
   name: Hypnobar
   type: augment
-  type_secondary: Facility .
+  type_secondary:
+  - facility
 - image: 12.jpg
   name: Iron Tortoise
   type: unit
-  type_secondary: Mech
+  type_secondary:
+  - mech
 - image: 13.jpg
   name: Lowhivers
   type: unit
-  type_secondary: 4 - Unit Human
+  type_secondary:
+  - human
 - image: 14.jpg
   name: Mandatory Stims
   type: reflex
 - image: 15.jpg
   name: Mantle Bore
   type: colony
-  type_secondary: Facility
+  type_secondary:
+  - facility
 - image: 16.jpg
   name: Mindjack
   type: reflex
@@ -67,52 +78,65 @@ cards:
 - image: 18.jpg
   name: Neural Amp
   type: augment
-  type_secondary: Unit
+  type_secondary:
+  - unit
 - image: 19.jpg
   name: Nodal Addicts
   type: unit
-  type_secondary: Human En Er A On Ee Es Es.
+  type_secondary:
+  - human
 - image: 20.jpg
   name: Pleasure Dome
   type: colony
-  type_secondary: Facility
+  type_secondary:
+  - facility
 - image: 21.jpg
   name: Punishment Chamber
   type: colony
-  type_secondary: Facility.
+  type_secondary:
+  - facility
 - image: 22.jpg
   name: Recycling Vats
   type: colony
-  type_secondary: Facility
+  type_secondary:
+  - facility
 - image: 23.jpg
   name: Rut Hollow
   type: colony
-  type_secondary: Facility .
+  type_secondary:
+  - facility
 - image: 24.jpg
   name: Scav Gang
   type: unit
-  type_secondary: Human
+  type_secondary:
+  - human
 - image: 25.jpg
   name: Secret Police
   type: unit
-  type_secondary: Human -
+  type_secondary:
+  - human
 - image: 26.jpg
   name: Sporemask
   type: augment
-  type_secondary: Unit
+  type_secondary:
+  - unit
 - image: 27.jpg
   name: Stimshifts
   type: augment
-  type_secondary: Facility.
+  type_secondary:
+  - facility
 - image: 28.jpg
   name: Titan Cannon
   type: colony
-  type_secondary: Nliie Ee Ae Ee F Fi A Oo A A 2 Colony Pacieedy.
+  type_secondary:
+  - unknown
 - image: 29.jpg
   name: Vir Ex Machina
   type: augment
-  type_secondary: Unit
+  type_secondary:
+  - unit
 - image: 30.jpg
   name: Walker Artillery
   type: unit
-  type_secondary: Mech
+  type_secondary:
+  - mech
