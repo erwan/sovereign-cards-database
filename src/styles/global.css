@@ -36,12 +36,10 @@ body {
     transparent 55%
   );
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
 
 .site-footer {
-  margin-top: auto;
+  margin-top: 2rem;
   padding: 2rem 1rem;
   text-align: center;
   font-size: 0.875rem;
