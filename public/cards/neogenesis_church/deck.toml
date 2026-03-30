@@ -1,7 +1,7 @@
 description = "Apsyntion’s oldest human-native faith, fanatically xenophobic toward alien and machine alike. The Maestra leads religion and war; the Choir and Inquisitors enforce doctrine in scattered chapels, preaching that Wormwood is the key to humanity’s return to Old Terra’s garden.\n"
 
 [[cards]]
-image = "01.jpg"
+image = "22.jpg"
 name = "Absolution Sphere"
 type = "colony"
 type_secondary = [
@@ -10,7 +10,7 @@ type_secondary = [
 cost = 4
 
 [[cards]]
-image = "02.jpg"
+image = "23.jpg"
 name = "Acid Baptists"
 type = "unit"
 type_secondary = [
@@ -19,13 +19,13 @@ type_secondary = [
 cost = 3
 
 [[cards]]
-image = "03.jpg"
+image = "24.jpg"
 name = "Ascetic Virtues"
 type = "reflex"
 cost = 1
 
 [[cards]]
-image = "04.jpg"
+image = "25.jpg"
 name = "Clinical Immortality"
 type = "augment"
 type_secondary = [
@@ -34,7 +34,7 @@ type_secondary = [
 cost = 4
 
 [[cards]]
-image = "05.jpg"
+image = "26.jpg"
 name = "Crecheling Prophet"
 type = "unit"
 type_secondary = [
@@ -43,13 +43,13 @@ type_secondary = [
 cost = 3
 
 [[cards]]
-image = "06.jpg"
+image = "27.jpg"
 name = "Desertion"
 type = "reflex"
 cost = 2
 
 [[cards]]
-image = "07.jpg"
+image = "28.jpg"
 name = "Deva Monks"
 type = "unit"
 type_secondary = [
@@ -58,7 +58,7 @@ type_secondary = [
 cost = 4
 
 [[cards]]
-image = "08.jpg"
+image = "29.jpg"
 name = "Gravelinks"
 type = "augment"
 type_secondary = [
@@ -67,7 +67,7 @@ type_secondary = [
 cost = 2
 
 [[cards]]
-image = "09.jpg"
+image = "30.jpg"
 name = "Halo Lift"
 type = "colony"
 type_secondary = [
@@ -76,13 +76,13 @@ type_secondary = [
 cost = 3
 
 [[cards]]
-image = "10.jpg"
+image = "01.jpg"
 name = "Holy Day"
 type = "reflex"
 cost = 3
 
 [[cards]]
-image = "11.jpg"
+image = "02.jpg"
 name = "House Of Meditation"
 type = "colony"
 type_secondary = [
@@ -91,7 +91,7 @@ type_secondary = [
 cost = 3
 
 [[cards]]
-image = "12.jpg"
+image = "03.jpg"
 name = "Hymn Of Knitting"
 type = "augment"
 type_secondary = [
@@ -100,7 +100,7 @@ type_secondary = [
 cost = 2
 
 [[cards]]
-image = "13.jpg"
+image = "04.jpg"
 name = "Inquisitors"
 type = "unit"
 type_secondary = [
@@ -109,7 +109,7 @@ type_secondary = [
 cost = 3
 
 [[cards]]
-image = "14.jpg"
+image = "05.jpg"
 name = "Jetleap Seraphim"
 type = "unit"
 type_secondary = [
@@ -118,7 +118,7 @@ type_secondary = [
 cost = 3
 
 [[cards]]
-image = "15.jpg"
+image = "06.jpg"
 name = "Library Of The Ark"
 type = "colony"
 type_secondary = [
@@ -127,7 +127,7 @@ type_secondary = [
 cost = 3
 
 [[cards]]
-image = "16.jpg"
+image = "07.jpg"
 name = "Maestra Sangha"
 type = "unit"
 type_secondary = [
@@ -136,7 +136,7 @@ type_secondary = [
 cost = 4
 
 [[cards]]
-image = "17.jpg"
+image = "08.jpg"
 name = "Messenger Ferry"
 type = "unit"
 type_secondary = [
@@ -145,13 +145,13 @@ type_secondary = [
 cost = 0
 
 [[cards]]
-image = "18.jpg"
+image = "09.jpg"
 name = "Miraculous Escape"
 type = "reflex"
 cost = 1
 
 [[cards]]
-image = "19.jpg"
+image = "10.jpg"
 name = "Neogenesis Chapel"
 type = "colony"
 type_secondary = [
@@ -160,7 +160,7 @@ type_secondary = [
 cost = 4
 
 [[cards]]
-image = "20.jpg"
+image = "11.jpg"
 name = "Pious Devotion"
 type = "augment"
 type_secondary = [
@@ -169,7 +169,7 @@ type_secondary = [
 cost = 3
 
 [[cards]]
-image = "21.jpg"
+image = "12.jpg"
 name = "Relic Seekers"
 type = "unit"
 type_secondary = [
@@ -178,7 +178,7 @@ type_secondary = [
 cost = 2
 
 [[cards]]
-image = "22.jpg"
+image = "13.jpg"
 name = "Seraphim Choir"
 type = "unit"
 type_secondary = [
@@ -187,13 +187,13 @@ type_secondary = [
 cost = 6
 
 [[cards]]
-image = "23.jpg"
+image = "14.jpg"
 name = "Symmetric Supplication"
 type = "reflex"
 cost = 2
 
 [[cards]]
-image = "24.jpg"
+image = "15.jpg"
 name = "Terra Ascetics"
 type = "unit"
 type_secondary = [
@@ -202,7 +202,7 @@ type_secondary = [
 cost = 2
 
 [[cards]]
-image = "25.jpg"
+image = "16.jpg"
 name = "Terra Colossus"
 type = "colony"
 type_secondary = [
@@ -211,7 +211,7 @@ type_secondary = [
 cost = 3
 
 [[cards]]
-image = "26.jpg"
+image = "17.jpg"
 name = "Theocracy"
 type = "augment"
 type_secondary = [
@@ -220,7 +220,7 @@ type_secondary = [
 cost = 6
 
 [[cards]]
-image = "27.jpg"
+image = "18.jpg"
 name = "Trench Judges"
 type = "unit"
 type_secondary = [
@@ -229,7 +229,7 @@ type_secondary = [
 cost = 3
 
 [[cards]]
-image = "28.jpg"
+image = "19.jpg"
 name = "Webweave Cherubs"
 type = "unit"
 type_secondary = [
@@ -238,7 +238,7 @@ type_secondary = [
 cost = 3
 
 [[cards]]
-image = "29.jpg"
+image = "20.jpg"
 name = "White Bishops"
 type = "unit"
 type_secondary = [
@@ -247,7 +247,7 @@ type_secondary = [
 cost = 3
 
 [[cards]]
-image = "30.jpg"
+image = "21.jpg"
 name = "Zealotry"
 type = "reflex"
 cost = 2
