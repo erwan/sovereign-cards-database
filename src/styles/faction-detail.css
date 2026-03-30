@@ -6,6 +6,21 @@
   margin-bottom: 2rem;
 }
 
+@media (max-width: 768px) {
+  .deck-header {
+    flex-direction: column;
+  }
+  
+  .deck-header-cover {
+    order: 2;
+  }
+  
+  .deck-header-text {
+    order: 1;
+    min-width: 100%;
+  }
+}
+
 .deck-header-cover {
   display: block;
   width: min(100%, 24rem);
