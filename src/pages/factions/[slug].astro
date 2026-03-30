@@ -35,12 +35,12 @@ const coverSrc = `${assetPrefix}leader.jpg`;
 ---
 
 <FactionLayout title={`${deck.displayName} — Sovereign Cards`}>
-  <div class="faction-detail" data-deck-view="list">
+  <div class="faction-detail" data-deck-view="gallery">
     <script is:inline>
       (function () {
         var root = document.currentScript && document.currentScript.parentElement;
         if (!root || !root.classList.contains("faction-detail")) return;
-        var v = "list";
+        var v = "gallery";
         try {
           var s = localStorage.getItem("sovereign-deck-display");
           if (s === "gallery" || s === "list") v = s;
@@ -130,7 +130,7 @@ const coverSrc = `${assetPrefix}leader.jpg`;
           } catch (e) {}
         }
 
-        var current = root.getAttribute("data-deck-view") || "list";
+        var current = root.getAttribute("data-deck-view") || "gallery";
         apply(current === "gallery" ? "gallery" : "list");
 
         listRadio.addEventListener("change", function () {
