@@ -1,9 +1,9 @@
 ---
-import '../styles/home.css';
-import SiteGitHubLink from '../components/SiteGitHubLink.astro';
-import Layout from '../layouts/Layout.astro';
-import { getBaseUrl } from '../lib/baseUrl';
-import { loadDecks } from '../lib/decks';
+import "../styles/home.css";
+import SiteGitHubLink from "../components/SiteGitHubLink.astro";
+import Layout from "../layouts/Layout.astro";
+import { getBaseUrl } from "../lib/baseUrl";
+import { loadDecks } from "../lib/decks";
 
 const decks = loadDecks();
 const base = getBaseUrl();
@@ -25,7 +25,7 @@ const base = getBaseUrl();
             <a class="deck-link" href={`${base}factions/${deck.slug}`}>
               <img
                 class="deck-cover"
-                src={`${base}cards/${deck.slug}/cover.png`}
+                src={`${base}cards/${deck.slug}/cover.jpg`}
                 alt={deck.displayName}
                 width="280"
                 height="392"
