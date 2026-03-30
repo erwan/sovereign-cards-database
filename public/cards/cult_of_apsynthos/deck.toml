@@ -2,7 +2,7 @@ name = "Cult of Apsynthos"
 description = "They settle the fungal wastes’ most toxic psychoactive zones and Lilin husks, obeying laws shaped by semi-aware xenofungus. Initiates splice mycelium into flesh until the network owns their nerves—gaining strength and spore-born “telepathy” while spreading infection toward a holy end to mankind.\n"
 
 [[cards]]
-image = "01.jpg"
+image = "22.jpg"
 name = "Acid Husks"
 type = "unit"
 type_secondary = [
@@ -11,7 +11,7 @@ type_secondary = [
 cost = 4
 
 [[cards]]
-image = "02.jpg"
+image = "23.jpg"
 name = "Apsyntion Preserve"
 type = "colony"
 type_secondary = [
@@ -20,7 +20,7 @@ type_secondary = [
 cost = 4
 
 [[cards]]
-image = "03.jpg"
+image = "24.jpg"
 name = "Blister Plates"
 type = "augment"
 type_secondary = [
@@ -29,7 +29,7 @@ type_secondary = [
 cost = 2
 
 [[cards]]
-image = "04.jpg"
+image = "25.jpg"
 name = "Boreworm Larvae"
 type = "unit"
 type_secondary = [
@@ -38,7 +38,7 @@ type_secondary = [
 cost = 4
 
 [[cards]]
-image = "05.jpg"
+image = "26.jpg"
 name = "Carrier"
 type = "augment"
 type_secondary = [
@@ -47,7 +47,7 @@ type_secondary = [
 cost = 4
 
 [[cards]]
-image = "06.jpg"
+image = "27.jpg"
 name = "Chimera Guild"
 type = "colony"
 type_secondary = [
@@ -56,7 +56,7 @@ type_secondary = [
 cost = 4
 
 [[cards]]
-image = "07.jpg"
+image = "28.jpg"
 name = "Elder Hybrids"
 type = "unit"
 type_secondary = [
@@ -65,7 +65,7 @@ type_secondary = [
 cost = 3
 
 [[cards]]
-image = "08.jpg"
+image = "29.jpg"
 name = "Endospexi"
 type = "unit"
 type_secondary = [
@@ -74,13 +74,13 @@ type_secondary = [
 cost = 2
 
 [[cards]]
-image = "09.jpg"
+image = "30.jpg"
 name = "Fungal Bloom"
 type = "reflex"
 cost = 3
 
 [[cards]]
-image = "10.jpg"
+image = "01.jpg"
 name = "Gene Speakers"
 type = "unit"
 type_secondary = [
@@ -89,7 +89,7 @@ type_secondary = [
 cost = 3
 
 [[cards]]
-image = "11.jpg"
+image = "02.jpg"
 name = "Hyphal Warning"
 type = "augment"
 type_secondary = [
@@ -98,7 +98,7 @@ type_secondary = [
 cost = 3
 
 [[cards]]
-image = "12.jpg"
+image = "03.jpg"
 name = "Grendels"
 type = "unit"
 type_secondary = [
@@ -107,7 +107,7 @@ type_secondary = [
 cost = 5
 
 [[cards]]
-image = "13.jpg"
+image = "04.jpg"
 name = "Haruspexi"
 type = "unit"
 type_secondary = [
@@ -116,7 +116,7 @@ type_secondary = [
 cost = 3
 
 [[cards]]
-image = "14.jpg"
+image = "05.jpg"
 name = "Herdmasters"
 type = "unit"
 type_secondary = [
@@ -125,13 +125,13 @@ type_secondary = [
 cost = 3
 
 [[cards]]
-image = "15.jpg"
+image = "06.jpg"
 name = "Mosaic Mutation"
 type = "reflex"
 cost = 2
 
 [[cards]]
-image = "16.jpg"
+image = "07.jpg"
 name = "Mycandrium"
 type = "colony"
 type_secondary = [
@@ -140,7 +140,7 @@ type_secondary = [
 cost = 3
 
 [[cards]]
-image = "17.jpg"
+image = "08.jpg"
 name = "Mygologists"
 type = "unit"
 type_secondary = [
@@ -149,19 +149,19 @@ type_secondary = [
 cost = 2
 
 [[cards]]
-image = "18.jpg"
+image = "09.jpg"
 name = "Orthogenesis"
 type = "reflex"
 cost = 2
 
 [[cards]]
-image = "19.jpg"
+image = "10.jpg"
 name = "Plague Spores"
 type = "reflex"
 cost = 2
 
 [[cards]]
-image = "20.jpg"
+image = "11.jpg"
 name = "Planet Plague"
 type = "augment"
 type_secondary = [
@@ -170,7 +170,7 @@ type_secondary = [
 cost = 2
 
 [[cards]]
-image = "21.jpg"
+image = "12.jpg"
 name = "Rot Midden"
 type = "colony"
 type_secondary = [
@@ -179,7 +179,7 @@ type_secondary = [
 cost = 4
 
 [[cards]]
-image = "22.jpg"
+image = "13.jpg"
 name = "Silkspitters"
 type = "unit"
 type_secondary = [
@@ -188,7 +188,7 @@ type_secondary = [
 cost = 4
 
 [[cards]]
-image = "23.jpg"
+image = "14.jpg"
 name = "Spore Blossoms"
 type = "augment"
 type_secondary = [
@@ -197,7 +197,7 @@ type_secondary = [
 cost = 2
 
 [[cards]]
-image = "24.jpg"
+image = "15.jpg"
 name = "Spore Mats"
 type = "colony"
 type_secondary = [
@@ -206,7 +206,7 @@ type_secondary = [
 cost = 4
 
 [[cards]]
-image = "25.jpg"
+image = "16.jpg"
 name = "Spore Slaves"
 type = "unit"
 type_secondary = [
@@ -215,13 +215,13 @@ type_secondary = [
 cost = 2
 
 [[cards]]
-image = "26.jpg"
+image = "17.jpg"
 name = "Spore Storm"
 type = "reflex"
 cost = 2
 
 [[cards]]
-image = "27.jpg"
+image = "18.jpg"
 name = "Stalk Tenders"
 type = "unit"
 type_secondary = [
@@ -230,7 +230,7 @@ type_secondary = [
 cost = 2
 
 [[cards]]
-image = "28.jpg"
+image = "19.jpg"
 name = "Unruly Husks"
 type = "unit"
 type_secondary = [
@@ -239,13 +239,13 @@ type_secondary = [
 cost = 3
 
 [[cards]]
-image = "29.jpg"
+image = "20.jpg"
 name = "Xeno Regeneration"
 type = "reflex"
 cost = 1
 
 [[cards]]
-image = "30.jpg"
+image = "21.jpg"
 name = "Xenoneural Arcology"
 type = "colony"
 type_secondary = [
