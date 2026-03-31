@@ -136,7 +136,7 @@ type = "unit"
 type_secondary = [
     "human",
 ]
-cost = 0
+cost = 2
 
 [[cards]]
 image = "18.jpg"

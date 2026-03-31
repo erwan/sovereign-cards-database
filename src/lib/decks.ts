@@ -84,11 +84,16 @@ export function cardBlockTypeLabel(card: CardEntry): string {
   return card.type_secondary.join(' / ');
 }
 
-function costSortKey(cost: string): number {
-  if (cost.length === 1 && cost >= '0' && cost <= '9') {
+/** 0–8 for digit costs; 9 for cost 9 or any other single-character cost. */
+export function costHistogramBinIndex(cost: string): number {
+  if (cost.length === 1 && cost >= '0' && cost <= '8') {
     return cost.charCodeAt(0) - 48;
   }
-  return 10;
+  return 9;
+}
+
+function costSortKey(cost: string): number {
+  return costHistogramBinIndex(cost);
 }
 
 export function compareCardsByCostThenName(a: CardEntry, b: CardEntry): number {
@@ -98,6 +103,27 @@ export function compareCardsByCostThenName(a: CardEntry, b: CardEntry): number {
   const byCostChar = a.cost.localeCompare(b.cost, undefined, { sensitivity: 'base' });
   if (byCostChar !== 0) return byCostChar;
   return a.name.localeCompare(b.name, undefined, { sensitivity: 'base' });
+}
+
+export interface CostHistogramBin {
+  label: string;
+  count: number;
+}
+
+export function buildCostHistogram(cards: CardEntry[]): { bins: CostHistogramBin[]; maxCount: number } {
+  const counts = new Array(10).fill(0);
+  for (const c of cards) {
+    counts[costHistogramBinIndex(c.cost)]++;
+  }
+  const bins: CostHistogramBin[] = [];
+  for (let i = 0; i <= 8; i++) {
+    bins.push({ label: String(i), count: counts[i] });
+  }
+  if (counts[9] > 0) {
+    bins.push({ label: 'Other', count: counts[9] });
+  }
+  const maxCount = Math.max(1, ...counts);
+  return { bins, maxCount };
 }
 
 const CARD_TYPES = new Set<string>(['unknown', 'unit', 'reflex', 'augment', 'colony']);
@@ -126,13 +152,18 @@ function assertCard(raw: unknown, slug: string, index: number): CardEntry {
   }
   const costRaw = o.cost;
   let cost: string;
-  if (typeof costRaw === 'number' && Number.isInteger(costRaw) && costRaw >= 0 && costRaw <= 9) {
+  if (typeof costRaw === 'number' && Number.isInteger(costRaw) && costRaw >= 0 && costRaw <= 8) {
     cost = String(costRaw);
   } else if (typeof costRaw === 'string' && [...costRaw].length === 1) {
     cost = costRaw;
+    if (cost >= '0' && cost <= '9' && cost > '8') {
+      throw new Error(
+        `Invalid cost at ${slug}[${index}]: digit costs must be 0–8, got ${String(costRaw)}`,
+      );
+    }
   } else {
     throw new Error(
-      `Invalid cost at ${slug}[${index}]: expected integer 0–9 or a single character, got ${String(costRaw)}`,
+      `Invalid cost at ${slug}[${index}]: expected integer 0–8 or a single character, got ${String(costRaw)}`,
     );
   }
   let type_secondary: CardSecondaryType[] | undefined;

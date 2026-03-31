@@ -1,18 +1,12 @@
 ---
-import { typeStatNoun, type CardType, type Deck } from "../lib/decks";
-
-interface TypeStatRow {
-  type: CardType;
-  count: number;
-}
+import { type Deck } from "../lib/decks";
 
 interface Props {
   deck: Deck;
   coverSrc: string;
-  typeStats: TypeStatRow[];
 }
 
-const { deck, coverSrc, typeStats } = Astro.props;
+const { deck, coverSrc } = Astro.props;
 ---
 
 <header class="deck-header">
@@ -29,23 +23,6 @@ const { deck, coverSrc, typeStats } = Astro.props;
     {
       deck.description.trim() !== "" && (
         <p class="deck-description">{deck.description}</p>
-      )
-    }
-    {
-      typeStats.length > 0 && (
-        <p class="deck-type-stats">
-          {typeStats.map((row, i) => (
-            <>
-              {i > 0 && (
-                <span class="deck-type-stats-sep" aria-hidden="true">
-                  {" "}
-                  |{" "}
-                </span>
-              )}
-              <a href={`#type-${row.type}`}>{`${row.count} ${typeStatNoun(row.type)}`}</a>
-            </>
-          ))}
-        </p>
       )
     }
   </div>

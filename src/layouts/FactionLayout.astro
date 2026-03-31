@@ -15,9 +15,12 @@ const home = getBaseUrl();
 <Layout title={title}>
   <main class="faction-main">
     <div class="faction-header">
-      <nav class="faction-nav">
-        <a href={home}>← Home</a>
-      </nav>
+      <div class="faction-header-start">
+        <nav class="faction-nav">
+          <a href={home}>← Home</a>
+        </nav>
+        <slot name="header-actions" />
+      </div>
       <SiteGitHubLink />
     </div>
     <slot />

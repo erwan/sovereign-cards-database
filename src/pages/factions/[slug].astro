@@ -2,6 +2,7 @@
 import "../../styles/faction-detail.css";
 import CardLightbox from "../../components/CardLightbox.astro";
 import CardListItem from "../../components/CardListItem.astro";
+import DeckCostHistograms from "../../components/DeckCostHistograms.astro";
 import DeckHeader from "../../components/DeckHeader.astro";
 import FactionLayout from "../../layouts/FactionLayout.astro";
 import { getBaseUrl } from "../../lib/baseUrl";
@@ -35,10 +36,36 @@ const coverSrc = `${assetPrefix}leader.jpg`;
 ---
 
 <FactionLayout title={`${deck.displayName} — Sovereign Cards`}>
+  <div
+    slot="header-actions"
+    class="deck-view-toolbar"
+    role="group"
+    aria-label="Display mode"
+  >
+    <div class="deck-view-switch" role="presentation">
+      <input
+        type="radio"
+        class="deck-view-input"
+        name="deck-view-mode"
+        id="deck-view-list"
+        value="list"
+      />
+      <label class="deck-view-option" for="deck-view-list">List</label>
+      <input
+        type="radio"
+        class="deck-view-input"
+        name="deck-view-mode"
+        id="deck-view-gallery"
+        value="gallery"
+      />
+      <label class="deck-view-option" for="deck-view-gallery">Cards</label>
+    </div>
+  </div>
   <div class="faction-detail" data-deck-view="gallery">
     <script is:inline>
       (function () {
-        var root = document.currentScript && document.currentScript.parentElement;
+        var root =
+          document.currentScript && document.currentScript.parentElement;
         if (!root || !root.classList.contains("faction-detail")) return;
         var v = "gallery";
         try {
@@ -48,28 +75,8 @@ const coverSrc = `${assetPrefix}leader.jpg`;
         root.setAttribute("data-deck-view", v);
       })();
     </script>
-    <DeckHeader deck={deck} coverSrc={coverSrc} typeStats={typeStats} />
-    <div class="deck-view-toolbar" role="group" aria-labelledby="deck-view-mode-label">
-      <span class="deck-view-toolbar-label" id="deck-view-mode-label">Layout</span>
-      <div class="deck-view-switch" role="presentation">
-        <input
-          type="radio"
-          class="deck-view-input"
-          name="deck-view-mode"
-          id="deck-view-list"
-          value="list"
-        />
-        <label class="deck-view-option" for="deck-view-list">List</label>
-        <input
-          type="radio"
-          class="deck-view-input"
-          name="deck-view-mode"
-          id="deck-view-gallery"
-          value="gallery"
-        />
-        <label class="deck-view-option" for="deck-view-gallery">Cards</label>
-      </div>
-    </div>
+    <DeckHeader deck={deck} coverSrc={coverSrc} />
+    <DeckCostHistograms deck={deck} />
     {
       DISPLAY_TYPE_ORDER.map((type) => {
         const sectionCards = deck.cards
@@ -99,25 +106,27 @@ const coverSrc = `${assetPrefix}leader.jpg`;
         if (!root || !listRadio || !galleryRadio) return;
 
         function syncCardItemA11y(view) {
-          root.querySelectorAll(".card-item[data-full-src]").forEach(function (el) {
-            var thumb = el.querySelector(".card-thumb");
-            if (view === "list") {
-              var name = el.getAttribute("data-card-name") || "";
-              var cost = el.getAttribute("data-card-cost") || "";
-              el.setAttribute("role", "button");
-              el.setAttribute("tabindex", "0");
-              el.setAttribute(
-                "aria-label",
-                "View full card: " + name + ", cost " + cost
-              );
-              if (thumb) thumb.alt = "";
-            } else {
-              el.removeAttribute("role");
-              el.removeAttribute("tabindex");
-              el.removeAttribute("aria-label");
-              if (thumb) thumb.alt = el.getAttribute("data-card-name") || "";
-            }
-          });
+          root
+            .querySelectorAll(".card-item[data-full-src]")
+            .forEach(function (el) {
+              var thumb = el.querySelector(".card-thumb");
+              if (view === "list") {
+                var name = el.getAttribute("data-card-name") || "";
+                var cost = el.getAttribute("data-card-cost") || "";
+                el.setAttribute("role", "button");
+                el.setAttribute("tabindex", "0");
+                el.setAttribute(
+                  "aria-label",
+                  "View full card: " + name + ", cost " + cost,
+                );
+                if (thumb) thumb.alt = "";
+              } else {
+                el.removeAttribute("role");
+                el.removeAttribute("tabindex");
+                el.removeAttribute("aria-label");
+                if (thumb) thumb.alt = el.getAttribute("data-card-name") || "";
+              }
+            });
         }
 
         function apply(view) {
