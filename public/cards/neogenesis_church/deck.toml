@@ -142,7 +142,7 @@ type = "unit"
 type_secondary = [
     "antigrav",
 ]
-cost = 0
+cost = 2
 
 [[cards]]
 image = "09.jpg"
