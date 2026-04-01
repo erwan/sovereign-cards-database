@@ -1,10 +1,11 @@
 ---
 import {
   buildCostHistogram,
+  type CardEntry,
   DISPLAY_TYPE_ORDER,
   type Deck,
   typeSectionHeading,
-} from "../lib/decks";
+} from "../lib/decks-content";
 
 interface Props {
   deck: Deck;
@@ -13,7 +14,7 @@ interface Props {
 const { deck } = Astro.props;
 
 const sections = DISPLAY_TYPE_ORDER.map((type) => {
-  const cards = deck.cards.filter((c) => c.type === type);
+  const cards = deck.cards.filter((c: CardEntry) => c.type === type);
   if (cards.length === 0) return null;
   const { bins } = buildCostHistogram(cards);
   const title = `${typeSectionHeading(type)} (${cards.length})`;

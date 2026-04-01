@@ -7,15 +7,17 @@ import DeckHeader from "../../components/DeckHeader.astro";
 import FactionLayout from "../../layouts/FactionLayout.astro";
 import { getBaseUrl } from "../../lib/baseUrl";
 import {
+  type CardEntry,
   compareCardsByCostThenName,
   DISPLAY_TYPE_ORDER,
   loadDecks,
   typeSectionHeading,
   type Deck,
-} from "../../lib/decks";
+} from "../../lib/decks-content";
 
-export function getStaticPaths() {
-  return loadDecks().map((deck) => ({
+export async function getStaticPaths() {
+  const decks = await loadDecks();
+  return decks.map((deck) => ({
     params: { slug: deck.slug },
     props: { deck },
   }));
@@ -26,10 +28,7 @@ interface Props {
 }
 
 const { deck } = Astro.props;
-const typeStats = DISPLAY_TYPE_ORDER.map((type) => ({
-  type,
-  count: deck.cards.filter((c) => c.type === type).length,
-})).filter((row) => row.count > 0);
+// typeStats is unused, removing it.
 const base = getBaseUrl();
 const assetPrefix = `${base}cards/${deck.slug}/`;
 const coverSrc = `${assetPrefix}leader.jpg`;
@@ -80,7 +79,7 @@ const coverSrc = `${assetPrefix}leader.jpg`;
     {
       DISPLAY_TYPE_ORDER.map((type) => {
         const sectionCards = deck.cards
-          .filter((c) => c.type === type)
+          .filter((c: CardEntry) => c.type === type)
           .sort(compareCardsByCostThenName);
         if (sectionCards.length === 0) return null;
         return (
@@ -89,7 +88,7 @@ const coverSrc = `${assetPrefix}leader.jpg`;
               {typeSectionHeading(type)}
             </h2>
             <ul class="card-list">
-              {sectionCards.map((card) => (
+              {sectionCards.map((card: CardEntry) => (
                 <CardListItem card={card} assetPrefix={assetPrefix} />
               ))}
             </ul>

@@ -3,9 +3,9 @@ import "../styles/home.css";
 import SiteGitHubLink from "../components/SiteGitHubLink.astro";
 import Layout from "../layouts/Layout.astro";
 import { getBaseUrl } from "../lib/baseUrl";
-import { loadDecks } from "../lib/decks";
+import { loadDecks } from "../lib/decks-content";
 
-const decks = loadDecks();
+const decks = await loadDecks();
 const base = getBaseUrl();
 ---
 
