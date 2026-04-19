@@ -1,12 +1,13 @@
-import { getCollection } from "astro:content";
-import { type CardEntry as CardEntryType, type Deck as DeckType } from "../content/decks/schema";
+import { DeckSchema, type CardEntry as CardEntryType } from "./schema";
 
 export type CardEntry = CardEntryType;
-export type Deck = DeckType & { slug: string };
-
-
-// Re-export types for backward compatibility
-// Re-exported from @content/decks/schema
+export type Deck = {
+  name?: string;
+  description?: string;
+  cards: CardEntry[];
+  slug: string;
+  displayName: string;
+};
 
 export const DISPLAY_TYPE_ORDER = [
   'unit',
@@ -62,6 +63,12 @@ export function compareCardsByCostThenName(a: CardEntry, b: CardEntry): number {
   return a.name.localeCompare(b.name, undefined, { sensitivity: 'base' });
 }
 
+export function compareCardsByNameThenCost(a: CardEntry, b: CardEntry): number {
+  const byName = a.name.localeCompare(b.name, undefined, { sensitivity: 'base' });
+  if (byName !== 0) return byName;
+  return compareCardsByCostThenName(a, b);
+}
+
 export interface CostHistogramBin {
   label: string;
   count: number;
@@ -92,15 +99,15 @@ function folderToDisplayName(folder: string): string {
 }
 
 export async function loadDecks(): Promise<Deck[]> {
-  const decksCollection = await getCollection("decks");
-  return decksCollection.map((entry) => {
-    // Remove .md extension if present
-    const slug = entry.id.replace(/\.md$/, '');
-    const displayName = entry.data.name?.trim() || folderToDisplayName(slug);
-    return {
-      ...entry.data,
-      slug,
-      displayName,
-    };
-  }).sort((a, b) => a.displayName.localeCompare(b.displayName));
+  const modules = import.meta.glob('../content/decks/*.json');
+  const entries = await Promise.all(
+    Object.entries(modules).map(async ([path, loader]) => {
+      const mod = await loader() as { default: unknown };
+      const slug = path.split('/').pop()!.replace('.json', '');
+      const parsed = DeckSchema.parse(mod.default);
+      const displayName = parsed.name?.trim() || folderToDisplayName(slug);
+      return { ...parsed, slug, displayName };
+    })
+  );
+  return entries.sort((a, b) => a.displayName.localeCompare(b.displayName));
 }

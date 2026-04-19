@@ -3,18 +3,25 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-check --tsconfig ./tsconfig.json"
   },
   "dependencies": {
-    "astro": "^5.0.0",
+    "@sveltejs/kit": "^2.0.0",
+    "svelte": "^5.0.0",
     "zod": "^3.25.76"
   },
+  "overrides": {
+    "cookie": "^0.7.0"
+  },
   "devDependencies": {
-    "@astrojs/check": "^0.9.8",
+    "@sveltejs/adapter-static": "^3.0.0",
+    "@sveltejs/vite-plugin-svelte": "^5.0.0",
     "@types/node": "^25.5.0",
-    "typescript": "^5.9.3"
+    "svelte-check": "^4.0.0",
+    "typescript": "^5.9.3",
+    "vite": "^6.0.0"
   }
 }
