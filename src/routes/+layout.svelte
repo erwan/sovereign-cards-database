@@ -1,4 +1,6 @@
 <script lang="ts">
+  import '@fontsource/lato/latin-400.css';
+  import '@fontsource/lato/latin-700.css';
   import '../styles/global.css';
   import '../styles/faction-layout.css';
   import '../styles/faction-detail.css';
@@ -12,12 +14,6 @@
 <svelte:head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Lato:wght@400;600;700&display=swap"
-    rel="stylesheet"
-  />
 </svelte:head>
 
 {@render children()}

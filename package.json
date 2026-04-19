@@ -9,6 +9,7 @@
     "check": "svelte-check --tsconfig ./tsconfig.json"
   },
   "dependencies": {
+    "@fontsource/lato": "^5.2.7",
     "@sveltejs/kit": "^2.0.0",
     "svelte": "^5.0.0",
     "zod": "^3.25.76"
@@ -20,6 +21,7 @@
     "@sveltejs/adapter-static": "^3.0.0",
     "@sveltejs/vite-plugin-svelte": "^5.0.0",
     "@types/node": "^25.5.0",
+    "sharp": "^0.34.5",
     "svelte-check": "^4.0.0",
     "typescript": "^5.9.3",
     "vite": "^6.0.0"
