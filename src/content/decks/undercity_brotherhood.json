@@ -1,0 +1,209 @@
+{
+  "description": "The largest human society, millions deep beneath the surface in caste darkness. Talents rule from pleasure domes while modified Drones never see the sun; propaganda, drugs, and cloning have split them into near-species. Echoes are commerce, not reverence\u2014except to drones who see Wormwood as escape. ",
+  "cards": [
+    {
+      "image": "01.jpg",
+      "name": "Agromechs",
+      "type": "unit",
+      "cost": "5",
+      "type_secondary": ["mech"]
+    },
+    {
+      "image": "02.jpg",
+      "name": "Graft Necrosis",
+      "type": "reflex",
+      "cost": "1"
+    },
+    {
+      "image": "03.jpg",
+      "name": "Creche Harvest",
+      "type": "reflex",
+      "cost": "1"
+    },
+    {
+      "image": "04.jpg",
+      "name": "Critical Shot",
+      "type": "reflex",
+      "cost": "3"
+    },
+    {
+      "image": "05.jpg",
+      "name": "Crustcracker Gang",
+      "type": "unit",
+      "cost": "3",
+      "type_secondary": ["human"]
+    },
+    {
+      "image": "06.jpg",
+      "name": "Flamer Crew",
+      "type": "unit",
+      "cost": "4",
+      "type_secondary": ["human"]
+    },
+    {
+      "image": "07.jpg",
+      "name": "Flystrikers",
+      "type": "unit",
+      "cost": "3",
+      "type_secondary": ["human"]
+    },
+    {
+      "image": "08.jpg",
+      "name": "Geneforge Nurses",
+      "type": "unit",
+      "cost": "2",
+      "type_secondary": ["human"]
+    },
+    {
+      "image": "09.jpg",
+      "name": "Homo Superior",
+      "type": "unit",
+      "cost": "5",
+      "type_secondary": ["chimera"]
+    },
+    {
+      "image": "10.jpg",
+      "name": "Husk Harvesters",
+      "type": "unit",
+      "cost": "2",
+      "type_secondary": ["human"]
+    },
+    {
+      "image": "11.jpg",
+      "name": "Hypnobar",
+      "type": "augment",
+      "cost": "3",
+      "type_secondary": ["facility"]
+    },
+    {
+      "image": "12.jpg",
+      "name": "Iron Tortoise",
+      "type": "unit",
+      "cost": "4",
+      "type_secondary": ["mech"]
+    },
+    {
+      "image": "13.jpg",
+      "name": "Lowhivers",
+      "type": "unit",
+      "cost": "2",
+      "type_secondary": ["human"]
+    },
+    {
+      "image": "14.jpg",
+      "name": "Mandatory Stims",
+      "type": "reflex",
+      "cost": "2"
+    },
+    {
+      "image": "15.jpg",
+      "name": "Mantle Bore",
+      "type": "colony",
+      "cost": "6",
+      "type_secondary": ["facility"]
+    },
+    {
+      "image": "16.jpg",
+      "name": "Mindjack",
+      "type": "reflex",
+      "cost": "2"
+    },
+    {
+      "image": "17.jpg",
+      "name": "Nerve Splice",
+      "type": "reflex",
+      "cost": "X"
+    },
+    {
+      "image": "18.jpg",
+      "name": "Neural Amp",
+      "type": "augment",
+      "cost": "2",
+      "type_secondary": ["unit"]
+    },
+    {
+      "image": "19.jpg",
+      "name": "Nodal Addicts",
+      "type": "unit",
+      "cost": "2",
+      "type_secondary": ["human"]
+    },
+    {
+      "image": "20.jpg",
+      "name": "Pleasure Dome",
+      "type": "colony",
+      "cost": "2",
+      "type_secondary": ["facility"]
+    },
+    {
+      "image": "21.jpg",
+      "name": "Punishment Chamber",
+      "type": "colony",
+      "cost": "2",
+      "type_secondary": ["facility"]
+    },
+    {
+      "image": "22.jpg",
+      "name": "Recycling Vats",
+      "type": "colony",
+      "cost": "2",
+      "type_secondary": ["facility"]
+    },
+    {
+      "image": "23.jpg",
+      "name": "Rut Hollow",
+      "type": "colony",
+      "cost": "2",
+      "type_secondary": ["facility"]
+    },
+    {
+      "image": "24.jpg",
+      "name": "Scav Gang",
+      "type": "unit",
+      "cost": "5",
+      "type_secondary": ["human"]
+    },
+    {
+      "image": "25.jpg",
+      "name": "Secret Police",
+      "type": "unit",
+      "cost": "2",
+      "type_secondary": ["human"]
+    },
+    {
+      "image": "26.jpg",
+      "name": "Sporemask",
+      "type": "augment",
+      "cost": "2",
+      "type_secondary": ["unit"]
+    },
+    {
+      "image": "27.jpg",
+      "name": "Stimshifts",
+      "type": "augment",
+      "cost": "2",
+      "type_secondary": ["facility"]
+    },
+    {
+      "image": "28.jpg",
+      "name": "Titan Cannon",
+      "type": "colony",
+      "cost": "8",
+      "type_secondary": ["facility"]
+    },
+    {
+      "image": "29.jpg",
+      "name": "Vir Ex Machina",
+      "type": "augment",
+      "cost": "4",
+      "type_secondary": ["unit"]
+    },
+    {
+      "image": "30.jpg",
+      "name": "Walker Artillery",
+      "type": "unit",
+      "cost": "6",
+      "type_secondary": ["mech"]
+    }
+  ]
+}

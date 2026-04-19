@@ -7,7 +7,7 @@ dist/
 scripts/__pycache__/
 
 # generated types
-.astro/
+.svelte-kit/
 
 # dependencies
 node_modules/
@@ -21,6 +21,9 @@ pnpm-debug.log*
 # environment variables
 .env
 .env.production
+
+# AI Tool
+.claude
 
 # macOS-specific files
 .DS_Store

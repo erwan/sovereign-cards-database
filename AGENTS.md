@@ -1,25 +1,66 @@
 ## Sovereign Cards Database
 
-This is an Astro static site that serves as a database of sovereign cards. The site is built with Astro
-and uses a static site generator approach. AI agents working with this project should be aware that
-it's a static site, so they don't need to rediscover this each time.
-
-Check the Astro documentation if necessary: https://docs.astro.build/en/getting-started/
+This is a SvelteKit static site that serves as a database of sovereign cards, deployed to GitHub Pages.
 
 ## Project Overview
 
-The Sovereign Cards Database is a collection of information about various sovereign cards, their
-properties, and related data. The site provides a structured way to access and browse this information.
+A browsable collection of cards organized by faction. Each faction is a JSON deck file. The site provides filtering, list/gallery views, and a lightbox for full-size card images.
 
 ## Technologies
 
-- Astro (static site generator)
-- Markdown for content
-- Frontmatter for metadata
-- Static site hosting
+- **SvelteKit** with static adapter (prerendered, no SSR)
+- **Svelte 5** (runes syntax: `$state`, `$props`, `$derived`, `$effect`, `$bindable`)
+- **TypeScript** (strict mode)
+- **Zod** for runtime schema validation
+- **Vite** as build tool
+- Output to `dist/`, base path `/sovereign-cards-database` in production
 
-# Files Structure
+## Commands
 
-- public: assets, mostly images
-- src: most of the code including Astro components, content (decks), layouts...
-- dist: generated files, do not edit manually!
+```bash
+npm run dev      # Vite dev server at http://localhost:5173
+npm run build    # Build static site to dist/
+npm run preview  # Serve production build locally
+npm run check    # svelte-check type checking
+```
+
+## File Structure
+
+```
+src/
+├── app.html
+├── content/
+│   └── decks/          # One JSON file per faction (10 factions)
+├── lib/
+│   ├── components/     # Svelte components (CardList, FilterBar, CardLightbox, etc.)
+│   ├── decks-content.ts  # Data loader (import.meta.glob), sort/histogram helpers
+│   ├── schema.ts         # Zod schemas for CardEntry and Deck
+│   └── stores.ts         # viewPreference (localStorage), lightbox state
+├── routes/
+│   ├── +layout.svelte / +layout.ts   # prerender = true root layout
+│   ├── +page.server.ts / +page.svelte  # Home: faction grid
+│   ├── cards/
+│   │   └── +page.server.ts / +page.svelte  # All-cards filterable browser
+│   └── factions/[slug]/
+│       └── +page.server.ts / +page.svelte  # Faction detail with cost histogram
+└── styles/             # CSS files imported per page/component
+
+static/               # Static assets including card images in static/cards/<slug>/
+scripts/
+└── ocr_card_headers.py  # Python/Tesseract OCR to extract card metadata from images
+```
+
+## Data Model
+
+Cards (`CardEntry`): `image`, `name`, `type` (unit/reflex/augment/colony/unknown), `cost` (0–8 or 'X'), `type_secondary` (array).
+
+Decks (`Deck`): optional `name`/`description`, array of `cards`.
+
+All deck JSON files live in `src/content/decks/` and are loaded at build time via `import.meta.glob`.
+
+## Key Notes
+
+- All routes are statically prerendered — there is no server-side runtime.
+- The base path is empty in dev and `/sovereign-cards-database` in production (GitHub Pages).
+- Card images live in `static/cards/<slug>/` and are referenced with the base path prefix.
+- The OCR script (`scripts/ocr_card_headers.py`) requires Tesseract on PATH; it writes JSON (not TOML).

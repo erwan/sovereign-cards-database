@@ -1,0 +1,209 @@
+{
+  "description": "First people out of the wrecked ark; they claim Apsyntion, not Earth, as home. Semi-nomadic clans live beside Lilin hives, coaxing food and oxygen from the fungal mat while oral tradition hides Wormwood\u2019s grave\u2014Wind Cathedrals on the cliffs echo hive-song at dawn and dusk. ",
+  "cards": [
+    {
+      "image": "01.jpg",
+      "name": "Anemoi",
+      "type": "unit",
+      "cost": "3",
+      "type_secondary": ["human"]
+    },
+    {
+      "image": "02.jpg",
+      "name": "Apsyntion Communication",
+      "type": "reflex",
+      "cost": "0"
+    },
+    {
+      "image": "03.jpg",
+      "name": "Apsyntion Symbiosis",
+      "type": "reflex",
+      "cost": "1"
+    },
+    {
+      "image": "04.jpg",
+      "name": "Behemoth",
+      "type": "unit",
+      "cost": "8",
+      "type_secondary": ["xeno"]
+    },
+    {
+      "image": "05.jpg",
+      "name": "Borespikes",
+      "type": "augment",
+      "cost": "5",
+      "type_secondary": ["unit"]
+    },
+    {
+      "image": "06.jpg",
+      "name": "Boreworm",
+      "type": "unit",
+      "cost": "5",
+      "type_secondary": ["xeno"]
+    },
+    {
+      "image": "07.jpg",
+      "name": "Brood Den",
+      "type": "colony",
+      "cost": "3",
+      "type_secondary": ["facility"]
+    },
+    {
+      "image": "08.jpg",
+      "name": "Brood Handlers",
+      "type": "unit",
+      "cost": "3",
+      "type_secondary": ["chimera"]
+    },
+    {
+      "image": "09.jpg",
+      "name": "Bury",
+      "type": "reflex",
+      "cost": "1"
+    },
+    {
+      "image": "10.jpg",
+      "name": "Chrysalis",
+      "type": "unit",
+      "cost": "2",
+      "type_secondary": ["xeno"]
+    },
+    {
+      "image": "11.jpg",
+      "name": "Contact",
+      "type": "reflex",
+      "cost": "1"
+    },
+    {
+      "image": "12.jpg",
+      "name": "Flock Webs",
+      "type": "augment",
+      "cost": "2",
+      "type_secondary": ["unit"]
+    },
+    {
+      "image": "13.jpg",
+      "name": "Fungus Farm",
+      "type": "colony",
+      "cost": "2",
+      "type_secondary": ["facility"]
+    },
+    {
+      "image": "14.jpg",
+      "name": "Harlequin",
+      "type": "unit",
+      "cost": "4",
+      "type_secondary": ["xeno"]
+    },
+    {
+      "image": "15.jpg",
+      "name": "Incursion",
+      "type": "reflex",
+      "cost": "2"
+    },
+    {
+      "image": "16.jpg",
+      "name": "Lilin Hive",
+      "type": "colony",
+      "cost": "2",
+      "type_secondary": ["facility"]
+    },
+    {
+      "image": "17.jpg",
+      "name": "Lilin Matron",
+      "type": "unit",
+      "cost": "4",
+      "type_secondary": ["xeno"]
+    },
+    {
+      "image": "18.jpg",
+      "name": "Lilin Vultures",
+      "type": "unit",
+      "cost": "2",
+      "type_secondary": ["xeno"]
+    },
+    {
+      "image": "19.jpg",
+      "name": "Mark Of The Hive",
+      "type": "augment",
+      "cost": "2",
+      "type_secondary": ["facility"]
+    },
+    {
+      "image": "20.jpg",
+      "name": "Mimetic Scales",
+      "type": "augment",
+      "cost": "2",
+      "type_secondary": ["unit"]
+    },
+    {
+      "image": "21.jpg",
+      "name": "Musk Herders",
+      "type": "unit",
+      "cost": "2",
+      "type_secondary": ["human"]
+    },
+    {
+      "image": "22.jpg",
+      "name": "Shroud",
+      "type": "unit",
+      "cost": "3",
+      "type_secondary": ["xeno"]
+    },
+    {
+      "image": "23.jpg",
+      "name": "Spawning Pits",
+      "type": "colony",
+      "cost": "4",
+      "type_secondary": ["facility"]
+    },
+    {
+      "image": "24.jpg",
+      "name": "Spore Weevils",
+      "type": "unit",
+      "cost": "5",
+      "type_secondary": ["xeno"]
+    },
+    {
+      "image": "25.jpg",
+      "name": "Sporemask Poachers",
+      "type": "unit",
+      "cost": "4",
+      "type_secondary": ["human"]
+    },
+    {
+      "image": "26.jpg",
+      "name": "Wind Cathedral",
+      "type": "colony",
+      "cost": "4",
+      "type_secondary": ["facility"]
+    },
+    {
+      "image": "27.jpg",
+      "name": "Windlion",
+      "type": "unit",
+      "cost": "4",
+      "type_secondary": ["xeno"]
+    },
+    {
+      "image": "28.jpg",
+      "name": "Windwalker Camp",
+      "type": "colony",
+      "cost": "3",
+      "type_secondary": ["facility"]
+    },
+    {
+      "image": "29.jpg",
+      "name": "Xeno Psychology",
+      "type": "reflex",
+      "cost": "1"
+    },
+    {
+      "image": "30.jpg",
+      "name": "Xenophagy",
+      "type": "augment",
+      "cost": "2",
+      "type_secondary": ["unit"]
+    }
+  ]
+}

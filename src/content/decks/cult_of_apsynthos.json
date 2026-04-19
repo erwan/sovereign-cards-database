@@ -1,0 +1,210 @@
+{
+  "name": "Cult of Apsynthos",
+  "description": "They settle the fungal wastes\u2019 most toxic psychoactive zones and Lilin husks, obeying laws shaped by semi-aware xenofungus. Initiates splice mycelium into flesh until the network owns their nerves\u2014gaining strength and spore-born \u201ctelepathy\u201d while spreading infection toward a holy end to mankind. ",
+  "cards": [
+    {
+      "image": "22.jpg",
+      "name": "Acid Husks",
+      "type": "unit",
+      "cost": "4",
+      "type_secondary": ["xeno"]
+    },
+    {
+      "image": "23.jpg",
+      "name": "Apsyntion Preserve",
+      "type": "colony",
+      "cost": "4",
+      "type_secondary": ["facility"]
+    },
+    {
+      "image": "24.jpg",
+      "name": "Blister Plates",
+      "type": "augment",
+      "cost": "2",
+      "type_secondary": ["unit"]
+    },
+    {
+      "image": "25.jpg",
+      "name": "Boreworm Larvae",
+      "type": "unit",
+      "cost": "4",
+      "type_secondary": ["xeno"]
+    },
+    {
+      "image": "26.jpg",
+      "name": "Carrier",
+      "type": "augment",
+      "cost": "4",
+      "type_secondary": ["unit"]
+    },
+    {
+      "image": "27.jpg",
+      "name": "Chimera Guild",
+      "type": "colony",
+      "cost": "4",
+      "type_secondary": ["facility"]
+    },
+    {
+      "image": "28.jpg",
+      "name": "Elder Hybrids",
+      "type": "unit",
+      "cost": "3",
+      "type_secondary": ["chimera"]
+    },
+    {
+      "image": "29.jpg",
+      "name": "Endospexi",
+      "type": "unit",
+      "cost": "2",
+      "type_secondary": ["chimera"]
+    },
+    {
+      "image": "30.jpg",
+      "name": "Fungal Bloom",
+      "type": "reflex",
+      "cost": "3"
+    },
+    {
+      "image": "01.jpg",
+      "name": "Gene Speakers",
+      "type": "unit",
+      "cost": "3",
+      "type_secondary": ["chimera"]
+    },
+    {
+      "image": "02.jpg",
+      "name": "Hyphal Warning",
+      "type": "augment",
+      "cost": "3",
+      "type_secondary": ["unit"]
+    },
+    {
+      "image": "03.jpg",
+      "name": "Grendels",
+      "type": "unit",
+      "cost": "5",
+      "type_secondary": ["xeno"]
+    },
+    {
+      "image": "04.jpg",
+      "name": "Haruspexi",
+      "type": "unit",
+      "cost": "3",
+      "type_secondary": ["chimera"]
+    },
+    {
+      "image": "05.jpg",
+      "name": "Herdmasters",
+      "type": "unit",
+      "cost": "3",
+      "type_secondary": ["chimera"]
+    },
+    {
+      "image": "06.jpg",
+      "name": "Mosaic Mutation",
+      "type": "reflex",
+      "cost": "2"
+    },
+    {
+      "image": "07.jpg",
+      "name": "Mycandrium",
+      "type": "colony",
+      "cost": "3",
+      "type_secondary": ["facility"]
+    },
+    {
+      "image": "08.jpg",
+      "name": "Mygologists",
+      "type": "unit",
+      "cost": "2",
+      "type_secondary": ["human"]
+    },
+    {
+      "image": "09.jpg",
+      "name": "Orthogenesis",
+      "type": "reflex",
+      "cost": "2"
+    },
+    {
+      "image": "10.jpg",
+      "name": "Plague Spores",
+      "type": "reflex",
+      "cost": "2"
+    },
+    {
+      "image": "11.jpg",
+      "name": "Planet Plague",
+      "type": "augment",
+      "cost": "2",
+      "type_secondary": ["unit"]
+    },
+    {
+      "image": "12.jpg",
+      "name": "Rot Midden",
+      "type": "colony",
+      "cost": "4",
+      "type_secondary": ["facility"]
+    },
+    {
+      "image": "13.jpg",
+      "name": "Silkspitters",
+      "type": "unit",
+      "cost": "4",
+      "type_secondary": ["xeno"]
+    },
+    {
+      "image": "14.jpg",
+      "name": "Spore Blossoms",
+      "type": "augment",
+      "cost": "2",
+      "type_secondary": ["unit"]
+    },
+    {
+      "image": "15.jpg",
+      "name": "Spore Mats",
+      "type": "colony",
+      "cost": "4",
+      "type_secondary": ["facility"]
+    },
+    {
+      "image": "16.jpg",
+      "name": "Spore Slaves",
+      "type": "unit",
+      "cost": "2",
+      "type_secondary": ["human"]
+    },
+    {
+      "image": "17.jpg",
+      "name": "Spore Storm",
+      "type": "reflex",
+      "cost": "2"
+    },
+    {
+      "image": "18.jpg",
+      "name": "Stalk Tenders",
+      "type": "unit",
+      "cost": "2",
+      "type_secondary": ["xeno"]
+    },
+    {
+      "image": "19.jpg",
+      "name": "Unruly Husks",
+      "type": "unit",
+      "cost": "3",
+      "type_secondary": ["xeno"]
+    },
+    {
+      "image": "20.jpg",
+      "name": "Xeno Regeneration",
+      "type": "reflex",
+      "cost": "1"
+    },
+    {
+      "image": "21.jpg",
+      "name": "Xenoneural Arcology",
+      "type": "colony",
+      "cost": "5",
+      "type_secondary": ["facility"]
+    }
+  ]
+}
