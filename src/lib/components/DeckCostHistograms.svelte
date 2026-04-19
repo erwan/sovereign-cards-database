@@ -39,14 +39,7 @@
                   {@const valueTip = `${bin.count} ${bin.count === 1 ? 'card' : 'cards'} at cost ${bin.label}`}
                   <div class="deck-histogram-cell" title={valueTip}>
                     <div class="deck-histogram-bar-track" aria-hidden="true">
-                      <div
-                        class="deck-histogram-bar-stack"
-                        style="--stack-fill: {stackFill}"
-                      >
-                        {#each { length: bin.count } as _}
-                          <div class="deck-histogram-bar-block"></div>
-                        {/each}
-                      </div>
+                      <div class="deck-histogram-bar-stack" style="--stack-fill: {stackFill}; --count: {bin.count}"></div>
                     </div>
                     <span class="deck-histogram-axis-label">{bin.label}</span>
                   </div>
