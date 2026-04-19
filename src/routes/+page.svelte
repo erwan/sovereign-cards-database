@@ -8,6 +8,7 @@
 
 <svelte:head>
   <title>Sovereign Cards Database</title>
+  <link rel="preload" as="image" href={asset(`/cards/${data.decks[0].slug}/cover.jpg` as Asset)} />
 </svelte:head>
 
 <main class="home">
@@ -17,7 +18,7 @@
   </div>
   <p class="lede">Cards database by faction. Choose a deck to browse card names and types.</p>
   <ul class="deck-grid">
-    {#each data.decks as deck}
+    {#each data.decks as deck, i}
       <li>
         <a class="deck-link" href={resolve(`/factions/${deck.slug}`)}>
           <img
@@ -26,7 +27,7 @@
             alt={deck.displayName}
             width="280"
             height="392"
-            loading="lazy"
+            fetchpriority={i === 0 ? 'high' : undefined}
           />
         </a>
       </li>

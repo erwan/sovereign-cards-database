@@ -12,6 +12,12 @@
 
   let { data } = $props();
   let deck = $derived(data.deck);
+
+  const priorityCards = $derived(new Set(
+    DISPLAY_TYPE_ORDER
+      .flatMap(type => deck.cards.filter((c: CardEntry) => c.type === type).sort(compareCardsByCostThenName))
+      .slice(0, 4)
+  ));
 </script>
 
 <svelte:head>
@@ -39,6 +45,7 @@
                 {card}
                 imageSrc={asset(`/cards/${deck.slug}/${card.image}` as Asset)}
                 view={$viewPreference}
+                priority={priorityCards.has(card)}
               />
             {/each}
           </ul>

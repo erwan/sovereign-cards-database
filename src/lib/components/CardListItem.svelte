@@ -7,9 +7,10 @@
     imageSrc: string;
     view?: 'list' | 'gallery';
     typeLabel?: string;
+    priority?: boolean;
   }
 
-  let { card, imageSrc, view = 'gallery', typeLabel = undefined }: Props = $props();
+  let { card, imageSrc, view = 'gallery', typeLabel = undefined, priority = false }: Props = $props();
 
   const displayTypeLabel = $derived(typeLabel ?? cardBlockTypeLabel(card));
   const isList = $derived(view === 'list');
@@ -45,7 +46,8 @@
       alt={isList ? '' : card.name}
       width="120"
       height="168"
-      loading="lazy"
+      loading={priority ? 'eager' : 'lazy'}
+      fetchpriority={priority ? 'high' : undefined}
     />
     <div class="card-meta">
       <span class="card-name">{card.name}</span>
