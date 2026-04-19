@@ -1,6 +1,6 @@
 ## Sovereign Cards Database
 
-This is a SvelteKit static site that serves as a database of sovereign cards, deployed to GitHub Pages. It was migrated from Astro to SvelteKit.
+This is a SvelteKit static site that serves as a database of sovereign cards, deployed to GitHub Pages.
 
 ## Project Overview
 

@@ -1,6 +1,7 @@
 <script lang="ts">
   import SiteGitHubLink from '$lib/components/SiteGitHubLink.svelte';
-  import { base } from '$app/paths';
+  import { asset, resolve } from '$app/paths';
+  import type { Asset } from '$app/types';
 
   let { data } = $props();
 </script>
@@ -18,10 +19,10 @@
   <ul class="deck-grid">
     {#each data.decks as deck}
       <li>
-        <a class="deck-link" href="{base}/factions/{deck.slug}">
+        <a class="deck-link" href={resolve(`/factions/${deck.slug}`)}>
           <img
             class="deck-cover"
-            src="{base}/cards/{deck.slug}/cover.jpg"
+            src={asset(`/cards/${deck.slug}/cover.jpg` as Asset)}
             alt={deck.displayName}
             width="280"
             height="392"
@@ -32,7 +33,7 @@
     {/each}
   </ul>
   <div class="global-cta">
-    <a class="cta-button" href="{base}/cards">Browse All Cards</a>
+    <a class="cta-button" href={resolve('/cards')}>Browse All Cards</a>
     <p class="cta-description">Search and filter cards across all factions</p>
   </div>
 </main>
