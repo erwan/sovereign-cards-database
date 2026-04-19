@@ -7,11 +7,11 @@
   import ViewToggle from '$lib/components/ViewToggle.svelte';
   import { DISPLAY_TYPE_ORDER, compareCardsByCostThenName, typeSectionHeading, type CardEntry } from '$lib/decks-content';
   import { viewPreference } from '$lib/stores';
-  import { base } from '$app/paths';
+  import { asset } from '$app/paths';
+  import type { Asset } from '$app/types';
 
   let { data } = $props();
   let deck = $derived(data.deck);
-  let assetPrefix = $derived(`${base}/cards/${deck.slug}/`);
 </script>
 
 <svelte:head>
@@ -24,7 +24,7 @@
   {/snippet}
 
   <div class="faction-detail" data-deck-view={$viewPreference}>
-    <DeckHeader {deck} coverSrc="{assetPrefix}leader.jpg" />
+    <DeckHeader {deck} coverSrc={asset(`/cards/${deck.slug}/leader.jpg` as Asset)} />
     <DeckCostHistograms {deck} />
     {#each DISPLAY_TYPE_ORDER as type}
       {@const sectionCards = deck.cards
@@ -37,7 +37,7 @@
             {#each sectionCards as card}
               <CardListItem
                 {card}
-                imageSrc="{assetPrefix}{card.image}"
+                imageSrc={asset(`/cards/${deck.slug}/${card.image}` as Asset)}
                 view={$viewPreference}
               />
             {/each}
