@@ -1,4 +1,5 @@
-import { loadDecks, type CardEntry } from '$lib/decks-content';
+import { loadDecks } from '$lib/decks-content.server';
+import type { CardEntry } from '$lib/decks-content';
 
 export interface CardWithFaction extends CardEntry {
   factionSlug: string;

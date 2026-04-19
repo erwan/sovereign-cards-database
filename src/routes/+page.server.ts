@@ -1,4 +1,4 @@
-import { loadDecks } from '$lib/decks-content';
+import { loadDecks } from '$lib/decks-content.server';
 
 export async function load() {
   const decks = await loadDecks();

@@ -1,4 +1,4 @@
-import { loadDecks } from '$lib/decks-content';
+import { loadDecks } from '$lib/decks-content.server';
 import { error } from '@sveltejs/kit';
 
 export async function entries() {
