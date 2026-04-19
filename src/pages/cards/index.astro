@@ -5,6 +5,7 @@ import CardLightbox from "../../components/CardLightbox.astro";
 import FilterBar from "../../components/FilterBar.astro";
 import FilteredCardList from "../../components/FilteredCardList.astro";
 import SiteGitHubLink from "../../components/SiteGitHubLink.astro";
+import ViewToggle from "../../components/ViewToggle.astro";
 import Layout from "../../layouts/Layout.astro";
 import { loadDecks, type CardEntry } from "../../lib/decks-content";
 import { getBaseUrl } from "../../lib/baseUrl";
@@ -80,27 +81,7 @@ const home = getBaseUrl();
         <nav class="faction-nav">
           <a href={home}>← Home</a>
         </nav>
-        <div class="deck-view-toolbar" role="group" aria-label="Display mode">
-          <div class="deck-view-switch" role="presentation">
-            <input
-              type="radio"
-              class="deck-view-input"
-              name="deck-view-mode"
-              id="deck-view-list"
-              value="list"
-            />
-            <label class="deck-view-option" for="deck-view-list">List</label>
-            <input
-              type="radio"
-              class="deck-view-input"
-              name="deck-view-mode"
-              id="deck-view-gallery"
-              value="gallery"
-            />
-            <label class="deck-view-option" for="deck-view-gallery">Cards</label
-            >
-          </div>
-        </div>
+      <ViewToggle initialView="gallery" />
       </div>
       <SiteGitHubLink />
     </div>

@@ -114,19 +114,31 @@ const sortedCards: CardWithFaction[] = [...cards]
         window.addEventListener("filters-changed", this._onFiltersChanged);
       },
 
-      persistSort() {
+       persistSort() {
         try {
           localStorage.setItem("sovereign-cards-sort", this.sortBy);
         } catch (e) {}
+      },
+
+      // Client-side costSortKey function (must be inside Alpine component context)
+      costSortKey(cost) {
+        if (cost.length === 1 && cost >= "0" && cost <= "8") {
+          return cost.charCodeAt(0) - 48;
+        }
+        return 9; // X or other
       },
 
       compareCostThenName(a, b) {
         var ka = this.costSortKey(a.cost);
         var kb = this.costSortKey(b.cost);
         if (ka !== kb) return ka - kb;
-        var byCostChar = String(a.cost).localeCompare(String(b.cost), undefined, {
-          sensitivity: "base",
-        });
+        var byCostChar = String(a.cost).localeCompare(
+          String(b.cost),
+          undefined,
+          {
+            sensitivity: "base",
+          },
+        );
         if (byCostChar !== 0) return byCostChar;
         return String(a.name).localeCompare(String(b.name), undefined, {
           sensitivity: "base",
@@ -138,8 +150,8 @@ const sortedCards: CardWithFaction[] = [...cards]
           sensitivity: "base",
         });
         if (byName !== 0) return byName;
-        var ka = this.costSortKey(a.cost);
-        var kb = this.costSortKey(b.cost);
+        var ka = costSortKey(a.cost);
+        var kb = costSortKey(b.cost);
         if (ka !== kb) return ka - kb;
         return String(a.cost).localeCompare(String(b.cost), undefined, {
           sensitivity: "base",
@@ -198,13 +210,6 @@ const sortedCards: CardWithFaction[] = [...cards]
 
           return true;
         });
-      },
-
-      costSortKey(cost) {
-        if (cost.length === 1 && cost >= "0" && cost <= "8") {
-          return cost.charCodeAt(0) - 48;
-        }
-        return 9; // X or other
       },
 
       renderCards() {

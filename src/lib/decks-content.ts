@@ -46,15 +46,11 @@ export function cardBlockTypeLabel(card: CardEntry): string {
 }
 
 /** 0–8 for digit costs; 9 for cost 9 or any other single-character cost. */
-export function costHistogramBinIndex(cost: string): number {
+export function costSortKey(cost: string): number {
   if (cost.length === 1 && cost >= '0' && cost <= '8') {
     return cost.charCodeAt(0) - 48;
   }
   return 9;
-}
-
-function costSortKey(cost: string): number {
-  return costHistogramBinIndex(cost);
 }
 
 export function compareCardsByCostThenName(a: CardEntry, b: CardEntry): number {
@@ -74,7 +70,7 @@ export interface CostHistogramBin {
 export function buildCostHistogram(cards: CardEntry[]): { bins: CostHistogramBin[]; maxCount: number } {
   const counts = new Array(10).fill(0);
   for (const c of cards) {
-    counts[costHistogramBinIndex(c.cost)]++;
+    counts[costSortKey(c.cost)]++;
   }
   const bins: CostHistogramBin[] = [];
   for (let i = 0; i <= 8; i++) {
