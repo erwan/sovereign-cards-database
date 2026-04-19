@@ -16,8 +16,6 @@ export async function load() {
     }))
   );
 
-  const factions = decks.map((d) => ({ slug: d.slug, displayName: d.displayName }));
-
   const allSecondaryTypes = [...new Set(
     allCards.flatMap((c) => c.type_secondary ?? [])
   )].sort();
@@ -38,5 +36,5 @@ export async function load() {
     ),
   };
 
-  return { allCards, factions, validSecondaryTypesByType };
+  return { allCards, validSecondaryTypesByType };
 }

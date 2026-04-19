@@ -17,7 +17,6 @@
     costs: [] as string[],
     type: '',
     secondaryType: '',
-    faction: '',
   });
 
   let sortBy = $state<'cost' | 'name'>(
@@ -29,13 +28,12 @@
   });
 
   let filteredCards = $derived.by(() => {
-    const { search, costs, type, secondaryType, faction } = filters;
+    const { search, costs, type, secondaryType } = filters;
     let result = data.allCards.filter((card: CardWithFaction) => {
       if (search && !card.name.toLowerCase().includes(search.toLowerCase())) return false;
       if (costs.length > 0 && !costs.includes(String(card.cost))) return false;
       if (type && card.type !== type) return false;
       if (secondaryType && !card.type_secondary?.includes(secondaryType)) return false;
-      if (faction && card.factionSlug !== faction) return false;
       return true;
     });
 
@@ -67,8 +65,6 @@
     bind:filters
     allCards={data.allCards}
     validSecondaryTypesByType={data.validSecondaryTypesByType}
-    factions={data.factions}
-    showFactionSelector={true}
   />
 
   <div class="faction-detail all-cards-detail" data-deck-view={$viewPreference}>

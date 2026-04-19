@@ -1,14 +1,14 @@
-<script lang="ts">
+<script lang="ts" generics="T extends CardEntry">
   import CardListItem from './CardListItem.svelte';
   import type { CardEntry } from '$lib/decks-content';
 
   interface Props {
-    cards: CardEntry[];
+    cards: T[];
     totalCount: number;
     sortBy: 'cost' | 'name';
     view: 'list' | 'gallery';
-    getImageSrc: (card: CardEntry) => string;
-    getTypeLabel?: (card: CardEntry) => string;
+    getImageSrc: (card: T) => string;
+    getTypeLabel?: (card: T) => string;
   }
 
   let {
@@ -41,7 +41,7 @@
     </div>
   {:else}
     <ul class="card-list">
-      {#each cards as card (card.name + (card as { factionSlug?: string }).factionSlug)}
+      {#each cards as card (card.name + ((card as Record<string, unknown>).factionSlug ?? ''))}
         <CardListItem
           {card}
           imageSrc={getImageSrc(card)}

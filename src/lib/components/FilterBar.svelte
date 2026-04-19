@@ -6,20 +6,12 @@
     costs: string[];
     type: string;
     secondaryType: string;
-    faction: string;
-  }
-
-  interface Faction {
-    slug: string;
-    displayName: string;
   }
 
   interface Props {
     filters: Filters;
-    allCards?: (CardEntry & { factionSlug?: string })[];
+    allCards?: CardEntry[];
     validSecondaryTypesByType?: Record<string, string[]>;
-    showFactionSelector?: boolean;
-    factions?: Faction[];
     searchPlaceholder?: string;
   }
 
@@ -27,8 +19,6 @@
     filters = $bindable(),
     allCards = [],
     validSecondaryTypesByType = {},
-    showFactionSelector = false,
-    factions = [],
     searchPlaceholder = 'Search cards...',
   }: Props = $props();
 
@@ -71,7 +61,7 @@
   );
 
   let hasActiveFilters = $derived(
-    !!(filters.search || filters.costs.length > 0 || filters.type || filters.secondaryType || filters.faction)
+    !!(filters.search || filters.costs.length > 0 || filters.type || filters.secondaryType)
   );
 
   $effect(() => {
@@ -93,7 +83,7 @@
     }
   });
 
-  function closeCostDropdown(e: MouseEvent) {
+  function closeCostDropdown(e: FocusEvent) {
     if (!(e.currentTarget as HTMLElement).contains(e.relatedTarget as Node)) {
       costDropdownOpen = false;
     }
@@ -116,7 +106,6 @@
     filters.costs = [];
     filters.type = '';
     filters.secondaryType = '';
-    filters.faction = '';
   }
 </script>
 
@@ -222,18 +211,6 @@
       {/each}
     </select>
   </div>
-
-  {#if showFactionSelector}
-    <div class="filter-group">
-      <label for="faction" class="filter-label">Faction</label>
-      <select bind:value={filters.faction} id="faction" class="filter-select">
-        <option value="">All Factions</option>
-        {#each factions as faction}
-          <option value={faction.slug}>{faction.displayName}</option>
-        {/each}
-      </select>
-    </div>
-  {/if}
 
   <div class="filter-group filter-group--actions">
     <span class="filter-label filter-label--spacer" aria-hidden="true">&nbsp;</span>
