@@ -109,19 +109,25 @@
 .filter-cost-option {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  cursor: pointer;
   font-size: 0.875rem;
   color: var(--text-primary);
   padding: 0.2rem 0;
   border-radius: 0.25rem;
 }
 
-.filter-cost-option:hover {
+.filter-cost-option-check {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  padding-right: 0.5rem;
+}
+
+.filter-cost-option-check:hover {
   color: var(--accent-hover);
 }
 
-.filter-cost-option input {
+.filter-cost-option-check input {
   width: 1rem;
   height: 1rem;
   accent-color: var(--accent);
@@ -130,6 +136,11 @@
 
 .filter-cost-option-label {
   font-variant-numeric: tabular-nums;
+}
+
+.filter-cost-center {
+  flex: 1;
+  min-height: 1px;
 }
 
 .filter-cost-only-btn {

@@ -100,22 +100,25 @@ const {
         aria-label="Cost values"
       >
         <template x-for="cv in getAvailableCosts()" :key="cv">
-          <label class="filter-cost-option">
-            <input
-              type="checkbox"
-              :value="cv"
-              x-model="filters.costs"
-              @change="emitFiltersChanged()"
-            />
-            <span class="filter-cost-option-label" x-text="cv"></span>
-            <div
+          <div class="filter-cost-option">
+            <label class="filter-cost-option-check">
+              <input
+                type="checkbox"
+                :value="cv"
+                x-model="filters.costs"
+                @change="emitFiltersChanged()"
+              />
+              <span class="filter-cost-option-label" x-text="cv"></span>
+            </label>
+            <button
+              type="button"
               class="filter-cost-only-btn"
-              @click.prevent="setOnlyCost(cv)"
+              @click="setOnlyCost(cv)"
               :aria-label="'Show only cost ' + cv"
             >
               Only
-            </div>
-          </label>
+            </button>
+          </div>
         </template>
         <div class="filter-cost-panel-footer">
           <button
