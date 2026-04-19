@@ -153,14 +153,6 @@
   color: var(--accent-hover);
 }
 
-.filter-cost-option:hover .filter-cost-only-btn {
-  opacity: 1;
-}
-
-.filter-cost-only-btn:hover {
-  color: var(--accent);
-}
-
 .filter-cost-panel-footer {
   margin-top: 0.35rem;
   padding-top: 0.5rem;

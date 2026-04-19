@@ -90,10 +90,11 @@ const home = getBaseUrl();
       <p class="page-subtitle">Browse and filter cards from all factions</p>
     </header>
 
-     <FilterBar 
-       showFactionSelector={false} 
-       validSecondaryTypesByType={validSecondaryTypesByType}
-     />
+<FilterBar 
+        showFactionSelector={false} 
+        validSecondaryTypesByType={validSecondaryTypesByType}
+        allCards={allCards}
+      />
 
     <div class="faction-detail all-cards-detail" data-deck-view="gallery">
       <script is:inline>

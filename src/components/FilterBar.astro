@@ -6,11 +6,18 @@ interface Faction {
   displayName: string;
 }
 
+interface CardData {
+  cost?: string;
+  type?: string;
+  type_secondary?: string[];
+}
+
 interface Props {
   searchPlaceholder?: string;
   showFactionSelector?: boolean;
   factions?: Faction[];
   validSecondaryTypesByType?: Record<string, string[]>;
+  allCards?: CardData[];
   initialState?: {
     search?: string;
     costs?: string[];
@@ -25,6 +32,7 @@ const {
   showFactionSelector = true,
   factions = [],
   validSecondaryTypesByType,
+  allCards = [],
   initialState = {},
 } = Astro.props;
 ---
@@ -37,6 +45,7 @@ const {
     showFactionSelector,
     factions,
     validSecondaryTypesByType,
+    allCards,
   })}
 >
   <div class="filter-group filter-group--search">
@@ -90,7 +99,7 @@ const {
         role="group"
         aria-label="Cost values"
       >
-        <template x-for="cv in costValues" :key="cv">
+        <template x-for="cv in getAvailableCosts()" :key="cv">
           <label class="filter-cost-option">
             <input
               type="checkbox"
@@ -200,8 +209,8 @@ const {
     return {
       showFactionSelector: initialState.showFactionSelector ?? true,
       factions: initialState.factions ?? [],
+      allCards: initialState.allCards ?? [],
       costDropdownOpen: false,
-      costValues: ["0", "1", "2", "3", "4", "5", "6", "7", "X"],
       filters: {
         search: initialState.search || "",
         costs: costsArr,
@@ -212,6 +221,52 @@ const {
 
       // Mapping of valid secondary types for each primary type (passed through initial state)
       validSecondaryTypesByType: initialState.validSecondaryTypesByType,
+
+      init() {
+        // Auto-clear costs that are no longer valid when type changes
+        this.$watch('filters.type', () => this.clearInvalidCosts());
+        this.$watch('filters.secondaryType', () => this.clearInvalidCosts());
+      },
+
+      clearInvalidCosts() {
+        var available = this.getAvailableCosts();
+        var invalid = this.filters.costs.filter(function(c) {
+          return !available.includes(c);
+        });
+        if (invalid.length > 0) {
+          this.filters.costs = this.filters.costs.filter(function(c) {
+            return available.includes(c);
+          });
+          this.emitFiltersChanged();
+        }
+      },
+
+      getAvailableCosts() {
+        var cards = this.allCards;
+        if (!cards || cards.length === 0) {
+          return ["0", "1", "2", "3", "4", "5", "6", "7", "X"];
+        }
+        var currentType = this.filters.type;
+        var currentSecondary = this.filters.secondaryType;
+        var costsSet = {};
+        for (var i = 0; i < cards.length; i++) {
+          var card = cards[i];
+          if (!card.cost) continue;
+          if (currentType && card.type !== currentType) continue;
+          if (currentSecondary) {
+            var types = card.type_secondary || [];
+            if (types.length > 0 && types.indexOf(currentSecondary) === -1) continue;
+          }
+          costsSet[card.cost] = true;
+        }
+        var costs = Object.keys(costsSet);
+        costs.sort(function(a, b) {
+          var oa = a === "X" ? 10 : parseInt(a, 10);
+          var ob = b === "X" ? 10 : parseInt(b, 10);
+          return oa - ob;
+        });
+        return costs.length > 0 ? costs : ["0", "1", "2", "3", "4", "5", "6", "7", "X"];
+      },
 
       costTriggerLabel() {
         var c = this.filters.costs;
