@@ -32,7 +32,12 @@ const {
 <div
   class="filter-bar"
   x-data="filterBarComponent(JSON.parse($el.dataset.initialState))"
-  data-initial-state={JSON.stringify({ ...initialState, showFactionSelector, factions, validSecondaryTypesByType })}
+  data-initial-state={JSON.stringify({
+    ...initialState,
+    showFactionSelector,
+    factions,
+    validSecondaryTypesByType,
+  })}
 >
   <div class="filter-group filter-group--search">
     <label for="search" class="filter-label">Search</label>
@@ -74,7 +79,8 @@ const {
         :aria-label="'Filter by cost, current: ' + costTriggerLabel()"
         @click="costDropdownOpen = !costDropdownOpen"
       >
-        <span class="filter-cost-trigger-text" x-text="costTriggerLabel()"></span>
+        <span class="filter-cost-trigger-text" x-text="costTriggerLabel()"
+        ></span>
         <span class="filter-cost-trigger-chevron" aria-hidden="true"></span>
       </button>
       <div
@@ -93,6 +99,13 @@ const {
               @change="emitFiltersChanged()"
             />
             <span class="filter-cost-option-label" x-text="cv"></span>
+            <div
+              class="filter-cost-only-btn"
+              @click.prevent="setOnlyCost(cv)"
+              :aria-label="'Show only cost ' + cv"
+            >
+              Only
+            </div>
           </label>
         </template>
         <div class="filter-cost-panel-footer">
@@ -124,7 +137,7 @@ const {
     </select>
   </div>
 
-   <div class="filter-group">
+  <div class="filter-group">
     <label for="secondaryType" class="filter-label">Secondary Type</label>
     <select
       x-model="filters.secondaryType"
@@ -134,8 +147,14 @@ const {
       :disabled="filters.type === 'reflex' || getAvailableSecondaryTypes().length === 0"
     >
       <option value="">Any Secondary</option>
-      <template x-for="secondaryType in getAvailableSecondaryTypes()" :key="secondaryType">
-        <option :value="secondaryType" x-text="secondaryType.charAt(0).toUpperCase() + secondaryType.slice(1)"></option>
+      <template
+        x-for="secondaryType in getAvailableSecondaryTypes()"
+        :key="secondaryType"
+      >
+        <option
+          :value="secondaryType"
+          x-text="secondaryType.charAt(0).toUpperCase() + secondaryType.slice(1)"
+        ></option>
       </template>
     </select>
   </div>
@@ -156,7 +175,9 @@ const {
   </div>
 
   <div class="filter-group filter-group--actions">
-    <span class="filter-label filter-label--spacer" aria-hidden="true">&nbsp;</span>
+    <span class="filter-label filter-label--spacer" aria-hidden="true"
+      >&nbsp;</span
+    >
     <button
       type="button"
       @click="clearFilters()"
@@ -189,7 +210,7 @@ const {
         faction: initialState.faction || "",
       },
 
-       // Mapping of valid secondary types for each primary type (passed through initial state)
+      // Mapping of valid secondary types for each primary type (passed through initial state)
       validSecondaryTypesByType: initialState.validSecondaryTypesByType,
 
       costTriggerLabel() {
@@ -225,7 +246,12 @@ const {
         this.emitFiltersChanged();
       },
 
-       clearFilters() {
+      setOnlyCost(cost) {
+        this.filters.costs = [cost];
+        this.emitFiltersChanged();
+      },
+
+      clearFilters() {
         this.filters = {
           search: "",
           costs: [],
@@ -239,7 +265,10 @@ const {
       // Get available secondary types based on current primary type
       getAvailableSecondaryTypes() {
         const currentType = this.filters.type;
-        return this.validSecondaryTypesByType[currentType] || this.validSecondaryTypesByType[''];
+        return (
+          this.validSecondaryTypesByType[currentType] ||
+          this.validSecondaryTypesByType[""]
+        );
       },
 
       // Check if a secondary type is valid for the current primary type
@@ -249,9 +278,12 @@ const {
         return availableTypes.includes(secondaryType);
       },
 
-       emitFiltersChanged() {
+      emitFiltersChanged() {
         // Clear secondary type if it's not valid for the current primary type
-        if (this.filters.type && !this.isSecondaryTypeValid(this.filters.secondaryType)) {
+        if (
+          this.filters.type &&
+          !this.isSecondaryTypeValid(this.filters.secondaryType)
+        ) {
           this.filters.secondaryType = "";
         }
 
@@ -267,5 +299,3 @@ const {
     };
   }
 </script>
-
-
