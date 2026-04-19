@@ -25,6 +25,51 @@ const allCards: CardWithFaction[] = decks.flatMap((deck) =>
   })),
 );
 
+// Calculate valid secondary types from actual card data
+function calculateValidSecondaryTypes(cards: CardWithFaction[]): Record<string, string[]> {
+  const typeMap: Record<string, Set<string>> = {};
+  
+  // Initialize sets for all types
+  cards.forEach(card => {
+    if (!card.type) return;
+    if (!typeMap[card.type]) {
+      typeMap[card.type] = new Set();
+    }
+    
+    // Add secondary types for this card type
+    if (card.type_secondary && card.type_secondary.length > 0) {
+      card.type_secondary.forEach(secondaryType => {
+        typeMap[card.type]?.add(secondaryType);
+      });
+    }
+  });
+  
+  // Convert sets to sorted arrays
+  const result: Record<string, string[]> = {};
+  Object.entries(typeMap).forEach(([type, secondaryTypes]) => {
+    result[type] = Array.from(secondaryTypes).sort();
+  });
+  
+  return result;
+}
+
+// Get all unique secondary types from all cards for the "Any" case
+function getAllSecondaryTypes(cards: CardWithFaction[]): string[] {
+  const allSecondaryTypes = new Set<string>();
+  cards.forEach(card => {
+    if (card.type_secondary) {
+      card.type_secondary.forEach(st => allSecondaryTypes.add(st));
+    }
+  });
+  return Array.from(allSecondaryTypes).sort();
+}
+
+// Calculate the valid secondary types mapping from actual card data
+const validSecondaryTypesByType = {
+  '': getAllSecondaryTypes(allCards),
+  ...calculateValidSecondaryTypes(allCards)
+};
+
 const home = getBaseUrl();
 ---
 
@@ -64,7 +109,10 @@ const home = getBaseUrl();
       <p class="page-subtitle">Browse and filter cards from all factions</p>
     </header>
 
-    <FilterBar showFactionSelector={false} />
+     <FilterBar 
+       showFactionSelector={false} 
+       validSecondaryTypesByType={validSecondaryTypesByType}
+     />
 
     <div class="faction-detail all-cards-detail" data-deck-view="gallery">
       <script is:inline>

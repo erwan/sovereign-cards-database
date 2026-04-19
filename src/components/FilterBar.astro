@@ -8,6 +8,7 @@ interface Props {
   searchPlaceholder?: string;
   showFactionSelector?: boolean;
   factions?: Faction[];
+  validSecondaryTypesByType?: Record<string, string[]>;
   initialState?: {
     search?: string;
     costs?: string[];
@@ -21,6 +22,7 @@ const {
   searchPlaceholder = "Search cards...",
   showFactionSelector = true,
   factions = [],
+  validSecondaryTypesByType,
   initialState = {},
 } = Astro.props;
 ---
@@ -28,7 +30,7 @@ const {
 <div
   class="filter-bar"
   x-data="filterBarComponent(JSON.parse($el.dataset.initialState))"
-  data-initial-state={JSON.stringify({ ...initialState, showFactionSelector, factions })}
+  data-initial-state={JSON.stringify({ ...initialState, showFactionSelector, factions, validSecondaryTypesByType })}
 >
   <div class="filter-group filter-group--search">
     <label for="search" class="filter-label">Search</label>
@@ -120,26 +122,19 @@ const {
     </select>
   </div>
 
-  <div class="filter-group">
+   <div class="filter-group">
     <label for="secondaryType" class="filter-label">Secondary Type</label>
     <select
       x-model="filters.secondaryType"
       @change="emitFiltersChanged()"
       id="secondaryType"
       class="filter-select"
+      :disabled="filters.type === 'reflex' || getAvailableSecondaryTypes().length === 0"
     >
       <option value="">Any Secondary</option>
-      <option value="unknown">Unknown</option>
-      <option value="antigrav">Antigrav</option>
-      <option value="unit">Unit</option>
-      <option value="facility">Facility</option>
-      <option value="human">Human</option>
-      <option value="xeno">Xeno</option>
-      <option value="chimera">Chimera</option>
-      <option value="aciereys">Aciereys</option>
-      <option value="mech">Mech</option>
-      <option value="reflex">Reflex</option>
-      <option value="synth">Synth</option>
+      <template x-for="secondaryType in getAvailableSecondaryTypes()" :key="secondaryType">
+        <option :value="secondaryType" x-text="secondaryType.charAt(0).toUpperCase() + secondaryType.slice(1)"></option>
+      </template>
     </select>
   </div>
 
@@ -192,6 +187,9 @@ const {
         faction: initialState.faction || "",
       },
 
+       // Mapping of valid secondary types for each primary type (passed through initial state)
+      validSecondaryTypesByType: initialState.validSecondaryTypesByType,
+
       costTriggerLabel() {
         var c = this.filters.costs;
         if (!c || c.length === 0) return "All costs";
@@ -225,7 +223,7 @@ const {
         this.emitFiltersChanged();
       },
 
-      clearFilters() {
+       clearFilters() {
         this.filters = {
           search: "",
           costs: [],
@@ -236,7 +234,25 @@ const {
         this.emitFiltersChanged();
       },
 
-      emitFiltersChanged() {
+      // Get available secondary types based on current primary type
+      getAvailableSecondaryTypes() {
+        const currentType = this.filters.type;
+        return this.validSecondaryTypesByType[currentType] || this.validSecondaryTypesByType[''];
+      },
+
+      // Check if a secondary type is valid for the current primary type
+      isSecondaryTypeValid(secondaryType) {
+        if (!secondaryType) return true;
+        const availableTypes = this.getAvailableSecondaryTypes();
+        return availableTypes.includes(secondaryType);
+      },
+
+       emitFiltersChanged() {
+        // Clear secondary type if it's not valid for the current primary type
+        if (this.filters.type && !this.isSecondaryTypeValid(this.filters.secondaryType)) {
+          this.filters.secondaryType = "";
+        }
+
         var detail = {
           search: this.filters.search,
           costs: this.filters.costs.slice(),
@@ -478,12 +494,18 @@ const {
     background: color-mix(in srgb, var(--text-muted) 14%, transparent);
   }
 
-  .filter-input:focus,
-  .filter-select:focus {
-    outline: none;
-    border-color: var(--accent);
-    box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 35%, transparent);
-  }
+   .filter-input:focus,
+   .filter-select:focus {
+     outline: none;
+     border-color: var(--accent);
+     box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 35%, transparent);
+   }
+
+   .filter-select:disabled {
+     opacity: 0.5;
+     cursor: not-allowed;
+     background: color-mix(in srgb, var(--border-subtle) 20%, var(--bg-base));
+   }
 
   .filter-search-clear:focus-visible {
     outline: none;
