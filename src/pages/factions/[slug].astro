@@ -5,6 +5,7 @@ import CardListItem from "../../components/CardListItem.astro";
 import DeckCostHistograms from "../../components/DeckCostHistograms.astro";
 import DeckHeader from "../../components/DeckHeader.astro";
 import FactionLayout from "../../layouts/FactionLayout.astro";
+import ViewToggle from "../../components/ViewToggle.astro";
 import { getBaseUrl } from "../../lib/baseUrl";
 import {
   type CardEntry,
@@ -28,38 +29,15 @@ interface Props {
 }
 
 const { deck } = Astro.props;
-// typeStats is unused, removing it.
 const base = getBaseUrl();
 const assetPrefix = `${base}cards/${deck.slug}/`;
 const coverSrc = `${assetPrefix}leader.jpg`;
 ---
 
 <FactionLayout title={`${deck.displayName} — Sovereign Cards`}>
-  <div
-    slot="header-actions"
-    class="deck-view-toolbar"
-    role="group"
-    aria-label="Display mode"
-  >
-    <div class="deck-view-switch" role="presentation">
-      <input
-        type="radio"
-        class="deck-view-input"
-        name="deck-view-mode"
-        id="deck-view-list"
-        value="list"
-      />
-      <label class="deck-view-option" for="deck-view-list">List</label>
-      <input
-        type="radio"
-        class="deck-view-input"
-        name="deck-view-mode"
-        id="deck-view-gallery"
-        value="gallery"
-      />
-      <label class="deck-view-option" for="deck-view-gallery">Cards</label>
+    <div slot="header-actions">
+      <ViewToggle initialView="gallery" />
     </div>
-  </div>
   <div class="faction-detail" data-deck-view="gallery">
     <script is:inline>
       (function () {
