@@ -10,11 +10,11 @@
   .deck-header {
     flex-direction: column;
   }
-  
+
   .deck-header-cover {
     order: 2;
   }
-  
+
   .deck-header-text {
     order: 1;
     min-width: 100%;
@@ -282,6 +282,7 @@
 }
 
 .faction-detail .card-item {
+  position: relative;
   display: flex;
   width: 100%;
   gap: 0.75rem;

@@ -1,0 +1,176 @@
+---
+import "../../styles/faction-detail.css";
+import "../../styles/faction-layout.css";
+import CardLightbox from "../../components/CardLightbox.astro";
+import FilterBar from "../../components/FilterBar.astro";
+import FilteredCardList from "../../components/FilteredCardList.astro";
+import SiteGitHubLink from "../../components/SiteGitHubLink.astro";
+import Layout from "../../layouts/Layout.astro";
+import { loadDecks, type CardEntry } from "../../lib/decks-content";
+import { getBaseUrl } from "../../lib/baseUrl";
+
+interface CardWithFaction extends CardEntry {
+  factionSlug: string;
+  factionName: string;
+}
+
+// Load all decks and flatten cards with faction metadata
+const decks = await loadDecks();
+
+const allCards: CardWithFaction[] = decks.flatMap((deck) =>
+  deck.cards.map((card) => ({
+    ...card,
+    factionSlug: deck.slug,
+    factionName: deck.displayName,
+  })),
+);
+
+const home = getBaseUrl();
+---
+
+<Layout title="All Cards | Sovereign Cards Database">
+  <main class="faction-main">
+    <div class="faction-header">
+      <div class="faction-header-start">
+        <nav class="faction-nav">
+          <a href={home}>← Home</a>
+        </nav>
+        <div class="deck-view-toolbar" role="group" aria-label="Display mode">
+          <div class="deck-view-switch" role="presentation">
+            <input
+              type="radio"
+              class="deck-view-input"
+              name="deck-view-mode"
+              id="deck-view-list"
+              value="list"
+            />
+            <label class="deck-view-option" for="deck-view-list">List</label>
+            <input
+              type="radio"
+              class="deck-view-input"
+              name="deck-view-mode"
+              id="deck-view-gallery"
+              value="gallery"
+            />
+            <label class="deck-view-option" for="deck-view-gallery">Cards</label
+            >
+          </div>
+        </div>
+      </div>
+      <SiteGitHubLink />
+    </div>
+    <header class="page-header">
+      <h1>All Cards</h1>
+      <p class="page-subtitle">Browse and filter cards from all factions</p>
+    </header>
+
+    <FilterBar showFactionSelector={false} />
+
+    <div class="faction-detail all-cards-detail" data-deck-view="gallery">
+      <script is:inline>
+        (function () {
+          var root =
+            document.currentScript && document.currentScript.parentElement;
+          if (!root || !root.classList.contains("faction-detail")) return;
+          var v = "gallery";
+          try {
+            var s = localStorage.getItem("sovereign-deck-display");
+            if (s === "gallery" || s === "list") v = s;
+          } catch (e) {}
+          root.setAttribute("data-deck-view", v);
+        })();
+      </script>
+      <FilteredCardList cardData={allCards} assetPrefix={home} />
+      <CardLightbox />
+      <script is:inline>
+        (function () {
+          var root = document.querySelector(
+            "main.faction-main .faction-detail",
+          );
+          var listRadio = document.getElementById("deck-view-list");
+          var galleryRadio = document.getElementById("deck-view-gallery");
+          if (!root || !listRadio || !galleryRadio) return;
+
+          function syncCardItemA11y(view) {
+            root
+              .querySelectorAll(".card-item[data-full-src]")
+              .forEach(function (el) {
+                var thumb = el.querySelector(".card-thumb");
+                if (view === "list") {
+                  var name = el.getAttribute("data-card-name") || "";
+                  var cost = el.getAttribute("data-card-cost") || "";
+                  el.setAttribute("role", "button");
+                  el.setAttribute("tabindex", "0");
+                  el.setAttribute(
+                    "aria-label",
+                    "View full card: " + name + ", cost " + cost,
+                  );
+                  if (thumb) thumb.alt = "";
+                } else {
+                  el.removeAttribute("role");
+                  el.removeAttribute("tabindex");
+                  el.removeAttribute("aria-label");
+                  if (thumb)
+                    thumb.alt = el.getAttribute("data-card-name") || "";
+                }
+              });
+          }
+
+          function apply(view) {
+            root.setAttribute("data-deck-view", view);
+            listRadio.checked = view === "list";
+            galleryRadio.checked = view === "gallery";
+            syncCardItemA11y(view);
+            try {
+              localStorage.setItem("sovereign-deck-display", view);
+            } catch (e) {}
+          }
+
+          var current = root.getAttribute("data-deck-view") || "gallery";
+          apply(current === "gallery" ? "gallery" : "list");
+
+          listRadio.addEventListener("change", function () {
+            if (listRadio.checked) apply("list");
+          });
+          galleryRadio.addEventListener("change", function () {
+            if (galleryRadio.checked) apply("gallery");
+          });
+
+          var cardListUl = root.querySelector("ul.card-list");
+          if (cardListUl && typeof MutationObserver !== "undefined") {
+            var obs = new MutationObserver(function () {
+              var v = root.getAttribute("data-deck-view") || "gallery";
+              syncCardItemA11y(v === "list" ? "list" : "gallery");
+            });
+            obs.observe(cardListUl, { childList: true, subtree: true });
+          }
+        })();
+      </script>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .page-header {
+    margin-bottom: 1.25rem;
+    text-align: left;
+  }
+
+  .page-header h1,
+  .page-subtitle {
+    font-size: clamp(1.5rem, 2.5vw, 1.85rem);
+    line-height: 1.35;
+  }
+
+  .page-header h1 {
+    font-weight: 600;
+    margin: 0 0 0.35rem 0;
+    color: var(--text-primary);
+  }
+
+  .page-subtitle {
+    margin: 0;
+    font-weight: 400;
+    color: var(--text-muted);
+  }
+</style>
