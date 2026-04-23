@@ -17,6 +17,10 @@
   min-width: 0;
 }
 
+.filter-group--break {
+  flex-basis: 100%;
+}
+
 .filter-group--search {
   flex: 1 1 14rem;
   min-width: min(100%, 12rem);

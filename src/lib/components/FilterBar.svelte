@@ -1,11 +1,15 @@
 <script lang="ts">
   import type { CardEntry } from '$lib/decks-content';
+  import StatFilter from './StatFilter.svelte';
 
   interface Filters {
     search: string;
     costs: string[];
     type: string;
     secondaryType: string;
+    health: string[];
+    attack: string[];
+    armor: string[];
   }
 
   interface Props {
@@ -21,8 +25,6 @@
     validSecondaryTypesByType = {},
     searchPlaceholder = 'Search cards...',
   }: Props = $props();
-
-  let costDropdownOpen = $state(false);
 
   function getAvailableCosts(): string[] {
     if (!allCards.length) return ['0', '1', '2', '3', '4', '5', '6', '7', 'X'];
@@ -49,20 +51,39 @@
     return validSecondaryTypesByType[filters.type] ?? validSecondaryTypesByType[''] ?? [];
   }
 
+  function getAvailableStats(field: 'health' | 'attack' | 'armor'): string[] {
+    if (!allCards.length) return ['0', '1', '2', '3', '4', '5', '6', '7', '8'];
+    const statsSet = new Set<string>();
+    for (const card of allCards) {
+      if (card.type !== 'unit') continue;
+      const val = card[field];
+      if (val === undefined || val === null) continue;
+      statsSet.add(String(val));
+    }
+    const stats = [...statsSet];
+    stats.sort((a, b) => parseInt(a) - parseInt(b));
+    return stats.length > 0 ? stats : ['0', '1', '2', '3', '4', '5', '6', '7', '8'];
+  }
+
   let availableCosts = $derived(getAvailableCosts());
   let availableSecondaryTypes = $derived(getAvailableSecondaryTypes());
-
-  let costTriggerLabel = $derived(
-    filters.costs.length === 0
-      ? 'All costs'
-      : [...filters.costs]
-          .sort((a, b) => (a === 'X' ? 10 : parseInt(a)) - (b === 'X' ? 10 : parseInt(b)))
-          .join(', ')
-  );
+  let availableHealth = $derived(getAvailableStats('health'));
+  let availableAttack = $derived(getAvailableStats('attack'));
+  let availableArmor = $derived(getAvailableStats('armor'));
 
   let hasActiveFilters = $derived(
-    !!(filters.search || filters.costs.length > 0 || filters.type || filters.secondaryType)
+    !!(
+      filters.search ||
+      filters.costs.length > 0 ||
+      filters.type ||
+      filters.secondaryType ||
+      filters.health.length > 0 ||
+      filters.attack.length > 0 ||
+      filters.armor.length > 0
+    )
   );
+
+  let showUnitFilters = $derived(filters.type === 'unit');
 
   $effect(() => {
     // Clear invalid costs when type/secondaryType changes
@@ -83,33 +104,25 @@
     }
   });
 
-  function closeCostDropdown(e: FocusEvent) {
-    if (!(e.currentTarget as HTMLElement).contains(e.relatedTarget as Node)) {
-      costDropdownOpen = false;
+  $effect(() => {
+    // Clear unit-specific filters when type changes away from 'unit'
+    if (filters.type !== 'unit') {
+      filters.health = [];
+      filters.attack = [];
+      filters.armor = [];
     }
-  }
-
-  function handleCostKeydown(e: KeyboardEvent) {
-    if (e.key === 'Escape') costDropdownOpen = false;
-  }
-
-  function setOnlyCost(cv: string) {
-    filters.costs = [cv];
-  }
-
-  function clearCostSelection() {
-    filters.costs = [];
-  }
+  });
 
   function clearFilters() {
     filters.search = '';
     filters.costs = [];
     filters.type = '';
     filters.secondaryType = '';
+    filters.health = [];
+    filters.attack = [];
+    filters.armor = [];
   }
 </script>
-
-<svelte:window onkeydown={handleCostKeydown} />
 
 <div class="filter-bar">
   <div class="filter-group filter-group--search">
@@ -137,53 +150,13 @@
   </div>
 
   <div class="filter-group filter-group--cost">
-    <span class="filter-label" id="filter-cost-heading">Cost</span>
-    <!-- svelte-ignore a11y_no_static_element_interactions -->
-    <div
-      class="filter-cost-dropdown"
-      onfocusout={closeCostDropdown}
-    >
-      <button
-        type="button"
-        class="filter-cost-trigger"
-        aria-haspopup="true"
-        aria-expanded={costDropdownOpen}
-        aria-label="Filter by cost, current: {costTriggerLabel}"
-        onclick={() => (costDropdownOpen = !costDropdownOpen)}
-      >
-        <span class="filter-cost-trigger-text">{costTriggerLabel}</span>
-        <span class="filter-cost-trigger-chevron" aria-hidden="true"></span>
-      </button>
-      {#if costDropdownOpen}
-        <div class="filter-cost-panel" role="group" aria-label="Cost values">
-          {#each availableCosts as cv}
-            <div class="filter-cost-option">
-              <label class="filter-cost-option-check">
-                <input
-                  type="checkbox"
-                  value={cv}
-                  bind:group={filters.costs}
-                />
-                <span class="filter-cost-option-label">{cv}</span>
-              </label>
-              <button
-                type="button"
-                class="filter-cost-only-btn"
-                onclick={() => setOnlyCost(cv)}
-                aria-label="Show only cost {cv}"
-              >
-                Only
-              </button>
-            </div>
-          {/each}
-          <div class="filter-cost-panel-footer">
-            <button type="button" class="filter-cost-foot-btn" onclick={clearCostSelection}>
-              Clear
-            </button>
-          </div>
-        </div>
-      {/if}
-    </div>
+    <StatFilter
+      label="Cost"
+      bind:values={filters.costs}
+      availableOptions={availableCosts}
+      allLabel="All costs"
+      sortNumeric={true}
+    />
   </div>
 
   <div class="filter-group">
@@ -223,4 +196,38 @@
       Clear Filters
     </button>
   </div>
+
+  <div class="filter-group filter-group--break" aria-hidden="true"></div>
+
+  {#if showUnitFilters}
+    <div class="filter-group filter-group--unit-stats">
+      <StatFilter
+        label="Health"
+        bind:values={filters.health}
+        availableOptions={availableHealth}
+        allLabel="All health"
+        sortNumeric={true}
+      />
+    </div>
+
+    <div class="filter-group filter-group--unit-stats">
+      <StatFilter
+        label="Attack"
+        bind:values={filters.attack}
+        availableOptions={availableAttack}
+        allLabel="All attack"
+        sortNumeric={true}
+      />
+    </div>
+
+    <div class="filter-group filter-group--unit-stats">
+      <StatFilter
+        label="Armor"
+        bind:values={filters.armor}
+        availableOptions={availableArmor}
+        allLabel="All armor"
+        sortNumeric={true}
+      />
+    </div>
+  {/if}
 </div>
