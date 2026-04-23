@@ -1,209 +1,356 @@
 {
-  "description": "The only civilization that can breathe its homeland\u2019s air and drink its water, inside constantly maintained shields. Long-lived scholars maintain corrupted Apsynthos datalinks, pioneered the cybernetic Chimeras, and enforce strict law\u2014 exile awaits those who break the Remnant\u2019s compact with paradise. ",
+  "description": "The only civilization that can breathe its homeland’s air and drink its water, inside constantly maintained shields. Long-lived scholars maintain corrupted Apsynthos datalinks, pioneered the cybernetic Chimeras, and enforce strict law— exile awaits those who break the Remnant’s compact with paradise. ",
   "cards": [
     {
       "image": "01.jpg",
       "name": "Aegis Shell",
       "type": "augment",
       "cost": "3",
-      "type_secondary": ["unit"]
+      "type_secondary": [
+        "unit"
+      ],
+      "card_effect": "All units behind this one gain +1 Armor.",
+      "flavor_text": ""
     },
     {
       "image": "02.jpg",
       "name": "Aether Tap",
       "type": "colony",
       "cost": "4",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "D: Add 2 to a card in a Forge.",
+      "flavor_text": "To drain the planet dry, we only had to break the skin."
     },
     {
       "image": "03.jpg",
       "name": "Airdock",
       "type": "colony",
       "cost": "4",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "D: Move target unit you control to any position in any lane. This ability cannot be used during a combat phase.",
+      "flavor_text": ""
     },
     {
       "image": "04.jpg",
       "name": "Apsynthos Revelations",
       "type": "reflex",
-      "cost": "0"
+      "cost": "0",
+      "card_effect": "You may draw up to two cards. All other factions may immediately draw as many cards as you do.",
+      "flavor_text": "Today we remember the sacrifice to give humanity our home - the fall of Terra and the gods revealed."
     },
     {
       "image": "05.jpg",
       "name": "Chimera Empaths",
       "type": "unit",
       "cost": "2",
-      "type_secondary": ["chimera"]
+      "type_secondary": [
+        "chimera"
+      ],
+      "attack": 1,
+      "armor": 0,
+      "health": 5,
+      "card_effect": "Units adjacent to this one restore one health from the Creche during your growth phase.",
+      "flavor_text": "<We are the voice of your pain>\r\n-Promethea probe logs"
     },
     {
       "image": "06.jpg",
       "name": "Chimera Oracles",
       "type": "unit",
       "cost": "3",
-      "type_secondary": ["chimera"]
+      "type_secondary": [
+        "chimera"
+      ],
+      "attack": 1,
+      "armor": 0,
+      "health": 5,
+      "card_effect": "During your upkeep, you may look at target player’s hand or one card in their Forge.",
+      "flavor_text": "We can remember your future."
     },
     {
       "image": "07.jpg",
       "name": "Chimera Symbiont",
       "type": "unit",
       "cost": "3",
-      "type_secondary": ["chimera"]
+      "type_secondary": [
+        "chimera"
+      ],
+      "attack": 2,
+      "armor": 1,
+      "health": 1,
+      "card_effect": "Health lost from adjacent units is placed on this card instead of the Creche.",
+      "flavor_text": "Press your nails into your palm. Now release. That feeling of pain fading away? That’s what I pray for."
     },
     {
       "image": "08.jpg",
       "name": "Chimera Telepaths",
       "type": "unit",
       "cost": "3",
-      "type_secondary": ["chimera"]
+      "type_secondary": [
+        "chimera"
+      ],
+      "attack": 1,
+      "armor": 0,
+      "health": 5,
+      "card_effect": "If this unit is in a breach, your opponent reveals their hand or Forge respectively during selection.",
+      "flavor_text": "We can see your secrets."
     },
     {
       "image": "09.jpg",
       "name": "Cloning Tanks",
       "type": "colony",
       "cost": "6",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "T➤ Add one T to your Citadel during your growth phase.\r\nD➤ Add one D to your Citadel during your growth phase.",
+      "flavor_text": ""
     },
     {
       "image": "10.jpg",
       "name": "Cloudbreakers",
       "type": "unit",
       "cost": "6",
-      "type_secondary": ["antigrav"]
+      "type_secondary": [
+        "antigrav"
+      ],
+      "attack": 3,
+      "armor": 1,
+      "health": 4,
+      "card_effect": "Airborne (Each airborne unit may move during your move phase)",
+      "flavor_text": "Air power rules this world - but rule humbly my friends. Remember Icarus.\r\n-Cloudbreaker Initiate Ceremony"
     },
     {
       "image": "11.jpg",
       "name": "Command Ring",
       "type": "colony",
       "cost": "3",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "T: Units in target lane gain +1 Attack for every T here until end of phase.",
+      "flavor_text": ""
     },
     {
       "image": "12.jpg",
       "name": "Creche Tutors",
       "type": "unit",
       "cost": "2",
-      "type_secondary": ["synth"]
+      "type_secondary": [
+        "synth"
+      ],
+      "attack": 1,
+      "armor": 0,
+      "health": 3,
+      "card_effect": "Add +1 T to your Citadel during your growth phase.",
+      "flavor_text": "The Chimera seek knowledge as a plant seeks water; brains straining against their organic limitations. They’ll need apt teachers.\r\n-Maestra Zayev, Chimera Handler"
     },
     {
       "image": "13.jpg",
       "name": "Datajack Legion",
       "type": "unit",
       "cost": "4",
-      "type_secondary": ["synth"]
+      "type_secondary": [
+        "synth"
+      ],
+      "attack": 2,
+      "armor": 1,
+      "health": 4,
+      "card_effect": "Cybernetic (This unit gains +1 Attack for every additional Cybernetic unit in play.)\r\nHealth lost from this unit is returned to your Citadel.",
+      "flavor_text": "For we are many."
     },
     {
       "image": "14.jpg",
       "name": "Fractal Weave",
       "type": "augment",
       "cost": "3",
-      "type_secondary": ["unit"]
+      "type_secondary": [
+        "unit"
+      ],
+      "card_effect": "This unit gains +1 Armor and Cloak (When attacking, may ignore the first unit in the enemy lane. In a breach, this unit always uses its full Attack value.)",
+      "flavor_text": ""
     },
     {
       "image": "15.jpg",
       "name": "Grav Skimmers",
       "type": "unit",
       "cost": "5",
-      "type_secondary": ["antigrav"]
+      "type_secondary": [
+        "antigrav"
+      ],
+      "attack": 2,
+      "armor": 2,
+      "health": 3,
+      "card_effect": "Airborne (Each airborne unit may move during your move phase)",
+      "flavor_text": "Our ancestors walked among the stars; we can barely lift our wings."
     },
     {
       "image": "16.jpg",
       "name": "Gravcarrier",
       "type": "unit",
       "cost": "7",
-      "type_secondary": ["antigrav"]
+      "type_secondary": [
+        "antigrav"
+      ],
+      "attack": 1,
+      "armor": 2,
+      "health": 5,
+      "card_effect": "Airborne (Each airborne unit may move during your move phase)\r\nYou may restore this unit from your Citadel during your upkeep. During any player’s upkeep, you may add health from this unit to adjacent units.",
+      "flavor_text": ""
     },
     {
       "image": "17.jpg",
       "name": "Ion Shroud",
       "type": "augment",
       "cost": "4",
-      "type_secondary": ["unit"]
+      "type_secondary": [
+        "unit"
+      ],
+      "card_effect": "This unit deals +2 damage and gains +1 Armor when resolving combat.",
+      "flavor_text": "A tiny hiss audible at the moment of contact, and the synth contorts into a tight, shuddering ball, like a dying insect."
     },
     {
       "image": "18.jpg",
       "name": "Knit",
       "type": "reflex",
-      "cost": "2"
+      "cost": "2",
+      "card_effect": "Restore all health to target unit from the Creche.",
+      "flavor_text": "New life from the old bones."
     },
     {
       "image": "19.jpg",
       "name": "Misdirection",
       "type": "reflex",
-      "cost": "1"
+      "cost": "1",
+      "card_effect": "Target player may move any number of units they control to any position in either lane.",
+      "flavor_text": ""
     },
     {
       "image": "20.jpg",
       "name": "Orbital Strike",
       "type": "reflex",
-      "cost": "5"
+      "cost": "5",
+      "card_effect": "Scrap target unit.",
+      "flavor_text": "It’s the only way to be sure."
     },
     {
       "image": "21.jpg",
       "name": "Perimeter Shield",
       "type": "colony",
       "cost": "5",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "D: All units in target defending lane gain +1 Armor until end of phase.",
+      "flavor_text": "We never saw the shield go up, but we felt the impact in our teeth as bullets shattered against air."
     },
     {
       "image": "22.jpg",
       "name": "Psych Resonator",
       "type": "augment",
       "cost": "3",
-      "type_secondary": ["unit"]
+      "type_secondary": [
+        "unit"
+      ],
+      "card_effect": "This unit gains +1 Attack in combat, or +2 if your opponent controls more Echoes than you.",
+      "flavor_text": "Mind’s eye unclouded."
     },
     {
       "image": "23.jpg",
       "name": "Spider Battery",
       "type": "unit",
       "cost": "5",
-      "type_secondary": ["mech"]
+      "type_secondary": [
+        "mech"
+      ],
+      "attack": 3,
+      "armor": 1,
+      "health": 2,
+      "card_effect": "Splash (When this unit deals combat damage, deal the same damage to the next enemy unit.)",
+      "flavor_text": ""
     },
     {
       "image": "24.jpg",
       "name": "Tachyon Burst",
       "type": "reflex",
-      "cost": "3"
+      "cost": "3",
+      "card_effect": "Return target unit to its owner’s hand. Its health is returned to that player’s Citadel.",
+      "flavor_text": "The idea of such a weapon is logically absurd, but we would be fools to call it ineffective."
     },
     {
       "image": "25.jpg",
       "name": "Tachyon Cannon",
       "type": "augment",
       "cost": "3",
-      "type_secondary": ["unit"]
+      "type_secondary": [
+        "unit"
+      ],
+      "card_effect": "After this unit deals combat damage, return one health from the opposing unit to its owner’s Citadel. If this scraps the unit, return it to its owner’s hand.",
+      "flavor_text": ""
     },
     {
       "image": "26.jpg",
       "name": "Tachyon Sentries",
       "type": "unit",
       "cost": "4",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 2,
+      "armor": 1,
+      "health": 3,
+      "card_effect": "After this unit deals combat damage, return one health from the opposing unit to its owner’s Citadel. If this scraps the unit, return it to its owner’s hand.",
+      "flavor_text": "Time travel was more fun when it was voluntary."
     },
     {
       "image": "27.jpg",
       "name": "Technogeisha",
       "type": "unit",
       "cost": "3",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 2,
+      "armor": 0,
+      "health": 3,
+      "card_effect": "Cloak (When attacking, may ignore the first unit in the enemy lane. In a breach, this unit always uses its full Attack value.)",
+      "flavor_text": "A cocktail of pheromone enhancements offer a scent that is literally intoxicating."
     },
     {
       "image": "28.jpg",
       "name": "Terraformers",
       "type": "unit",
       "cost": "4",
-      "type_secondary": ["mech"]
+      "type_secondary": [
+        "mech"
+      ],
+      "attack": 1,
+      "armor": 1,
+      "health": 3,
+      "card_effect": "Your cards cost 1 less to Forge.",
+      "flavor_text": "Tear up the spore mats. That’s my policy.\r\n-Foreman Domai"
     },
     {
       "image": "29.jpg",
       "name": "Water Extractors",
       "type": "colony",
       "cost": "5",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "DDD➤ Add +1 TD to your Citadel during your growth phase.",
+      "flavor_text": "These will be our monuments to the future generations of Apsyntion. Pull the acid from the oceans, and drink our fill."
     },
     {
       "image": "30.jpg",
       "name": "Weather Control",
       "type": "reflex",
-      "cost": "2"
+      "cost": "2",
+      "card_effect": "Deal 1 damage to all Airborne units. All units have -1 Armor.",
+      "flavor_text": "To bend the heavens themselves."
     }
   ]
 }

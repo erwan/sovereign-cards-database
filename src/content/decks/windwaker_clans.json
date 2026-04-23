@@ -1,209 +1,356 @@
 {
-  "description": "First people out of the wrecked ark; they claim Apsyntion, not Earth, as home. Semi-nomadic clans live beside Lilin hives, coaxing food and oxygen from the fungal mat while oral tradition hides Wormwood\u2019s grave\u2014Wind Cathedrals on the cliffs echo hive-song at dawn and dusk. ",
+  "description": "First people out of the wrecked ark; they claim Apsyntion, not Earth, as home. Semi-nomadic clans live beside Lilin hives, coaxing food and oxygen from the fungal mat while oral tradition hides Wormwood’s grave—Wind Cathedrals on the cliffs echo hive-song at dawn and dusk. ",
   "cards": [
     {
       "image": "01.jpg",
       "name": "Anemoi",
       "type": "unit",
       "cost": "3",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 2,
+      "armor": 1,
+      "health": 4,
+      "card_effect": "Resilient (Restore one health from the Creche during your growth phase.)",
+      "flavor_text": "Buffeted, tossed about, skin carved from storms that rage all their lives. Wormwood has hewn men from stone."
     },
     {
       "image": "02.jpg",
       "name": "Apsyntion Communication",
       "type": "reflex",
-      "cost": "0"
+      "cost": "0",
+      "card_effect": "Draw a card, then draw a card for each Xeno in play.",
+      "flavor_text": "<are you the song or the singer>\r\n-First recording from Promethea probe"
     },
     {
       "image": "03.jpg",
       "name": "Apsyntion Symbiosis",
       "type": "reflex",
-      "cost": "1"
+      "cost": "1",
+      "card_effect": "Target faction’s units each gain Consume (If this unit deals lethal combat damage, add one health from the defeated unit.)",
+      "flavor_text": "Ranna no longer felt ill when the spores drifted upwards, no longer dizzy from the song of the world."
     },
     {
       "image": "04.jpg",
       "name": "Behemoth",
       "type": "unit",
       "cost": "8",
-      "type_secondary": ["xeno"]
+      "type_secondary": [
+        "xeno"
+      ],
+      "attack": 4,
+      "armor": 2,
+      "health": 2,
+      "card_effect": "Consume (If this unit deals lethal combat damage, add one health from the defeated unit.)",
+      "flavor_text": "The behemoth is more like a force of nature than a living thing, and what man would choose to fight a hurricane?"
     },
     {
       "image": "05.jpg",
       "name": "Borespikes",
       "type": "augment",
       "cost": "5",
-      "type_secondary": ["unit"]
+      "type_secondary": [
+        "unit"
+      ],
+      "card_effect": "This unit gains +1 Armor and Pierce (This unit ignores Armor when in combat.)",
+      "flavor_text": "A borespike might look like a tusk or a thorn to a layman, but a rose can’t chew its way through composite armor."
     },
     {
       "image": "06.jpg",
       "name": "Boreworm",
       "type": "unit",
       "cost": "5",
-      "type_secondary": ["xeno"]
+      "type_secondary": [
+        "xeno"
+      ],
+      "attack": 4,
+      "armor": 1,
+      "health": 1,
+      "card_effect": "Consume (If this unit deals lethal combat damage, add one health from the defeated unit.)",
+      "flavor_text": "We’re looking at Eden’s defense system. Who are we to spit in the face of God?\r\n-Vergil, Brood Handler"
     },
     {
       "image": "07.jpg",
       "name": "Brood Den",
       "type": "colony",
       "cost": "3",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "D➤ When you remove a D from this facility, you may add it to a target Xeno unit.",
+      "flavor_text": "Lilin Matrons die protecting their final clutch — a first meal for the last born."
     },
     {
       "image": "08.jpg",
       "name": "Brood Handlers",
       "type": "unit",
       "cost": "3",
-      "type_secondary": ["chimera"]
+      "type_secondary": [
+        "chimera"
+      ],
+      "attack": 1,
+      "armor": 1,
+      "health": 3,
+      "card_effect": "Adjacent Xenos gain +1 Attack, and may restore 1 health from the Creche during your upkeep.",
+      "flavor_text": "<your song is our song. the others must now be silent>\r\n-End of Promethea Probe logs"
     },
     {
       "image": "09.jpg",
       "name": "Bury",
       "type": "reflex",
-      "cost": "1"
+      "cost": "1",
+      "card_effect": "Move target unit to the back of any lane its owner controls. While this reflex is active, this unit gets -1 Attack and +1 Armor.",
+      "flavor_text": ""
     },
     {
       "image": "10.jpg",
       "name": "Chrysalis",
       "type": "unit",
       "cost": "2",
-      "type_secondary": ["xeno"]
+      "type_secondary": [
+        "xeno"
+      ],
+      "attack": 0,
+      "armor": 1,
+      "health": 1,
+      "card_effect": "Add one D to this unit from the Creche during your growth phase.\r\nIf Chrysalis has 4 health, you may scrap and replace it with a Xeno from your hand. It gains all health from Chrysalis.",
+      "flavor_text": ""
     },
     {
       "image": "11.jpg",
       "name": "Contact",
       "type": "reflex",
-      "cost": "1"
+      "cost": "1",
+      "card_effect": "Draw a card. If it is a unit, you may add it to the front of a lane you control with 1 health added from the Creche. If not, return it to the top of the deck.",
+      "flavor_text": "My fingers brushed chitin and I heard the planet speak.\r\n-Ranna Myran, Promethea Probe Team"
     },
     {
       "image": "12.jpg",
       "name": "Flock Webs",
       "type": "augment",
       "cost": "2",
-      "type_secondary": ["unit"]
+      "type_secondary": [
+        "unit"
+      ],
+      "card_effect": "This unit is Slow (If this unit takes lethal combat damage, it does not deal damage in return.)\r\nIf this unit deals combat damage to a unit, this card becomes attached to that unit.",
+      "flavor_text": ""
     },
     {
       "image": "13.jpg",
       "name": "Fungus Farm",
       "type": "colony",
       "cost": "2",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "D: Add 1 D to this card from the Creche.",
+      "flavor_text": "Lilin biostructures are complex neural weaves. A fungus farmer is as much an agriculturist as he is a psychiatrist."
     },
     {
       "image": "14.jpg",
       "name": "Harlequin",
       "type": "unit",
       "cost": "4",
-      "type_secondary": ["xeno"]
+      "type_secondary": [
+        "xeno"
+      ],
+      "attack": 2,
+      "armor": 1,
+      "health": 3,
+      "card_effect": "Cloak (When attacking, may ignore the first unit in the enemy lane. In a breach, this unit always uses its full Attack value.)",
+      "flavor_text": "Chromatophores in the skin give the harlequin impeccable camouflage. "
     },
     {
       "image": "15.jpg",
       "name": "Incursion",
       "type": "reflex",
-      "cost": "2"
+      "cost": "2",
+      "card_effect": "Target unit gains +1 Attack, +1 Armor and Cloak (When attacking, may ignore the first unit in the enemy lane. In a breach, this unit always uses its full Attack value.)",
+      "flavor_text": ""
     },
     {
       "image": "16.jpg",
       "name": "Lilin Hive",
       "type": "colony",
       "cost": "2",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "If a unit you control loses health, you may place the token here instead of scrapping it. You cannot remove tokens from this card. \r\nFor every 4 citizens here, units you control do +1 combat damage.",
+      "flavor_text": ""
     },
     {
       "image": "17.jpg",
       "name": "Lilin Matron",
       "type": "unit",
       "cost": "4",
-      "type_secondary": ["xeno"]
+      "type_secondary": [
+        "xeno"
+      ],
+      "attack": 1,
+      "armor": 1,
+      "health": 1,
+      "card_effect": "Add one health from the Crèche during your upkeep.\r\nSquad (This unit gets +1 Attack for every health on it.)",
+      "flavor_text": "Her children are legion."
     },
     {
       "image": "18.jpg",
       "name": "Lilin Vultures",
       "type": "unit",
       "cost": "2",
-      "type_secondary": ["xeno"]
+      "type_secondary": [
+        "xeno"
+      ],
+      "attack": 0,
+      "armor": 1,
+      "health": 1,
+      "card_effect": "If any unit is scrapped, you may add a health to this unit from the Creche.\r\nSquad (This unit gets +1 Attack for every health on it.)",
+      "flavor_text": ""
     },
     {
       "image": "19.jpg",
       "name": "Mark Of The Hive",
       "type": "augment",
       "cost": "2",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "Any citizens on this facility are lost during that player’s growth phase.",
+      "flavor_text": "There was no gnashing of teeth - this was something so alien it could not hate."
     },
     {
       "image": "20.jpg",
       "name": "Mimetic Scales",
       "type": "augment",
       "cost": "2",
-      "type_secondary": ["unit"]
+      "type_secondary": [
+        "unit"
+      ],
+      "card_effect": "This unit gains Cloak (When attacking, may ignore the first unit in the enemy lane. In a breach, this unit always uses its full Attack value.).",
+      "flavor_text": "He startles, and his skin shifts in tone and texture, as his thoughts betray his camouflage."
     },
     {
       "image": "21.jpg",
       "name": "Musk Herders",
       "type": "unit",
       "cost": "2",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 1,
+      "armor": 0,
+      "health": 4,
+      "card_effect": "Resilient (Restore one health from the Creche during your growth phase.)\r\nIf this unit is at full health, you gain +1 T during your growth phase.",
+      "flavor_text": "Herdsmen returning with a full flock are heroes for a day."
     },
     {
       "image": "22.jpg",
       "name": "Shroud",
       "type": "unit",
       "cost": "3",
-      "type_secondary": ["xeno"]
+      "type_secondary": [
+        "xeno"
+      ],
+      "attack": 2,
+      "armor": 1,
+      "health": 2,
+      "card_effect": "Airborne (Each airborne unit may move during your move phase)",
+      "flavor_text": "The real terror is behind you, when the second shroud blocks out the sun."
     },
     {
       "image": "23.jpg",
       "name": "Spawning Pits",
       "type": "colony",
       "cost": "4",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "D: Restore 1 health to a unit you control from the Creche.",
+      "flavor_text": "Neuroplastic fungal mats remarkably similar to our own creche tech - a fractal bridge between our species."
     },
     {
       "image": "24.jpg",
       "name": "Spore Weevils",
       "type": "unit",
       "cost": "5",
-      "type_secondary": ["xeno"]
+      "type_secondary": [
+        "xeno"
+      ],
+      "attack": 0,
+      "armor": 0,
+      "health": 4,
+      "card_effect": "Squad (This unit gets +1 Attack for every health on it.)",
+      "flavor_text": "A blight of weevils knows only hunger."
     },
     {
       "image": "25.jpg",
       "name": "Sporemask Poachers",
       "type": "unit",
       "cost": "4",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 3,
+      "armor": 0,
+      "health": 3,
+      "card_effect": "Consume (If this unit deals lethal combat damage, add one health from the defeated unit.)",
+      "flavor_text": "Poachers only need a few moments in the mist to fill a sac with a month’s salary."
     },
     {
       "image": "26.jpg",
       "name": "Wind Cathedral",
       "type": "colony",
       "cost": "4",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "During their upkeep, each opponent must move a D from their Citadel to this facility, if they can.",
+      "flavor_text": "When the planet sang, we listened and learned. This is their Voice, and it calls to all humanity.\r\n-Cult Bishop Neroma"
     },
     {
       "image": "27.jpg",
       "name": "Windlion",
       "type": "unit",
       "cost": "4",
-      "type_secondary": ["xeno"]
+      "type_secondary": [
+        "xeno"
+      ],
+      "attack": 3,
+      "armor": 0,
+      "health": 3,
+      "card_effect": "Slow (If this unit takes lethal combat damage, it does not deal damage in return.)\r\nThis unit gains +1 Attack for each point of health below its maximum.",
+      "flavor_text": "The bellow is tuned to a critical frequency - pained howls can crack armor... or a man’s skeleton."
     },
     {
       "image": "28.jpg",
       "name": "Windwalker Camp",
       "type": "colony",
       "cost": "3",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "D: Restore 1 health to target unit from your Citadel.",
+      "flavor_text": "They tamed the wasteland. Only fitting they would tame the Lilin."
     },
     {
       "image": "29.jpg",
       "name": "Xeno Psychology",
       "type": "reflex",
-      "cost": "1"
+      "cost": "1",
+      "card_effect": "Your units gain +1 Attack.",
+      "flavor_text": "We’re looking at a myconeural network with a far greater magnitude than the human brain. We are the virus here.\r\n-Ranna Myren, Promethea Probe Team"
     },
     {
       "image": "30.jpg",
       "name": "Xenophagy",
       "type": "augment",
       "cost": "2",
-      "type_secondary": ["unit"]
+      "type_secondary": [
+        "unit"
+      ],
+      "card_effect": "This unit gains Consume (If this unit deals lethal combat damage, add one health from the defeated unit.)",
+      "flavor_text": ""
     }
   ]
 }

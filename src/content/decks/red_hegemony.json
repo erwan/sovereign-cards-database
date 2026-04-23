@@ -1,209 +1,356 @@
 {
-  "description": "Scarlet-flag pirates and slavers on cloudbases over the acid wastes\u2014a loose confederation of fugitives whose cobbled ships wield any forbidden tech: synths, mechs, aliens. Leadership is fluid; only strength and survival bind them. ",
+  "description": "Scarlet-flag pirates and slavers on cloudbases over the acid wastes—a loose confederation of fugitives whose cobbled ships wield any forbidden tech: synths, mechs, aliens. Leadership is fluid; only strength and survival bind them. ",
   "cards": [
     {
       "image": "01.jpg",
       "name": "Ambush",
       "type": "reflex",
-      "cost": "2"
+      "cost": "2",
+      "card_effect": "Play during an attack. Reverse the order of target lane.",
+      "flavor_text": ""
     },
     {
       "image": "02.jpg",
       "name": "Arena",
       "type": "colony",
       "cost": "3",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "D: Reveal the top card of your deck. If it is an Echo, add a health from the Creche to a target unit. Then place the card on the bottom of your deck.",
+      "flavor_text": ""
     },
     {
       "image": "03.jpg",
       "name": "Betrayal",
       "type": "reflex",
-      "cost": "3"
+      "cost": "3",
+      "card_effect": "Target unit deals its Attack damage to an adjacent unit of your choice.",
+      "flavor_text": ""
     },
     {
       "image": "04.jpg",
       "name": "Bombardment",
       "type": "reflex",
-      "cost": "4"
+      "cost": "4",
+      "card_effect": "Deal 2 damage to target unit and each adjacent unit.",
+      "flavor_text": "God is on the side with the best artillery."
     },
     {
       "image": "05.jpg",
       "name": "Bounty Hunters",
       "type": "unit",
       "cost": "4",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 3,
+      "armor": 1,
+      "health": 3,
+      "card_effect": "If this unit deals lethal combat damage, scrap a D from your Citadel or scrap this unit.",
+      "flavor_text": ""
     },
     {
       "image": "06.jpg",
       "name": "Brassjackets",
       "type": "unit",
       "cost": "4",
-      "type_secondary": ["synth"]
+      "type_secondary": [
+        "synth"
+      ],
+      "attack": 2,
+      "armor": 0,
+      "health": 5,
+      "card_effect": "While this unit is at full health, it has Pierce (This unit ignores Armor when in combat.)",
+      "flavor_text": "Slave synths are disposable, since keeping one in bondage is a risk few would take on."
     },
     {
       "image": "07.jpg",
       "name": "Civilian Casualties",
       "type": "reflex",
-      "cost": "1"
+      "cost": "1",
+      "card_effect": "Target a player who has just been breached. Scrap a citizen from their citadel.",
+      "flavor_text": "When they called my name, no one spoke. They culled the heroes first."
     },
     {
       "image": "08.jpg",
       "name": "Clone Stock",
       "type": "augment",
       "cost": "3",
-      "type_secondary": ["unit"]
+      "type_secondary": [
+        "unit"
+      ],
+      "card_effect": "Add one health to this unit from the Creche.\r\nDuring your upkeep, this unit adds one health from the Crèche.",
+      "flavor_text": "If only I had two more like you."
     },
     {
       "image": "09.jpg",
       "name": "Cloudbreak Spire",
       "type": "colony",
       "cost": "4",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "T: Units attacking you get -1 Armor until end of phase.",
+      "flavor_text": "Cloudbreakers are the eyes of heaven, staring deep into hell."
     },
     {
       "image": "10.jpg",
       "name": "Corsairs",
       "type": "unit",
       "cost": "4",
-      "type_secondary": ["antigrav"]
+      "type_secondary": [
+        "antigrav"
+      ],
+      "attack": 3,
+      "armor": 0,
+      "health": 3,
+      "card_effect": "This unit may look at an extra card any time it breaches a faction.\r\nAirborne (Each airborne unit may move during your move phase)",
+      "flavor_text": "Thievery was the first virtue restored from the Old World."
     },
     {
       "image": "11.jpg",
       "name": "Datajack Bandits",
       "type": "unit",
       "cost": "3",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 1,
+      "armor": 1,
+      "health": 4,
+      "card_effect": "This unit’s breach value is +2.",
+      "flavor_text": ""
     },
     {
       "image": "12.jpg",
       "name": "Decksweeps",
       "type": "unit",
       "cost": "2",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 1,
+      "armor": 0,
+      "health": 5,
+      "card_effect": "You may scrap a health from this unit to increase a Forge card by 1.",
+      "flavor_text": "The scarlet banners inspire fear in victim and bearer alike."
     },
     {
       "image": "13.jpg",
       "name": "Exosuit",
       "type": "augment",
       "cost": "2",
-      "type_secondary": ["unit"]
+      "type_secondary": [
+        "unit"
+      ],
+      "card_effect": "This unit gains +2 Armor, and is Slow (If this unit takes lethal combat damage, it does not deal damage in return.)",
+      "flavor_text": ""
     },
     {
       "image": "14.jpg",
       "name": "Gambler",
       "type": "augment",
       "cost": "2",
-      "type_secondary": ["unit"]
+      "type_secondary": [
+        "unit"
+      ],
+      "card_effect": "During your upkeep, you may look at any number of cards in an opponent’s hand, up to this unit’s health. If you find an Echo, score one. If you do not, this unit loses 1 health for each card you saw.",
+      "flavor_text": "Acquisition of great wealth, or furious punishment."
     },
     {
       "image": "15.jpg",
       "name": "Grave Hoard",
       "type": "colony",
       "cost": "4",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "If a unit is damaged in a battle with your units, you may move any health that would be scrapped to this facility.",
+      "flavor_text": "Nanite clouds erupted from the bodies when disturbed, the final gasp of the soul."
     },
     {
       "image": "16.jpg",
       "name": "Hacker",
       "type": "colony",
       "cost": "3",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "T: Draw a random card from an opponent’s scrap and add it to your hand.",
+      "flavor_text": "Exiles from the overcity turn into parasites in the network."
     },
     {
       "image": "17.jpg",
       "name": "Hegemony Pirates",
       "type": "unit",
       "cost": "5",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 3,
+      "armor": 1,
+      "health": 4,
+      "card_effect": "If this unit breaches and scores an Echo, you may restore 1 health to it from your Citadel.",
+      "flavor_text": ""
     },
     {
       "image": "18.jpg",
       "name": "Hegemony Slavers",
       "type": "unit",
       "cost": "4",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 2,
+      "armor": 1,
+      "health": 2,
+      "card_effect": "Whenever this unit breaches a Faction, you may take 1 citizen from that Faction’s colony and add it to an adjacent unit.\r\nSlavelink (This unit gains +1 Attack for every other unit you control in the lane.)",
+      "flavor_text": ""
     },
     {
       "image": "19.jpg",
       "name": "Hellcat",
       "type": "unit",
       "cost": "4",
-      "type_secondary": ["mech"]
+      "type_secondary": [
+        "mech"
+      ],
+      "attack": 3,
+      "armor": 0,
+      "health": 4,
+      "card_effect": "Whenever this unit survives combat, it adds 1 health from the Crèche.",
+      "flavor_text": "A scav mech lacks in beauty, but overflows with personality."
     },
     {
       "image": "20.jpg",
       "name": "Hornet Swarm",
       "type": "unit",
       "cost": "6",
-      "type_secondary": ["synth"]
+      "type_secondary": [
+        "synth"
+      ],
+      "attack": 0,
+      "armor": 0,
+      "health": 4,
+      "card_effect": "Squad (This unit gets +1 Attack for every health on it.)\r\nAirborne (Each airborne unit may move during your move phase)",
+      "flavor_text": ""
     },
     {
       "image": "21.jpg",
       "name": "Listening Post",
       "type": "colony",
       "cost": "3",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "D: Look at a card in any player’s Forge.",
+      "flavor_text": "Keep your ear to the ground and you’ll get the Shroud’s eye view."
     },
     {
       "image": "22.jpg",
       "name": "Privateer Contract",
       "type": "reflex",
-      "cost": "2"
+      "cost": "2",
+      "card_effect": "Target a Faction. If this Faction is breached, the breaching Faction gains a T on their Citadel.",
+      "flavor_text": ""
     },
     {
       "image": "23.jpg",
       "name": "Razorback",
       "type": "unit",
       "cost": "4",
-      "type_secondary": ["antigrav"]
+      "type_secondary": [
+        "antigrav"
+      ],
+      "attack": 2,
+      "armor": 1,
+      "health": 5,
+      "card_effect": "Airborne (Each airborne unit may move during your move phase)\r\nWhen this unit moves, scrap one health from it.",
+      "flavor_text": "Big engine, no heatsinks."
     },
     {
       "image": "24.jpg",
       "name": "Reconstruct",
       "type": "augment",
       "cost": "2",
-      "type_secondary": ["unit"]
+      "type_secondary": [
+        "unit"
+      ],
+      "card_effect": "This unit may immediately restore its health from your Citadel and is now a Mech with:\r\n Slow (If this unit takes lethal combat damage, it does not deal damage in return.)\r\nAnd Cybernetic (This unit gains +1 Attack for every additional Cybernetic unit in play.)",
+      "flavor_text": ""
     },
     {
       "image": "25.jpg",
       "name": "Shipbreakers",
       "type": "unit",
       "cost": "2",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 1,
+      "armor": 0,
+      "health": 4,
+      "card_effect": "You may lose a health from this unit to take a random card from your scrap into your hand.",
+      "flavor_text": "Dangerous work, plundering the tombs of ancient starfarers."
     },
     {
       "image": "26.jpg",
       "name": "Smog Skiff",
       "type": "unit",
       "cost": "3",
-      "type_secondary": ["antigrav"]
+      "type_secondary": [
+        "antigrav"
+      ],
+      "attack": 1,
+      "armor": 2,
+      "health": 3,
+      "card_effect": "Airborne (Each airborne unit may move during your move phase)\r\nAdjacent units get -1 Attack",
+      "flavor_text": ""
     },
     {
       "image": "27.jpg",
       "name": "Talent Hack",
       "type": "reflex",
-      "cost": "2"
+      "cost": "2",
+      "card_effect": "All factions gain D during their growth phase instead of T.",
+      "flavor_text": "A mind supported by a neural network is a mind that is vulnerable, both within and without."
     },
     {
       "image": "28.jpg",
       "name": "Telepath Graft",
       "type": "augment",
       "cost": "2",
-      "type_secondary": ["unit"]
+      "type_secondary": [
+        "unit"
+      ],
+      "card_effect": "Cybernetic (This unit gains +1 Attack for every additional Cybernetic unit in play.)\r\nThis unit cannot move.",
+      "flavor_text": "Grafting lilin muscular dendrites into human cervical vertebrae is how some of us get our rocks off.\r\n-Rinn Bell, Graft artist"
     },
     {
       "image": "29.jpg",
       "name": "Tethered Nephilim",
       "type": "unit",
       "cost": "6",
-      "type_secondary": ["synth"]
+      "type_secondary": [
+        "synth"
+      ],
+      "attack": 3,
+      "armor": 2,
+      "health": 1,
+      "card_effect": "During your upkeep, you may scrap a health from this unit to look at an opponent’s hand, or a card in their Forge.",
+      "flavor_text": "A Nephilim is the rare prize you chain to the biggest rock you can find."
     },
     {
       "image": "30.jpg",
       "name": "Worker Hovels",
       "type": "colony",
       "cost": "3",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "D: Add 1 to a card in a Forge.\r\nIf there are 3 or more D here, move them to target opponent’s Citadel. Scrap all T there.",
+      "flavor_text": "Stinking hives just waiting for the overseers. I say concentration breeds contempt. -Foreman Domai"
     }
   ]
 }

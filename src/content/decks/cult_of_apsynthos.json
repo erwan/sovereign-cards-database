@@ -1,210 +1,357 @@
 {
   "name": "Cult of Apsynthos",
-  "description": "They settle the fungal wastes\u2019 most toxic psychoactive zones and Lilin husks, obeying laws shaped by semi-aware xenofungus. Initiates splice mycelium into flesh until the network owns their nerves\u2014gaining strength and spore-born \u201ctelepathy\u201d while spreading infection toward a holy end to mankind. ",
+  "description": "They settle the fungal wastes’ most toxic psychoactive zones and Lilin husks, obeying laws shaped by semi-aware xenofungus. Initiates splice mycelium into flesh until the network owns their nerves—gaining strength and spore-born “telepathy” while spreading infection toward a holy end to mankind. ",
   "cards": [
     {
       "image": "22.jpg",
       "name": "Acid Husks",
       "type": "unit",
       "cost": "4",
-      "type_secondary": ["xeno"]
+      "type_secondary": [
+        "xeno"
+      ],
+      "attack": 3,
+      "armor": 0,
+      "health": 5,
+      "card_effect": "You may scrap a health token from this unit to have it gain Splash (When this unit deals combat damage, deal the same damage to the next enemy unit.) until end of phase.",
+      "flavor_text": ""
     },
     {
       "image": "23.jpg",
       "name": "Apsyntion Preserve",
       "type": "colony",
       "cost": "4",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "T: Units in target lane gain +1 Armor until the end of phase.",
+      "flavor_text": "If it were up to me, I’d take the flamers to that swamp. But it’s not up to me.\r\n-General Takei, Dominion Holonet"
     },
     {
       "image": "24.jpg",
       "name": "Blister Plates",
       "type": "augment",
       "cost": "2",
-      "type_secondary": ["unit"]
+      "type_secondary": [
+        "unit"
+      ],
+      "card_effect": "This unit gains +1 Attack when attacking, +2 Attack when defending.",
+      "flavor_text": ""
     },
     {
       "image": "25.jpg",
       "name": "Boreworm Larvae",
       "type": "unit",
       "cost": "4",
-      "type_secondary": ["xeno"]
+      "type_secondary": [
+        "xeno"
+      ],
+      "attack": 3,
+      "armor": 1,
+      "health": 1,
+      "card_effect": "Forge as an augment on target unit. During that unit’s upkeep, add 1 health from it to Boreworm Larvae.\r\nIf the attached unit is scrapped, Boreworm Larvae moves to the back of any lane its owner controls.",
+      "flavor_text": ""
     },
     {
       "image": "26.jpg",
       "name": "Carrier",
       "type": "augment",
       "cost": "4",
-      "type_secondary": ["unit"]
+      "type_secondary": [
+        "unit"
+      ],
+      "card_effect": "This unit and adjacent units have a maximum Attack value of 1. They gain Pierce (This unit ignores Armor when in combat.)",
+      "flavor_text": ""
     },
     {
       "image": "27.jpg",
       "name": "Chimera Guild",
       "type": "colony",
       "cost": "4",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "D: Each unit in target lane may restore one health from your Citadel.",
+      "flavor_text": "Our race has existed too long - resisting entropy, forgetting our humanity. Now chimera are bred to feel for us."
     },
     {
       "image": "28.jpg",
       "name": "Elder Hybrids",
       "type": "unit",
       "cost": "3",
-      "type_secondary": ["chimera"]
+      "type_secondary": [
+        "chimera"
+      ],
+      "attack": 3,
+      "armor": 0,
+      "health": 4,
+      "card_effect": "Units adjacent to Elder Hybrid must add one health to it during your upkeep.",
+      "flavor_text": "The first tests were crude, and cruel, leaving these creatures in a dream of vengeance."
     },
     {
       "image": "29.jpg",
       "name": "Endospexi",
       "type": "unit",
       "cost": "2",
-      "type_secondary": ["chimera"]
+      "type_secondary": [
+        "chimera"
+      ],
+      "attack": 1,
+      "armor": 0,
+      "health": 5,
+      "card_effect": "You may scrap a health from this unit to look at an opponent’s hand or target card in their Forge.",
+      "flavor_text": "The endospexi are a relic of tribal colonies, sacrificing to the Lilin out of brutal necessity."
     },
     {
       "image": "30.jpg",
       "name": "Fungal Bloom",
       "type": "reflex",
-      "cost": "3"
+      "cost": "3",
+      "card_effect": "Scrap all citizens on target facility.",
+      "flavor_text": ""
     },
     {
       "image": "01.jpg",
       "name": "Gene Speakers",
       "type": "unit",
       "cost": "3",
-      "type_secondary": ["chimera"]
+      "type_secondary": [
+        "chimera"
+      ],
+      "attack": 1,
+      "armor": 0,
+      "health": 4,
+      "card_effect": "Pierce (This unit ignores Armor when in combat.)\r\nAdjacent units restore one health from the Creche during your growth phase.",
+      "flavor_text": "A whisper in the ear, then through the heart."
     },
     {
       "image": "02.jpg",
       "name": "Hyphal Warning",
       "type": "augment",
       "cost": "3",
-      "type_secondary": ["unit"]
+      "type_secondary": [
+        "unit"
+      ],
+      "card_effect": "This unit and all units in front of it have +1 Armor.",
+      "flavor_text": ""
     },
     {
       "image": "03.jpg",
       "name": "Grendels",
       "type": "unit",
       "cost": "5",
-      "type_secondary": ["xeno"]
+      "type_secondary": [
+        "xeno"
+      ],
+      "attack": 3,
+      "armor": 2,
+      "health": 2,
+      "card_effect": "",
+      "flavor_text": "The grendel was thought to be the largest living thing on Apsyntion during the first expeditions - before the behemoths crushed the notion."
     },
     {
       "image": "04.jpg",
       "name": "Haruspexi",
       "type": "unit",
       "cost": "3",
-      "type_secondary": ["chimera"]
+      "type_secondary": [
+        "chimera"
+      ],
+      "attack": 2,
+      "armor": 0,
+      "health": 4,
+      "card_effect": "Scrap 1 health from an adjacent unit: Look at an opponent’s entire hand or one card in their Forge.",
+      "flavor_text": "Once lost traditions rooted in superstition, divination is now free to evolve like any other technology."
     },
     {
       "image": "05.jpg",
       "name": "Herdmasters",
       "type": "unit",
       "cost": "3",
-      "type_secondary": ["chimera"]
+      "type_secondary": [
+        "chimera"
+      ],
+      "attack": 2,
+      "armor": 1,
+      "health": 2,
+      "card_effect": "Adjacent units gain +1 Attack and +1 Armor.",
+      "flavor_text": "It is unholy. I will not stand, idle and petulant, as our flock is converted one by one into beasts by our own hand!\r\n-Provincar Jian, ‘Once more unto the breach’"
     },
     {
       "image": "06.jpg",
       "name": "Mosaic Mutation",
       "type": "reflex",
-      "cost": "2"
+      "cost": "2",
+      "card_effect": "Scrap target unit and replace it with a unit from your hand. Health from the scrapped unit is added to the new one.",
+      "flavor_text": "The genetic change is almost imperceptible - we are two monsters from the same tree.\r\n-Brood Experimentation Log"
     },
     {
       "image": "07.jpg",
       "name": "Mycandrium",
       "type": "colony",
       "cost": "3",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "If a unit you control loses health, you may add it to Mycandrium. Citizens do not leave Mycandrium during your upkeep.\r\n\r\nYou may use tokens from Mycandrium rather than your Citadel when adding Health to units.",
+      "flavor_text": ""
     },
     {
       "image": "08.jpg",
       "name": "Mygologists",
       "type": "unit",
       "cost": "2",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 1,
+      "armor": 0,
+      "health": 3,
+      "card_effect": "All units in this lane gain Resilient (Restore one health from the Creche during your growth phase.)",
+      "flavor_text": "At Apsynthos Crater, the spore mats have so much neurological activity you can see electrical arcs at twilight. These will be our children’s diplomats."
     },
     {
       "image": "09.jpg",
       "name": "Orthogenesis",
       "type": "reflex",
-      "cost": "2"
+      "cost": "2",
+      "card_effect": "Choose a unit in your scrap and add it to a lane as if it were just forged. Attach this card.\r\nScrap this unit during your upkeep.",
+      "flavor_text": "<Die. Sleep. Always within the embrace. Wake, human.>\r\n-Promethea Datalog"
     },
     {
       "image": "10.jpg",
       "name": "Plague Spores",
       "type": "reflex",
-      "cost": "2"
+      "cost": "2",
+      "card_effect": "All units have 0 Armor.",
+      "flavor_text": "Civvies see the datanet holos coming back from the front, and they say it looks like paradise. They don’t understand that when a ‘snowflake’ roots in your lungs, you’d tear your own chest open to get it out."
     },
     {
       "image": "11.jpg",
       "name": "Planet Plague",
       "type": "augment",
       "cost": "2",
-      "type_secondary": ["unit"]
+      "type_secondary": [
+        "unit"
+      ],
+      "card_effect": "Scrap 1 citizen from your Citadel at the end of your growth phase. If this unit deals non-lethal combat damage, attach this augment to the damaged unit.",
+      "flavor_text": ""
     },
     {
       "image": "12.jpg",
       "name": "Rot Midden",
       "type": "colony",
       "cost": "4",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "D: Search your scrap for a non-reflex card and add it to your hand, then discard a card.",
+      "flavor_text": ""
     },
     {
       "image": "13.jpg",
       "name": "Silkspitters",
       "type": "unit",
       "cost": "4",
-      "type_secondary": ["xeno"]
+      "type_secondary": [
+        "xeno"
+      ],
+      "attack": 2,
+      "armor": 1,
+      "health": 4,
+      "card_effect": "If this unit is in combat, the enemy unit is Slow (If this unit takes lethal combat damage, it does not deal damage in return.)",
+      "flavor_text": ""
     },
     {
       "image": "14.jpg",
       "name": "Spore Blossoms",
       "type": "augment",
       "cost": "2",
-      "type_secondary": ["unit"]
+      "type_secondary": [
+        "unit"
+      ],
+      "card_effect": "This unit gains Consume (If this unit deals lethal combat damage, add one health from the defeated unit.)",
+      "flavor_text": "Spores take root in battlefield casualties, turning bodies into blooms."
     },
     {
       "image": "15.jpg",
       "name": "Spore Mats",
       "type": "colony",
       "cost": "4",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "D: Add a T to this facility from the Creche.",
+      "flavor_text": "Mutation rates are within acceptable limits."
     },
     {
       "image": "16.jpg",
       "name": "Spore Slaves",
       "type": "unit",
       "cost": "2",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 2,
+      "armor": 0,
+      "health": 3,
+      "card_effect": "When this unit deals combat damage, you may scrap a health from it to have it deal the same damage to the next enemy unit.",
+      "flavor_text": "Poachers start their careers harvesting the fungal sacs. They end their lives bursting from the inside."
     },
     {
       "image": "17.jpg",
       "name": "Spore Storm",
       "type": "reflex",
-      "cost": "2"
+      "cost": "2",
+      "card_effect": "Each unit in target lane gains +1 Attack. These units lose 1 health when this reflex is scrapped.",
+      "flavor_text": "The tiny scarlet spores dance in the air, and the mind begins to blossom."
     },
     {
       "image": "18.jpg",
       "name": "Stalk Tenders",
       "type": "unit",
       "cost": "2",
-      "type_secondary": ["xeno"]
+      "type_secondary": [
+        "xeno"
+      ],
+      "attack": 1,
+      "armor": 1,
+      "health": 3,
+      "card_effect": "Add +1 D to your Citadel during your growth phase.",
+      "flavor_text": "Certainly diligent little things — are they the caretakers or the cattle?\r\n Ranna Myren, Promethea Probe Team"
     },
     {
       "image": "19.jpg",
       "name": "Unruly Husks",
       "type": "unit",
       "cost": "3",
-      "type_secondary": ["xeno"]
+      "type_secondary": [
+        "xeno"
+      ],
+      "attack": 3,
+      "armor": 0,
+      "health": 5,
+      "card_effect": "Units in front of this one lose 1 health during your upkeep.",
+      "flavor_text": "Minds to mycelia, friends to food."
     },
     {
       "image": "20.jpg",
       "name": "Xeno Regeneration",
       "type": "reflex",
-      "cost": "1"
+      "cost": "1",
+      "card_effect": "You may immediately add health to any number of units, using citizens from your Citadel.",
+      "flavor_text": "He lay into the warm embrace of the spore marsh and closed his eyes. He breathed deep and heard the song of the world."
     },
     {
       "image": "21.jpg",
       "name": "Xenoneural Arcology",
       "type": "colony",
       "cost": "5",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "T: Gain T on this card for every unit you control.",
+      "flavor_text": "An exponential shift in the neural net will accompany the fervor. We will finally be natives of Apsyntion."
     }
   ]
 }

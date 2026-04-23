@@ -1,209 +1,356 @@
 {
-  "description": "The largest human society, millions deep beneath the surface in caste darkness. Talents rule from pleasure domes while modified Drones never see the sun; propaganda, drugs, and cloning have split them into near-species. Echoes are commerce, not reverence\u2014except to drones who see Wormwood as escape. ",
+  "description": "The largest human society, millions deep beneath the surface in caste darkness. Talents rule from pleasure domes while modified Drones never see the sun; propaganda, drugs, and cloning have split them into near-species. Echoes are commerce, not reverence—except to drones who see Wormwood as escape. ",
   "cards": [
     {
       "image": "01.jpg",
       "name": "Agromechs",
       "type": "unit",
       "cost": "5",
-      "type_secondary": ["mech"]
+      "type_secondary": [
+        "mech"
+      ],
+      "attack": 0,
+      "armor": 1,
+      "health": 4,
+      "card_effect": "Gain +1 T during your growth phase for every health on this unit.",
+      "flavor_text": ""
     },
     {
       "image": "02.jpg",
       "name": "Graft Necrosis",
       "type": "reflex",
-      "cost": "1"
+      "cost": "1",
+      "card_effect": "Target unit loses 1 health for every augment attached to it.\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+      "flavor_text": "A bad graft could die in hours - taking the host to hell in a span of an afternoon.\t\t\t"
     },
     {
       "image": "03.jpg",
       "name": "Creche Harvest",
       "type": "reflex",
-      "cost": "1"
+      "cost": "1",
+      "card_effect": "Place 2 D on this card from the Creche.",
+      "flavor_text": "Little bodies in the Drone pens, faces pressed tight against the glass."
     },
     {
       "image": "04.jpg",
       "name": "Critical Shot",
       "type": "reflex",
-      "cost": "3"
+      "cost": "3",
+      "card_effect": "Scrap one health from target unit.",
+      "flavor_text": ""
     },
     {
       "image": "05.jpg",
       "name": "Crustcracker Gang",
       "type": "unit",
       "cost": "3",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 3,
+      "armor": 1,
+      "health": 4,
+      "card_effect": "During your growth phase, scrap one health from Crustcracker Gang.",
+      "flavor_text": "Convicts, layabouts, aristocrats, kings - every man is born again in the acid of the mines."
     },
     {
       "image": "06.jpg",
       "name": "Flamer Crew",
       "type": "unit",
       "cost": "4",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 2,
+      "armor": 1,
+      "health": 4,
+      "card_effect": "Splash (When this unit deals combat damage, deal the same damage to the next enemy unit.)",
+      "flavor_text": "A grendel will burn just like anything else. The smell isn’t much of a reward."
     },
     {
       "image": "07.jpg",
       "name": "Flystrikers",
       "type": "unit",
       "cost": "3",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 2,
+      "armor": 0,
+      "health": 4,
+      "card_effect": "If this unit is dealt combat damage, scrap one health from the attacking unit.",
+      "flavor_text": "A boiling nanite cloud - black as tar, hissing and roiling like hate, rising from the bodies..."
     },
     {
       "image": "08.jpg",
       "name": "Geneforge Nurses",
       "type": "unit",
       "cost": "2",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 1,
+      "armor": 1,
+      "health": 3,
+      "card_effect": "Add +1D to your Citadel during your growth phase.",
+      "flavor_text": "Midwives to the spliced abominations of an overripe society...\r\n-Inquisitor Sandoval, ‘The plank and the splinter’"
     },
     {
       "image": "09.jpg",
       "name": "Homo Superior",
       "type": "unit",
       "cost": "5",
-      "type_secondary": ["chimera"]
+      "type_secondary": [
+        "chimera"
+      ],
+      "attack": 2,
+      "armor": 2,
+      "health": 3,
+      "card_effect": "You may scrap a D from your Citadel to deal +2 damage when resolving a combat with this unit.",
+      "flavor_text": "New monsters in old flesh, these so called ‘men’.\r\n-Malachai Renquist, Neogenesis Bishop"
     },
     {
       "image": "10.jpg",
       "name": "Husk Harvesters",
       "type": "unit",
       "cost": "2",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 0,
+      "armor": 1,
+      "health": 4,
+      "card_effect": "Each time you score an Echo you may add 1 to a card in your Forge.",
+      "flavor_text": "Harvesters follow the flame squads into the spore mats, digging through ashes for such a little thing..."
     },
     {
       "image": "11.jpg",
       "name": "Hypnobar",
       "type": "augment",
       "cost": "3",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "Flip T after leaving this facility. Any D leaving this facility are scrapped.",
+      "flavor_text": "The hypnostims were created to bring addicts back from the brink - now death is preferable to prohibition."
     },
     {
       "image": "12.jpg",
       "name": "Iron Tortoise",
       "type": "unit",
       "cost": "4",
-      "type_secondary": ["mech"]
+      "type_secondary": [
+        "mech"
+      ],
+      "attack": 1,
+      "armor": 3,
+      "health": 2,
+      "card_effect": "Units behind Iron Tortoise gain +1 Armor.\r\nSlow (If this unit takes lethal combat damage, it does not deal damage in return.)",
+      "flavor_text": ""
     },
     {
       "image": "13.jpg",
       "name": "Lowhivers",
       "type": "unit",
       "cost": "2",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 2,
+      "armor": 0,
+      "health": 5,
+      "card_effect": "This unit gains one D from your Citadel during your growth phase.\r\nDuring your upkeep, flip a T on the Citadel or scrap Lowhivers.",
+      "flavor_text": ""
     },
     {
       "image": "14.jpg",
       "name": "Mandatory Stims",
       "type": "reflex",
-      "cost": "2"
+      "cost": "2",
+      "card_effect": "Move all citizens from a facility to its controller’s Citadel.",
+      "flavor_text": "Do the stims help us work longer? Or better? Should we be grateful we retain the neural capacity to question?"
     },
     {
       "image": "15.jpg",
       "name": "Mantle Bore",
       "type": "colony",
       "cost": "6",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "D: Add 1 to every card in target Forge.",
+      "flavor_text": "The drops of rain make a hole in the stone, not by violence, but by oft falling.\r\n-Proverbs, Datalinks"
     },
     {
       "image": "16.jpg",
       "name": "Mindjack",
       "type": "reflex",
-      "cost": "2"
+      "cost": "2",
+      "card_effect": "Look at target opponent’s hand. Choose a non-Echo card and add it to your hand.",
+      "flavor_text": "He felt his mind disconnect from his body - just a plug coming undone and then darkness."
     },
     {
       "image": "17.jpg",
       "name": "Nerve Splice",
       "type": "reflex",
-      "cost": "X"
+      "cost": "X",
+      "card_effect": "Flip X T on target Citadel. Any player attacking you has +1 breach value.",
+      "flavor_text": "A necessary atrocity."
     },
     {
       "image": "18.jpg",
       "name": "Neural Amp",
       "type": "augment",
       "cost": "2",
-      "type_secondary": ["unit"]
+      "type_secondary": [
+        "unit"
+      ],
+      "card_effect": "This unit gains +2 Attack.",
+      "flavor_text": "Amplify your ideals, send them out among your troops, and they will tear your enemies asunder."
     },
     {
       "image": "19.jpg",
       "name": "Nodal Addicts",
       "type": "unit",
       "cost": "2",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 1,
+      "armor": 0,
+      "health": 1,
+      "card_effect": "You must put a T from your Citadel on this unit during your growth phase, or scrap it.\r\nIf attacking and breaching, you may scrap health from this unit. Scrap a citizen from the opposing colony for each health lost.",
+      "flavor_text": ""
     },
     {
       "image": "20.jpg",
       "name": "Pleasure Dome",
       "type": "colony",
       "cost": "2",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "TT➤ You may add one additional T to your Citadel during your growth phase.",
+      "flavor_text": ""
     },
     {
       "image": "21.jpg",
       "name": "Punishment Chamber",
       "type": "colony",
       "cost": "2",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "D: Add 2 to a Forge card.\r\nScrap all citizens on this facility during your upkeep.",
+      "flavor_text": "Fear will keep the rabble in line."
     },
     {
       "image": "22.jpg",
       "name": "Recycling Vats",
       "type": "colony",
       "cost": "2",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "Health lost from units you control may be placed on this facility instead of scrapped. ",
+      "flavor_text": "It is every citizen’s final duty."
     },
     {
       "image": "23.jpg",
       "name": "Rut Hollow",
       "type": "colony",
       "cost": "2",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "DD➤ Add a D to your Citadel during your growth phase.",
+      "flavor_text": "They can see the glint of the pleasure dome reflecting like a diamond, a kilometer above the hollow."
     },
     {
       "image": "24.jpg",
       "name": "Scav Gang",
       "type": "unit",
       "cost": "5",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 0,
+      "armor": 1,
+      "health": 3,
+      "card_effect": "Squad (This unit gets +1 Attack for every health on it.)\r\nIf this unit deals lethal damage, take an augment from that unit and attach it to Scav Gang.",
+      "flavor_text": ""
     },
     {
       "image": "25.jpg",
       "name": "Secret Police",
       "type": "unit",
       "cost": "2",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 3,
+      "armor": 1,
+      "health": 3,
+      "card_effect": "Flip a T on your Citadel during your upkeep or scrap Secret Police.",
+      "flavor_text": ""
     },
     {
       "image": "26.jpg",
       "name": "Sporemask",
       "type": "augment",
       "cost": "2",
-      "type_secondary": ["unit"]
+      "type_secondary": [
+        "unit"
+      ],
+      "card_effect": "This unit has +1 Armor.",
+      "flavor_text": "Fungus mats convert organic matter into a thick sludge in hours - the masks prevent this conversion within the lungs."
     },
     {
       "image": "27.jpg",
       "name": "Stimshifts",
       "type": "augment",
       "cost": "2",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "Each citizen used to work this facility counts as two. Any citizens removed from this facility are scrapped.",
+      "flavor_text": "One Drone can work twice as hard for half the life."
     },
     {
       "image": "28.jpg",
       "name": "Titan Cannon",
       "type": "colony",
       "cost": "8",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "D: Deal 1 damage to target unit and each adjacent unit.",
+      "flavor_text": "In the recoil there is a hollow quiet, as the planet holds its breath."
     },
     {
       "image": "29.jpg",
       "name": "Vir Ex Machina",
       "type": "augment",
       "cost": "4",
-      "type_secondary": ["unit"]
+      "type_secondary": [
+        "unit"
+      ],
+      "card_effect": "Search a scrap for a unit, and forge it immediately into the back of one of your lanes. Attach this augment.\r\nIf this augment is ever removed, scrap the attached unit.",
+      "flavor_text": ""
     },
     {
       "image": "30.jpg",
       "name": "Walker Artillery",
       "type": "unit",
       "cost": "6",
-      "type_secondary": ["mech"]
+      "type_secondary": [
+        "mech"
+      ],
+      "attack": 2,
+      "armor": 2,
+      "health": 2,
+      "card_effect": "You may target a Citadel or facility during your upkeep. Its controller chooses a citizen there and scraps it.\r\nSplash (When this unit deals combat damage, deal the same damage to the next enemy unit.)",
+      "flavor_text": ""
     }
   ]
 }
