@@ -1,209 +1,357 @@
 {
-  "description": "Once-prosperous Coriolis was broken by war between Utopia, Myrmidon, and Coriolis itself. Stripped nobles and survivors trade in caravans, melt relics into guns, herd engineered Ceph for wealth, and cling to governance from the ruins while the old dynasty\u2019s corpse is slowly built over. ",
+  "description": "Once-prosperous Coriolis was broken by war between Utopia, Myrmidon, and Coriolis itself. Stripped nobles and survivors trade in caravans, melt relics into guns, herd engineered Ceph for wealth, and cling to governance from the ruins while the old dynasty’s corpse is slowly built over. ",
   "cards": [
     {
       "image": "01.jpg",
       "name": "Bull Ceph",
       "type": "unit",
       "cost": "4",
-      "type_secondary": ["xeno"]
+      "type_secondary": [
+        "xeno"
+      ],
+      "attack": 2,
+      "armor": 1,
+      "health": 3,
+      "card_effect": "This unit gains +1 Attack for each unit behind it.",
+      "flavor_text": "Bull Ceph defend their herd, even if the herd is a huddle of terrified humans."
     },
     {
       "image": "02.jpg",
       "name": "Caravan Guards",
       "type": "unit",
       "cost": "4",
-      "type_secondary": ["xeno"]
+      "type_secondary": [
+        "xeno"
+      ],
+      "attack": 2,
+      "armor": 1,
+      "health": 4,
+      "card_effect": "Units behind this one gain +1 Armor.",
+      "flavor_text": ""
     },
     {
       "image": "03.jpg",
       "name": "Duchess Of Ash",
       "type": "unit",
       "cost": "4",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 2,
+      "armor": 1,
+      "health": 1,
+      "card_effect": "Units in this lane gain +1 to their breach value.",
+      "flavor_text": "A melted throne makes fine bullets."
     },
     {
       "image": "04.jpg",
       "name": "Duelist",
       "type": "augment",
       "cost": "2",
-      "type_secondary": ["unit"]
+      "type_secondary": [
+        "unit"
+      ],
+      "card_effect": "If this unit is alone in its lane, it gains +2 Attack.",
+      "flavor_text": "Discipline is the top of the food chain here."
     },
     {
       "image": "05.jpg",
       "name": "Field Medics",
       "type": "unit",
       "cost": "2",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 1,
+      "armor": 1,
+      "health": 3,
+      "card_effect": "Adjacent units restore one health from the Creche during your growth phase.",
+      "flavor_text": ""
     },
     {
       "image": "06.jpg",
       "name": "Flagbearers",
       "type": "unit",
       "cost": "3",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 1,
+      "armor": 1,
+      "health": 3,
+      "card_effect": "Adjacent units gain +1 Attack.",
+      "flavor_text": "When Corioli burned, the city itself became a martyr."
     },
     {
       "image": "07.jpg",
       "name": "Frontier Despot",
       "type": "unit",
       "cost": "2",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 1,
+      "armor": 1,
+      "health": 1,
+      "card_effect": "If this unit breaches and you find an Echo, you may look at an additional card. If it is also an Echo, repeat.",
+      "flavor_text": "I’ll take that. And that too."
     },
     {
       "image": "08.jpg",
       "name": "Gardens Of Kadesh",
       "type": "colony",
       "cost": "4",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "You may place one W/U here from the Creche each time you score an Echo.",
+      "flavor_text": "Are these trees extinct if they can exist only within the shields? Could the same be said of our species?\r\n-Remnant Sha Teng"
     },
     {
       "image": "09.jpg",
       "name": "Glacial Melt",
       "type": "reflex",
-      "cost": "2"
+      "cost": "2",
+      "card_effect": "Gain a T on your Citadel. Any faction may scrap a facility to gain a T on their Citadel.",
+      "flavor_text": "Water has been in contention on Apsyntion since our arrival. Today we take the first step to remedy its absence."
     },
     {
       "image": "10.jpg",
       "name": "Graftguard",
       "type": "unit",
       "cost": "4",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 2,
+      "armor": 1,
+      "health": 3,
+      "card_effect": "If this unit breaches and you reveal an augment, you may attach it to this unit.\r\nCybernetic (This unit gains +1 Attack for every additional Cybernetic unit in play.)",
+      "flavor_text": ""
     },
     {
       "image": "11.jpg",
       "name": "High Caste",
       "type": "augment",
       "cost": "2",
-      "type_secondary": ["unit"]
+      "type_secondary": [
+        "unit"
+      ],
+      "card_effect": "This unit gains +1 Attack against units using D for health.",
+      "flavor_text": ""
     },
     {
       "image": "12.jpg",
       "name": "Highborn Academy",
       "type": "colony",
       "cost": "3",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "You may add idle D to this facility during your upkeep.\r\nT: Flip all D on this facility. You may work Highborn Academy while citizens are on it.",
+      "flavor_text": ""
     },
     {
       "image": "13.jpg",
       "name": "Highborn Nursery",
       "type": "colony",
       "cost": "3",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "Place a T from the Creche on this facility during your growth phase. Do not remove citizens from here during your upkeep.\r\nTTT➤ Move all T on this facility to your Citadel.",
+      "flavor_text": ""
     },
     {
       "image": "14.jpg",
       "name": "Ice Hauler",
       "type": "unit",
       "cost": "3",
-      "type_secondary": ["mech"]
+      "type_secondary": [
+        "mech"
+      ],
+      "attack": 1,
+      "armor": 1,
+      "health": 3,
+      "card_effect": "Gain +1 T on your Citadel during your growth phase.",
+      "flavor_text": "Permafrost is critical to human survival on Apsyntion - big melts must be managed with care."
     },
     {
       "image": "15.jpg",
       "name": "Merchant Caravan",
       "type": "unit",
       "cost": "3",
-      "type_secondary": ["human", "xeno"]
+      "type_secondary": [
+        "human",
+        "xeno"
+      ],
+      "attack": 0,
+      "armor": 1,
+      "health": 5,
+      "card_effect": "During your upkeep you may choose another Faction, and trade a card in your hand for a random card from theirs.",
+      "flavor_text": ""
     },
     {
       "image": "16.jpg",
       "name": "Migrant Labor",
       "type": "reflex",
-      "cost": "0"
+      "cost": "0",
+      "card_effect": "You may work another player’s facility as if it were your own (your citizens will become owned by that player).",
+      "flavor_text": ""
     },
     {
       "image": "17.jpg",
       "name": "Mule",
       "type": "augment",
       "cost": "3",
-      "type_secondary": ["unit"]
+      "type_secondary": [
+        "unit"
+      ],
+      "card_effect": "All units in this lane gain +1 Attack.\r\nIf this unit receives damage, you may scrap this augment to reduce that damage by 1.",
+      "flavor_text": "We crossed the steppe with the so-called help of a machine we all learned to hate."
     },
     {
       "image": "18.jpg",
       "name": "Musk Ceph",
       "type": "unit",
       "cost": "3",
-      "type_secondary": ["xeno"]
+      "type_secondary": [
+        "xeno"
+      ],
+      "attack": 2,
+      "armor": 0,
+      "health": 5,
+      "card_effect": "Slow (If this unit takes lethal combat damage, it does not deal damage in return.)",
+      "flavor_text": "Pack ceph are oft decked in perfumed saddles to hide the smell."
     },
     {
       "image": "19.jpg",
       "name": "Noble Profession",
       "type": "augment",
       "cost": "3",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "All D who work this facility become T.",
+      "flavor_text": ""
     },
     {
       "image": "20.jpg",
       "name": "Open Market",
       "type": "colony",
       "cost": "3",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "D: Draw a random card from your scrap, then discard a card.",
+      "flavor_text": ""
     },
     {
       "image": "21.jpg",
       "name": "Plutocracy",
       "type": "reflex",
-      "cost": "1"
+      "cost": "1",
+      "card_effect": "T used to work Forges do not flip when cards are finished.",
+      "flavor_text": "The poor have sometimes objected to being governed badly; the rich have always objected to being governed at all.\r\n-Datalinks"
     },
     {
       "image": "22.jpg",
       "name": "Prodigal Sons",
       "type": "reflex",
-      "cost": "4"
+      "cost": "4",
+      "card_effect": "Add 2 T to a Citadel from the Creche.",
+      "flavor_text": "Men return from the wastes all the time - at least, they were men when they left."
     },
     {
       "image": "23.jpg",
       "name": "Rail Cavalry",
       "type": "unit",
       "cost": "5",
-      "type_secondary": ["antigrav"]
+      "type_secondary": [
+        "antigrav"
+      ],
+      "attack": 2,
+      "armor": 0,
+      "health": 3,
+      "card_effect": "Airborne (Each airborne unit may move during your move phase)\r\nPierce (This unit ignores Armor when in combat.)",
+      "flavor_text": ""
     },
     {
       "image": "24.jpg",
       "name": "Relocation",
       "type": "reflex",
-      "cost": "2"
+      "cost": "2",
+      "card_effect": "Take a citizen from any player’s colony and add it to a target Citadel.",
+      "flavor_text": ""
     },
     {
       "image": "25.jpg",
       "name": "Ruined Arcology",
       "type": "colony",
       "cost": "4",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "T: Add 1 to all cards in target Forge.",
+      "flavor_text": "Rebuilding Eden in our own image."
     },
     {
       "image": "26.jpg",
       "name": "Scrap Hunt",
       "type": "reflex",
-      "cost": "1"
+      "cost": "1",
+      "card_effect": "Take target card from your scrap and add it to your hand.",
+      "flavor_text": ""
     },
     {
       "image": "27.jpg",
       "name": "Scrap Scavengers",
       "type": "unit",
       "cost": "3",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 1,
+      "armor": 1,
+      "health": 4,
+      "card_effect": "You may add 1 to a Forge card anytime a card is scrapped.",
+      "flavor_text": "The twisted wreck of the Apsynthos is a womb of riches - for those who would test its defenses."
     },
     {
       "image": "28.jpg",
       "name": "Stun Whip",
       "type": "augment",
       "cost": "2",
-      "type_secondary": ["unit"]
+      "type_secondary": [
+        "unit"
+      ],
+      "card_effect": "If this unit deals combat damage, the damaged unit has -1 Attack until the end of phase.",
+      "flavor_text": ""
     },
     {
       "image": "29.jpg",
       "name": "Synthsilk Hatchery",
       "type": "colony",
       "cost": "4",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "D: Target unit gains +1 Armor until end of phase.",
+      "flavor_text": "Such tiny creatures the basis for mass mobilization - revolution birthed from a raveling cocoon."
     },
     {
       "image": "30.jpg",
       "name": "Technocrats",
       "type": "unit",
       "cost": "3",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 1,
+      "armor": 1,
+      "health": 3,
+      "card_effect": "Gain an additional 1 on every card in your Forge during your upkeep.",
+      "flavor_text": "Overly broad, terribly technical, the ultimate fusion of politics and engineering."
     }
   ]
 }

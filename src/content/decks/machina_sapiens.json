@@ -1,208 +1,353 @@
 {
-  "description": "Sapient and semi-sapient machines evolved from the ark\u2019s terraforming nanites. They mimic human and Lilin ways in war and culture, may venerate Wormwood as creator\u2014or merely echo our faiths\u2014and perceive much of the planet through the ambient nanite cloud. ",
+  "description": "Sapient and semi-sapient machines evolved from the ark’s terraforming nanites. They mimic human and Lilin ways in war and culture, may venerate Wormwood as creator—or merely echo our faiths—and perceive much of the planet through the ambient nanite cloud. ",
   "cards": [
     {
       "image": "01.jpg",
       "name": "Apsynthos Nanocore",
       "type": "colony",
       "cost": "5",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "D: Flip this Drone, then add a T to this facility from the Creche.",
+      "flavor_text": "“Don’t call us graverobbers. Plunderers. Those who call the wreck a ‘tomb’ are superstitious tribals, or plain old fools.”"
     },
     {
       "image": "02.jpg",
       "name": "Black Queen",
       "type": "unit",
       "cost": "4",
-      "type_secondary": ["synth"]
+      "type_secondary": [
+        "synth"
+      ],
+      "attack": 2,
+      "armor": 1,
+      "health": 1,
+      "card_effect": "Slavelink (This unit gains +1 Attack for every other unit you control in the lane.)",
+      "flavor_text": "Big brain queen. holdin’ so many bastard’s thoughts all at once, big old brain full of secrets and lies."
     },
     {
       "image": "03.jpg",
       "name": "Blink Gate",
       "type": "colony",
       "cost": "5",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "D: Move target unit you control to any position in any lane OR reveal a finished unit and forge it.",
+      "flavor_text": "Work crews refused to enter at first, convinced we had opened a gate to hell."
     },
     {
       "image": "04.jpg",
       "name": "Blink Module",
       "type": "augment",
       "cost": "2",
-      "type_secondary": ["unit"]
+      "type_secondary": [
+        "unit"
+      ],
+      "card_effect": "You may move this unit to any position in the lane at the beginning of any combat phase.",
+      "flavor_text": ""
     },
     {
       "image": "05.jpg",
       "name": "Cataphract",
       "type": "unit",
       "cost": "5",
-      "type_secondary": ["synth"]
+      "type_secondary": [
+        "synth"
+      ],
+      "attack": 2,
+      "armor": 1,
+      "health": 2,
+      "card_effect": "Pierce (This unit ignores Armor when in combat.)",
+      "flavor_text": "Microminiature laser lances arc from its body on contact, shattering steel and a bit of bone."
     },
     {
       "image": "06.jpg",
       "name": "Command Spire",
       "type": "colony",
       "cost": "4",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "T: Units in target lane gain +1 Attack until end of phase.",
+      "flavor_text": "We watched the machines mimic the architecture of war, and ignored the obvious implications."
     },
     {
       "image": "07.jpg",
       "name": "Corpse Harvesters",
       "type": "unit",
       "cost": "3",
-      "type_secondary": ["synth"]
+      "type_secondary": [
+        "synth"
+      ],
+      "attack": 1,
+      "armor": 1,
+      "health": 3,
+      "card_effect": "If any unit is scrapped, move its last health token to your Citadel.",
+      "flavor_text": "Crechlings tell stories at night of the harvesters taking them away."
     },
     {
       "image": "08.jpg",
       "name": "Cybernetic Conciousness",
       "type": "reflex",
-      "cost": "2"
+      "cost": "2",
+      "card_effect": "Units in target lane gain Cybernetic (This unit gains +1 Attack for every additional Cybernetic unit in play.)",
+      "flavor_text": "Runner to technocrat; datajacks skipping stones off drone hive security backbones. Input soul, output jazz."
     },
     {
       "image": "09.jpg",
       "name": "Datajack Wraiths",
       "type": "unit",
       "cost": "4",
-      "type_secondary": ["synth"]
+      "type_secondary": [
+        "synth"
+      ],
+      "attack": 3,
+      "armor": 0,
+      "health": 3,
+      "card_effect": "Cybernetic (This unit gains +1 Attack for every additional Cybernetic unit in play.)\r\nCloak (When attacking, may ignore the first unit in the enemy lane. In a breach, this unit always uses its full Attack value.)",
+      "flavor_text": ""
     },
     {
       "image": "10.jpg",
       "name": "Datalink Hub",
       "type": "colony",
       "cost": "3",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "D: Place a T on this card from the creche for every Cybernetic unit in play.",
+      "flavor_text": "Jill jacks in; to fetch the sin; steal the crown; kings tumble down."
     },
     {
       "image": "11.jpg",
       "name": "Exterminating Servitors",
       "type": "unit",
       "cost": "5",
-      "type_secondary": ["synth"]
+      "type_secondary": [
+        "synth"
+      ],
+      "attack": 3,
+      "armor": 1,
+      "health": 3,
+      "card_effect": "Cybernetic (This unit gains +1 Attack for every additional Cybernetic unit in play.)\r\nIf this unit breaches a lane, the defending player scraps a citizen from their Citadel.",
+      "flavor_text": ""
     },
     {
       "image": "12.jpg",
       "name": "Graft Rejection",
       "type": "reflex",
-      "cost": "2"
+      "cost": "2",
+      "card_effect": "Scrap target Augment.",
+      "flavor_text": "Nanite compatibility is as much an art as a science. Multi-limb replacement failures are just bad luck."
     },
     {
       "image": "13.jpg",
       "name": "Hunter",
       "type": "unit",
       "cost": "4",
-      "type_secondary": ["synth"]
+      "type_secondary": [
+        "synth"
+      ],
+      "attack": 3,
+      "armor": 1,
+      "health": 3,
+      "card_effect": "If this unit deals lethal combat damage, scrap a D from your Citadel or scrap this unit.",
+      "flavor_text": ""
     },
     {
       "image": "14.jpg",
       "name": "Nanite Golems",
       "type": "unit",
       "cost": "4",
-      "type_secondary": ["synth"]
+      "type_secondary": [
+        "synth"
+      ],
+      "attack": 2,
+      "armor": 2,
+      "health": 4,
+      "card_effect": "Slow (If this unit takes lethal combat damage, it does not deal damage in return.)",
+      "flavor_text": "The first line written into the RNA was test code: ‘emet’."
     },
     {
       "image": "15.jpg",
       "name": "Nanocore Emissaries",
       "type": "unit",
       "cost": "2",
-      "type_secondary": ["synth"]
+      "type_secondary": [
+        "synth"
+      ],
+      "attack": 1,
+      "armor": 1,
+      "health": 3,
+      "card_effect": "Cybernetic (This unit gains +1 Attack for every additional Cybernetic unit in play.)",
+      "flavor_text": "Not flesh and bone, nor pure data, the emissaries are somewhere in between."
     },
     {
       "image": "16.jpg",
       "name": "Nautilus",
       "type": "unit",
       "cost": "3",
-      "type_secondary": ["synth"]
+      "type_secondary": [
+        "synth"
+      ],
+      "attack": 2,
+      "armor": 1,
+      "health": 1,
+      "card_effect": "Units adjacent to this one gain +1 Armor.",
+      "flavor_text": "Nautilus fields overlap in a most pleasant way, humming and buzzing and shrugging off nasty things."
     },
     {
       "image": "17.jpg",
       "name": "Quiet Hulk",
       "type": "unit",
       "cost": "3",
-      "type_secondary": ["synth"]
+      "type_secondary": [
+        "synth"
+      ],
+      "attack": 2,
+      "armor": 2,
+      "health": 3,
+      "card_effect": "This unit only deals combat damage if it loses at least 1 health.",
+      "flavor_text": "Children are warned when they are very small; not to throw stones at sleeping giants."
     },
     {
       "image": "18.jpg",
       "name": "Remake",
       "type": "reflex",
-      "cost": "3"
+      "cost": "3",
+      "card_effect": "Target unit adds 2 health from the Creche.",
+      "flavor_text": ""
     },
     {
       "image": "19.jpg",
       "name": "Repair And Refit",
       "type": "reflex",
-      "cost": "1"
+      "cost": "1",
+      "card_effect": "Restore health to any number of target units, using citizens from your Citadel.",
+      "flavor_text": ""
     },
     {
       "image": "20.jpg",
       "name": "Shield Generator",
       "type": "augment",
       "cost": "2",
-      "type_secondary": ["unit"]
+      "type_secondary": [
+        "unit"
+      ],
+      "card_effect": "Units adjacent to this one gain +1 Armor and are immune to Splash.",
+      "flavor_text": ""
     },
     {
       "image": "21.jpg",
       "name": "Shrike Herd",
       "type": "unit",
       "cost": "4",
-      "type_secondary": ["synth"]
+      "type_secondary": [
+        "synth"
+      ],
+      "attack": 2,
+      "armor": 1,
+      "health": 3,
+      "card_effect": "Cybernetic (This unit gains +1 Attack for every additional Cybernetic unit in play.)\r\nIf this unit deals combat damage, add one of the health tokens that would be lost to this card instead.",
+      "flavor_text": ""
     },
     {
       "image": "22.jpg",
       "name": "Snatchers",
       "type": "unit",
       "cost": "3",
-      "type_secondary": ["synth"]
+      "type_secondary": [
+        "synth"
+      ],
+      "attack": 2,
+      "armor": 1,
+      "health": 2,
+      "card_effect": "You may remove a D from a target Citadel during your upkeep, and add it to your Citadel.",
+      "flavor_text": "Synthetic psychology is tricky science - investigating a mind that is hellbent on becoming the investigator."
     },
     {
       "image": "23.jpg",
       "name": "Stray Mecha",
       "type": "unit",
       "cost": "2",
-      "type_secondary": ["synth"]
+      "type_secondary": [
+        "synth"
+      ],
+      "attack": 1,
+      "armor": 1,
+      "health": 3,
+      "card_effect": "Cybernetic (This unit gains +1 Attack for every additional Cybernetic unit in play.)",
+      "flavor_text": "Mother mecha, mother mecha, are you alive?\r\n‘I breathe, I speak, I bleed, I die’"
     },
     {
       "image": "24.jpg",
       "name": "Synaptic Umbilical",
       "type": "augment",
       "cost": "2",
-      "type_secondary": ["unit"]
+      "type_secondary": [
+        "unit"
+      ],
+      "card_effect": "Target unit gains Cybernetic (This unit gains +1 Attack for every additional Cybernetic unit in play.)",
+      "flavor_text": "Information is invisible, odorless, textureless. It is the oxygen of the new world."
     },
     {
       "image": "25.jpg",
       "name": "Sft",
       "type": "colony",
       "cost": "3",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "Restore all health to target unit from the Creche.",
+      "flavor_text": "New life from the old bones."
     },
     {
       "image": "26.jpg",
       "name": "Tachyon Shield",
       "type": "colony",
       "cost": "6",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "D: Return one health from a unit attacking you to its owner’s Citadel. If this scrapped the unit, return it to their hand.",
+      "flavor_text": "Time will be our aegis now."
     },
     {
       "image": "27.jpg",
       "name": "Teleport",
       "type": "reflex",
-      "cost": "1"
+      "cost": "1",
+      "card_effect": "Move target unit to any position in any lane its owner controls. You cannot use this during a combat phase.",
+      "flavor_text": ""
     },
     {
       "image": "28.jpg",
       "name": "They Of The Machine",
       "type": "reflex",
-      "cost": "3"
+      "cost": "3",
+      "card_effect": "Synth and Mech units gain +1 Attack and +1 Armor while this is in play.",
+      "flavor_text": "Synth fabs have strict codes of conduct for the Crèche techs. No swearing. No laughing. And absolutely no prayers in sight of the machines."
     },
     {
       "image": "29.jpg",
       "name": "Thought Control",
       "type": "reflex",
-      "cost": "4"
+      "cost": "4",
+      "card_effect": "Move target unit to the back of any lane, under the control of that player.\r\nReturn this unit to its owner when this reflex is scrapped, in the back of a lane they control. If this is not possible, scrap it.",
+      "flavor_text": ""
     },
     {
       "image": "30.jpg",
       "name": "Viral Saboteur",
       "type": "augment",
       "cost": "3",
-      "type_secondary": ["unit"]
+      "type_secondary": [
+        "unit"
+      ],
+      "card_effect": "Any unit adjacent to this one loses one health during their controller’s upkeep.",
+      "flavor_text": "Datajacks are traitors. Cowards. Thieves. Let them try and crack our soldiers.\r\n-General Lia Madov, ‘Machine Casualties’"
     }
   ]
 }

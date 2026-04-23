@@ -25,6 +25,9 @@ export const CardEntrySchema = z.object({
     z.number().int().min(0).max(8).transform(String),
   ]),
   type_secondary: z.array(z.enum([...CARD_SECONDARY_TYPES] as [string, ...string[]])).optional(),
+  attack: z.number().int().min(0).optional(),
+  armor: z.number().int().min(0).optional(),
+  health: z.number().int().min(0).optional(),
 });
 
 export const DeckSchema = z.object({

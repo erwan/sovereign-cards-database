@@ -1,209 +1,356 @@
 {
-  "description": "Escaped drones\u2014often from the Undercity\u2014built a militant, trade-hungry enclave of equals. They copy and field scavenged war tech, wage a hidden war of hacks and knives to free their kind, and would turn Wormwood\u2019s power against every chain. ",
+  "description": "Escaped drones—often from the Undercity—built a militant, trade-hungry enclave of equals. They copy and field scavenged war tech, wage a hidden war of hacks and knives to free their kind, and would turn Wormwood’s power against every chain. ",
   "cards": [
     {
       "image": "01.jpg",
       "name": "Apsynthos Cryopod",
       "type": "colony",
       "cost": "4",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "T➤ Add DD to your Citadel during your growth phase.",
+      "flavor_text": "Rare finds, these relics from the ark. Do we trust the sleepers we find inside?"
     },
     {
       "image": "02.jpg",
       "name": "Apsynthos Memorial",
       "type": "colony",
       "cost": "4",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "T➤ When you score an Echo, you may flip a D on target Citadel.",
+      "flavor_text": "Twisted metal juts straight out of the ground like a rotten tooth - they say it’s a bit of the ark, a bit of our home."
     },
     {
       "image": "03.jpg",
       "name": "Calliope",
       "type": "unit",
       "cost": "4",
-      "type_secondary": ["antigrav"]
+      "type_secondary": [
+        "antigrav"
+      ],
+      "attack": 2,
+      "armor": 1,
+      "health": 4,
+      "card_effect": "Slow (If this unit takes lethal combat damage, it does not deal damage in return.)\r\nSplash (When this unit deals combat damage, deal the same damage to the next enemy unit.)",
+      "flavor_text": ""
     },
     {
       "image": "04.jpg",
       "name": "Cantina",
       "type": "colony",
       "cost": "3",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "D: Target opponent must tell you how many Echoes they have in their hand and Forge combined.",
+      "flavor_text": "A stiff drink and a handful of stims is the path to a burgeoning friendship."
     },
     {
       "image": "05.jpg",
       "name": "Defection",
       "type": "reflex",
-      "cost": "3"
+      "cost": "3",
+      "card_effect": "Each faction must move one D from a unit they control to this reflex. When this reflex is scrapped, move the D on it to your Citadel.",
+      "flavor_text": ""
     },
     {
       "image": "06.jpg",
       "name": "Desperate Sacrifice",
       "type": "reflex",
-      "cost": "1"
+      "cost": "1",
+      "card_effect": "Scrap a unit you control. Scrap health tokens equal to its Armor, divided among any number of units in one lane.",
+      "flavor_text": ""
     },
     {
       "image": "07.jpg",
       "name": "Detonation Packs",
       "type": "augment",
       "cost": "2",
-      "type_secondary": ["unit"]
+      "type_secondary": [
+        "unit"
+      ],
+      "card_effect": "When this unit resolves combat damage, it may add its Armor to its Attack value. If you do this, scrap one health.",
+      "flavor_text": ""
     },
     {
       "image": "08.jpg",
       "name": "Double Agent",
       "type": "augment",
       "cost": "2",
-      "type_secondary": ["unit"]
+      "type_secondary": [
+        "unit"
+      ],
+      "card_effect": "You retain control of this augment while it on an opponent’s unit. On your turn, you may look at this player’s hand or one card in their forge during your upkeep.",
+      "flavor_text": ""
     },
     {
       "image": "09.jpg",
       "name": "Drone Insurgents",
       "type": "unit",
       "cost": "3",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 1,
+      "armor": 0,
+      "health": 5,
+      "card_effect": "If this unit breaches a Faction, add the number of D on their Citadel to the breach value (up to the health of this unit).",
+      "flavor_text": ""
     },
     {
       "image": "10.jpg",
       "name": "Drone Riots",
       "type": "reflex",
-      "cost": "2"
+      "cost": "2",
+      "card_effect": "Target a facility. That player may choose to scrap the facility (scrapping all D) or scrap all T in their colony (minimum 1).",
+      "flavor_text": ""
     },
     {
       "image": "11.jpg",
       "name": "Dustmen",
       "type": "unit",
       "cost": "3",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 2,
+      "armor": 0,
+      "health": 5,
+      "card_effect": "If this unit breaches a hand and you do not find an echo, you may add one of the revealed cards to your hand rather than discarding it.",
+      "flavor_text": ""
     },
     {
       "image": "12.jpg",
       "name": "Hive Radicals",
       "type": "unit",
       "cost": "3",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 1,
+      "armor": 0,
+      "health": 1,
+      "card_effect": "If this unit breaches a faction, you may take a D from the defending player’s Citadel and add it to this unit.\r\nSquad (This unit gets +1 Attack for every health on it.)",
+      "flavor_text": ""
     },
     {
       "image": "13.jpg",
       "name": "Holonet Scribes",
       "type": "unit",
       "cost": "2",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 1,
+      "armor": 1,
+      "health": 3,
+      "card_effect": "If this unit defends, you may flip a D on your Citadel at the end of combat.\r\nIf this unit breaches an opponent, you may look at an extra card.",
+      "flavor_text": "Forget the pen. A scribe’s moxie is mightier."
     },
     {
       "image": "14.jpg",
       "name": "Infoleak",
       "type": "reflex",
-      "cost": "2"
+      "cost": "2",
+      "card_effect": "All Factions play with their hands revealed. (Cards are still drawn randomly during a breach).",
+      "flavor_text": "“Tell your friend a lie. If he keeps it secret, then tell him the truth.”"
     },
     {
       "image": "15.jpg",
       "name": "Nano Plantation",
       "type": "colony",
       "cost": "4",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "D: Add 1 D to your Citadel from the Creche.",
+      "flavor_text": "This is the line between heresy and necessity.\r\n-Inquisitor Marcus"
     },
     {
       "image": "16.jpg",
       "name": "Nerve Plates",
       "type": "augment",
       "cost": "2",
-      "type_secondary": ["unit"]
+      "type_secondary": [
+        "unit"
+      ],
+      "card_effect": "This unit gains +1 Armor.",
+      "flavor_text": "The armor doesn’t protect the flesh. It is the flesh."
     },
     {
       "image": "17.jpg",
       "name": "Plasma Torch",
       "type": "augment",
       "cost": "3",
-      "type_secondary": ["unit"]
+      "type_secondary": [
+        "unit"
+      ],
+      "card_effect": "This unit gains Pierce (This unit ignores Armor when in combat.)",
+      "flavor_text": ""
     },
     {
       "image": "18.jpg",
       "name": "Rail Sniper",
       "type": "unit",
       "cost": "4",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 1,
+      "armor": 1,
+      "health": 1,
+      "card_effect": "Cybernetic (This unit gains +1 Attack for every additional Cybernetic unit in play.)\r\nRail Sniper may scrap one health from a target unit at the beginning of your combat phase.",
+      "flavor_text": ""
     },
     {
       "image": "19.jpg",
       "name": "Recon Guerillas",
       "type": "unit",
       "cost": "4",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 2,
+      "armor": 0,
+      "health": 4,
+      "card_effect": "Each time this unit deals combat damage, you may flip a citizen on it.\r\nFor every T on this unit, it gains +1 Attack and +1 Armor.",
+      "flavor_text": ""
     },
     {
       "image": "20.jpg",
       "name": "Refugee Ethics",
       "type": "reflex",
-      "cost": "3"
+      "cost": "3",
+      "card_effect": "Target a faction. Remove all D from their Colony and distribute them evenly amongst all other Faction’s Citadels.\r\nIf there is an uneven number of D, extras return to the owner’s Citadel.",
+      "flavor_text": ""
     },
     {
       "image": "21.jpg",
       "name": "Sabotage",
       "type": "reflex",
-      "cost": "3"
+      "cost": "3",
+      "card_effect": "Target a card in any player’s Forge and reveal it. If it is an Echo, it remains in their Forge. If it is not an Echo, scrap that card and return the forge T to their Citadel.",
+      "flavor_text": ""
     },
     {
       "image": "22.jpg",
       "name": "Scrap Depot",
       "type": "colony",
       "cost": "3",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "D: Return the bottom card of your scrap to your hand, then discard a card.",
+      "flavor_text": ""
     },
     {
       "image": "23.jpg",
       "name": "Sentinels",
       "type": "unit",
       "cost": "6",
-      "type_secondary": ["mech"]
+      "type_secondary": [
+        "mech"
+      ],
+      "attack": 3,
+      "armor": 2,
+      "health": 3,
+      "card_effect": "Slow (If this unit takes lethal combat damage, it does not deal damage in return.)\r\n",
+      "flavor_text": "Old mechs. Sturdy mechs."
     },
     {
       "image": "24.jpg",
       "name": "Skimsquad",
       "type": "unit",
       "cost": "6",
-      "type_secondary": ["antigrav"]
+      "type_secondary": [
+        "antigrav"
+      ],
+      "attack": 0,
+      "armor": 1,
+      "health": 3,
+      "card_effect": "Airborne (Each airborne unit may move during your move phase)\r\nSquad (This unit gets +1 Attack for every health on it.)",
+      "flavor_text": ""
     },
     {
       "image": "25.jpg",
       "name": "Splicing Medics",
       "type": "unit",
       "cost": "2",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 1,
+      "armor": 0,
+      "health": 4,
+      "card_effect": "Resilient (Restore one health from the Creche during your growth phase.)\r\nYou may add health from this unit to adjacent units during your upkeep.",
+      "flavor_text": ""
     },
     {
       "image": "26.jpg",
       "name": "Stitch Tanks",
       "type": "colony",
       "cost": "4",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "T: Target unit adds 1 health from the Creche.",
+      "flavor_text": ""
     },
     {
       "image": "27.jpg",
       "name": "Undercity Anarchs",
       "type": "unit",
       "cost": "2",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 1,
+      "armor": 0,
+      "health": 3,
+      "card_effect": "You may remove a D from a target Citadel during your upkeep, and add it to this unit.",
+      "flavor_text": "As you tighten your grip, we prosper"
     },
     {
       "image": "28.jpg",
       "name": "Watchdogs",
       "type": "unit",
       "cost": "5",
-      "type_secondary": ["mech"]
+      "type_secondary": [
+        "mech"
+      ],
+      "attack": 3,
+      "armor": 1,
+      "health": 3,
+      "card_effect": "If this unit is at the front of the lane, you may rearrange this lane freely before battle.",
+      "flavor_text": ""
     },
     {
       "image": "29.jpg",
       "name": "Webweave Spies",
       "type": "unit",
       "cost": "3",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 2,
+      "armor": 1,
+      "health": 2,
+      "card_effect": "Cloak (When attacking, may ignore the first unit in the enemy lane. In a breach, this unit always uses its full Attack value.)",
+      "flavor_text": "I don’t need to be a chimera to know what you’re hiding."
     },
     {
       "image": "30.jpg",
       "name": "Worker Strike",
       "type": "augment",
       "cost": "2",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "Any citizens who work this facility cannot be removed during your upkeep.\r\nYou may discard one health from any unit you control to scrap all citizens here and remove this augment.",
+      "flavor_text": ""
     }
   ]
 }

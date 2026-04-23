@@ -1,209 +1,356 @@
 {
-  "description": "Apsyntion\u2019s oldest human-native faith, fanatically xenophobic toward alien and machine alike. The Maestra leads religion and war; the Choir and Inquisitors enforce doctrine in scattered chapels, preaching that Wormwood is the key to humanity\u2019s return to Old Terra\u2019s garden. ",
+  "description": "Apsyntion’s oldest human-native faith, fanatically xenophobic toward alien and machine alike. The Maestra leads religion and war; the Choir and Inquisitors enforce doctrine in scattered chapels, preaching that Wormwood is the key to humanity’s return to Old Terra’s garden. ",
   "cards": [
     {
       "image": "22.jpg",
       "name": "Absolution Sphere",
       "type": "colony",
       "cost": "4",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "D: Flip all D who work Absolution Sphere.",
+      "flavor_text": "The first thing to enter the sphere was a young girl, gov-drafted, told nothing. Six days later it spat her out, babbling like a newborn."
     },
     {
       "image": "23.jpg",
       "name": "Acid Baptists",
       "type": "unit",
       "cost": "3",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 1,
+      "armor": 1,
+      "health": 5,
+      "card_effect": "During your growth phase, you may flip a D in your colony.",
+      "flavor_text": "Bathed in a river of memetic nanites, they bring the flock to pasture."
     },
     {
       "image": "24.jpg",
       "name": "Ascetic Virtues",
       "type": "reflex",
-      "cost": "1"
+      "cost": "1",
+      "card_effect": "Discard a card: Flip a D on your Citadel. Anyone may use this ability so long as this Reflex is in play.",
+      "flavor_text": "Worldly distractions are psychic anchors. -Zen Gospel Scripture"
     },
     {
       "image": "25.jpg",
       "name": "Clinical Immortality",
       "type": "augment",
       "cost": "4",
-      "type_secondary": ["unit"]
+      "type_secondary": [
+        "unit"
+      ],
+      "card_effect": "Choose a unit in a scrap and place it in the back of target lane. Attach this card. Add one health from your Citadel. This unit gains Resilient (Restore one health from the Creche during your growth phase.).",
+      "flavor_text": "Humanity is shed as easily as an old skin."
     },
     {
       "image": "26.jpg",
       "name": "Crecheling Prophet",
       "type": "unit",
       "cost": "3",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 0,
+      "armor": 1,
+      "health": 1,
+      "card_effect": "Other units in this lane gain +1 Attack. If this unit is scrapped, you may immediately restore any number of units with citizens from your Citadel.",
+      "flavor_text": "Her scars are fire in the hearts of the faithful."
     },
     {
       "image": "27.jpg",
       "name": "Desertion",
       "type": "reflex",
-      "cost": "2"
+      "cost": "2",
+      "card_effect": "Remove 1 health from target unit and place it on its controller’s Citadel.",
+      "flavor_text": ""
     },
     {
       "image": "28.jpg",
       "name": "Deva Monks",
       "type": "unit",
       "cost": "4",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 0,
+      "armor": 2,
+      "health": 5,
+      "card_effect": "Each time you score an Echo, you may flip a D on this unit.\r\nThis unit has +1 attack for each T on it.",
+      "flavor_text": "The language of angels can be sharpened."
     },
     {
       "image": "29.jpg",
       "name": "Gravelinks",
       "type": "augment",
       "cost": "2",
-      "type_secondary": ["unit"]
+      "type_secondary": [
+        "unit"
+      ],
+      "card_effect": "This unit gains +1 Attack for every unit in your scrap.",
+      "flavor_text": "Memory augs provide immortality in the barracks - long dead soldiers train the living"
     },
     {
       "image": "30.jpg",
       "name": "Halo Lift",
       "type": "colony",
       "cost": "3",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "D: Move target unit you control (may not be used during combat).",
+      "flavor_text": "You pray the lift puts you on the ground rightside up, outside-in - altogether the same you were before you got in the damn thing."
     },
     {
       "image": "01.jpg",
       "name": "Holy Day",
       "type": "reflex",
-      "cost": "3"
+      "cost": "3",
+      "card_effect": "Each faction must add a T to Holy Day during their Growth phase. Return a T to their Citadel if they skip their Combat phase. When Holy Day is scrapped, you must skip your combat phase unless you scrap all T on it. ",
+      "flavor_text": ""
     },
     {
       "image": "02.jpg",
       "name": "House Of Meditation",
       "type": "colony",
       "cost": "3",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "D: Draw a card (you may exceed 8 cards).",
+      "flavor_text": "Mind and matter are one and the same here - we can coax Apsyntion if we listen.\r\n-Chimera Handler Lenaius"
     },
     {
       "image": "03.jpg",
       "name": "Hymn Of Knitting",
       "type": "augment",
       "cost": "2",
-      "type_secondary": ["unit"]
+      "type_secondary": [
+        "unit"
+      ],
+      "card_effect": "Units adjacent to this one restore one health from the Creche during your   growth phase.",
+      "flavor_text": "Zen Gospel clerics form the backbone of nanite-infused troops, their song rippling over the battlefield like a soothing mist."
     },
     {
       "image": "04.jpg",
       "name": "Inquisitors",
       "type": "unit",
       "cost": "3",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 2,
+      "armor": 1,
+      "health": 3,
+      "card_effect": "This unit’s breach value is doubled.",
+      "flavor_text": "Brutal? Yes. Necessary? Absolutely. We will not be slaves to artificial masters.\r\n-Order Priest Gruman"
     },
     {
       "image": "05.jpg",
       "name": "Jetleap Seraphim",
       "type": "unit",
       "cost": "3",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 2,
+      "armor": 1,
+      "health": 4,
+      "card_effect": "Airborne (Each airborne unit may move during your move phase)",
+      "flavor_text": "Shock troops. That’s just what the       church needs.\r\n-Neogenesis detractor"
     },
     {
       "image": "06.jpg",
       "name": "Library Of The Ark",
       "type": "colony",
       "cost": "3",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "T: Choose a non-reflex card in your scrap and add it to your hand, then discard a card.",
+      "flavor_text": "Waste not, want not."
     },
     {
       "image": "07.jpg",
       "name": "Maestra Sangha",
       "type": "unit",
       "cost": "4",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 1,
+      "armor": 1,
+      "health": 3,
+      "card_effect": "During combat, other units in this lane gain +1 Attack for each non-human unit your opponent controls.",
+      "flavor_text": "Fanaticism inspires feats of strength where adrenaline fades."
     },
     {
       "image": "08.jpg",
       "name": "Messenger Ferry",
       "type": "unit",
       "cost": "2",
-      "type_secondary": ["antigrav"]
+      "type_secondary": [
+        "antigrav"
+      ],
+      "attack": 0,
+      "armor": 1,
+      "health": 2,
+      "card_effect": "Airborne (Each airborne unit may move during your move phase)\r\nDuring your movement phase, you may give another player control of this unit, as if it were just forged. They must give you an Echo from their hand if possible. Score it.",
+      "flavor_text": ""
     },
     {
       "image": "09.jpg",
       "name": "Miraculous Escape",
       "type": "reflex",
-      "cost": "1"
+      "cost": "1",
+      "card_effect": "Target a unit in a battle that would be scrapped. At the end of the battle phase, return it to the back of its lane with     one health.",
+      "flavor_text": ""
     },
     {
       "image": "10.jpg",
       "name": "Neogenesis Chapel",
       "type": "colony",
       "cost": "4",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "T: Draw a card from your deck. If it is an echo, score it. If not, discard it.",
+      "flavor_text": "Sermons drive the faithful towards great works, and stir suspicion of reformation."
     },
     {
       "image": "11.jpg",
       "name": "Pious Devotion",
       "type": "augment",
       "cost": "3",
-      "type_secondary": ["unit"]
+      "type_secondary": [
+        "unit"
+      ],
+      "card_effect": "If this unit deals lethal combat damage, place a T on your Citadel.",
+      "flavor_text": "Creche workers respect pious genes, and sometimes a splicer will make an exception for a war hero."
     },
     {
       "image": "12.jpg",
       "name": "Relic Seekers",
       "type": "unit",
       "cost": "2",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 1,
+      "armor": 1,
+      "health": 3,
+      "card_effect": "During your draw phase, you may put one non-echo card from your hand at the bottom of your deck before drawing.",
+      "flavor_text": ""
     },
     {
       "image": "13.jpg",
       "name": "Seraphim Choir",
       "type": "unit",
       "cost": "6",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 1,
+      "armor": 0,
+      "health": 3,
+      "card_effect": "Squad (This unit gets +1 Attack for every health on it.)\r\nAirborne (Each airborne unit may move during your move phase)",
+      "flavor_text": "Angels of an entirely new order."
     },
     {
       "image": "14.jpg",
       "name": "Symmetric Supplication",
       "type": "reflex",
-      "cost": "2"
+      "cost": "2",
+      "card_effect": "Flip the citizens used for this reflex.",
+      "flavor_text": "To master the self, you must first master your fear of the other."
     },
     {
       "image": "15.jpg",
       "name": "Terra Ascetics",
       "type": "unit",
       "cost": "2",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 1,
+      "armor": 0,
+      "health": 5,
+      "card_effect": "Each time you lose an echo you may flip a D in your colony.",
+      "flavor_text": "Material possessions are the shackles of the spirit."
     },
     {
       "image": "16.jpg",
       "name": "Terra Colossus",
       "type": "colony",
       "cost": "3",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "When you score an Echo, you may place a D here from the Creche.\r\nT: Add any amount of health to target units using D from this facility (you may do this at any time, so long as there are no T here).",
+      "flavor_text": ""
     },
     {
       "image": "17.jpg",
       "name": "Theocracy",
       "type": "augment",
       "cost": "6",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "You may move an additional citizen from this facility to your Citadel during your upkeep.",
+      "flavor_text": "A man driven by faith will work until his hands bleed, and his legs fail him."
     },
     {
       "image": "18.jpg",
       "name": "Trench Judges",
       "type": "unit",
       "cost": "3",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 2,
+      "armor": 1,
+      "health": 3,
+      "card_effect": "Slavelink (This unit gains +1 Attack for every other unit you control in the lane.)",
+      "flavor_text": "Thousands of years of superstition only to find out we were right all along."
     },
     {
       "image": "19.jpg",
       "name": "Webweave Cherubs",
       "type": "unit",
       "cost": "3",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 2,
+      "armor": 1,
+      "health": 4,
+      "card_effect": "If this unit is in an attack, all units in the enemy lane are Slow (If this unit takes lethal combat damage, it does not deal damage in return.)",
+      "flavor_text": ""
     },
     {
       "image": "20.jpg",
       "name": "White Bishops",
       "type": "unit",
       "cost": "3",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 1,
+      "armor": 2,
+      "health": 3,
+      "card_effect": "Units adjacent to this one gain +1 Armor.",
+      "flavor_text": "We hear you. Your song is our own. Let us partake in choir.\r\n-Hymns, 24:36"
     },
     {
       "image": "21.jpg",
       "name": "Zealotry",
       "type": "reflex",
-      "cost": "2"
+      "cost": "2",
+      "card_effect": "Your Human units gain +1 Attack.\r\nYou may scrap any number of D from your Citadel to deal the same amount of damage to target non-human unit.",
+      "flavor_text": ""
     }
   ]
 }

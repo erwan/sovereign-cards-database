@@ -17,6 +17,9 @@
     costs: [] as string[],
     type: '',
     secondaryType: '',
+    health: [] as string[],
+    attack: [] as string[],
+    armor: [] as string[],
   });
 
   let sortBy = $state<'cost' | 'name'>(
@@ -28,12 +31,17 @@
   });
 
   let filteredCards = $derived.by(() => {
-    const { search, costs, type, secondaryType } = filters;
+    const { search, costs, type, secondaryType, health, attack, armor } = filters;
     let result = data.allCards.filter((card: CardWithFaction) => {
       if (search && !card.name.toLowerCase().includes(search.toLowerCase())) return false;
       if (costs.length > 0 && !costs.includes(String(card.cost))) return false;
       if (type && card.type !== type) return false;
       if (secondaryType && !card.type_secondary?.includes(secondaryType)) return false;
+      if (type === 'unit') {
+        if (health.length > 0 && !(card.health !== undefined && health.includes(String(card.health)))) return false;
+        if (attack.length > 0 && !(card.attack !== undefined && attack.includes(String(card.attack)))) return false;
+        if (armor.length > 0 && !(card.armor !== undefined && armor.includes(String(card.armor)))) return false;
+      }
       return true;
     });
 

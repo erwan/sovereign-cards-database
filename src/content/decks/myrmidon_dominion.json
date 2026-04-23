@@ -1,209 +1,356 @@
 {
-  "description": "Nomadic marauders from the fungal wastes to the southern ice line, infamous for past wars yet surprisingly meritocratic among soldiers. They field mechs and exosuits, despise synths, and drive legions into frenzy with \u201cbattle hymns\u201d from battlefield minarets. ",
+  "description": "Nomadic marauders from the fungal wastes to the southern ice line, infamous for past wars yet surprisingly meritocratic among soldiers. They field mechs and exosuits, despise synths, and drive legions into frenzy with “battle hymns” from battlefield minarets. ",
   "cards": [
     {
       "image": "01.jpg",
       "name": "Battle Stims",
       "type": "augment",
       "cost": "2",
-      "type_secondary": ["unit"]
+      "type_secondary": [
+        "unit"
+      ],
+      "card_effect": "This unit gains Resilient (Restore one health from the Creche during your growth phase.)",
+      "flavor_text": "She pressed the stimkit to her vein, and felt her heart beating like an over taut drum — a moment like falling in love."
     },
     {
       "image": "02.jpg",
       "name": "Burnout",
       "type": "reflex",
-      "cost": "1"
+      "cost": "1",
+      "card_effect": "All T on Citadels flip at the end of  forge phase.",
+      "flavor_text": "Stimshock is a danger drilled into every Crecheling."
     },
     {
       "image": "03.jpg",
       "name": "Conscription",
       "type": "reflex",
-      "cost": "1"
+      "cost": "1",
+      "card_effect": "Target player may flip as many T as they wish on their Citadel. They may use D to restore the health of any number of units.",
+      "flavor_text": ""
     },
     {
       "image": "04.jpg",
       "name": "Defensive Position",
       "type": "reflex",
-      "cost": "2"
+      "cost": "2",
+      "card_effect": "Target a unit in combat. It gains +1 Armor for each other unit in its lane.",
+      "flavor_text": ""
     },
     {
       "image": "05.jpg",
       "name": "Drillyard",
       "type": "colony",
       "cost": "4",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "D: Target unit gains +1 Attack until end of phase.",
+      "flavor_text": "Battle hymns stream forth from minarets, just tall enough to graze heaven."
     },
     {
       "image": "06.jpg",
       "name": "Firehawk Bomber",
       "type": "unit",
       "cost": "5",
-      "type_secondary": ["antigrav"]
+      "type_secondary": [
+        "antigrav"
+      ],
+      "attack": 3,
+      "armor": 0,
+      "health": 3,
+      "card_effect": "Airborne (Each airborne unit may move during your move phase)\r\nSplash (When this unit deals combat damage, deal the same damage to the next enemy unit.)",
+      "flavor_text": ""
     },
     {
       "image": "07.jpg",
       "name": "Flesh Spare",
       "type": "augment",
       "cost": "3",
-      "type_secondary": ["unit"]
+      "type_secondary": [
+        "unit"
+      ],
+      "card_effect": "Any health lost from this unit may be placed on your Citadel instead of being scrapped.",
+      "flavor_text": "Envy these beasts! For they serve the maker’s will even at the end of their coil!\r\n-Malachai Renquist, Neogenesis Bishop"
     },
     {
       "image": "08.jpg",
       "name": "Flux Ammo",
       "type": "reflex",
-      "cost": "4"
+      "cost": "4",
+      "card_effect": "Scrap 2 health from target unit.",
+      "flavor_text": "Weaponry on Apsyntion is an arms race between those who break armor, and those who break physics."
     },
     {
       "image": "09.jpg",
       "name": "Geneforge",
       "type": "colony",
       "cost": "3",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "T: Flip this T. Add 1 to all cards in target Forge.",
+      "flavor_text": "The terran mule was a masterpiece of engineering. These mules have thumbs."
     },
     {
       "image": "10.jpg",
       "name": "Goliath Cannon",
       "type": "colony",
       "cost": "4",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "D: Deal 1 damage to target unit.",
+      "flavor_text": "A railgun is simply a magnet with attitude."
     },
     {
       "image": "11.jpg",
       "name": "Iron Oni",
       "type": "unit",
       "cost": "4",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 1,
+      "armor": 2,
+      "health": 3,
+      "card_effect": "Pierce (This unit ignores Armor when in combat.)\r\nCybernetic (This unit gains +1 Attack for every additional Cybernetic unit in play.)",
+      "flavor_text": ""
     },
     {
       "image": "12.jpg",
       "name": "Lascannon Heavies",
       "type": "unit",
       "cost": "4",
-      "type_secondary": ["mech"]
+      "type_secondary": [
+        "mech"
+      ],
+      "attack": 1,
+      "armor": 3,
+      "health": 4,
+      "card_effect": "You may scrap one health from this unit to switch its Armor and Attack values until end of phase.",
+      "flavor_text": "The lasconnon is a formidable weapon with a sizable downside - its propensity to overload after seconds of strain."
     },
     {
       "image": "13.jpg",
       "name": "Link Crown",
       "type": "augment",
       "cost": "2",
-      "type_secondary": ["unit"]
+      "type_secondary": [
+        "unit"
+      ],
+      "card_effect": "This unit gains Slavelink (This unit gains +1 Attack for every other unit you control in the lane.)",
+      "flavor_text": "As much a queen as any monarch."
     },
     {
       "image": "14.jpg",
       "name": "Lotus Eaters",
       "type": "unit",
       "cost": "3",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 3,
+      "armor": 0,
+      "health": 4,
+      "card_effect": "If this unit attacks and you do not find an Echo, scrap a health from each adjacent unit.",
+      "flavor_text": "When the stims kick... you just get out of the way, kid. Whatever hole you fall into first, you stay put."
     },
     {
       "image": "15.jpg",
       "name": "Martial Law",
       "type": "reflex",
-      "cost": "0"
+      "cost": "0",
+      "card_effect": "Add 1 to target Forge card for every unit you control, then scrap one health from every unit you control.",
+      "flavor_text": "Laboring under tyrants, we longed to take their place."
     },
     {
       "image": "16.jpg",
       "name": "Mech Foundry",
       "type": "colony",
       "cost": "3",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "T: Restore one health to a target Mech or Antigrav unit from the Creche.",
+      "flavor_text": ""
     },
     {
       "image": "17.jpg",
       "name": "Mech Junkies",
       "type": "unit",
       "cost": "2",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 1,
+      "armor": 1,
+      "health": 4,
+      "card_effect": "Each adjacent Mech or Antigrav unit gains +1 Attack and +1 Armor.",
+      "flavor_text": "I’m a mechanic first and a therapist second."
     },
     {
       "image": "18.jpg",
       "name": "Military Academy",
       "type": "colony",
       "cost": "3",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "You may place a D from your Citadel on this facility during your upkeep.\r\nT: Use D on this facility to restore the health of any units you control. You may use this ability when this facility is not idle.",
+      "flavor_text": ""
     },
     {
       "image": "19.jpg",
       "name": "Newbloods",
       "type": "unit",
       "cost": "3",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 2,
+      "armor": 0,
+      "health": 5,
+      "card_effect": "If this unit deals lethal combat damage, flip a health token on it.\r\nDuring your upkeep, you may restore health to this unit from your Citadel.",
+      "flavor_text": ""
     },
     {
       "image": "20.jpg",
       "name": "Powered Exoskeleton",
       "type": "augment",
       "cost": "3",
-      "type_secondary": ["unit"]
+      "type_secondary": [
+        "unit"
+      ],
+      "card_effect": "This unit gains +1 Attack and +1 Armor.",
+      "flavor_text": "The flesh is weak, but the metal is willing."
     },
     {
       "image": "21.jpg",
       "name": "Salamander Armor",
       "type": "unit",
       "cost": "4",
-      "type_secondary": ["mech"]
+      "type_secondary": [
+        "mech"
+      ],
+      "attack": 3,
+      "armor": 0,
+      "health": 2,
+      "card_effect": "Slow (If this unit takes lethal combat damage, it does not deal damage in return.)\r\nThis unit may be forged during a combat phase, before damage has been dealt, adding it to the back of the lane.",
+      "flavor_text": ""
     },
     {
       "image": "22.jpg",
       "name": "Shock Troops",
       "type": "unit",
       "cost": "5",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 1,
+      "armor": 0,
+      "health": 3,
+      "card_effect": "Squad (This unit gets +1 Attack for every health on it.)",
+      "flavor_text": ""
     },
     {
       "image": "23.jpg",
       "name": "Slave Battalion",
       "type": "unit",
       "cost": "2",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 1,
+      "armor": 0,
+      "health": 5,
+      "card_effect": "Return this unit to your hand when it is destroyed.",
+      "flavor_text": ""
     },
     {
       "image": "24.jpg",
       "name": "Stiltstrider",
       "type": "unit",
       "cost": "7",
-      "type_secondary": ["mech"]
+      "type_secondary": [
+        "mech"
+      ],
+      "attack": 3,
+      "armor": 2,
+      "health": 2,
+      "card_effect": "Splash (When this unit deals combat damage, deal the same damage to the next enemy unit.)",
+      "flavor_text": "When a ‘strider fires, the ion cloud makes your hair stand on end a kilometer away."
     },
     {
       "image": "25.jpg",
       "name": "Striker Mech",
       "type": "unit",
       "cost": "5",
-      "type_secondary": ["mech"]
+      "type_secondary": [
+        "mech"
+      ],
+      "attack": 2,
+      "armor": 1,
+      "health": 3,
+      "card_effect": "Splash (When this unit deals combat damage, deal the same damage to the next enemy unit.)",
+      "flavor_text": ""
     },
     {
       "image": "26.jpg",
       "name": "Synthsilk Platoon",
       "type": "unit",
       "cost": "7",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 1,
+      "armor": 1,
+      "health": 4,
+      "card_effect": "Squad (This unit gets +1 Attack for every health on it.)",
+      "flavor_text": "A thread the width of a human hair can be woven into an army."
     },
     {
       "image": "27.jpg",
       "name": "Tundra Palace",
       "type": "colony",
       "cost": "4",
-      "type_secondary": ["facility"]
+      "type_secondary": [
+        "facility"
+      ],
+      "card_effect": "T: Gain DDD on your Citadel from the Creche",
+      "flavor_text": "Tyranny of the majority."
     },
     {
       "image": "28.jpg",
       "name": "Veteran Plate",
       "type": "augment",
       "cost": "5",
-      "type_secondary": ["unit"]
+      "type_secondary": [
+        "unit"
+      ],
+      "card_effect": "Search your scrap for a unit, and forge it for no cost. Attach Veteran Armor. Any D used for initial health become T.\r\nIf Veteran Armor is ever removed, scrap the attached unit.",
+      "flavor_text": ""
     },
     {
       "image": "29.jpg",
       "name": "War Chiefs",
       "type": "unit",
       "cost": "4",
-      "type_secondary": ["human"]
+      "type_secondary": [
+        "human"
+      ],
+      "attack": 3,
+      "armor": 1,
+      "health": 4,
+      "card_effect": "If you have no T on your Citadel at the beginning of your growth phase, scrap a health from this unit.",
+      "flavor_text": "Hierarchy is everything to a Myrmidon warband, where a moment of weakness in the hymn can make a king into a corpse."
     },
     {
       "image": "30.jpg",
       "name": "Warthirst",
       "type": "reflex",
-      "cost": "1"
+      "cost": "1",
+      "card_effect": "Target unit gains +1 Attack for each unit in the enemy lane during combat.",
+      "flavor_text": "‘Warthirst’ is the master’s euphemism for stim-addicts and sleepwalkers. Battle fatigue worn as a badge of honor."
     }
   ]
 }

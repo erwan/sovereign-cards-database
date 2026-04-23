@@ -17,6 +17,16 @@
   min-width: 0;
 }
 
+.filter-group--break {
+  flex-basis: 100%;
+}
+
+.filter-unit-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.25rem;
+}
+
 .filter-group--search {
   flex: 1 1 14rem;
   min-width: min(100%, 12rem);
