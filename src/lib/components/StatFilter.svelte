@@ -72,18 +72,26 @@
     <div class="filter-cost-panel" role="group" aria-label="{label} values">
       {#each availableOptions as opt}
         <div class="filter-cost-option">
-          <label class="filter-cost-option-check">
+          <label
+            class="filter-cost-option-check"
+            onmousedown={(e) => e.preventDefault()}
+            onclick={(e) => {
+              if ((e.target as HTMLElement).tagName === 'INPUT') return;
+              e.preventDefault();
+              values = values.includes(opt) ? values.filter(v => v !== opt) : [...values, opt];
+            }}
+          >
             <input
               type="checkbox"
-              value={opt}
-              bind:group={values}
+              checked={values.includes(opt)}
+              onchange={() => values = values.includes(opt) ? values.filter(v => v !== opt) : [...values, opt]}
             />
             <span class="filter-cost-option-label">{opt}</span>
           </label>
           <button
             type="button"
             class="filter-cost-only-btn"
-            onclick={() => setOnly(opt)}
+            onclick={(e) => { e.stopPropagation(); setOnly(opt); }}
             aria-label="Show only {label.toLowerCase()} {opt}"
           >
             Only
