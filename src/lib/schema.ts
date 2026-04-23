@@ -28,6 +28,7 @@ export const CardEntrySchema = z.object({
   attack: z.number().int().min(0).optional(),
   armor: z.number().int().min(0).optional(),
   health: z.number().int().min(0).optional(),
+  card_effect: z.string().optional(),
 });
 
 export const DeckSchema = z.object({

@@ -5,12 +5,14 @@
 
   interface Filters {
     search: string;
+    titleOnly: boolean;
     costs: string[];
     type: string;
     secondaryType: string;
     health: string[];
     attack: string[];
     armor: string[];
+    keyword: string[];
   }
 
   interface Props {
@@ -84,12 +86,14 @@
   let hasActiveFilters = $derived(
     !!(
       filters.search ||
+      filters.titleOnly ||
       filters.costs.length > 0 ||
       filters.type ||
       filters.secondaryType ||
       filters.health.length > 0 ||
       filters.attack.length > 0 ||
-      filters.armor.length > 0
+      filters.armor.length > 0 ||
+      filters.keyword
     ),
   );
 
@@ -120,17 +124,20 @@
       filters.health = [];
       filters.attack = [];
       filters.armor = [];
+      filters.keyword = [];
     }
   });
 
   function clearFilters() {
     filters.search = "";
+    filters.titleOnly = false;
     filters.costs = [];
     filters.type = "";
     filters.secondaryType = "";
     filters.health = [];
     filters.attack = [];
     filters.armor = [];
+    filters.keyword = [];
   }
 </script>
 
@@ -138,24 +145,30 @@
   <div class="filter-group filter-group--search">
     <label for="search" class="filter-label">Search</label>
     <div class="filter-search-wrap">
-      <input
-        type="text"
-        id="search"
-        bind:value={filters.search}
-        placeholder={searchPlaceholder}
-        class="filter-input filter-input--search"
-        autocomplete="off"
-      />
-      {#if filters.search.length > 0}
-        <button
-          type="button"
-          class="filter-search-clear"
-          onclick={() => (filters.search = "")}
-          aria-label="Clear search"
-        >
-          <span aria-hidden="true">×</span>
-        </button>
-      {/if}
+      <div class="filter-search-input-wrap">
+        <input
+          type="text"
+          id="search"
+          bind:value={filters.search}
+          placeholder={searchPlaceholder}
+          class="filter-input filter-input--search"
+          autocomplete="off"
+        />
+        {#if filters.search.length > 0}
+          <button
+            type="button"
+            class="filter-search-clear"
+            onclick={() => (filters.search = "")}
+            aria-label="Clear search"
+          >
+            <span aria-hidden="true">×</span>
+          </button>
+        {/if}
+      </div>
+      <label class="filter-label--checkbox">
+        <input type="checkbox" bind:checked={filters.titleOnly} />
+        Title only
+      </label>
     </div>
   </div>
 
@@ -241,6 +254,15 @@
           availableOptions={availableArmor}
           allLabel="All armor"
           sortNumeric={true}
+        />
+      </div>
+
+      <div class="filter-group filter-group--unit-stats">
+        <StatFilter
+          label="Keywords"
+          bind:values={filters.keyword}
+          availableOptions={["Airborne", "Slow", "Resilient", "Cybernetic", "Pierce", "Cloak", "Slavelink", "Splash", "Squad", "Consume"]}
+          allLabel="All keywords"
         />
       </div>
     </div>

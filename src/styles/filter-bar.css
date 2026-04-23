@@ -28,8 +28,6 @@
 }
 
 .filter-group--search {
-  flex: 1 1 14rem;
-  min-width: min(100%, 12rem);
   max-width: 24rem;
 }
 
@@ -216,9 +214,39 @@
   min-height: 1em;
 }
 
+.filter-label--checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: normal;
+  cursor: pointer;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.filter-label--checkbox input[type="checkbox"] {
+  width: 1em;
+  height: 1em;
+  accent-color: var(--accent);
+}
+
 .filter-search-wrap {
   position: relative;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
   width: 100%;
+}
+
+.filter-search-input-wrap {
+  position: relative;
+  display: flex;
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 .filter-input,
