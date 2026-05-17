@@ -2,22 +2,11 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { parse as parseYaml } from 'yaml';
 
-export type CardType = 'unknown' | 'unit' | 'reflex' | 'augment' | 'colony';
+const CARD_TYPES_VALUES = ['unknown', 'unit', 'reflex', 'augment', 'colony'] as const;
+export type CardType = (typeof CARD_TYPES_VALUES)[number];
+const CARD_TYPES = new Set<string>(CARD_TYPES_VALUES);
 
-export type CardSecondaryType =
-  | 'unknown'
-  | 'antigrav'
-  | 'unit'
-  | 'facility'
-  | 'human'
-  | 'xeno'
-  | 'chimera'
-  | 'aciereys'
-  | 'mech'
-  | 'reflex'
-  | 'synth';
-
-const CARD_SECONDARY_TYPES = new Set<string>([
+const CARD_SECONDARY_TYPES_VALUES = [
   'unknown',
   'antigrav',
   'unit',
@@ -29,7 +18,9 @@ const CARD_SECONDARY_TYPES = new Set<string>([
   'mech',
   'reflex',
   'synth',
-]);
+] as const;
+export type CardSecondaryType = (typeof CARD_SECONDARY_TYPES_VALUES)[number];
+const CARD_SECONDARY_TYPES = new Set<string>(CARD_SECONDARY_TYPES_VALUES);
 
 export interface CardEntry {
   image: string;
@@ -81,8 +72,6 @@ export function cardBlockTypeLabel(card: CardEntry): string {
   if (!card.type_secondary?.length) return '';
   return card.type_secondary.join(' / ');
 }
-
-const CARD_TYPES = new Set<string>(['unknown', 'unit', 'reflex', 'augment', 'colony']);
 
 export function folderToDisplayName(folder: string): string {
   return folder
